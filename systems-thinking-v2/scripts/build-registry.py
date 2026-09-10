@@ -120,9 +120,9 @@ LOOPS = {
   "contributors":{
     "joann":{"originalCode":"B1","name":"Program economics","chain":["CV-REALIZED","CV-REDEEM","CV-BREAKAGE","CV-HEADROOM","CV-GENEROSITY","CV-REALIZED"],"note":"Full five-step form with the inverse link named."},
     "ola":{"originalCode":"B1","name":"Realization vs. Program Margin","chain":["CV-REALIZED","CV-BREAKAGE","CV-HEADROOM","CV-REALIZED"],"note":"Same brake, three-node form."},
-    "josh":{"originalCode":"B2","name":"Personalized Value & Breakage","chain":[],"note":"UNRESOLVED. The name pairs two mechanisms this map treats separately, and Josh attaches the same loop to goal alignment in JL01 - a third reading. Not derivable."}},
-  "convergence":"partial",
-  "finding":"Two contributors drew the same brake and a third may have. It is the only brake where the inverse link is arithmetic rather than behavioural — a point that gets used cannot also go unused."},
+    "josh":{"originalCode":"B2","name":"Personalized Value & Breakage","chain":["CV-RELEVANCE","CV-REDEEM","CV-BREAKAGE","CV-HEADROOM","CV-RELEVANCE"],"note":"RESOLVED FROM TRANSCRIPT, 5 Sept working session: Josh states increasing personalization 'increases less breakage for BMO, like it's not great financially'. Personalization to breakage is the inverse link. Enters the same brake through personalization rather than through redemption.","evidence":"Working session transcript, 1:30:38"}},
+  "convergence":"converged",
+  "finding":"Three contributors found the same brake by three different routes - Joann through redemption, Ola through scale investment, Josh through personalization. All three land on the same inverse link. It is the only brake where the inverse link is arithmetic rather than behavioural — a point that gets used cannot also go unused."},
 
 "TB2": {"type":"balancing","name":"Trust & consent — the permission brake",
   "canonicalChain":["CV-INTENSITY","CV-INTRUSION","CV-CONSENT","CV-SIGNAL","CV-RELEVANCE","CV-INTENSITY"],
@@ -150,9 +150,10 @@ LOOPS = {
   "canonicalChain":["CV-ENGAGE","CV-OVERLAP","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-ENGAGE"],
   "summary":"Engagement produces member-client overlap; overlap produces combined signal; combined signal improves relevance; relevance produces realized value.",
   "contributors":{
-    "joann":{"originalCode":"R2","name":"Conversion flywheel","chain":["CV-ENGAGE","CV-OVERLAP","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-ENGAGE"],"note":"Proposed as the replacement revenue source if breakage comes off the scorecard."}},
-  "convergence":"unique",
-  "finding":"Only Joann modelled member-to-client conversion as a closed loop. It matters disproportionately because it is the only revenue source in the team's set that grows when redemption grows."},
+    "joann":{"originalCode":"R2","name":"Conversion flywheel","chain":["CV-ENGAGE","CV-OVERLAP","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-ENGAGE"],"note":"Proposed as the replacement revenue source if breakage comes off the scorecard."},
+    "josh":{"originalCode":"-","name":"Goal-linked conversion","chain":["CV-GOAL","CV-OVERLAP","CV-REALIZED","CV-ENGAGE","CV-GOAL"],"note":"FROM TRANSCRIPT, 5 Sept: 'how do we convert a better loyalty experience... into broadening the deeper relationship with BMO through their products and services... instead of measuring it, maybe we could force that'. His goal construct is the mechanism - rewards goals and financial goals set together.","evidence":"Working session transcript, 1:37:19 and 1:49:52"}},
+  "convergence":"converged",
+  "finding":"Joann and Josh independently reached the same conclusion, and said so to each other on the call: 'you and I had on the same, like that cross-selling of products and services'. Both also propose it as the answer to breakage - the only revenue source in the team's set that grows when redemption grows."},
 
 "TR3": {"type":"reinforcing","name":"Partner coverage",
   "canonicalChain":["CV-ENGAGE","CV-PARTNERSPEND","CV-ANCHOR","CV-BREADTH","CV-EVERYDAY","CV-ENGAGE"],
@@ -174,12 +175,12 @@ LOOPS = {
   "canonicalChain":["CV-PREVIEW","CV-CONSENT","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-PREVIEW"],
   "summary":"Showing a member what connecting an account would return gives them a reason to connect; connection enriches combined signal; richer signal improves relevance; relevance produces realized value, which is itself the next proof.",
   "contributors":{
-    "josh":{"originalCode":"R5","name":"Consumer-Driven Banking Awareness & Adoption","chain":["CV-PREVIEW","CV-CONSENT","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-PREVIEW"],"note":"DERIVED from Josh's JL02 prose; not supplied by him."}},
-  "convergence":"derived",
-  "derivation":{"confidence":"high","status":"needs-confirmation",
+    "josh":{"originalCode":"R5","name":"Consumer-Driven Banking Awareness & Adoption","chain":["CV-PREVIEW","CV-CONSENT","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-PREVIEW"],"note":"DERIVED from JL02 prose and CORROBORATED by the 5 Sept transcript, where Josh names the hook as cash and the barrier as low trust: 'Department of Finance has done surveys. It's low trust on consumer driven banking... how do you incentivize people to give that data? For me, what I've come up with and seen is its cash.'","evidence":"Working session transcript, 1:56:05"}},
+  "convergence":"corroborated",
+  "derivation":{"confidence":"high","status":"corroborated-not-yet-confirmed",
     "basis":"Josh states the chain almost completely in JL02: a value preview gives members a reason to participate, and progressive consent helps the loop gain enough participation to produce useful experiences and visible proof. Reason-to-participate to consent to signal to experiences to proof is a closed reinforcing path.",
     "assumption":"That visible proof feeds back to the value preview rather than terminating. His phrase implies the return arrow; he does not draw it."},
-  "finding":"The one Josh loop his prose genuinely supports. Zero negative links, consistent with his reinforcing label."},
+  "finding":"Josh named this loop out loud and gave both its hook (cash value) and its barrier (low trust in consumer-driven banking). Zero negative links, consistent with his reinforcing label. Overlaps the trust-and-consent brake at consent granted."},
 
 "TR6": {"type":"reinforcing","name":"Fragmentation and disengagement",
   "canonicalChain":["CV-FRAGMENT","CV-FRICTION","CV-ENGAGE","CV-SIGNAL","CV-RELEVANCE","CV-FRAGMENT"],
@@ -191,7 +192,7 @@ LOOPS = {
   "derivation":{"confidence":"low","status":"needs-confirmation",
     "basis":"The name pairs friction with engagement, and JL03 treats fragmentation as the thing to restructure. Two negative links - friction suppressing engagement, relevance reducing fragmentation - give an even count, consistent with a reinforcing label.",
     "assumption":"That Josh intends a vicious cycle rather than a virtuous one. A reinforcing loop runs both ways, so this may be the same structure read from the opposite direction. The polarity pattern is entirely inferred."},
-  "finding":"Plausible and internally consistent, but the parity is the only evidence for it. Confirm before using."},
+  "finding":"The only Josh loop with no corroboration anywhere. He never raised fragmentation or friction in the 5 Sept session, and his written document does not describe the mechanism. This is the single remaining unknown in the team set."},
 }
 
 

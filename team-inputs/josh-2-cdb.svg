@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs>
+<marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 z" fill="#0e7c6b"/></marker>
+<marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 z" fill="#b4531f"/></marker>
+</defs>
+<rect width="800" height="800" fill="#f7f8fa"/>
+<text x="44" y="50" fill="#5c6675" font-size="13" font-weight="600" letter-spacing="2">JOSH &#183; TEAM ZIG LOOP CONSOLIDATION</text>
+<rect x="44" y="68" width="146" height="24" fill="#e2f1ee"/>
+<text x="117" y="85" fill="#0e7c6b" font-size="12.5" font-weight="700" letter-spacing="1" text-anchor="middle">FROM THE CALL</text>
+<text x="208" y="88" fill="#14181f" font-size="25" font-weight="600">Consumer-driven banking adoption</text>
+<text x="44" y="122" fill="#5c6675" font-size="15.5">You named the hook and the barrier out loud. This is the loop that implies.</text>
+<line x1="44" y1="146" x2="756" y2="146" stroke="#d6dbe3" stroke-width="1"/>
+<path d="M 457.2 291.6 Q 505.4 286.9 515.9 334.2" fill="none" stroke="#0e7c6b" stroke-width="2.4" marker-end="url(#ag)"/>
+<text x="525.4" y="269.4" fill="#0e7c6b" font-size="29" font-weight="700" text-anchor="middle">+</text>
+<path d="M 557.5 423.9 Q 570.6 487.4 522.6 531.1" fill="none" stroke="#0e7c6b" stroke-width="2.4" marker-end="url(#ag)"/>
+<text x="602.9" y="507.9" fill="#0e7c6b" font-size="29" font-weight="700" text-anchor="middle">+</text>
+<path d="M 403.0 579.2 Q 400.0 611.3 397.0 579.2" fill="none" stroke="#0e7c6b" stroke-width="2.4" marker-end="url(#ag)"/>
+<text x="400.0" y="655.3" fill="#0e7c6b" font-size="29" font-weight="700" text-anchor="middle">+</text>
+<path d="M 277.4 531.1 Q 229.4 487.4 242.5 423.9" fill="none" stroke="#0e7c6b" stroke-width="2.4" marker-end="url(#ag)"/>
+<text x="197.1" y="507.9" fill="#0e7c6b" font-size="29" font-weight="700" text-anchor="middle">+</text>
+<path d="M 284.1 334.2 Q 294.6 286.9 342.8 291.6" fill="none" stroke="#0e7c6b" stroke-width="2.4" marker-end="url(#ag)"/>
+<text x="274.6" y="269.4" fill="#0e7c6b" font-size="29" font-weight="700" text-anchor="middle">+</text>
+<rect x="314.0" y="219.0" width="172" height="62" rx="3" fill="#ffffff" stroke="#0e7c6b" stroke-width="2.2"/>
+<text x="400.0" y="246.0" text-anchor="middle" fill="#14181f" font-size="15" font-weight="600">Cash value shown</text>
+<text x="400.0" y="265.0" text-anchor="middle" fill="#14181f" font-size="15" font-weight="600">up front</text>
+<rect x="487.1" y="344.8" width="172" height="62" rx="3" fill="#ffffff" stroke="#d6dbe3" stroke-width="1.5"/>
+<text x="573.1" y="371.8" text-anchor="middle" fill="#14181f" font-size="15">Member shares</text>
+<text x="573.1" y="390.8" text-anchor="middle" fill="#14181f" font-size="15">data (consent)</text>
+<rect x="421.0" y="548.2" width="172" height="62" rx="3" fill="#ffffff" stroke="#d6dbe3" stroke-width="1.5"/>
+<text x="507.0" y="575.2" text-anchor="middle" fill="#14181f" font-size="15">Combined</text>
+<text x="507.0" y="594.2" text-anchor="middle" fill="#14181f" font-size="15">signals</text>
+<rect x="207.0" y="548.2" width="172" height="62" rx="3" fill="#ffffff" stroke="#d6dbe3" stroke-width="1.5"/>
+<text x="293.0" y="575.2" text-anchor="middle" fill="#14181f" font-size="15">Decisioning</text>
+<text x="293.0" y="594.2" text-anchor="middle" fill="#14181f" font-size="15">relevance</text>
+<rect x="140.9" y="344.8" width="172" height="62" rx="3" fill="#ffffff" stroke="#d6dbe3" stroke-width="1.5"/>
+<text x="226.9" y="381.8" text-anchor="middle" fill="#14181f" font-size="15">Realized value</text>
+<text x="400" y="427" text-anchor="middle" fill="#0e7c6b" font-size="14" font-weight="700" letter-spacing="1.6">REINFORCING</text>
+<text x="400" y="451" text-anchor="middle" fill="#5c6675" font-size="14">0 minuses &#183; even, so it compounds</text>
+<rect x="44" y="686" width="712" height="80" fill="#eceff4"/>
+<text x="64" y="712" fill="#2b5ce6" font-size="12.5" font-weight="700" letter-spacing="1">YOUR WORDS, 1:56:05</text>
+<text x="64" y="735" fill="#14181f" font-size="14.5">&#8220;how do you incentivize people to give that data?&#8230;</text>
+<text x="64" y="756" fill="#14181f" font-size="14.5">what I&#8217;ve come up with and seen is its cash&#8221;</text>
+</svg>

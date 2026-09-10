@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs>
+<marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 z" fill="#0e7c6b"/></marker>
+<marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 z" fill="#b4531f"/></marker>
+</defs>
+<rect width="800" height="800" fill="#f7f8fa"/>
+<text x="44" y="50" fill="#5c6675" font-size="13" font-weight="600" letter-spacing="2">JOSH &#183; TEAM ZIG LOOP CONSOLIDATION</text>
+<rect x="44" y="68" width="146" height="24" fill="#e2f1ee"/>
+<text x="117" y="85" fill="#0e7c6b" font-size="12.5" font-weight="700" letter-spacing="1" text-anchor="middle">FROM THE CALL</text>
+<text x="208" y="88" fill="#14181f" font-size="25" font-weight="600">Personalized value &amp; breakage</text>
+<text x="44" y="122" fill="#5c6675" font-size="15.5">You said this on 5 Sept &#8212; it turns out to be the same brake Joann and Ola drew.</text>
+<line x1="44" y1="146" x2="756" y2="146" stroke="#d6dbe3" stroke-width="1"/>
+<path d="M 443.7 293.7 Q 518.3 313.7 538.3 388.3" fill="none" stroke="#0e7c6b" stroke-width="2.4" marker-end="url(#ag)"/>
+<text x="542.3" y="299.7" fill="#0e7c6b" font-size="29" font-weight="700" text-anchor="middle">+</text>
+<path d="M 538.3 475.7 Q 518.3 550.3 443.7 570.3" fill="none" stroke="#b4531f" stroke-width="3" marker-end="url(#ao)"/>
+<text x="542.3" y="584.3" fill="#b4531f" font-size="36" font-weight="700" text-anchor="middle">&#8722;</text>
+<path d="M 356.3 570.3 Q 281.7 550.3 261.7 475.7" fill="none" stroke="#0e7c6b" stroke-width="2.4" marker-end="url(#ag)"/>
+<text x="257.7" y="584.3" fill="#0e7c6b" font-size="29" font-weight="700" text-anchor="middle">+</text>
+<path d="M 261.7 388.3 Q 281.7 313.7 356.3 293.7" fill="none" stroke="#0e7c6b" stroke-width="2.4" marker-end="url(#ag)"/>
+<text x="257.7" y="299.7" fill="#0e7c6b" font-size="29" font-weight="700" text-anchor="middle">+</text>
+<rect x="314.0" y="219.0" width="172" height="62" rx="3" fill="#ffffff" stroke="#b4531f" stroke-width="2.2"/>
+<text x="400.0" y="246.0" text-anchor="middle" fill="#14181f" font-size="15" font-weight="600">Personalization</text>
+<text x="400.0" y="265.0" text-anchor="middle" fill="#14181f" font-size="15" font-weight="600">&amp; relevance</text>
+<rect x="496.0" y="401.0" width="172" height="62" rx="3" fill="#ffffff" stroke="#d6dbe3" stroke-width="1.5"/>
+<text x="582.0" y="428.0" text-anchor="middle" fill="#14181f" font-size="15">Redemption</text>
+<text x="582.0" y="447.0" text-anchor="middle" fill="#14181f" font-size="15">rate</text>
+<rect x="314.0" y="583.0" width="172" height="62" rx="3" fill="#ffffff" stroke="#d6dbe3" stroke-width="1.5"/>
+<text x="400.0" y="610.0" text-anchor="middle" fill="#14181f" font-size="15">Breakage</text>
+<text x="400.0" y="629.0" text-anchor="middle" fill="#14181f" font-size="15">revenue</text>
+<rect x="132.0" y="401.0" width="172" height="62" rx="3" fill="#ffffff" stroke="#d6dbe3" stroke-width="1.5"/>
+<text x="218.0" y="428.0" text-anchor="middle" fill="#14181f" font-size="15">Margin headroom</text>
+<text x="218.0" y="447.0" text-anchor="middle" fill="#14181f" font-size="15">to be generous</text>
+<text x="400" y="338" text-anchor="middle" fill="#b4531f" font-size="14" font-weight="700" letter-spacing="1.6">BALANCING</text>
+<text x="400" y="362" text-anchor="middle" fill="#5c6675" font-size="14">1 minus &#183; odd, so it pushes back</text>
+<rect x="44" y="686" width="712" height="80" fill="#eceff4"/>
+<text x="64" y="712" fill="#2b5ce6" font-size="12.5" font-weight="700" letter-spacing="1">YOUR WORDS, 1:30:38</text>
+<text x="64" y="735" fill="#14181f" font-size="14.5">&#8220;increasing personalization&#8230; increases less breakage for BMO,</text>
+<text x="64" y="756" fill="#14181f" font-size="14.5">like it&#8217;s not great financially&#8221;</text>
+</svg>
