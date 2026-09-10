@@ -54,6 +54,7 @@ def main():
         subs.append(s)
 
     cmap = load(DATA / "convergence-map.json")
+    registry = load(DATA / "variable-registry.json")
 
     known = {s["id"] for s in subs}
     for declared in cmap.get("analysedSubmissions", []):
@@ -87,6 +88,24 @@ def main():
             "summary": counts,
             "leverage": cmap["leverageConvergence"],
             "product": cmap["productConvergence"],
+        },
+        "registry": {
+            "variables": registry["variables"],
+            "loops": registry["loops"],
+            "rule": registry["rule"],
+            "method": registry["method"],
+        },
+        "structuralDiagnostic": {
+            "headline": "The current map is a value chain, not a feedback structure.",
+            "measured": "Sly's approved V2 contract holds 21 nodes and 41 relationships but only 2 closed loops. Three of its four views contain none at all.",
+            "byView": [
+                {"view": "Current System", "relationships": 17, "closedLoops": 2},
+                {"view": "Main Variable Transition", "relationships": 12, "closedLoops": 0},
+                {"view": "Future Opportunity", "relationships": 9, "closedLoops": 0},
+                {"view": "Outside the Boundary", "relationships": 5, "closedLoops": 0},
+            ],
+            "interpretation": "39 of 41 relationships run one way and never return. A structure where influence flows forward and does not come back is a pipeline: it can show how value moves, but it cannot explain why the system behaves as it does over time.",
+            "remedy": "The team's own loop work already supplies what is missing. Nine canonical loops, all closed, all with stated mechanisms. Making those the primary structure and demoting the eight-step chain to a supporting value-chain view converts the pipeline into a systems map without discarding any of the existing analysis.",
         },
         "divergences": cmap["divergences"],
         "gaps": cmap["gaps"],

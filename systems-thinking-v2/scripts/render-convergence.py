@@ -103,6 +103,77 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       '<div class="cv-field"><span>Note</span><p>' + esc(c.note) + "</p></div></article>";
   }
 
+  var VARS = {};
+  DATA.registry.variables.forEach(function (v) { VARS[v.id] = v; });
+  var PEOPLE = { joann:"Joann", sly:"Sly", henry:"Henry", josh:"Josh", lia:"Lia", ola:"Ola" };
+
+  function chainStrip(chain, negPairs) {
+    if (!chain || !chain.length) return '<p class="cv-nochain">Structure not supplied.</p>';
+    var neg = {};
+    (negPairs || []).forEach(function (p) { neg[p[0] + ">" + p[1]] = true; });
+    var out = ['<div class="cv-strip-wrap"><div class="cv-strip">'];
+    chain.forEach(function (id, i) {
+      var v = VARS[id];
+      var last = i === chain.length - 1;
+      out.push('<span class="cv-v' + (last ? " is-back" : "") + '">' + esc(v ? v.label : id) + "</span>");
+      if (!last) {
+        var isNeg = neg[id + ">" + chain[i + 1]];
+        out.push('<span class="cv-s' + (isNeg ? " is-neg" : "") + '">' + (isNeg ? "&minus;" : "+") + "</span>");
+      }
+    });
+    out.push("</div></div>");
+    return out.join("");
+  }
+
+  function loopCard(loop) {
+    var people = Object.keys(loop.contributors);
+    var negs = (loop.negativeLinks || []).length;
+    var parity = negs % 2 === 0 ? "compounds" : "pushes back";
+    var parts = ['<article class="cv-card cv-loop is-' + esc(loop.convergence) + '">'];
+    parts.push('<header><div class="cv-card-head">' +
+      '<code class="cv-loopcode">' + esc(loop.id) + "</code>" +
+      badge(loop.convergence, loop.convergence) +
+      '<span class="cv-tally">' + people.length + " of 6</span></div>");
+    parts.push("<h4>" + esc(loop.name) + "</h4></header>");
+    parts.push('<p class="cv-loopsum">' + esc(loop.summary) + "</p>");
+    parts.push(chainStrip(loop.canonicalChain, loop.negativeLinks));
+    parts.push('<p class="cv-parity"><strong>' + esc(loop.type) + "</strong> &middot; " +
+      negs + " minus" + (negs === 1 ? "" : "es") + " &middot; " + parity + "</p>");
+    if (loop.derivation) {
+      parts.push('<div class="cv-field is-next"><span>Drafted, not supplied &middot; ' +
+        esc(loop.derivation.confidence) + ' confidence</span><p>' + esc(loop.derivation.assumption) + "</p></div>");
+    }
+    parts.push('<div class="cv-field"><span>What this tells us</span><p>' + esc(loop.finding) + "</p></div>");
+    parts.push('<div class="cv-drawnby">' + people.map(function (k) {
+      return '<span class="cv-who">' + esc(PEOPLE[k] || k) + "</span>";
+    }).join("") + "</div>");
+    parts.push("</article>");
+    return parts.join("");
+  }
+
+  function personSection(key) {
+    var loops = DATA.registry.loops.filter(function (l) { return l.contributors[key]; });
+    if (!loops.length) return "";
+    var out = ['<section class="cv-person"><h4>' + esc(PEOPLE[key]) +
+      '<span class="cv-personcount">' + loops.length + " loop" + (loops.length === 1 ? "" : "s") + "</span></h4>"];
+    out.push('<div class="cv-personloops">');
+    loops.forEach(function (l) {
+      var c = l.contributors[key];
+      out.push('<div class="cv-ploop">' +
+        '<div class="cv-ploop-head"><strong>' + esc(c.name) + "</strong>" +
+        (c.originalCode && c.originalCode !== "-" ? '<code>their code: ' + esc(c.originalCode) + "</code>" : "") +
+        '<code class="cv-maps">maps to ' + esc(l.id) + "</code></div>" +
+        chainStrip(c.chain, l.negativeLinks) +
+        '<p class="cv-pnote">' + esc(c.note) + "</p>" +
+        (c.evidence ? '<p class="cv-eff">' + esc(c.evidence) + "</p>" : "") +
+        "</div>");
+    });
+    out.push("</div></section>");
+    return out.join("");
+  }
+
+  var DIAG = DATA.structuralDiagnostic;
+
   var summary = DATA.convergence.summary || {};
   var section = el("section", "cv-view");
   section.id = "convergence-view";
@@ -126,6 +197,8 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       "</header>" +
       '<div class="cv-subnav" role="group" aria-label="Choose a convergence view">' +
         '<button type="button" class="btn btn-primary" data-cv-panel="converge" aria-pressed="true">Convergence</button>' +
+        '<button type="button" class="btn" data-cv-panel="allloops" aria-pressed="false">Everyone&rsquo;s loops</button>' +
+        '<button type="button" class="btn" data-cv-panel="canon" aria-pressed="false">Converged loops</button>' +
         '<button type="button" class="btn" data-cv-panel="diverge" aria-pressed="false">Divergence</button>' +
         '<button type="button" class="btn" data-cv-panel="gaps" aria-pressed="false">Open gaps</button>' +
         '<button type="button" class="btn" data-cv-panel="who" aria-pressed="false">Contributors</button>' +
@@ -137,6 +210,24 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
         '<div class="cv-grid">' + DATA.convergence.product.map(clusterCard).join("") + "</div>" +
         '<p class="cv-fine">Convergence strength describes how independently contributors arrived at the same claim. It never upgrades epistemic status: ' +
         esc(DATA.classificationRule) + "</p>" +
+      "</div>" +
+      '<div class="cv-panel" data-cv-panel-body="allloops" hidden>' +
+        '<p class="cv-lead">Every loop anyone drew, as they drew it, grouped by author. Each one is labelled with the canonical loop it resolves to, so you can see which of your loops is also someone else&rsquo;s.</p>' +
+        ["joann","sly","henry","josh","lia","ola"].map(personSection).join("") +
+      "</div>" +
+      '<div class="cv-panel" data-cv-panel-body="canon" hidden>' +
+        '<section class="cv-card cv-diag">' +
+          '<span class="cv-kicker">Why the loops should be the map</span>' +
+          "<h3>" + esc(DIAG.headline) + "</h3>" +
+          "<p>" + esc(DIAG.measured) + "</p>" +
+          '<div class="cv-diagrid">' + DIAG.byView.map(function (v) {
+            return '<div class="cv-diagcell' + (v.closedLoops ? "" : " is-zero") + '"><strong>' + v.closedLoops +
+              "</strong><span>" + esc(v.view) + "</span><em>" + v.relationships + " relationships</em></div>";
+          }).join("") + "</div>" +
+          "<p>" + esc(DIAG.interpretation) + "</p>" +
+          '<p class="cv-remedy">' + esc(DIAG.remedy) + "</p>" +
+        "</section>" +
+        '<div class="cv-grid">' + DATA.registry.loops.map(loopCard).join("") + "</div>" +
       "</div>" +
       '<div class="cv-panel" data-cv-panel-body="diverge" hidden>' +
         '<div class="cv-grid">' + DATA.divergences.map(divergenceCard).join("") + "</div>" +

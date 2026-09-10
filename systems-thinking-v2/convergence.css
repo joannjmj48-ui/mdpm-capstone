@@ -131,3 +131,72 @@
 @media (max-width: 640px) {
   #loyalty-map-v2 .cv-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- loops panels ---------- */
+
+#loyalty-map-v2 .cv-lead { max-width: 68ch; color: var(--muted-foreground); margin: 0 0 1.4rem; }
+
+#loyalty-map-v2 .cv-strip-wrap { overflow-x: auto; padding-bottom: 4px; margin-top: .55rem; }
+#loyalty-map-v2 .cv-strip { display: flex; align-items: center; gap: 6px; width: max-content; }
+#loyalty-map-v2 .cv-v {
+  font-size: 12.5px; line-height: 1.25; padding: 5px 9px; max-width: 14ch;
+  background: var(--sunken); border: 1px solid var(--border); border-radius: 4px;
+}
+#loyalty-map-v2 .cv-v.is-back { background: transparent; border-style: dashed; color: var(--muted-foreground); }
+#loyalty-map-v2 .cv-s { font-family: var(--font-mono); font-weight: 700; font-size: 15px; color: var(--green); }
+#loyalty-map-v2 .cv-s.is-neg { color: var(--destructive); font-size: 18px; }
+#loyalty-map-v2 .cv-nochain { font-size: 13px; color: var(--muted-foreground); font-style: italic; margin-top: .5rem; }
+
+#loyalty-map-v2 .cv-loopcode {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: .06em;
+  background: var(--foreground); color: var(--background); padding: 3px 7px; border-radius: 3px;
+}
+#loyalty-map-v2 .cv-loopsum { margin-top: .5rem; font-size: 14.5px; }
+#loyalty-map-v2 .cv-parity {
+  margin-top: .6rem; font-size: 12.5px; color: var(--muted-foreground);
+  text-transform: capitalize; font-family: var(--font-mono);
+}
+#loyalty-map-v2 .cv-drawnby { display: flex; flex-wrap: wrap; gap: 5px; margin-top: .9rem; padding-top: .7rem; border-top: 1px solid var(--border); }
+
+#loyalty-map-v2 .cv-loop.is-converged   { border-left: 3px solid var(--green); }
+#loyalty-map-v2 .cv-loop.is-corroborated{ border-left: 3px solid var(--primary); }
+#loyalty-map-v2 .cv-loop.is-partial     { border-left: 3px solid var(--muted-foreground); }
+#loyalty-map-v2 .cv-loop.is-derived     { border-left: 3px dashed var(--destructive); }
+#loyalty-map-v2 .cv-loop.is-unique      { border-left: 3px solid var(--border); }
+
+/* per-person listing */
+#loyalty-map-v2 .cv-person { margin-bottom: 1.9rem; }
+#loyalty-map-v2 .cv-person > h4 {
+  display: flex; align-items: baseline; gap: .6rem;
+  font-size: var(--font-size-h3); margin: 0 0 .7rem;
+  padding-bottom: .4rem; border-bottom: 1px solid var(--border);
+}
+#loyalty-map-v2 .cv-personcount {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 400;
+  color: var(--muted-foreground); text-transform: uppercase; letter-spacing: .06em;
+}
+#loyalty-map-v2 .cv-personloops { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); }
+#loyalty-map-v2 .cv-ploop { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: .9rem 1rem; }
+#loyalty-map-v2 .cv-ploop-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .45rem; }
+#loyalty-map-v2 .cv-ploop-head code {
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--muted-foreground);
+  border: 1px solid var(--border); padding: 1px 5px; border-radius: 3px;
+}
+#loyalty-map-v2 .cv-ploop-head code.cv-maps { color: var(--primary); border-color: currentColor; }
+#loyalty-map-v2 .cv-pnote { margin-top: .6rem; font-size: 13px; color: var(--muted-foreground); }
+#loyalty-map-v2 .cv-eff { margin-top: .3rem; font-size: 11.5px; font-family: var(--font-mono); color: var(--primary); }
+
+/* structural diagnostic */
+#loyalty-map-v2 .cv-diag { border-left: 3px solid var(--destructive); margin-bottom: 1.4rem; }
+#loyalty-map-v2 .cv-diag h3 { margin: .3rem 0 .7rem; font-size: var(--font-size-h2); }
+#loyalty-map-v2 .cv-diag p { margin-top: .6rem; max-width: 74ch; }
+#loyalty-map-v2 .cv-diagrid { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1rem 0 .3rem; }
+#loyalty-map-v2 .cv-diagcell {
+  display: flex; flex-direction: column; min-width: 9.5rem; padding: .6rem .8rem;
+  background: var(--secondary); border: 1px solid var(--border); border-radius: var(--radius);
+}
+#loyalty-map-v2 .cv-diagcell strong { font-size: var(--font-size-h2); line-height: 1.1; color: var(--green); }
+#loyalty-map-v2 .cv-diagcell.is-zero strong { color: var(--destructive); }
+#loyalty-map-v2 .cv-diagcell span { font-size: 12.5px; }
+#loyalty-map-v2 .cv-diagcell em { font-size: 11px; font-style: normal; color: var(--muted-foreground); font-family: var(--font-mono); }
+#loyalty-map-v2 .cv-remedy { border-left: 2px solid var(--primary); padding-left: .8rem; }
