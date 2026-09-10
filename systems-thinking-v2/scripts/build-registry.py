@@ -89,6 +89,12 @@ REG = {
  [("joann","Everyday relevance")]),
 "CV-GOAL": ("Member goal achievement","Progress against a goal the member has stated.",
  [("josh","Member goal achievement"),("joann","Goal-linked progress")]),
+"CV-PREVIEW": ("Demonstrated value of connecting",
+ "Concrete, visible proof that linking an account or granting data returns something the member can use.",
+ [("josh","Value preview / visible proof")]),
+"CV-FRAGMENT": ("Channel & data fragmentation",
+ "Value, status and opportunity split across channels and systems that do not resolve to one view.",
+ [("josh","Fragmented data and channels"),("joann","Searching across channels")]),
 "CV-REVENUE": ("Engagement & revenue","Program revenue produced by sustained engagement.",
  [("ola","Engagement & Revenue"),("joann","Member-to-client conversion (R2)")]),
 }
@@ -99,11 +105,11 @@ LOOPS = {
   "canonicalChain":["CV-REALIZED","CV-ENGAGE","CV-TXN","CV-SIGNAL","CV-RELEVANCE","CV-OFFERS","CV-REALIZED"],
   "summary":"Value members actually get keeps them engaged; engagement produces permissioned signal; signal improves relevance; relevance produces more realized value.",
   "contributors":{
-    "joann":{"code":"R1","name":"Relevance flywheel","chain":["CV-REALIZED","CV-ENGAGE","CV-TXN","CV-SIGNAL","CV-RELEVANCE","CV-REALIZED"],"note":"Collapses opportunity surfacing into the relevance→value link."},
-    "sly":{"code":"R1","name":"Value Realization and Learning Flywheel","chain":["CV-REALIZED","CV-TRUST","CV-ENGAGE","CV-SIGNAL","CV-RELEVANCE","CV-OFFERS","CV-TXN","CV-REALIZED"],"note":"Adds trust as an explicit step."},
-    "henry":{"code":"R1","name":"Value Realization Flywheel","chain":["CV-REALIZED","CV-TRUST","CV-ENGAGE","CV-SIGNAL","CV-RELEVANCE","CV-OFFERS","CV-TXN","CV-REALIZED"],"note":"Identical to Sly's, node for node, in different words."},
-    "lia":{"code":"R","name":"Reinforcing Loop (more engagement)","chain":["CV-REALIZED","CV-ENGAGE","CV-SIGNAL","CV-OFFERS","CV-REALIZED"],"note":"Four-node compression; no trust or capture step."},
-    "ola":{"code":"R1","name":"Personalization Flywheel","chain":["CV-ENGAGE","CV-SIGNAL","CV-OFFERS","CV-ENGAGE"],"note":"Three-node compression; realized value implicit."}},
+    "joann":{"originalCode":"R1","name":"Relevance flywheel","chain":["CV-REALIZED","CV-ENGAGE","CV-TXN","CV-SIGNAL","CV-RELEVANCE","CV-REALIZED"],"note":"Collapses opportunity surfacing into the relevance→value link."},
+    "sly":{"originalCode":"R1","name":"Value Realization and Learning Flywheel","chain":["CV-REALIZED","CV-TRUST","CV-ENGAGE","CV-SIGNAL","CV-RELEVANCE","CV-OFFERS","CV-TXN","CV-REALIZED"],"note":"Adds trust as an explicit step."},
+    "henry":{"originalCode":"R1","name":"Value Realization Flywheel","chain":["CV-REALIZED","CV-TRUST","CV-ENGAGE","CV-SIGNAL","CV-RELEVANCE","CV-OFFERS","CV-TXN","CV-REALIZED"],"note":"Identical to Sly's, node for node, in different words."},
+    "lia":{"originalCode":"R","name":"Reinforcing Loop (more engagement)","chain":["CV-REALIZED","CV-ENGAGE","CV-SIGNAL","CV-OFFERS","CV-REALIZED"],"note":"Four-node compression; no trust or capture step."},
+    "ola":{"originalCode":"R1","name":"Personalization Flywheel","chain":["CV-ENGAGE","CV-SIGNAL","CV-OFFERS","CV-ENGAGE"],"note":"Three-node compression; realized value implicit."}},
   "convergence":"converged",
   "finding":"Five of six contributors independently drew this loop. It is the same causal structure at four different resolutions, not five different theories."},
 
@@ -112,20 +118,20 @@ LOOPS = {
   "negativeLinks":[["CV-REDEEM","CV-BREAKAGE"]],
   "summary":"Redemption is what members want, but the programme is funded on points nobody uses. Redemption up, breakage down, headroom down, generosity down, value reaching members down.",
   "contributors":{
-    "joann":{"code":"B1","name":"Program economics","chain":["CV-REALIZED","CV-REDEEM","CV-BREAKAGE","CV-HEADROOM","CV-GENEROSITY","CV-REALIZED"],"note":"Full five-step form with the inverse link named."},
-    "ola":{"code":"B1","name":"Realization vs. Program Margin","chain":["CV-REALIZED","CV-BREAKAGE","CV-HEADROOM","CV-REALIZED"],"note":"Same brake, three-node form."},
-    "josh":{"code":"B2","name":"Personalized Value & Breakage","chain":[],"note":"Named, structure not supplied. Numbered B2, which collides with Joann's B2 Trust & consent."}},
-  "convergence":"converged",
-  "finding":"Three contributors found the same brake. It is the only brake where the inverse link is arithmetic rather than behavioural — a point that gets used cannot also go unused."},
+    "joann":{"originalCode":"B1","name":"Program economics","chain":["CV-REALIZED","CV-REDEEM","CV-BREAKAGE","CV-HEADROOM","CV-GENEROSITY","CV-REALIZED"],"note":"Full five-step form with the inverse link named."},
+    "ola":{"originalCode":"B1","name":"Realization vs. Program Margin","chain":["CV-REALIZED","CV-BREAKAGE","CV-HEADROOM","CV-REALIZED"],"note":"Same brake, three-node form."},
+    "josh":{"originalCode":"B2","name":"Personalized Value & Breakage","chain":[],"note":"UNRESOLVED. The name pairs two mechanisms this map treats separately, and Josh attaches the same loop to goal alignment in JL01 - a third reading. Not derivable."}},
+  "convergence":"partial",
+  "finding":"Two contributors drew the same brake and a third may have. It is the only brake where the inverse link is arithmetic rather than behavioural — a point that gets used cannot also go unused."},
 
 "TB2": {"type":"balancing","name":"Trust & consent — the permission brake",
   "canonicalChain":["CV-INTENSITY","CV-INTRUSION","CV-CONSENT","CV-SIGNAL","CV-RELEVANCE","CV-INTENSITY"],
   "negativeLinks":[["CV-INTRUSION","CV-CONSENT"]],
   "summary":"Personalization runs on permission it can spend. Push intensity too hard and members feel watched, consent narrows, signal thins, relevance falls.",
   "contributors":{
-    "joann":{"code":"B2","name":"Trust & consent","chain":["CV-INTENSITY","CV-INTRUSION","CV-CONSENT","CV-SIGNAL","CV-RELEVANCE","CV-INTENSITY"],"note":"Framed as the cap on how hard R1 can be pushed."},
-    "lia":{"code":"B","name":"Balancing Loop (keeps things in check)","chain":["CV-INTENSITY","CV-INTRUSION","CV-TRUST","CV-CONSENT","CV-RELEVANCE","CV-INTENSITY"],"note":"Routes through trust explicitly before consent."},
-    "josh":{"code":"—","name":"Progressive consent (JL02)","chain":[],"note":"Not drawn as a loop; appears as a leverage point on the same mechanism."}},
+    "joann":{"originalCode":"B2","name":"Trust & consent","chain":["CV-INTENSITY","CV-INTRUSION","CV-CONSENT","CV-SIGNAL","CV-RELEVANCE","CV-INTENSITY"],"note":"Framed as the cap on how hard R1 can be pushed."},
+    "lia":{"originalCode":"B","name":"Balancing Loop (keeps things in check)","chain":["CV-INTENSITY","CV-INTRUSION","CV-TRUST","CV-CONSENT","CV-RELEVANCE","CV-INTENSITY"],"note":"Routes through trust explicitly before consent."},
+    "josh":{"originalCode":"—","name":"Progressive consent (JL02)","chain":[],"note":"Not drawn as a loop; appears as a leverage point on the same mechanism."}},
   "convergence":"converged",
   "finding":"Two contributors drew this independently and a third proposed intervening on it. It is the only brake that acts on the flywheel's fuel rather than its output."},
 
@@ -134,30 +140,60 @@ LOOPS = {
   "negativeLinks":[["CV-REALIZED","CV-UNRESOLVED"]],
   "summary":"Value that was promised but did not visibly arrive creates uncertainty and friction, which triggers detection and resolution effort, which restores clarity and realized value — reducing the unresolved value that started it.",
   "contributors":{
-    "henry":{"code":"B1","name":"Reward Value Gap Correction","chain":["CV-UNRESOLVED","CV-FRICTION","CV-DETECT","CV-STATUS","CV-REALIZED","CV-UNRESOLVED"],"note":"The only contributor to draw the correction as a closed loop."},
-    "sly":{"code":"B1","name":"Operational Friction and Capacity Constraint","chain":["CV-ENGAGE","CV-DEMAND","CV-OPSLOAD","CV-UNRESOLVED","CV-REALIZED","CV-TRUST","CV-ENGAGE"],"note":"Same failure, different cause: capacity not keeping up with volume."},
-    "joann":{"code":"—","name":"The six-state ledger","chain":[],"note":"Modelled as a state machine with one capability per failure mode rather than as a loop."}},
+    "henry":{"originalCode":"B1","name":"Reward Value Gap Correction","chain":["CV-UNRESOLVED","CV-FRICTION","CV-DETECT","CV-STATUS","CV-REALIZED","CV-UNRESOLVED"],"note":"The only contributor to draw the correction as a closed loop."},
+    "sly":{"originalCode":"B1","name":"Operational Friction and Capacity Constraint","chain":["CV-ENGAGE","CV-DEMAND","CV-OPSLOAD","CV-UNRESOLVED","CV-REALIZED","CV-TRUST","CV-ENGAGE"],"note":"Same failure, different cause: capacity not keeping up with volume."},
+    "joann":{"originalCode":"—","name":"The six-state ledger","chain":[],"note":"Modelled as a state machine with one capability per failure mode rather than as a loop."}},
   "convergence":"partial",
   "finding":"Henry and Sly describe the same breakdown from opposite ends — Henry from the member's uncertainty, Sly from the operation's capacity. Both end at unresolved value reducing realization and trust."},
 
 "TR2": {"type":"reinforcing","name":"Conversion flywheel",
   "canonicalChain":["CV-ENGAGE","CV-OVERLAP","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-ENGAGE"],
-  "summary":"Engagement produces member–client overlap; overlap produces combined signal; combined signal improves relevance; relevance produces realized value.",
+  "summary":"Engagement produces member-client overlap; overlap produces combined signal; combined signal improves relevance; relevance produces realized value.",
   "contributors":{
-    "joann":{"code":"R2","name":"Conversion flywheel","chain":["CV-ENGAGE","CV-OVERLAP","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-ENGAGE"],"note":"Proposed as the replacement revenue source if breakage comes off the scorecard."},
-    "ola":{"code":"R2","name":"Trust Through Reliable Value","chain":["CV-REVENUE","CV-STATUS","CV-TRUST","CV-REVENUE"],"note":"Shares the code R2 but is a different mechanism — reliability building trust, not member-to-client conversion."},
-    "josh":{"code":"R5","name":"Consumer-Driven Banking Awareness & Adoption","chain":[],"note":"Named, structure not supplied. Plausibly the same overlap mechanism reached through CDB."}},
-  "convergence":"contested",
-  "finding":"Three contributors used R2-or-equivalent for three different mechanisms. This is a labelling collision, not agreement — it must be renumbered before the team presents a shared register."},
+    "joann":{"originalCode":"R2","name":"Conversion flywheel","chain":["CV-ENGAGE","CV-OVERLAP","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-ENGAGE"],"note":"Proposed as the replacement revenue source if breakage comes off the scorecard."}},
+  "convergence":"unique",
+  "finding":"Only Joann modelled member-to-client conversion as a closed loop. It matters disproportionately because it is the only revenue source in the team's set that grows when redemption grows."},
 
 "TR3": {"type":"reinforcing","name":"Partner coverage",
   "canonicalChain":["CV-ENGAGE","CV-PARTNERSPEND","CV-ANCHOR","CV-BREADTH","CV-EVERYDAY","CV-ENGAGE"],
-  "summary":"The flywheel on the supply side. Engagement produces attributable partner spend, which retains anchor partners, which widens earn-and-redeem breadth, which makes the program part of ordinary weekly life.",
+  "summary":"The flywheel on the supply side. Engagement produces attributable partner spend, which retains anchor partners, which widens earn-and-redeem breadth, which makes the programme part of ordinary weekly life.",
   "contributors":{
-    "joann":{"code":"R3","name":"Partner coverage","chain":["CV-ENGAGE","CV-PARTNERSPEND","CV-ANCHOR","CV-BREADTH","CV-EVERYDAY","CV-ENGAGE"],"note":"Currently running backwards — Sobeys 2022, Shell 2026."}},
+    "joann":{"originalCode":"R3","name":"Partner coverage","chain":["CV-ENGAGE","CV-PARTNERSPEND","CV-ANCHOR","CV-BREADTH","CV-EVERYDAY","CV-ENGAGE"],"note":"Currently running backwards - Sobeys 2022, Shell 2026."}},
   "convergence":"unique",
-  "finding":"Only Joann modelled the supply side. It is also the only loop anyone claims is currently spinning in the wrong direction, which makes it the least redundant and least examined part of the team's set."},
+  "finding":"The only loop anyone claims is currently spinning in the wrong direction, which makes it the least redundant and least examined part of the team's set."},
+
+"TR4": {"type":"reinforcing","name":"Reliability and trust",
+  "canonicalChain":["CV-REVENUE","CV-STATUS","CV-TRUST","CV-ENGAGE","CV-REVENUE"],
+  "summary":"Investment in reliable, visible status produces trust; trust produces engagement; engagement funds further investment. This loop routes through status visibility rather than through relevance.",
+  "contributors":{
+    "ola":{"originalCode":"R2","name":"Trust Through Reliable Value","chain":["CV-REVENUE","CV-STATUS","CV-TRUST","CV-REVENUE"],"note":"Three-node form."}},
+  "convergence":"unique",
+  "finding":"Ola is the only contributor to close reliability into a loop - and it is the loop Joann's six-state ledger acts on directly. The team's most-specified product feature drives the team's least-discussed loop."},
+
+"TR5": {"type":"reinforcing","name":"Connected-data adoption",
+  "canonicalChain":["CV-PREVIEW","CV-CONSENT","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-PREVIEW"],
+  "summary":"Showing a member what connecting an account would return gives them a reason to connect; connection enriches combined signal; richer signal improves relevance; relevance produces realized value, which is itself the next proof.",
+  "contributors":{
+    "josh":{"originalCode":"R5","name":"Consumer-Driven Banking Awareness & Adoption","chain":["CV-PREVIEW","CV-CONSENT","CV-COMBINED","CV-RELEVANCE","CV-REALIZED","CV-PREVIEW"],"note":"DERIVED from Josh's JL02 prose; not supplied by him."}},
+  "convergence":"derived",
+  "derivation":{"confidence":"high","status":"needs-confirmation",
+    "basis":"Josh states the chain almost completely in JL02: a value preview gives members a reason to participate, and progressive consent helps the loop gain enough participation to produce useful experiences and visible proof. Reason-to-participate to consent to signal to experiences to proof is a closed reinforcing path.",
+    "assumption":"That visible proof feeds back to the value preview rather than terminating. His phrase implies the return arrow; he does not draw it."},
+  "finding":"The one Josh loop his prose genuinely supports. Zero negative links, consistent with his reinforcing label."},
+
+"TR6": {"type":"reinforcing","name":"Fragmentation and disengagement",
+  "canonicalChain":["CV-FRAGMENT","CV-FRICTION","CV-ENGAGE","CV-SIGNAL","CV-RELEVANCE","CV-FRAGMENT"],
+  "negativeLinks":[["CV-FRICTION","CV-ENGAGE"],["CV-RELEVANCE","CV-FRAGMENT"]],
+  "summary":"Fragmented channels and data raise the effort of finding and tracking value; effort suppresses engagement; less engagement thins signal; thinner signal degrades relevance; degraded relevance leaves the experience more fragmented still.",
+  "contributors":{
+    "josh":{"originalCode":"R4","name":"Digital Friction & Engagement","chain":["CV-FRAGMENT","CV-FRICTION","CV-ENGAGE","CV-SIGNAL","CV-RELEVANCE","CV-FRAGMENT"],"note":"DERIVED from the loop name plus JL03. Josh supplied neither variables nor polarities."}},
+  "convergence":"derived",
+  "derivation":{"confidence":"low","status":"needs-confirmation",
+    "basis":"The name pairs friction with engagement, and JL03 treats fragmentation as the thing to restructure. Two negative links - friction suppressing engagement, relevance reducing fragmentation - give an even count, consistent with a reinforcing label.",
+    "assumption":"That Josh intends a vicious cycle rather than a virtuous one. A reinforcing loop runs both ways, so this may be the same structure read from the opposite direction. The polarity pattern is entirely inferred."},
+  "finding":"Plausible and internally consistent, but the parity is the only evidence for it. Confirm before using."},
 }
+
 
 contributors = ["joann","sly","henry","josh","lia","ola"]
 registry = {
