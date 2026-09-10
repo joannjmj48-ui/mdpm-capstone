@@ -1,0 +1,431 @@
+{
+  "id": "SUB-SLY",
+  "contributorId": "sly",
+  "behaviourOfInterest": "How value realization in an open loyalty system can accelerate—and constrain—itself over time.",
+  "valueChain": [
+    "Worthwhile opportunity identified",
+    "Eligible opportunity surfaced",
+    "Member chooses to act",
+    "Qualification completed",
+    "Points earned and confirmed",
+    "Redemption chosen",
+    "Benefit fulfilled",
+    "Value realized"
+  ],
+  "variables": [
+    {
+      "id": "V01",
+      "label": "Relevant, visible opportunities",
+      "definition": "Worthwhile opportunities that an eligible member can discover and understand.",
+      "sharedAcrossLoops": false
+    },
+    {
+      "id": "V02",
+      "label": "Opportunity capture",
+      "definition": "The rate at which members act on worthwhile, eligible opportunities.",
+      "sharedAcrossLoops": false
+    },
+    {
+      "id": "V03",
+      "label": "Member value-realization rate",
+      "definition": "The proportion of worthwhile, eligible value entering the chain that becomes a fulfilled benefit the member can actually use.",
+      "sharedAcrossLoops": true
+    },
+    {
+      "id": "V04",
+      "label": "Program trust",
+      "definition": "Confidence that the program will reliably convert its promises into usable value.",
+      "sharedAcrossLoops": true
+    },
+    {
+      "id": "V05",
+      "label": "Repeat participation",
+      "definition": "The continuation of relevant earning, redemption, and benefit-use behaviours over time.",
+      "sharedAcrossLoops": true
+    },
+    {
+      "id": "V06",
+      "label": "Outcome information",
+      "definition": "Usable information about what value members pursued, received, and ultimately realized.",
+      "sharedAcrossLoops": false
+    },
+    {
+      "id": "V07",
+      "label": "Decisioning quality",
+      "definition": "The system's ability to select more relevant opportunities using observed outcomes.",
+      "sharedAcrossLoops": false
+    },
+    {
+      "id": "V08",
+      "label": "Reward-processing demand",
+      "definition": "The volume and complexity of earning, posting, redemption, fulfilment, and support activity.",
+      "sharedAcrossLoops": false
+    },
+    {
+      "id": "V09",
+      "label": "Operational load",
+      "definition": "The workload placed on the capabilities and teams responsible for delivering program value.",
+      "sharedAcrossLoops": false
+    },
+    {
+      "id": "V10",
+      "label": "Value friction",
+      "definition": "Delays, errors, effort, and breakdowns that obstruct progress from available value to realized value.",
+      "sharedAcrossLoops": false
+    }
+  ],
+  "links": [
+    {
+      "id": "CL01",
+      "from": "V01",
+      "to": "V02",
+      "polarity": "+",
+      "delay": false,
+      "mechanism": "Relevant, understandable opportunities are more likely to be pursued and successfully earned.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL02",
+      "from": "V02",
+      "to": "V03",
+      "polarity": "+",
+      "delay": false,
+      "mechanism": "More worthwhile value captured creates more value capable of being fulfilled and realized.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL03",
+      "from": "V03",
+      "to": "V04",
+      "polarity": "+",
+      "delay": true,
+      "mechanism": "Repeated successful delivery gradually builds confidence in the program.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL04",
+      "from": "V04",
+      "to": "V05",
+      "polarity": "+",
+      "delay": true,
+      "mechanism": "Higher trust increases members' willingness to participate again.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL05",
+      "from": "V05",
+      "to": "V06",
+      "polarity": "+",
+      "delay": false,
+      "mechanism": "Participation creates outcome signals about what members pursue, receive, ignore, or struggle with.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL06",
+      "from": "V06",
+      "to": "V07",
+      "polarity": "+",
+      "delay": true,
+      "mechanism": "Usable outcomes improve learning after analysis, decision updates, and organizational action.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL07",
+      "from": "V07",
+      "to": "V01",
+      "polarity": "+",
+      "delay": false,
+      "mechanism": "Better decisions improve opportunity selection, timing, eligibility, and delivery context.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL08",
+      "from": "V05",
+      "to": "V08",
+      "polarity": "+",
+      "delay": false,
+      "mechanism": "More participation produces more transactions, qualifications, fulfilments, and possible exceptions.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL09",
+      "from": "V08",
+      "to": "V09",
+      "polarity": "+",
+      "delay": false,
+      "mechanism": "Demand increases operational load when capacity and coordination do not scale proportionately.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL10",
+      "from": "V09",
+      "to": "V10",
+      "polarity": "+",
+      "delay": true,
+      "mechanism": "Capacity pressure and weak coordination tend to increase backlogs, delays, errors, and unresolved cases.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "CL11",
+      "from": "V10",
+      "to": "V03",
+      "polarity": "-",
+      "delay": false,
+      "mechanism": "Failures prevent worthwhile value from becoming a successfully fulfilled benefit.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "active-direction"
+    }
+  ],
+  "loops": [
+    {
+      "id": "SLY-R1",
+      "type": "reinforcing",
+      "code": "R1",
+      "name": "Value Realization and Learning Flywheel",
+      "sequence": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V01"
+      ],
+      "linkIds": [
+        "CL01",
+        "CL02",
+        "CL03",
+        "CL04",
+        "CL05",
+        "CL06",
+        "CL07"
+      ],
+      "summary": "Reliable realization can build trust and participation, producing the outcome information required to improve future decisions.",
+      "behaviourOverTime": "Compounding growth or compounding decline, depending on direction of travel.",
+      "narrative": [
+        "As decision relevance and opportunity visibility improve, members capture more worthwhile opportunities. Greater capture increases successful value realization. Repeated realization builds trust, which supports continued participation. Participation generates richer evidence about what members pursue, earn, redeem, realize, ignore, or struggle with. When that outcome information improves decisioning, future opportunities become more relevant and visible.",
+        "The loop can also move downward: poor relevance can reduce opportunity capture and realization, weakening trust, participation, outcome information, and future decisioning. This is a learning loop organized around realized outcomes—not simply offer personalization."
+      ],
+      "epistemicStatus": "inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction"
+    },
+    {
+      "id": "SLY-B1",
+      "type": "balancing",
+      "code": "B1",
+      "name": "Operational Friction and Capacity Constraint",
+      "sequence": [
+        "V05",
+        "V08",
+        "V09",
+        "V10",
+        "V03",
+        "V04",
+        "V05"
+      ],
+      "linkIds": [
+        "CL08",
+        "CL09",
+        "CL10",
+        "CL11",
+        "CL03",
+        "CL04"
+      ],
+      "summary": "Participation can increase processing demand and operational load, creating friction that reduces realized value and eventually constrains participation.",
+      "behaviourOverTime": "A ceiling on participation and realized value that tightens as volume grows.",
+      "narrative": [
+        "As repeat participation increases, more reward events must be qualified, posted, redeemed, fulfilled, explained, and supported. If this demand grows faster than effective operational capacity, delays, errors, and unresolved exceptions increase. These failures reduce successful value realization, weaken trust, and eventually constrain participation.",
+        "Balancing does not mean beneficial. This loop can impose a ceiling on participation and value realization."
+      ],
+      "epistemicStatus": "inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction"
+    }
+  ],
+  "leveragePoints": [
+    {
+      "id": "L01",
+      "title": "Shared value-state information",
+      "role": "Required information foundation",
+      "effect": "Strengthens R1 and weakens B1",
+      "variableIds": [
+        "V02",
+        "V03",
+        "V06",
+        "V08",
+        "V09",
+        "V10"
+      ],
+      "mechanism": "Create a reliable view of what is identified, eligible, pursued, qualified, earned, pending, posted, redeemed, fulfilled, or unresolved.",
+      "signal": "The system cannot improve value realization when members and operators cannot see where value currently sits or where it became interrupted.",
+      "result": "Acting here can improve member transparency, supply better outcome information, expose at-risk value earlier, and reduce avoidable handoffs and delays.",
+      "classification": "Abson: Design · Meadows: #6 information flows; #9 delays",
+      "dependency": "Requires event connectivity, common definitions, and permissioned identity resolution."
+    },
+    {
+      "id": "L02",
+      "title": "Decisioning based on realized outcomes",
+      "role": "Longer-term learning capability",
+      "effect": "Strengthens R1",
+      "variableIds": [
+        "V01",
+        "V03",
+        "V06",
+        "V07"
+      ],
+      "mechanism": "Feed realization, failure, and recovery outcomes—not only impressions or activations—back into future decisions.",
+      "signal": "Offer and opportunity decisions remain incomplete if the system learns only that something was shown or activated, rather than whether value was actually realized.",
+      "result": "Acting here can improve future relevance, timing, eligibility, and delivery decisions using evidence from completed member outcomes.",
+      "classification": "Abson: Feedbacks + Design · Meadows: #7 reinforcing feedback; #6 information flows",
+      "dependency": "Requires outcome attribution and an operating process that acts on learning."
+    },
+    {
+      "id": "L03",
+      "title": "Exception detection and recovery",
+      "role": "Primary product-action leverage point",
+      "effect": "Weakens B1 and supports R1",
+      "variableIds": [
+        "V03",
+        "V04",
+        "V06",
+        "V09",
+        "V10"
+      ],
+      "mechanism": "Identify at-risk value, diagnose the interruption, resolve or route it, verify realization, and capture the result.",
+      "signal": "Failures currently reduce value realization and trust, but each detected and resolved failure can also become information for future improvement.",
+      "result": "Acting here can restore individual value, reduce unresolved exceptions, strengthen trust, and generate evidence about recurring breakdowns.",
+      "classification": "Abson: Feedbacks + Design · Meadows: #8 balancing feedback; #6 information flows; #5 rules; #9 delays",
+      "dependency": "Requires resolution authority, ownership, partner and service integration, and safeguards against false intervention."
+    },
+    {
+      "id": "L04",
+      "title": "Realized value as the system goal",
+      "role": "System-level anchor",
+      "effect": "Governs both loops",
+      "variableIds": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10"
+      ],
+      "mechanism": "Align measures and decision rules around appropriate member value realization rather than value issued, activity alone, or breakage.",
+      "signal": "Local teams can optimize offers, points issuance, redemption, or service metrics while worthwhile value continues to disappear across the total journey.",
+      "result": "Acting here can align discovery, fulfilment, recovery, decisioning, and measurement around the same member outcome.",
+      "classification": "Abson: Intent · Meadows: #3 system goals",
+      "dependency": "Requires executive alignment and economic validation; a product cannot impose this system goal alone."
+    }
+  ],
+  "productDefinition": {
+    "title": "A transparent rewards experience with visible tracking and recovery",
+    "visionStatement": "Enable every member to reliably turn worthwhile reward opportunities into value they can see, trust, and use.",
+    "oneSentence": "A digital rewards experience that helps loyalty-program members discover worthwhile opportunities, see where promised value stands, and initiate or approve recovery when it is delayed, missing, or at risk.",
+    "primaryUser": "Loyalty-program members with worthwhile, eligible reward value already in motion and a detectable risk that some of it may be delayed, missed, or lost because of a qualification, posting, redemption, fulfilment, partner, or service breakdown.",
+    "primaryUserNote": "Risk-state segment—not an attitude-based persona. Initial cohort and reward journey still to be validated.",
+    "coreJob": "Help me receive and use the worthwhile reward value I was promised—and recover it without diagnosing the system or repeatedly chasing support when something breaks.",
+    "capabilities": [
+      {
+        "id": "PM01",
+        "name": "Discover",
+        "facing": "member-facing",
+        "description": "Surface worthwhile, attainable reward opportunities that a member can understand and act upon."
+      },
+      {
+        "id": "PM02",
+        "name": "Track",
+        "facing": "member-facing",
+        "description": "Make qualification, earning, posting, redemption, fulfilment, and unresolved states visible."
+      },
+      {
+        "id": "PM04",
+        "name": "Assure and recover",
+        "facing": "member-facing",
+        "description": "Detect at-risk value, intervene or route it, and verify that promised value was realized.",
+        "isWedge": true
+      },
+      {
+        "id": "PM03",
+        "name": "Learn",
+        "facing": "behind-the-experience",
+        "description": "Use realized, failed, and recovered outcomes to improve future decisions and system performance."
+      }
+    ],
+    "wedge": {
+      "name": "Proactive Value Assurance and Recovery",
+      "leveragePointId": "L03",
+      "definition": "Monitor worthwhile reward opportunities as they progress from qualification through earning, redemption, and fulfilment; identify when promised value is delayed, missing, or at risk; and either resolve the issue automatically or route it to the responsible service pathway with the necessary context. Members remain informed and retain approval over consequential actions, while recovery outcomes help identify and prevent recurring sources of value loss.",
+      "scopeToDetermine": [
+        "First member cohort",
+        "First reward journey",
+        "First detectable failure type",
+        "Permitted recovery action"
+      ],
+      "rationale": [
+        "It directly addresses preventable loss after worthwhile value enters the chain.",
+        "It creates an observable member outcome—not only an internal analytical capability.",
+        "It can start with one bounded reward journey or failure type and expand over time."
+      ]
+    },
+    "operatingSequence": [
+      "Sense",
+      "Diagnose",
+      "Decide",
+      "Act",
+      "Verify",
+      "Learn"
+    ],
+    "measures": [
+      {
+        "name": "Opportunity capture rate",
+        "calculation": "Points successfully earned ÷ points available through worthwhile, eligible opportunities entering the chain",
+        "reveals": "How effectively worthwhile earning potential progresses into confirmed earned value"
+      },
+      {
+        "name": "Earned-value realization rate",
+        "calculation": "Earned points successfully converted into fulfilled benefits ÷ earned points available for intended use",
+        "reveals": "How effectively earned value progresses through visibility, redemption, and fulfilment"
+      },
+      {
+        "name": "End-to-end realization rate",
+        "calculation": "Points-derived value successfully realized ÷ worthwhile, eligible points-value entering the chain",
+        "reveals": "The conversion efficiency of the complete pathway from worthwhile opportunity to fulfilled benefit"
+      }
+    ],
+    "boundary": {
+      "inScope": "Opportunity discovery; value-status visibility; at-risk value detection; member communication and approval; recovery or accountable routing; and outcome verification.",
+      "outOfScope": "Replacing loyalty, banking, partner, or service systems; maximizing redemption at any cost; treating intentional saving or informed rejection as value loss; forcing banking conversion; or masking structural failures through repeated case-by-case recovery."
+    },
+    "channelAssumption": "Embedded within existing authenticated BMO and Blue Rewards digital touchpoints, connecting to current loyalty, banking, partner, and service systems rather than replacing them. The initial channel and role of mobile still need validation.",
+    "epistemicStatus": "assumed",
+    "claimBasis": "group-convergence",
+    "decisionStatus": "active-direction"
+  }
+}

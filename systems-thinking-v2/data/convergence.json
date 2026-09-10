@@ -1,0 +1,1014 @@
+{
+  "version": "1.1.0-convergence",
+  "generated": true,
+  "generatedBy": "scripts/build-convergence.py — do not hand-edit; edit data/submissions/*.json or data/convergence-map.json",
+  "modelStatus": "partial-team-coverage",
+  "governingInquiry": "Where do Team Zig's independently developed causal loops and product definitions converge, where do they diverge, and what does that tell us about the loyalty system we are designing for?",
+  "extends": "data/system-map.json",
+  "classificationRule": "Group convergence and hypotheses never become evidence-supported solely through approval. Independent agreement between contributors is recorded as convergence strength, not as evidence.",
+  "convergenceStrength": {
+    "unique": "Proposed by one contributor only.",
+    "partial": "Proposed by more than one contributor but with materially different meaning, weight, or boundary.",
+    "converged": "Proposed independently by multiple contributors with substantively the same meaning.",
+    "contested": "Contributors propose incompatible relationships, polarities, or framings."
+  },
+  "coverage": {
+    "contributorsExpected": "unknown — full Team Zig roster not yet confirmed",
+    "contributorsReceived": 2,
+    "caveat": "Convergence across two contributors is a weak basis for claiming team convergence. Ratings should be revisited as further submissions arrive."
+  },
+  "contributors": [
+    {
+      "id": "sly",
+      "displayName": "Sylvester",
+      "submissionId": "SUB-SLY",
+      "status": "received",
+      "sourceRef": "Published V1 site: /systems-thinking/ (system-loops.js, leverage-product.js)",
+      "note": "Extracted from published work rather than collected via the intake template."
+    },
+    {
+      "id": "josh",
+      "displayName": "Josh",
+      "submissionId": "SUB-JOSH",
+      "status": "received-partial",
+      "sourceRef": "Josh- Leverage Points and Product Description.docx (Team Zig, Milestone 2)",
+      "note": "Leverage points and product description supplied. Causal loop structure referenced but not supplied — see GAP-01."
+    }
+  ],
+  "submissions": [
+    {
+      "id": "SUB-SLY",
+      "contributorId": "sly",
+      "behaviourOfInterest": "How value realization in an open loyalty system can accelerate—and constrain—itself over time.",
+      "valueChain": [
+        "Worthwhile opportunity identified",
+        "Eligible opportunity surfaced",
+        "Member chooses to act",
+        "Qualification completed",
+        "Points earned and confirmed",
+        "Redemption chosen",
+        "Benefit fulfilled",
+        "Value realized"
+      ],
+      "variables": [
+        {
+          "id": "V01",
+          "label": "Relevant, visible opportunities",
+          "definition": "Worthwhile opportunities that an eligible member can discover and understand.",
+          "sharedAcrossLoops": false
+        },
+        {
+          "id": "V02",
+          "label": "Opportunity capture",
+          "definition": "The rate at which members act on worthwhile, eligible opportunities.",
+          "sharedAcrossLoops": false
+        },
+        {
+          "id": "V03",
+          "label": "Member value-realization rate",
+          "definition": "The proportion of worthwhile, eligible value entering the chain that becomes a fulfilled benefit the member can actually use.",
+          "sharedAcrossLoops": true
+        },
+        {
+          "id": "V04",
+          "label": "Program trust",
+          "definition": "Confidence that the program will reliably convert its promises into usable value.",
+          "sharedAcrossLoops": true
+        },
+        {
+          "id": "V05",
+          "label": "Repeat participation",
+          "definition": "The continuation of relevant earning, redemption, and benefit-use behaviours over time.",
+          "sharedAcrossLoops": true
+        },
+        {
+          "id": "V06",
+          "label": "Outcome information",
+          "definition": "Usable information about what value members pursued, received, and ultimately realized.",
+          "sharedAcrossLoops": false
+        },
+        {
+          "id": "V07",
+          "label": "Decisioning quality",
+          "definition": "The system's ability to select more relevant opportunities using observed outcomes.",
+          "sharedAcrossLoops": false
+        },
+        {
+          "id": "V08",
+          "label": "Reward-processing demand",
+          "definition": "The volume and complexity of earning, posting, redemption, fulfilment, and support activity.",
+          "sharedAcrossLoops": false
+        },
+        {
+          "id": "V09",
+          "label": "Operational load",
+          "definition": "The workload placed on the capabilities and teams responsible for delivering program value.",
+          "sharedAcrossLoops": false
+        },
+        {
+          "id": "V10",
+          "label": "Value friction",
+          "definition": "Delays, errors, effort, and breakdowns that obstruct progress from available value to realized value.",
+          "sharedAcrossLoops": false
+        }
+      ],
+      "links": [
+        {
+          "id": "CL01",
+          "from": "V01",
+          "to": "V02",
+          "polarity": "+",
+          "delay": false,
+          "mechanism": "Relevant, understandable opportunities are more likely to be pursued and successfully earned.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL02",
+          "from": "V02",
+          "to": "V03",
+          "polarity": "+",
+          "delay": false,
+          "mechanism": "More worthwhile value captured creates more value capable of being fulfilled and realized.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL03",
+          "from": "V03",
+          "to": "V04",
+          "polarity": "+",
+          "delay": true,
+          "mechanism": "Repeated successful delivery gradually builds confidence in the program.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL04",
+          "from": "V04",
+          "to": "V05",
+          "polarity": "+",
+          "delay": true,
+          "mechanism": "Higher trust increases members' willingness to participate again.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL05",
+          "from": "V05",
+          "to": "V06",
+          "polarity": "+",
+          "delay": false,
+          "mechanism": "Participation creates outcome signals about what members pursue, receive, ignore, or struggle with.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL06",
+          "from": "V06",
+          "to": "V07",
+          "polarity": "+",
+          "delay": true,
+          "mechanism": "Usable outcomes improve learning after analysis, decision updates, and organizational action.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL07",
+          "from": "V07",
+          "to": "V01",
+          "polarity": "+",
+          "delay": false,
+          "mechanism": "Better decisions improve opportunity selection, timing, eligibility, and delivery context.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL08",
+          "from": "V05",
+          "to": "V08",
+          "polarity": "+",
+          "delay": false,
+          "mechanism": "More participation produces more transactions, qualifications, fulfilments, and possible exceptions.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL09",
+          "from": "V08",
+          "to": "V09",
+          "polarity": "+",
+          "delay": false,
+          "mechanism": "Demand increases operational load when capacity and coordination do not scale proportionately.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL10",
+          "from": "V09",
+          "to": "V10",
+          "polarity": "+",
+          "delay": true,
+          "mechanism": "Capacity pressure and weak coordination tend to increase backlogs, delays, errors, and unresolved cases.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "CL11",
+          "from": "V10",
+          "to": "V03",
+          "polarity": "-",
+          "delay": false,
+          "mechanism": "Failures prevent worthwhile value from becoming a successfully fulfilled benefit.",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "active-direction"
+        }
+      ],
+      "loops": [
+        {
+          "id": "SLY-R1",
+          "type": "reinforcing",
+          "code": "R1",
+          "name": "Value Realization and Learning Flywheel",
+          "sequence": [
+            "V01",
+            "V02",
+            "V03",
+            "V04",
+            "V05",
+            "V06",
+            "V07",
+            "V01"
+          ],
+          "linkIds": [
+            "CL01",
+            "CL02",
+            "CL03",
+            "CL04",
+            "CL05",
+            "CL06",
+            "CL07"
+          ],
+          "summary": "Reliable realization can build trust and participation, producing the outcome information required to improve future decisions.",
+          "behaviourOverTime": "Compounding growth or compounding decline, depending on direction of travel.",
+          "narrative": [
+            "As decision relevance and opportunity visibility improve, members capture more worthwhile opportunities. Greater capture increases successful value realization. Repeated realization builds trust, which supports continued participation. Participation generates richer evidence about what members pursue, earn, redeem, realize, ignore, or struggle with. When that outcome information improves decisioning, future opportunities become more relevant and visible.",
+            "The loop can also move downward: poor relevance can reduce opportunity capture and realization, weakening trust, participation, outcome information, and future decisioning. This is a learning loop organized around realized outcomes—not simply offer personalization."
+          ],
+          "epistemicStatus": "inferred",
+          "claimBasis": "group-convergence",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "SLY-B1",
+          "type": "balancing",
+          "code": "B1",
+          "name": "Operational Friction and Capacity Constraint",
+          "sequence": [
+            "V05",
+            "V08",
+            "V09",
+            "V10",
+            "V03",
+            "V04",
+            "V05"
+          ],
+          "linkIds": [
+            "CL08",
+            "CL09",
+            "CL10",
+            "CL11",
+            "CL03",
+            "CL04"
+          ],
+          "summary": "Participation can increase processing demand and operational load, creating friction that reduces realized value and eventually constrains participation.",
+          "behaviourOverTime": "A ceiling on participation and realized value that tightens as volume grows.",
+          "narrative": [
+            "As repeat participation increases, more reward events must be qualified, posted, redeemed, fulfilled, explained, and supported. If this demand grows faster than effective operational capacity, delays, errors, and unresolved exceptions increase. These failures reduce successful value realization, weaken trust, and eventually constrain participation.",
+            "Balancing does not mean beneficial. This loop can impose a ceiling on participation and value realization."
+          ],
+          "epistemicStatus": "inferred",
+          "claimBasis": "group-convergence",
+          "decisionStatus": "active-direction"
+        }
+      ],
+      "leveragePoints": [
+        {
+          "id": "L01",
+          "title": "Shared value-state information",
+          "role": "Required information foundation",
+          "effect": "Strengthens R1 and weakens B1",
+          "variableIds": [
+            "V02",
+            "V03",
+            "V06",
+            "V08",
+            "V09",
+            "V10"
+          ],
+          "mechanism": "Create a reliable view of what is identified, eligible, pursued, qualified, earned, pending, posted, redeemed, fulfilled, or unresolved.",
+          "signal": "The system cannot improve value realization when members and operators cannot see where value currently sits or where it became interrupted.",
+          "result": "Acting here can improve member transparency, supply better outcome information, expose at-risk value earlier, and reduce avoidable handoffs and delays.",
+          "classification": "Abson: Design · Meadows: #6 information flows; #9 delays",
+          "dependency": "Requires event connectivity, common definitions, and permissioned identity resolution."
+        },
+        {
+          "id": "L02",
+          "title": "Decisioning based on realized outcomes",
+          "role": "Longer-term learning capability",
+          "effect": "Strengthens R1",
+          "variableIds": [
+            "V01",
+            "V03",
+            "V06",
+            "V07"
+          ],
+          "mechanism": "Feed realization, failure, and recovery outcomes—not only impressions or activations—back into future decisions.",
+          "signal": "Offer and opportunity decisions remain incomplete if the system learns only that something was shown or activated, rather than whether value was actually realized.",
+          "result": "Acting here can improve future relevance, timing, eligibility, and delivery decisions using evidence from completed member outcomes.",
+          "classification": "Abson: Feedbacks + Design · Meadows: #7 reinforcing feedback; #6 information flows",
+          "dependency": "Requires outcome attribution and an operating process that acts on learning."
+        },
+        {
+          "id": "L03",
+          "title": "Exception detection and recovery",
+          "role": "Primary product-action leverage point",
+          "effect": "Weakens B1 and supports R1",
+          "variableIds": [
+            "V03",
+            "V04",
+            "V06",
+            "V09",
+            "V10"
+          ],
+          "mechanism": "Identify at-risk value, diagnose the interruption, resolve or route it, verify realization, and capture the result.",
+          "signal": "Failures currently reduce value realization and trust, but each detected and resolved failure can also become information for future improvement.",
+          "result": "Acting here can restore individual value, reduce unresolved exceptions, strengthen trust, and generate evidence about recurring breakdowns.",
+          "classification": "Abson: Feedbacks + Design · Meadows: #8 balancing feedback; #6 information flows; #5 rules; #9 delays",
+          "dependency": "Requires resolution authority, ownership, partner and service integration, and safeguards against false intervention."
+        },
+        {
+          "id": "L04",
+          "title": "Realized value as the system goal",
+          "role": "System-level anchor",
+          "effect": "Governs both loops",
+          "variableIds": [
+            "V01",
+            "V02",
+            "V03",
+            "V04",
+            "V05",
+            "V06",
+            "V07",
+            "V08",
+            "V09",
+            "V10"
+          ],
+          "mechanism": "Align measures and decision rules around appropriate member value realization rather than value issued, activity alone, or breakage.",
+          "signal": "Local teams can optimize offers, points issuance, redemption, or service metrics while worthwhile value continues to disappear across the total journey.",
+          "result": "Acting here can align discovery, fulfilment, recovery, decisioning, and measurement around the same member outcome.",
+          "classification": "Abson: Intent · Meadows: #3 system goals",
+          "dependency": "Requires executive alignment and economic validation; a product cannot impose this system goal alone."
+        }
+      ],
+      "productDefinition": {
+        "title": "A transparent rewards experience with visible tracking and recovery",
+        "visionStatement": "Enable every member to reliably turn worthwhile reward opportunities into value they can see, trust, and use.",
+        "oneSentence": "A digital rewards experience that helps loyalty-program members discover worthwhile opportunities, see where promised value stands, and initiate or approve recovery when it is delayed, missing, or at risk.",
+        "primaryUser": "Loyalty-program members with worthwhile, eligible reward value already in motion and a detectable risk that some of it may be delayed, missed, or lost because of a qualification, posting, redemption, fulfilment, partner, or service breakdown.",
+        "primaryUserNote": "Risk-state segment—not an attitude-based persona. Initial cohort and reward journey still to be validated.",
+        "coreJob": "Help me receive and use the worthwhile reward value I was promised—and recover it without diagnosing the system or repeatedly chasing support when something breaks.",
+        "capabilities": [
+          {
+            "id": "PM01",
+            "name": "Discover",
+            "facing": "member-facing",
+            "description": "Surface worthwhile, attainable reward opportunities that a member can understand and act upon."
+          },
+          {
+            "id": "PM02",
+            "name": "Track",
+            "facing": "member-facing",
+            "description": "Make qualification, earning, posting, redemption, fulfilment, and unresolved states visible."
+          },
+          {
+            "id": "PM04",
+            "name": "Assure and recover",
+            "facing": "member-facing",
+            "description": "Detect at-risk value, intervene or route it, and verify that promised value was realized.",
+            "isWedge": true
+          },
+          {
+            "id": "PM03",
+            "name": "Learn",
+            "facing": "behind-the-experience",
+            "description": "Use realized, failed, and recovered outcomes to improve future decisions and system performance."
+          }
+        ],
+        "wedge": {
+          "name": "Proactive Value Assurance and Recovery",
+          "leveragePointId": "L03",
+          "definition": "Monitor worthwhile reward opportunities as they progress from qualification through earning, redemption, and fulfilment; identify when promised value is delayed, missing, or at risk; and either resolve the issue automatically or route it to the responsible service pathway with the necessary context. Members remain informed and retain approval over consequential actions, while recovery outcomes help identify and prevent recurring sources of value loss.",
+          "scopeToDetermine": [
+            "First member cohort",
+            "First reward journey",
+            "First detectable failure type",
+            "Permitted recovery action"
+          ],
+          "rationale": [
+            "It directly addresses preventable loss after worthwhile value enters the chain.",
+            "It creates an observable member outcome—not only an internal analytical capability.",
+            "It can start with one bounded reward journey or failure type and expand over time."
+          ]
+        },
+        "operatingSequence": [
+          "Sense",
+          "Diagnose",
+          "Decide",
+          "Act",
+          "Verify",
+          "Learn"
+        ],
+        "measures": [
+          {
+            "name": "Opportunity capture rate",
+            "calculation": "Points successfully earned ÷ points available through worthwhile, eligible opportunities entering the chain",
+            "reveals": "How effectively worthwhile earning potential progresses into confirmed earned value"
+          },
+          {
+            "name": "Earned-value realization rate",
+            "calculation": "Earned points successfully converted into fulfilled benefits ÷ earned points available for intended use",
+            "reveals": "How effectively earned value progresses through visibility, redemption, and fulfilment"
+          },
+          {
+            "name": "End-to-end realization rate",
+            "calculation": "Points-derived value successfully realized ÷ worthwhile, eligible points-value entering the chain",
+            "reveals": "The conversion efficiency of the complete pathway from worthwhile opportunity to fulfilled benefit"
+          }
+        ],
+        "boundary": {
+          "inScope": "Opportunity discovery; value-status visibility; at-risk value detection; member communication and approval; recovery or accountable routing; and outcome verification.",
+          "outOfScope": "Replacing loyalty, banking, partner, or service systems; maximizing redemption at any cost; treating intentional saving or informed rejection as value loss; forcing banking conversion; or masking structural failures through repeated case-by-case recovery."
+        },
+        "channelAssumption": "Embedded within existing authenticated BMO and Blue Rewards digital touchpoints, connecting to current loyalty, banking, partner, and service systems rather than replacing them. The initial channel and role of mobile still need validation.",
+        "epistemicStatus": "assumed",
+        "claimBasis": "group-convergence",
+        "decisionStatus": "active-direction"
+      }
+    },
+    {
+      "id": "SUB-JOSH",
+      "contributorId": "josh",
+      "behaviourOfInterest": "How the loyalty system can direct relevant value toward what members are actually trying to achieve, rather than toward generic reward activity.",
+      "sourceRef": "Josh- Leverage Points and Product Description.docx (Team Zig, Milestone 2)",
+      "extractionNote": "Transcribed from prose. Josh's document supplies leverage points and a product description. It names loops R4, R5 and B2 as the loops each leverage point acts on, but does not supply their variables or links — so his causal loop structure is REFERENCED, NOT SUPPLIED. His loops cannot be merged with Sly's until that structure is provided.",
+      "variables": [],
+      "links": [],
+      "loops": [
+        {
+          "id": "JOSH-R4",
+          "code": "R4",
+          "name": "Digital Friction & Engagement",
+          "type": "reinforcing",
+          "structureStatus": "referenced-not-supplied",
+          "sequence": [],
+          "linkIds": [],
+          "epistemicStatus": "unresolved",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "unresolved"
+        },
+        {
+          "id": "JOSH-R5",
+          "code": "R5",
+          "name": "Consumer-Driven Banking Awareness & Adoption",
+          "type": "reinforcing",
+          "structureStatus": "referenced-not-supplied",
+          "sequence": [],
+          "linkIds": [],
+          "epistemicStatus": "unresolved",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "unresolved"
+        },
+        {
+          "id": "JOSH-B2",
+          "code": "B2",
+          "name": "Personalized Value & Breakage",
+          "type": "balancing",
+          "structureStatus": "referenced-not-supplied",
+          "sequence": [],
+          "linkIds": [],
+          "epistemicStatus": "unresolved",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "unresolved"
+        }
+      ],
+      "leveragePoints": [
+        {
+          "id": "JL01",
+          "title": "Reorient the system around member goal achievement",
+          "role": "System-level anchor",
+          "effect": "Governs B2",
+          "primaryLoopIds": [
+            "JOSH-B2"
+          ],
+          "variableIds": [],
+          "mechanism": "Set member goal achievement as the system's organizing objective and measure performance through worthwhile, realized value. Members state goals and preferences; BMO combines those signals with observed behaviour to prioritize rewards, experiences and suitable banking products that advance each job.",
+          "signal": "Need-based segments provide the starting structure; continued learning can move personalization toward a segment of one.",
+          "result": "Goal setup, progress tracking, opportunity ranking and coordinated loyalty-and-banking recommendations would operationalize the change.",
+          "classification": "Meadows: #3 system goals — very high leverage",
+          "evidence": "Deloitte found loyalty programs increased perceived value for 80% of members, yet consumers actively used only five of eight enrolled programs, supporting a sharper focus on useful value.",
+          "epistemicStatus": "supported",
+          "claimBasis": "evidence",
+          "decisionStatus": "active-direction"
+        },
+        {
+          "id": "JL02",
+          "title": "Make CDB value visible before asking members to connect accounts",
+          "role": "Adoption precondition",
+          "effect": "Strengthens R5",
+          "primaryLoopIds": [
+            "JOSH-R5"
+          ],
+          "variableIds": [],
+          "mechanism": "Use a concrete, immediate member benefit as the entry point to consumer-driven banking. Blue Rewards shows how connecting an account may uncover eligible spending, improve reward recommendations or reveal a faster path toward a stated goal. A value preview, followed by a linking incentive or immediately useful insight, gives members a reason to participate.",
+          "signal": "The request should then explain what data BMO needs, what additional value it enables and how access can be changed or withdrawn.",
+          "result": "Combines a compelling hook with progressive consent, helping R5 gain enough participation to produce useful experiences and visible proof.",
+          "classification": "Meadows: #6 information flows; #5 rules of the system — high leverage",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "hypothesis"
+        },
+        {
+          "id": "JL03",
+          "title": "Restructure fragmented data and channels into an ambient loyalty experience",
+          "role": "Information and channel foundation",
+          "effect": "Acts across R4, B2 and R5",
+          "primaryLoopIds": [
+            "JOSH-R4",
+            "JOSH-B2",
+            "JOSH-R5"
+          ],
+          "variableIds": [],
+          "mechanism": "Connect member goals and preferences with Blue Rewards activity, BMO relationship data, authorized cross-bank data, digital-intent signals and ISO 20022 payment information. These flows surface opportunities through BMO channels, wallets, approved external services and participating retailers.",
+          "signal": "At purchase, members could compare offers, redemption options, payment methods and suitable BMO products against their goal. Merchant and RTR integrations could confirm qualifying payments, update rewards and resolve missing value.",
+          "result": "Canada's CDB framework, Google's UK portability rules and loyalBe demonstrate enabling models. An April 2027 capstone would let BMO test consent and decision rules before broader adoption.",
+          "classification": "Meadows: #6 information flows, supported by #5 rules of the system — high leverage",
+          "epistemicStatus": "inferred",
+          "claimBasis": "analytical-inference",
+          "decisionStatus": "hypothesis"
+        }
+      ],
+      "productDefinition": {
+        "versionNote": "Initial Product Description v1 — Josh flagged this for update after Sept 20, 2026.",
+        "title": "An integrated, goal-linked digital rewards experience",
+        "oneSentence": "An integrated digital rewards experience that surfaces relevant rewards, partner experiences and appropriate BMO products and services at the moment they can best help members achieve their goals.",
+        "primaryUser": "BMO customers and rewards-only members who want valuable opportunities without searching across channels, calculating reward value or chasing missing rewards.",
+        "coreJob": "Help me align my spending, saving, payment and reward choices with the goals I actually have — without hunting across channels or doing the math myself.",
+        "capabilities": [
+          {
+            "id": "JPM01",
+            "name": "Set goals and permissions",
+            "facing": "member-facing",
+            "description": "Set custom financial and reward goals, preferences and data permissions."
+          },
+          {
+            "id": "JPM02",
+            "name": "Compare choices against goals",
+            "facing": "member-facing",
+            "description": "Compare how spending, saving, payment and redemption choices could help them achieve their goals."
+          },
+          {
+            "id": "JPM03",
+            "name": "Receive goal-linked opportunities",
+            "facing": "member-facing",
+            "description": "Receive timely, goal-linked opportunities and incentives.",
+            "isWedge": true
+          },
+          {
+            "id": "JPM04",
+            "name": "Track progress and rewards",
+            "facing": "member-facing",
+            "description": "Easily track goal progress as well as earned, pending, redeemed or missing rewards."
+          }
+        ],
+        "mechanismOfAction": "The product uses visible progress, timely feedback and well-designed incentives to help members align their spending, saving, payment and reward choices with their goals.",
+        "channelAssumption": "Begins in existing BMO and Blue Rewards channels and, with member permission, combines BMO, loyalty, partner and connected financial data.",
+        "boundary": {
+          "outOfScope": "BMO and partners retain responsibility for offer economics, payments and reward issuance."
+        },
+        "wedgeNote": "Josh does not explicitly name a product wedge. JPM03 is marked as the closest candidate because his leverage points centre on goal-linked opportunity surfacing — this is an INFERENCE and needs Josh's confirmation.",
+        "epistemicStatus": "assumed",
+        "claimBasis": "group-convergence",
+        "decisionStatus": "active-direction"
+      }
+    }
+  ],
+  "convergence": {
+    "analysisVersion": "0.1.0",
+    "analysisNote": "Curated cross-contributor analysis. Matching is judgement, not string comparison — every cluster names the specific items it merges so the reasoning can be reconstructed and disputed. Strength describes how independently contributors arrived at the same claim; it never upgrades epistemic status.",
+    "summary": {
+      "converged": 5,
+      "partial": 2,
+      "unique": 2
+    },
+    "leverage": [
+      {
+        "id": "CV-L01",
+        "theme": "The system goal must be realized value, not issued value or activity",
+        "strength": "converged",
+        "members": [
+          {
+            "submissionId": "SUB-SLY",
+            "itemId": "L04",
+            "framing": "Realized value as the system goal — align measures and decision rules around appropriate member value realization rather than value issued, activity alone, or breakage."
+          },
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "JL01",
+            "framing": "Reorient the system around member goal achievement — measure performance through worthwhile, realized value."
+          }
+        ],
+        "whatConverged": "Both contributors independently identified the system's goal as the highest-leverage intervention, both placed it at Meadows #3, and both explicitly rejected activity, issuance or breakage as the measure of success. Neither treats this as something a product feature can deliver on its own.",
+        "whyItMatters": "Two independent analyses landing on the same Meadows level, with the same rejection of the same wrong metrics, is the strongest signal in the merged set. It is the most defensible shared foundation Team Zig currently has.",
+        "epistemicStatus": "inferred",
+        "claimBasis": "group-convergence",
+        "decisionStatus": "active-direction",
+        "residualDivergenceIds": [
+          "DV-01"
+        ]
+      },
+      {
+        "id": "CV-L02",
+        "theme": "Connected, visible value-state information is the enabling foundation",
+        "strength": "converged",
+        "members": [
+          {
+            "submissionId": "SUB-SLY",
+            "itemId": "L01",
+            "framing": "Shared value-state information — a reliable view of what is identified, eligible, pursued, qualified, earned, pending, posted, redeemed, fulfilled, or unresolved."
+          },
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "JL03",
+            "framing": "Restructure fragmented data and channels into an ambient loyalty experience — connect goals, Blue Rewards activity, relationship data, authorized cross-bank data, intent signals and ISO 20022 payment information."
+          }
+        ],
+        "whatConverged": "Both classify this at Meadows #6 information flows, and both argue that nothing downstream can improve while value-state data stays fragmented. Both treat it as a precondition rather than as the product itself.",
+        "whyItMatters": "This is the shared dependency underneath both product directions. Whichever wedge the team chooses, this capability is on the critical path.",
+        "epistemicStatus": "inferred",
+        "claimBasis": "group-convergence",
+        "decisionStatus": "active-direction",
+        "residualDivergenceIds": [
+          "DV-03"
+        ]
+      },
+      {
+        "id": "CV-L03",
+        "theme": "Missing and at-risk value must be detected and resolved",
+        "strength": "partial",
+        "members": [
+          {
+            "submissionId": "SUB-SLY",
+            "itemId": "L03",
+            "framing": "Exception detection and recovery — the primary product-action leverage point and the basis of the product wedge."
+          },
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "JL03",
+            "framing": "Merchant and RTR integrations could confirm qualifying payments, update rewards and resolve missing value — one capability within the data and channel restructure."
+          }
+        ],
+        "whatConverged": "Both models contain recovery of missing value, and both connect it to member trust.",
+        "whatDiffers": "Sly makes recovery the highest-leverage product action and the entire starting point. Josh treats it as a downstream benefit of integrating data and payment rails. Same mechanism, very different weight and sequencing.",
+        "whyItMatters": "The difference is not cosmetic: it decides whether the team builds recovery first and discovery later, or the reverse.",
+        "epistemicStatus": "contested",
+        "claimBasis": "analytical-inference",
+        "decisionStatus": "unresolved",
+        "residualDivergenceIds": [
+          "DV-02"
+        ]
+      },
+      {
+        "id": "CV-L04",
+        "theme": "Consent-aware account connection as an adoption mechanism",
+        "strength": "unique",
+        "members": [
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "JL02",
+            "framing": "Make CDB value visible before asking members to connect accounts — value preview, then progressive consent."
+          }
+        ],
+        "whatConverged": "No counterpart in Sly's model. Sly's boundary does not include consumer-driven banking, so no equivalent leverage point exists to merge with.",
+        "whyItMatters": "This is not a disagreement — it is scope Sly's model never covered. It cannot be marked converged or contested until the team settles the boundary question in DV-03.",
+        "epistemicStatus": "unresolved",
+        "claimBasis": "analytical-inference",
+        "decisionStatus": "hypothesis",
+        "residualDivergenceIds": [
+          "DV-03"
+        ]
+      },
+      {
+        "id": "CV-L05",
+        "theme": "Learning from realized outcomes improves future decisions",
+        "strength": "partial",
+        "members": [
+          {
+            "submissionId": "SUB-SLY",
+            "itemId": "L02",
+            "framing": "Decisioning based on realized outcomes — feed realization, failure and recovery outcomes back into future decisions. Placed in a reinforcing loop (R1)."
+          },
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "JL01",
+            "framing": "Continued learning can move personalization toward a segment of one. Attached to B2 — Personalized Value & Breakage, a balancing loop."
+          }
+        ],
+        "whatConverged": "Both contributors include a learning mechanism that improves relevance over time.",
+        "whatDiffers": "Sly places learning inside a reinforcing loop, where it compounds. Josh attaches personalization learning to a balancing loop, where it would stabilise rather than compound. These imply different behaviour over time from the same mechanism.",
+        "whyItMatters": "If the same mechanism is reinforcing in one model and balancing in another, at least one loop is mis-specified. This cannot be resolved without Josh's loop structure.",
+        "epistemicStatus": "contested",
+        "claimBasis": "analytical-inference",
+        "decisionStatus": "unresolved",
+        "residualDivergenceIds": [
+          "DV-04"
+        ],
+        "blockedBy": [
+          "GAP-01"
+        ]
+      }
+    ],
+    "product": [
+      {
+        "id": "CV-P01",
+        "theme": "Members must be able to see earned, pending, redeemed and missing value",
+        "strength": "converged",
+        "members": [
+          {
+            "submissionId": "SUB-SLY",
+            "itemId": "PM02",
+            "framing": "Track — make qualification, earning, posting, redemption, fulfilment and unresolved states visible."
+          },
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "JPM04",
+            "framing": "Easily track goal progress as well as earned, pending, redeemed or missing rewards."
+          }
+        ],
+        "whatConverged": "Near-identical capability, described independently in near-identical state language — including the same insistence that missing or unresolved value be visible, not just successful value.",
+        "whyItMatters": "The single most defensible product capability in the merged set. Both contributors would build it, and neither treats it as optional.",
+        "epistemicStatus": "inferred",
+        "claimBasis": "group-convergence",
+        "decisionStatus": "active-direction"
+      },
+      {
+        "id": "CV-P02",
+        "theme": "Surface worthwhile, relevant opportunities the member can act on",
+        "strength": "converged",
+        "members": [
+          {
+            "submissionId": "SUB-SLY",
+            "itemId": "PM01",
+            "framing": "Discover — surface worthwhile, attainable reward opportunities a member can understand and act upon."
+          },
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "JPM03",
+            "framing": "Receive timely, goal-linked opportunities and incentives."
+          }
+        ],
+        "whatConverged": "Both include relevance-driven opportunity surfacing as a member-facing capability.",
+        "whatDiffers": "Sly qualifies relevance as worthwhile and attainable; Josh qualifies it as goal-linked. Josh's version requires the member to have stated a goal first.",
+        "whyItMatters": "The qualifier determines the data dependency: Sly's can be inferred from behaviour, Josh's requires explicit member input.",
+        "epistemicStatus": "inferred",
+        "claimBasis": "group-convergence",
+        "decisionStatus": "active-direction",
+        "residualDivergenceIds": [
+          "DV-01"
+        ]
+      },
+      {
+        "id": "CV-P03",
+        "theme": "Same channel assumption",
+        "strength": "converged",
+        "members": [
+          {
+            "submissionId": "SUB-SLY",
+            "itemId": "channelAssumption",
+            "framing": "Embedded within existing authenticated BMO and Blue Rewards digital touchpoints, connecting to rather than replacing current systems."
+          },
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "channelAssumption",
+            "framing": "Begins in existing BMO and Blue Rewards channels and, with member permission, combines BMO, loyalty, partner and connected financial data."
+          }
+        ],
+        "whatConverged": "Both independently assume an embedded experience in existing authenticated channels, and both explicitly decline to replace underlying loyalty, banking or partner systems.",
+        "whyItMatters": "Removes a whole class of architectural argument from the team's remaining decisions.",
+        "epistemicStatus": "assumed",
+        "claimBasis": "group-convergence",
+        "decisionStatus": "active-direction"
+      },
+      {
+        "id": "CV-P04",
+        "theme": "Goal setting and goal-progress tracking",
+        "strength": "unique",
+        "members": [
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "JPM01",
+            "framing": "Set custom financial and reward goals, preferences and data permissions."
+          },
+          {
+            "submissionId": "SUB-JOSH",
+            "itemId": "JPM02",
+            "framing": "Compare how spending, saving, payment and redemption choices could help achieve goals."
+          }
+        ],
+        "whatConverged": "No counterpart in Sly's product definition. Sly's model has no member-stated goal construct at all.",
+        "whyItMatters": "This is the concrete product consequence of DV-01. If the team adopts Josh's organizing objective, these capabilities become mandatory; if it adopts Sly's, they are optional.",
+        "epistemicStatus": "unresolved",
+        "claimBasis": "analytical-inference",
+        "decisionStatus": "hypothesis",
+        "residualDivergenceIds": [
+          "DV-01"
+        ]
+      }
+    ]
+  },
+  "divergences": [
+    {
+      "id": "DV-01",
+      "title": "What organizes the system: delivered outcome or stated intent?",
+      "severity": "material",
+      "positions": [
+        {
+          "submissionId": "SUB-SLY",
+          "position": "Member value realization — did the worthwhile value the member was promised actually get delivered and become usable? Measurable from system events without asking the member anything."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Member goal achievement — did the member advance the goal they set? Requires the member to state a goal, and requires consent to combine data against it."
+        }
+      ],
+      "whyItMatters": "These are close enough to be mistaken for the same idea and different enough to produce different products. Realization can be measured passively; goal achievement cannot. Adopting Josh's objective adds a member-input dependency, a consent dependency, and a cold-start problem for members who never set a goal. Adopting Sly's leaves the system unable to distinguish value the member wanted from value the member merely received.",
+      "resolutionOptions": [
+        "Treat realization as the measurable proxy and goal achievement as the intent it serves — nest rather than choose.",
+        "Adopt goal achievement as the system goal and accept the member-input dependency.",
+        "Keep both and test whether goal-setters behave differently from non-goal-setters."
+      ],
+      "recommendedNext": "Nesting is the least destructive option and preserves both contributors' reasoning, but it must be tested against the cold-start case rather than assumed.",
+      "status": "unresolved"
+    },
+    {
+      "id": "DV-02",
+      "title": "Where the product starts: protect value in motion, or direct value toward goals?",
+      "severity": "material",
+      "positions": [
+        {
+          "submissionId": "SUB-SLY",
+          "position": "Start at the end of the chain. Wedge = Proactive Value Assurance and Recovery: detect at-risk value, resolve or route it, verify realization."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Start at the front of the chain. Emphasis on goal-linked opportunity surfacing and comparison at the moment of decision. (Wedge inferred, not stated — needs Josh's confirmation.)"
+        }
+      ],
+      "whyItMatters": "Both models describe the same end-to-end product surface, but enter it from opposite ends. The choice determines the first cohort (members with value at risk vs. members with a stated goal), the first journey, the first metric, and what the team can demonstrate at the capstone.",
+      "resolutionOptions": [
+        "Recovery first — narrower, has a detectable trigger, produces an observable member outcome without needing goals.",
+        "Discovery first — broader reach, but depends on goal capture and consent landing first.",
+        "Sequence explicitly: recovery proves reliability, then goals direct relevance."
+      ],
+      "recommendedNext": "Confirm with Josh whether JPM03 is genuinely his intended starting point before treating this as a real disagreement — the inference may be wrong.",
+      "status": "unresolved"
+    },
+    {
+      "id": "DV-03",
+      "title": "Boundary conflict: is consumer-driven banking inside the system?",
+      "severity": "blocking",
+      "positions": [
+        {
+          "submissionId": "SUB-SLY",
+          "position": "Boundary covers the loyalty program, its partners, and its service pathways. No CDB, cross-bank data, or payment-rail variable exists in the model."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Boundary includes consumer-driven banking, authorized cross-bank data, ISO 20022 payment information, RTR and merchant integrations."
+        }
+      ],
+      "whyItMatters": "This is not a difference of opinion inside one system — the two contributors are modelling systems of different size. Merging nodes and relationships across a boundary mismatch produces a map that is internally inconsistent, which is why this blocks the structural merge rather than merely qualifying it.",
+      "resolutionOptions": [
+        "Adopt the wider boundary and add CDB constructs to the shared map as hypothesis-status.",
+        "Keep the narrower boundary and record CDB as an external influence outside it.",
+        "Model CDB as a named future-state extension with its own view."
+      ],
+      "recommendedNext": "Settle this before merging any nodes or relationships. Sly's V2 contract already has a boundary section and an 'Outside the Boundary' view that can hold the wider constructs without committing to them.",
+      "status": "unresolved",
+      "blocksMerge": true
+    },
+    {
+      "id": "DV-04",
+      "title": "Is personalization learning reinforcing or balancing?",
+      "severity": "material",
+      "positions": [
+        {
+          "submissionId": "SUB-SLY",
+          "position": "Learning from realized outcomes sits inside R1 and compounds — better outcomes produce better information, which produces better decisions."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Personalization learning is attached to B2 — Personalized Value & Breakage — a balancing loop that would stabilise rather than compound."
+        }
+      ],
+      "whyItMatters": "The same mechanism cannot be both without a difference somewhere in the link polarities. At least one loop is mis-specified, or the two are describing different mechanisms under similar names.",
+      "resolutionOptions": [
+        "Obtain Josh's B2 structure and compare polarity by polarity.",
+        "Determine whether Josh's 'breakage' term introduces a negative link Sly's model does not have."
+      ],
+      "recommendedNext": "Cannot be resolved without GAP-01.",
+      "status": "unresolved",
+      "blockedBy": [
+        "GAP-01"
+      ]
+    },
+    {
+      "id": "DV-05",
+      "title": "Evidence asymmetry between submissions",
+      "severity": "procedural",
+      "positions": [
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Cites external sources: Deloitte loyalty research, Canada's CDB framework, Google's UK portability rules, loyalBe."
+        },
+        {
+          "submissionId": "SUB-SLY",
+          "position": "One internal contract source; most claims are legacy evidence synthesis or analytical inference with source traceability still pending."
+        }
+      ],
+      "whyItMatters": "Where the two models overlap, Josh's citations must not silently promote Sly's shared claims to 'supported'. The classification model already forbids this, but a merge performed carelessly would do it anyway.",
+      "resolutionOptions": [
+        "Register Josh's sources in the contract's sources array and attach them only to the specific claims they support.",
+        "Leave shared claims at their lower epistemic status until independently evidenced."
+      ],
+      "recommendedNext": "Register the sources; do not let overlap inherit them.",
+      "status": "open"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "GAP-01",
+      "title": "Josh's causal loop structure was not supplied",
+      "detail": "Josh's document names R4 (Digital Friction & Engagement), R5 (Consumer-Driven Banking Awareness & Adoption) and B2 (Personalized Value & Breakage) as the loops his leverage points act on, but supplies no variables, links or polarities for them. Loop-level convergence with Sly's R1 and B1 cannot be computed.",
+      "blocks": [
+        "CV-L05",
+        "DV-04",
+        "loop-level merge"
+      ],
+      "askOf": "josh",
+      "ask": "Variables, links and polarities for R4, R5 and B2 — Parts 1–3 of the intake template."
+    },
+    {
+      "id": "GAP-02",
+      "title": "Loop numbering implies a team-wide loop register that is not in hand",
+      "detail": "Sly's published model uses R1 and B1. Josh's uses R4, R5 and B2. Josh's numbering starts partway through a sequence, which implies Team Zig has a shared loop register containing at least R1-R5 and B1-B2 — and that Sly's published R1/B1 may or may not be the same R1/B1 Josh is counting from. If the numbering schemes are independent, two different loops may currently share the same label.",
+      "blocks": [
+        "any loop merge",
+        "convergence tab labelling"
+      ],
+      "askOf": "team",
+      "ask": "Confirm whether a shared loop register exists. If it does, obtain it; if it does not, renumber on merge so no two loops share a code."
+    },
+    {
+      "id": "GAP-03",
+      "title": "Remaining contributors have not submitted",
+      "detail": "Only Sylvester and Josh are represented. Convergence strength across two contributors is weak evidence of team convergence — a third independent agreement is what would make CV-L01 and CV-P01 genuinely strong.",
+      "blocks": [
+        "final convergence strength ratings"
+      ],
+      "askOf": "team",
+      "ask": "Remaining Team Zig submissions via the intake template."
+    },
+    {
+      "id": "GAP-04",
+      "title": "Josh's product wedge is inferred, not stated",
+      "detail": "JPM03 was marked as Josh's wedge candidate because his leverage points centre on goal-linked opportunity surfacing. Josh did not designate a starting point. DV-02 depends on this inference being correct.",
+      "blocks": [
+        "DV-02"
+      ],
+      "askOf": "josh",
+      "ask": "If you could only build one capability first, which one — and why that one?"
+    }
+  ]
+}
