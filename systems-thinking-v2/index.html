@@ -818,7 +818,7 @@ svg {
   color: var(--destructive);
 }
 </style>
-<link rel="stylesheet" href="convergence.css?v=2">
+<link rel="stylesheet" href="convergence.css?v=3">
 </head>
 <body>
 <div id="loyalty-map-v2" class="lm2-root">
@@ -2844,6 +2844,70 @@ svg {
           "inferred",
           null,
           "CUR-R17"
+        ],
+        [
+          "partner",
+          "products",
+          "Partner earn and redeem surface",
+          "inferred",
+          null,
+          "CUR-R18"
+        ],
+        [
+          "data",
+          "channels",
+          "Decisions reach the member",
+          "inferred",
+          null,
+          "CUR-R19"
+        ],
+        [
+          "service",
+          "data",
+          "Operational outcomes return as evidence",
+          "inferred",
+          null,
+          "CUR-R20"
+        ],
+        [
+          "service",
+          "channels",
+          "Operational support of delivery",
+          "inferred",
+          null,
+          "CUR-R21"
+        ],
+        [
+          "member-only",
+          "channels",
+          "Members act through delivery channels",
+          "inferred",
+          null,
+          "CUR-R22"
+        ],
+        [
+          "member-client",
+          "products",
+          "Member-clients transact through products",
+          "inferred",
+          null,
+          "CUR-R23"
+        ],
+        [
+          "client-only",
+          "products",
+          "Clients hold and transact through products",
+          "inferred",
+          null,
+          "CUR-R24"
+        ],
+        [
+          "engagement",
+          "member-value",
+          "Engagement returns to realization",
+          "inferred",
+          null,
+          "CUR-R25"
         ]
       ]
     },
@@ -3124,6 +3188,14 @@ svg {
     "Identity + permission handoffs": "Identity or permission handoffs may interrupt usable context.",
     "Channel continuity constraints": "Separate surfaces may create repeated steps or inconsistent context.",
     "Support + fulfilment ownership": "Cross-system issues may be transferred rather than resolved end to end.",
+    "Partner earn and redeem surface": "Partner brands supply the merchant surfaces, categories and offers through which points are earned and redeemed. Without partner coverage there is less for products and transactions to carry.",
+    "Decisions reach the member": "A decision about relevance, eligibility or timing only affects a member once it is delivered through a channel. Decisioning quality is capped by what delivery can carry.",
+    "Operational outcomes return as evidence": "Fulfilment results, exceptions and unresolved cases return to decisioning as evidence about what actually completed, not merely what was offered.",
+    "Operational support of delivery": "Service and operations sustain the channels members transact through, including recovery when a channel interaction fails.",
+    "Members act through delivery channels": "Member-only participants encounter the programme through delivery channels, not solely as a source of value realization.",
+    "Member-clients transact through products": "Members who also bank with BMO interact with the products and transactions backbone directly, which is what makes combined signal possible.",
+    "Clients hold and transact through products": "Client-only participants interact with the products backbone even where they do not participate in the loyalty programme.",
+    "Engagement returns to realization": "Sustained engagement produces further opportunities to realize value, closing the pair rather than terminating at the outcome.",
     "Establish relevance + plausible eligibility": "The opportunity becomes Potential Value when relevance and a plausible eligible path are established.",
     "Satisfy qualification requirements": "Potential Value becomes Earned Value when applicable requirements are satisfied.",
     "Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
@@ -3283,6 +3355,62 @@ svg {
       "epistemicStatus": "Inferred",
       "claimBasis": "Analytical inference",
       "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R18": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R19": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R20": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R21": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R22": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R23": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R24": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R25": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
       "transitionIds": [],
       "evidenceRefs": []
     },
@@ -4452,6 +4580,6 @@ svg {
     ?.addEventListener("load", initialize, { once: true });
 })();
 </script>
-<script src="convergence.js?v=2"></script>
+<script src="convergence.js?v=3"></script>
 </body>
 </html>

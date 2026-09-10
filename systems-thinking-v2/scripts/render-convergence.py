@@ -217,15 +217,17 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       "</div>" +
       '<div class="cv-panel" data-cv-panel-body="canon" hidden>' +
         '<section class="cv-card cv-diag">' +
-          '<span class="cv-kicker">Why the loops should be the map</span>' +
+          '<span class="cv-kicker">Faculty feedback &middot; actioned 10 Sept</span>' +
           "<h3>" + esc(DIAG.headline) + "</h3>" +
+          '<p class="cv-scope">' + esc(DIAG.scope) + "</p>" +
           "<p>" + esc(DIAG.measured) + "</p>" +
-          '<div class="cv-diagrid">' + DIAG.byView.map(function (v) {
-            return '<div class="cv-diagcell' + (v.closedLoops ? "" : " is-zero") + '"><strong>' + v.closedLoops +
-              "</strong><span>" + esc(v.view) + "</span><em>" + v.relationships + " relationships</em></div>";
-          }).join("") + "</div>" +
           "<p>" + esc(DIAG.interpretation) + "</p>" +
+          '<div class="cv-diagrid">' + DIAG.byView.map(function (v) {
+            return '<div class="cv-diagcell"><span>' + esc(v.view) + "</span>" +
+              '<strong><em class="cv-was">' + esc(String(v.before)) + "</em> &rarr; " + esc(String(v.after)) + "</strong></div>";
+          }).join("") + "</div>" +
           '<p class="cv-remedy">' + esc(DIAG.remedy) + "</p>" +
+          '<p class="cv-note">' + esc(DIAG.note) + "</p>" +
         "</section>" +
         '<div class="cv-grid">' + DATA.registry.loops.map(loopCard).join("") + "</div>" +
       "</div>" +

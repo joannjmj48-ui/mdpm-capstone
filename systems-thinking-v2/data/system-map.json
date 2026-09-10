@@ -107,7 +107,8 @@
       "incomingRelationshipIds": [],
       "outgoingRelationshipIds": [
         "CUR-R01",
-        "CUR-R03"
+        "CUR-R03",
+        "CUR-R22"
       ],
       "valueStatesInfluenced": [],
       "jtbdRefs": [],
@@ -174,7 +175,8 @@
         "CUR-R02"
       ],
       "outgoingRelationshipIds": [
-        "CUR-R04"
+        "CUR-R04",
+        "CUR-R23"
       ],
       "valueStatesInfluenced": [],
       "jtbdRefs": [],
@@ -239,7 +241,8 @@
       "incomingRelationshipIds": [],
       "outgoingRelationshipIds": [
         "CUR-R02",
-        "CUR-R05"
+        "CUR-R05",
+        "CUR-R24"
       ],
       "valueStatesInfluenced": [],
       "jtbdRefs": [],
@@ -316,7 +319,8 @@
         "CUR-R06",
         "TR-R05",
         "FUT-R07",
-        "FUT-R08"
+        "FUT-R08",
+        "CUR-R18"
       ],
       "valueStatesInfluenced": [
         "opportunity",
@@ -416,7 +420,8 @@
         "CUR-R11",
         "CUR-R12",
         "FUT-R03",
-        "FUT-R08"
+        "FUT-R08",
+        "CUR-R25"
       ],
       "outgoingRelationshipIds": [
         "CUR-R07",
@@ -498,7 +503,8 @@
       ],
       "outgoingRelationshipIds": [
         "CUR-R14",
-        "FUT-R05"
+        "FUT-R05",
+        "CUR-R25"
       ],
       "valueStatesInfluenced": [],
       "jtbdRefs": [],
@@ -563,7 +569,11 @@
       ],
       "dimensions": [],
       "systemLinks": [],
-      "incomingRelationshipIds": [],
+      "incomingRelationshipIds": [
+        "CUR-R18",
+        "CUR-R23",
+        "CUR-R24"
+      ],
       "outgoingRelationshipIds": [
         "CUR-R08",
         "CUR-R09",
@@ -649,11 +659,13 @@
       "incomingRelationshipIds": [
         "CUR-R08",
         "CUR-R14",
-        "CUR-R15"
+        "CUR-R15",
+        "CUR-R20"
       ],
       "outgoingRelationshipIds": [
         "CUR-R10",
-        "TR-R07"
+        "TR-R07",
+        "CUR-R19"
       ],
       "valueStatesInfluenced": [
         "opportunity",
@@ -737,7 +749,10 @@
       ],
       "systemLinks": [],
       "incomingRelationshipIds": [
-        "CUR-R16"
+        "CUR-R16",
+        "CUR-R19",
+        "CUR-R21",
+        "CUR-R22"
       ],
       "outgoingRelationshipIds": [
         "CUR-R11",
@@ -828,7 +843,9 @@
       "outgoingRelationshipIds": [
         "CUR-R12",
         "TR-R08",
-        "TR-R10"
+        "TR-R10",
+        "CUR-R20",
+        "CUR-R21"
       ],
       "valueStatesInfluenced": [
         "earned-value",
@@ -3085,6 +3102,198 @@
       "claimBasis": "analytical-inference",
       "decisionStatus": "unresolved",
       "traceabilityStatus": "source-link-pending"
+    },
+    {
+      "id": "CUR-R18",
+      "sourceId": "partner",
+      "targetId": "products",
+      "from": "partner",
+      "to": "products",
+      "label": "Partner earn and redeem surface",
+      "displayLabel": "Partner earn and redeem surface",
+      "relationshipDefinition": "Partner brands supply the merchant surfaces, categories and offers through which points are earned and redeemed. Without partner coverage there is less for products and transactions to carry.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+    },
+    {
+      "id": "CUR-R19",
+      "sourceId": "data",
+      "targetId": "channels",
+      "from": "data",
+      "to": "channels",
+      "label": "Decisions reach the member",
+      "displayLabel": "Decisions reach the member",
+      "relationshipDefinition": "A decision about relevance, eligibility or timing only affects a member once it is delivered through a channel. Decisioning quality is capped by what delivery can carry.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+    },
+    {
+      "id": "CUR-R20",
+      "sourceId": "service",
+      "targetId": "data",
+      "from": "service",
+      "to": "data",
+      "label": "Operational outcomes return as evidence",
+      "displayLabel": "Operational outcomes return as evidence",
+      "relationshipDefinition": "Fulfilment results, exceptions and unresolved cases return to decisioning as evidence about what actually completed, not merely what was offered.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+    },
+    {
+      "id": "CUR-R21",
+      "sourceId": "service",
+      "targetId": "channels",
+      "from": "service",
+      "to": "channels",
+      "label": "Operational support of delivery",
+      "displayLabel": "Operational support of delivery",
+      "relationshipDefinition": "Service and operations sustain the channels members transact through, including recovery when a channel interaction fails.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+    },
+    {
+      "id": "CUR-R22",
+      "sourceId": "member-only",
+      "targetId": "channels",
+      "from": "member-only",
+      "to": "channels",
+      "label": "Members act through delivery channels",
+      "displayLabel": "Members act through delivery channels",
+      "relationshipDefinition": "Member-only participants encounter the programme through delivery channels, not solely as a source of value realization.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+    },
+    {
+      "id": "CUR-R23",
+      "sourceId": "member-client",
+      "targetId": "products",
+      "from": "member-client",
+      "to": "products",
+      "label": "Member-clients transact through products",
+      "displayLabel": "Member-clients transact through products",
+      "relationshipDefinition": "Members who also bank with BMO interact with the products and transactions backbone directly, which is what makes combined signal possible.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+    },
+    {
+      "id": "CUR-R24",
+      "sourceId": "client-only",
+      "targetId": "products",
+      "from": "client-only",
+      "to": "products",
+      "label": "Clients hold and transact through products",
+      "displayLabel": "Clients hold and transact through products",
+      "relationshipDefinition": "Client-only participants interact with the products backbone even where they do not participate in the loyalty programme.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+    },
+    {
+      "id": "CUR-R25",
+      "sourceId": "engagement",
+      "targetId": "member-value",
+      "from": "engagement",
+      "to": "member-value",
+      "label": "Engagement returns to realization",
+      "displayLabel": "Engagement returns to realization",
+      "relationshipDefinition": "Sustained engagement produces further opportunities to realize value, closing the pair rather than terminating at the outcome.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
     }
   ],
   "overlays": [
@@ -3349,7 +3558,15 @@
         "CUR-R14",
         "CUR-R15",
         "CUR-R16",
-        "CUR-R17"
+        "CUR-R17",
+        "CUR-R18",
+        "CUR-R19",
+        "CUR-R20",
+        "CUR-R21",
+        "CUR-R22",
+        "CUR-R23",
+        "CUR-R24",
+        "CUR-R25"
       ],
       "transitionIds": [
         "VT01",
