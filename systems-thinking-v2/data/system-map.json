@@ -136,7 +136,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Member populations"
     },
     {
       "id": "member-client",
@@ -204,7 +205,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Member populations"
     },
     {
       "id": "client-only",
@@ -270,7 +272,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Member populations"
     },
     {
       "id": "partner",
@@ -366,7 +369,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Partner ecosystem"
     },
     {
       "id": "member-value",
@@ -457,7 +461,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Value realization"
     },
     {
       "id": "engagement",
@@ -534,7 +539,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Value realization"
     },
     {
       "id": "products",
@@ -615,7 +621,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Enabling backbone"
     },
     {
       "id": "data",
@@ -707,7 +714,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Enabling backbone"
     },
     {
       "id": "channels",
@@ -796,7 +804,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Enabling backbone"
     },
     {
       "id": "service",
@@ -887,7 +896,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Enabling backbone"
     },
     {
       "id": "friction",
@@ -968,7 +978,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "region": "Structural conditions"
     },
     {
       "id": "identity",
@@ -2111,7 +2122,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "participation",
+      "polarity": "+"
     },
     {
       "id": "CUR-R02",
@@ -2134,7 +2147,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "participation",
+      "polarity": "+"
     },
     {
       "id": "CUR-R03",
@@ -2157,7 +2172,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "participation",
+      "polarity": "+"
     },
     {
       "id": "CUR-R04",
@@ -2180,7 +2197,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "participation",
+      "polarity": "+"
     },
     {
       "id": "CUR-R05",
@@ -2203,7 +2222,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "inferred-current"
+      "state": "inferred-current",
+      "flowLens": "participation",
+      "polarity": "+"
     },
     {
       "id": "CUR-R06",
@@ -2226,7 +2247,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+"
     },
     {
       "id": "CUR-R07",
@@ -2249,7 +2272,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "inferred-current"
+      "state": "inferred-current",
+      "flowLens": "value",
+      "polarity": "+"
     },
     {
       "id": "CUR-R08",
@@ -2272,7 +2297,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "information",
+      "polarity": "+"
     },
     {
       "id": "CUR-R09",
@@ -2298,7 +2325,9 @@
         "VT01",
         "VT02"
       ],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+"
     },
     {
       "id": "CUR-R10",
@@ -2324,7 +2353,9 @@
         "VT01",
         "VT02"
       ],
-      "state": "inferred-current"
+      "state": "inferred-current",
+      "flowLens": "information",
+      "polarity": "+"
     },
     {
       "id": "CUR-R11",
@@ -2351,7 +2382,9 @@
         "VT02",
         "VT04"
       ],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+"
     },
     {
       "id": "CUR-R12",
@@ -2377,7 +2410,9 @@
         "VT03",
         "VT04"
       ],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+"
     },
     {
       "id": "CUR-R13",
@@ -2404,7 +2439,10 @@
       "valueTransitionIds": [
         "VT05"
       ],
-      "state": "inferred-current"
+      "state": "inferred-current",
+      "flowLens": "participation",
+      "polarity": "+",
+      "delay": true
     },
     {
       "id": "CUR-R14",
@@ -2429,7 +2467,10 @@
       "valueTransitionIds": [
         "VT05"
       ],
-      "state": "unresolved"
+      "state": "unresolved",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": true
     },
     {
       "id": "CUR-R15",
@@ -2452,7 +2493,10 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "inferred-current"
+      "state": "inferred-current",
+      "flowLens": "condition",
+      "polarity": "-",
+      "delay": true
     },
     {
       "id": "CUR-R16",
@@ -2475,7 +2519,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "inferred-current"
+      "state": "inferred-current",
+      "flowLens": "condition",
+      "polarity": "-"
     },
     {
       "id": "CUR-R17",
@@ -2498,7 +2544,9 @@
       "decisionStatus": "unresolved",
       "evidenceRefs": [],
       "valueTransitionIds": [],
-      "state": "inferred-current"
+      "state": "inferred-current",
+      "flowLens": "condition",
+      "polarity": "-"
     },
     {
       "id": "TR-R01",
@@ -3125,7 +3173,9 @@
       "evidenceRefs": [],
       "valueTransitionIds": [],
       "state": "inferred-current",
-      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann.",
+      "flowLens": "value",
+      "polarity": "+"
     },
     {
       "id": "CUR-R19",
@@ -3149,7 +3199,9 @@
       "evidenceRefs": [],
       "valueTransitionIds": [],
       "state": "inferred-current",
-      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann.",
+      "flowLens": "information",
+      "polarity": "+"
     },
     {
       "id": "CUR-R20",
@@ -3173,7 +3225,10 @@
       "evidenceRefs": [],
       "valueTransitionIds": [],
       "state": "inferred-current",
-      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann.",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": true
     },
     {
       "id": "CUR-R21",
@@ -3197,7 +3252,9 @@
       "evidenceRefs": [],
       "valueTransitionIds": [],
       "state": "inferred-current",
-      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann.",
+      "flowLens": "capability",
+      "polarity": "+"
     },
     {
       "id": "CUR-R22",
@@ -3221,7 +3278,9 @@
       "evidenceRefs": [],
       "valueTransitionIds": [],
       "state": "inferred-current",
-      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann.",
+      "flowLens": "participation",
+      "polarity": "+"
     },
     {
       "id": "CUR-R23",
@@ -3245,7 +3304,9 @@
       "evidenceRefs": [],
       "valueTransitionIds": [],
       "state": "inferred-current",
-      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann.",
+      "flowLens": "participation",
+      "polarity": "+"
     },
     {
       "id": "CUR-R24",
@@ -3269,7 +3330,9 @@
       "evidenceRefs": [],
       "valueTransitionIds": [],
       "state": "inferred-current",
-      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann.",
+      "flowLens": "participation",
+      "polarity": "+"
     },
     {
       "id": "CUR-R25",
@@ -3293,7 +3356,9 @@
       "evidenceRefs": [],
       "valueTransitionIds": [],
       "state": "inferred-current",
-      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann."
+      "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann.",
+      "flowLens": "participation",
+      "polarity": "+"
     }
   ],
   "overlays": [
@@ -3720,5 +3785,43 @@
     "Causal effects from realization to engagement and relationship outcomes are unvalidated.",
     "The current degree of integration or fragmentation is unresolved.",
     "Partner incrementality and sustainable net value after full costs remain unresolved."
+  ],
+  "flowLenses": {
+    "purpose": "A systems map that offers only one kind of arrow can only read as a pipeline. Reading the same structure through separate flow lenses is what makes the interconnections visible.",
+    "method": "Adopted from Joann's MMIE 884 Assignment 3, which reads its map through matter, money and information flows.",
+    "lenses": [
+      {
+        "id": "value",
+        "label": "Value flow",
+        "definition": "The reward value itself moving toward the member — opportunity, fulfilment, benefit."
+      },
+      {
+        "id": "information",
+        "label": "Information flow",
+        "definition": "Signal, evidence, status and decisioning moving through the system."
+      },
+      {
+        "id": "participation",
+        "label": "Participation flow",
+        "definition": "People entering the system, acting in it, and returning to it."
+      },
+      {
+        "id": "capability",
+        "label": "Capability support",
+        "definition": "One backbone component sustaining another."
+      },
+      {
+        "id": "condition",
+        "label": "Structural condition",
+        "definition": "Friction obstructing rather than carrying — the negative links in the view."
+      }
+    ]
+  },
+  "regions": [
+    "Enabling backbone",
+    "Member populations",
+    "Partner ecosystem",
+    "Structural conditions",
+    "Value realization"
   ]
 }
