@@ -19,7 +19,7 @@ def err(m): errors.append(m)
 def warn(m): warnings.append(m)
 
 
-def check_submission(sub):
+def check_submission(sub, reg_vars=None, reg_loops=None):
     sid = sub["id"]
     variables = sub.get("variables", [])
     links = sub.get("links", [])
@@ -42,7 +42,7 @@ def check_submission(sub):
             err(f"{sid}/{lid}: no mechanism stated — an unexplained link is correlation, "
                 f"not causation, and must not be merged")
 
-    if not variables and not links:
+    if not variables and not links and not any(l.get("canonicalLoop") for l in sub.get("loops", [])):
         warn(f"{sid}: no causal structure supplied — leverage and product content "
              f"can still be merged, but loop convergence cannot")
     for var in variables:
@@ -52,6 +52,25 @@ def check_submission(sub):
 
     for loop in sub.get("loops", []):
         lid, seq = loop["id"], loop.get("sequence", [])
+        canon = loop.get("canonicalLoop")
+        if canon:
+            # expressed in canonical registry terms: the mechanism for each link
+            # lives in variable-registry.json, not in this submission
+            rl = (reg_loops or {}).get(canon)
+            if not rl:
+                err(f"{sid}/{lid}: canonicalLoop {canon} is not in the registry")
+                continue
+            for step in seq:
+                if step not in (reg_vars or set()):
+                    err(f"{sid}/{lid}: {step} is not a canonical variable")
+            if len(seq) < 3 or seq[0] != seq[-1]:
+                err(f"{sid}/{lid}: canonical sequence does not close")
+            negs = len(rl.get("negativeLinks") or [])
+            derived = "balancing" if negs % 2 else "reinforcing"
+            if loop.get("type") != derived:
+                err(f"{sid}/{lid}: declared '{loop.get('type')}' but {canon} carries "
+                    f"{negs} negative link(s), which behaves as '{derived}'")
+            continue
         if loop.get("structureStatus") == "referenced-not-supplied":
             if seq:
                 err(f"{sid}/{lid}: marked referenced-not-supplied but carries a sequence")
@@ -155,22 +174,29 @@ def main():
         return 1
     c = json.loads(DATA.read_text(encoding="utf-8"))
 
+    reg = c.get("registry") or {}
+    reg_vars = {v["id"] for v in reg.get("variables", [])}
+    reg_loops = {l["id"]: l for l in reg.get("loops", [])}
+
     declared = {x["id"] for x in c.get("contributors", [])}
     for sub in c.get("submissions", []):
         if sub.get("contributorId") not in declared:
             err(f"{sub['id']}: contributorId {sub.get('contributorId')!r} not in contributors")
-        check_submission(sub)
+        check_submission(sub, reg_vars, reg_loops)
 
     for cont in c.get("contributors", []):
-        if cont.get("status") == "received" and not any(
+        # a contributor without a submissionId carries their loop data in the
+        # variable registry instead of a per-contributor submission file
+        if cont.get("submissionId") and not any(
                 s["id"] == cont.get("submissionId") for s in c.get("submissions", [])):
             err(f"contributor {cont['id']}: marked received but submission "
                 f"{cont.get('submissionId')} is absent")
 
     check_convergence_refs(c)
 
-    print(f"convergence.json — {len(c.get('submissions', []))} submission(s), "
-          f"{len(c.get('contributors', []))} contributor(s)")
+    open_gaps = [g for g in c.get("gaps", []) if g.get("status") != "closed"]
+    print(f"convergence.json — {len(c.get('contributors', []))} contributor(s), "
+          f"{len(reg_loops)} canonical loop(s), {len(open_gaps)} open gap(s)")
     for w in warnings:
         print(f"  warn  {w}")
     for e in errors:

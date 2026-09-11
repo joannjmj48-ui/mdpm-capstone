@@ -685,7 +685,7 @@
             "CV-HEADROOM",
             "CV-RELEVANCE"
           ],
-          "note": "RESOLVED FROM TRANSCRIPT, 5 Sept working session: Josh states increasing personalization 'increases less breakage for BMO, like it's not great financially'. Personalization to breakage is the inverse link. Enters the same brake through personalization rather than through redemption.",
+          "note": "CONFIRMED BY JOSH, 10 Sept. Originally resolved from the 5 Sept working session: Josh states increasing personalization 'increases less breakage for BMO, like it's not great financially'. Personalization to breakage is the inverse link. Enters the same brake through personalization rather than through redemption.",
           "evidence": "Working session transcript, 1:30:38"
         }
       },
@@ -937,12 +937,12 @@
           "evidence": "Working session transcript, 1:56:05"
         }
       },
-      "convergence": "corroborated",
+      "convergence": "author-confirmed",
       "derivation": {
         "confidence": "high",
-        "status": "corroborated-not-yet-confirmed",
+        "status": "confirmed-by-author-10-sept",
         "basis": "Josh states the chain almost completely in JL02: a value preview gives members a reason to participate, and progressive consent helps the loop gain enough participation to produce useful experiences and visible proof. Reason-to-participate to consent to signal to experiences to proof is a closed reinforcing path.",
-        "assumption": "That visible proof feeds back to the value preview rather than terminating. His phrase implies the return arrow; he does not draw it."
+        "assumption": "The return arrow from visible proof back to the value preview was the only inferred element. Josh confirmed it on 10 Sept."
       },
       "finding": "Josh named this loop out loud and gave both its hook (cash value) and its barrier (low trust in consumer-driven banking). Zero negative links, consistent with his reinforcing label. Overlaps the trust-and-consent brake at consent granted."
     },
@@ -984,14 +984,14 @@
           "note": "DERIVED from the loop name plus JL03. Josh supplied neither variables nor polarities."
         }
       },
-      "convergence": "derived",
+      "convergence": "author-approved",
       "derivation": {
-        "confidence": "low",
-        "status": "needs-confirmation",
+        "confidence": "low-construction-approved",
+        "status": "approved-by-author-10-sept",
         "basis": "The name pairs friction with engagement, and JL03 treats fragmentation as the thing to restructure. Two negative links - friction suppressing engagement, relevance reducing fragmentation - give an even count, consistent with a reinforcing label.",
-        "assumption": "That Josh intends a vicious cycle rather than a virtuous one. A reinforcing loop runs both ways, so this may be the same structure read from the opposite direction. The polarity pattern is entirely inferred."
+        "assumption": "The whole structure was constructed from a loop name plus parity arithmetic, then approved rather than authored. Josh confirmed it on 10 Sept, which settles the direction question but does not turn a construction into independent evidence. Treat the variables and polarities as a shared working model rather than as Josh's prior analysis."
       },
-      "finding": "The only Josh loop with no corroboration anywhere. He never raised fragmentation or friction in the 5 Sept session, and his written document does not describe the mechanism. This is the single remaining unknown in the team set."
+      "finding": "Approved by Josh on 10 Sept. It is still the only loop in the team set whose variables and polarities nobody stated before this consolidation proposed them - neither his document nor the 5 Sept session describes the mechanism. Approval records agreement, not evidence."
     }
   ]
 }

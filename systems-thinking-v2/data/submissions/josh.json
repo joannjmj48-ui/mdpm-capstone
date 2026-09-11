@@ -3,7 +3,7 @@
   "contributorId": "josh",
   "behaviourOfInterest": "How the loyalty system can direct relevant value toward what members are actually trying to achieve, rather than toward generic reward activity.",
   "sourceRef": "Josh- Leverage Points and Product Description.docx (Team Zig, Milestone 2)",
-  "extractionNote": "Transcribed from prose. Josh's document supplies leverage points and a product description. It names loops R4, R5 and B2 as the loops each leverage point acts on, but does not supply their variables or links — so his causal loop structure is REFERENCED, NOT SUPPLIED. His loops cannot be merged with Sly's until that structure is provided.",
+  "extractionNote": "Leverage points and product description transcribed from his Milestone 2 document. Loop structures were reconstructed from that document plus the 5 Sept working-session transcript, then put to Josh on 10 Sept; he approved all three. See variable-registry.json for the per-loop distinction between what he authored and what this consolidation constructed for him.",
   "variables": [],
   "links": [],
   "loops": [
@@ -12,36 +12,62 @@
       "code": "R4",
       "name": "Digital Friction & Engagement",
       "type": "reinforcing",
-      "structureStatus": "referenced-not-supplied",
-      "sequence": [],
+      "structureStatus": "reconstructed-and-approved",
+      "sequence": [
+        "CV-FRAGMENT",
+        "CV-FRICTION",
+        "CV-ENGAGE",
+        "CV-SIGNAL",
+        "CV-RELEVANCE",
+        "CV-FRAGMENT"
+      ],
       "linkIds": [],
-      "epistemicStatus": "unresolved",
-      "claimBasis": "analytical-inference",
-      "decisionStatus": "unresolved"
+      "epistemicStatus": "inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "canonicalLoop": "TR6",
+      "approvedOn": "2026-09-10"
     },
     {
       "id": "JOSH-R5",
       "code": "R5",
       "name": "Consumer-Driven Banking Awareness & Adoption",
       "type": "reinforcing",
-      "structureStatus": "referenced-not-supplied",
-      "sequence": [],
+      "structureStatus": "reconstructed-and-approved",
+      "sequence": [
+        "CV-PREVIEW",
+        "CV-CONSENT",
+        "CV-COMBINED",
+        "CV-RELEVANCE",
+        "CV-REALIZED",
+        "CV-PREVIEW"
+      ],
       "linkIds": [],
-      "epistemicStatus": "unresolved",
-      "claimBasis": "analytical-inference",
-      "decisionStatus": "unresolved"
+      "epistemicStatus": "inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "canonicalLoop": "TR5",
+      "approvedOn": "2026-09-10"
     },
     {
       "id": "JOSH-B2",
       "code": "B2",
       "name": "Personalized Value & Breakage",
       "type": "balancing",
-      "structureStatus": "referenced-not-supplied",
-      "sequence": [],
+      "structureStatus": "reconstructed-and-approved",
+      "sequence": [
+        "CV-RELEVANCE",
+        "CV-REDEEM",
+        "CV-BREAKAGE",
+        "CV-HEADROOM",
+        "CV-RELEVANCE"
+      ],
       "linkIds": [],
-      "epistemicStatus": "unresolved",
-      "claimBasis": "analytical-inference",
-      "decisionStatus": "unresolved"
+      "epistemicStatus": "inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "canonicalLoop": "TB1",
+      "approvedOn": "2026-09-10"
     }
   ],
   "leveragePoints": [
@@ -50,7 +76,9 @@
       "title": "Reorient the system around member goal achievement",
       "role": "System-level anchor",
       "effect": "Governs B2",
-      "primaryLoopIds": ["JOSH-B2"],
+      "primaryLoopIds": [
+        "JOSH-B2"
+      ],
       "variableIds": [],
       "mechanism": "Set member goal achievement as the system's organizing objective and measure performance through worthwhile, realized value. Members state goals and preferences; BMO combines those signals with observed behaviour to prioritize rewards, experiences and suitable banking products that advance each job.",
       "signal": "Need-based segments provide the starting structure; continued learning can move personalization toward a segment of one.",
@@ -66,7 +94,9 @@
       "title": "Make CDB value visible before asking members to connect accounts",
       "role": "Adoption precondition",
       "effect": "Strengthens R5",
-      "primaryLoopIds": ["JOSH-R5"],
+      "primaryLoopIds": [
+        "JOSH-R5"
+      ],
       "variableIds": [],
       "mechanism": "Use a concrete, immediate member benefit as the entry point to consumer-driven banking. Blue Rewards shows how connecting an account may uncover eligible spending, improve reward recommendations or reveal a faster path toward a stated goal. A value preview, followed by a linking incentive or immediately useful insight, gives members a reason to participate.",
       "signal": "The request should then explain what data BMO needs, what additional value it enables and how access can be changed or withdrawn.",
@@ -81,7 +111,11 @@
       "title": "Restructure fragmented data and channels into an ambient loyalty experience",
       "role": "Information and channel foundation",
       "effect": "Acts across R4, B2 and R5",
-      "primaryLoopIds": ["JOSH-R4", "JOSH-B2", "JOSH-R5"],
+      "primaryLoopIds": [
+        "JOSH-R4",
+        "JOSH-B2",
+        "JOSH-R5"
+      ],
       "variableIds": [],
       "mechanism": "Connect member goals and preferences with Blue Rewards activity, BMO relationship data, authorized cross-bank data, digital-intent signals and ISO 20022 payment information. These flows surface opportunities through BMO channels, wallets, approved external services and participating retailers.",
       "signal": "At purchase, members could compare offers, redemption options, payment methods and suitable BMO products against their goal. Merchant and RTR integrations could confirm qualifying payments, update rewards and resolve missing value.",
@@ -99,10 +133,31 @@
     "primaryUser": "BMO customers and rewards-only members who want valuable opportunities without searching across channels, calculating reward value or chasing missing rewards.",
     "coreJob": "Help me align my spending, saving, payment and reward choices with the goals I actually have — without hunting across channels or doing the math myself.",
     "capabilities": [
-      {"id": "JPM01", "name": "Set goals and permissions", "facing": "member-facing", "description": "Set custom financial and reward goals, preferences and data permissions."},
-      {"id": "JPM02", "name": "Compare choices against goals", "facing": "member-facing", "description": "Compare how spending, saving, payment and redemption choices could help them achieve their goals."},
-      {"id": "JPM03", "name": "Receive goal-linked opportunities", "facing": "member-facing", "description": "Receive timely, goal-linked opportunities and incentives.", "isWedge": true},
-      {"id": "JPM04", "name": "Track progress and rewards", "facing": "member-facing", "description": "Easily track goal progress as well as earned, pending, redeemed or missing rewards."}
+      {
+        "id": "JPM01",
+        "name": "Set goals and permissions",
+        "facing": "member-facing",
+        "description": "Set custom financial and reward goals, preferences and data permissions."
+      },
+      {
+        "id": "JPM02",
+        "name": "Compare choices against goals",
+        "facing": "member-facing",
+        "description": "Compare how spending, saving, payment and redemption choices could help them achieve their goals."
+      },
+      {
+        "id": "JPM03",
+        "name": "Receive goal-linked opportunities",
+        "facing": "member-facing",
+        "description": "Receive timely, goal-linked opportunities and incentives.",
+        "isWedge": true
+      },
+      {
+        "id": "JPM04",
+        "name": "Track progress and rewards",
+        "facing": "member-facing",
+        "description": "Easily track goal progress as well as earned, pending, redeemed or missing rewards."
+      }
     ],
     "mechanismOfAction": "The product uses visible progress, timely feedback and well-designed incentives to help members align their spending, saving, payment and reward choices with their goals.",
     "channelAssumption": "Begins in existing BMO and Blue Rewards channels and, with member permission, combines BMO, loyalty, partner and connected financial data.",

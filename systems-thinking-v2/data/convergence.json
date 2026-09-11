@@ -2,7 +2,7 @@
   "version": "1.1.0-convergence",
   "generated": true,
   "generatedBy": "scripts/build-convergence.py — do not hand-edit; edit data/submissions/*.json or data/convergence-map.json",
-  "modelStatus": "partial-team-coverage",
+  "modelStatus": "full-team-coverage",
   "governingInquiry": "Where do Team Zig's independently developed causal loops and product definitions converge, where do they diverge, and what does that tell us about the loyalty system we are designing for?",
   "extends": "data/system-map.json",
   "classificationRule": "Group convergence and hypotheses never become evidence-supported solely through approval. Independent agreement between contributors is recorded as convergence strength, not as evidence.",
@@ -13,11 +13,19 @@
     "contested": "Contributors propose incompatible relationships, polarities, or framings."
   },
   "coverage": {
-    "contributorsExpected": "unknown — full Team Zig roster not yet confirmed",
-    "contributorsReceived": 2,
-    "caveat": "Convergence across two contributors is a weak basis for claiming team convergence. Ratings should be revisited as further submissions arrive."
+    "contributorsExpected": 6,
+    "contributorsReceived": 6,
+    "caveat": "All six contributors are represented. Convergence strength still records independent agreement, never evidence."
   },
   "contributors": [
+    {
+      "id": "joann",
+      "displayName": "Joann",
+      "submissionId": null,
+      "status": "received",
+      "sourceRef": "Five-loop systems map (HTML), B1 leverage analysis, initial product description, 5 Sept talking script",
+      "note": "Five loops - the largest single set. Loop structures held in variable-registry.json."
+    },
     {
       "id": "sly",
       "displayName": "Sylvester",
@@ -27,12 +35,36 @@
       "note": "Extracted from published work rather than collected via the intake template."
     },
     {
+      "id": "henry",
+      "displayName": "Henry",
+      "submissionId": null,
+      "status": "received",
+      "sourceRef": "Reinforcing Loop, Balancing Loop and System Map diagrams; product definition document",
+      "note": "His R1 is node-for-node identical to Sly's in different wording."
+    },
+    {
       "id": "josh",
       "displayName": "Josh",
       "submissionId": "SUB-JOSH",
-      "status": "received-partial",
-      "sourceRef": "Josh- Leverage Points and Product Description.docx (Team Zig, Milestone 2)",
-      "note": "Leverage points and product description supplied. Causal loop structure referenced but not supplied — see GAP-01."
+      "status": "received",
+      "sourceRef": "Milestone 2 leverage points and product description; 5 Sept working-session transcript",
+      "note": "Loop structures reconstructed from his document and the transcript, then approved by him on 10 Sept."
+    },
+    {
+      "id": "lia",
+      "displayName": "Lia",
+      "submissionId": null,
+      "status": "received",
+      "sourceRef": "Two Connected Loops for Blue Rewards diagram; 5 Sept working session",
+      "note": "Two loops - engagement/relevance, and personalization versus member control."
+    },
+    {
+      "id": "ola",
+      "displayName": "Ola",
+      "submissionId": null,
+      "status": "received",
+      "sourceRef": "BMO Blue Rewards - Digital Business Model System Loops (PDF); 5 Sept working session",
+      "note": "Three loops derived from the Digital Business Model Canvas."
     }
   ],
   "submissions": [
@@ -472,7 +504,7 @@
       "contributorId": "josh",
       "behaviourOfInterest": "How the loyalty system can direct relevant value toward what members are actually trying to achieve, rather than toward generic reward activity.",
       "sourceRef": "Josh- Leverage Points and Product Description.docx (Team Zig, Milestone 2)",
-      "extractionNote": "Transcribed from prose. Josh's document supplies leverage points and a product description. It names loops R4, R5 and B2 as the loops each leverage point acts on, but does not supply their variables or links — so his causal loop structure is REFERENCED, NOT SUPPLIED. His loops cannot be merged with Sly's until that structure is provided.",
+      "extractionNote": "Leverage points and product description transcribed from his Milestone 2 document. Loop structures were reconstructed from that document plus the 5 Sept working-session transcript, then put to Josh on 10 Sept; he approved all three. See variable-registry.json for the per-loop distinction between what he authored and what this consolidation constructed for him.",
       "variables": [],
       "links": [],
       "loops": [
@@ -481,36 +513,62 @@
           "code": "R4",
           "name": "Digital Friction & Engagement",
           "type": "reinforcing",
-          "structureStatus": "referenced-not-supplied",
-          "sequence": [],
+          "structureStatus": "reconstructed-and-approved",
+          "sequence": [
+            "CV-FRAGMENT",
+            "CV-FRICTION",
+            "CV-ENGAGE",
+            "CV-SIGNAL",
+            "CV-RELEVANCE",
+            "CV-FRAGMENT"
+          ],
           "linkIds": [],
-          "epistemicStatus": "unresolved",
-          "claimBasis": "analytical-inference",
-          "decisionStatus": "unresolved"
+          "epistemicStatus": "inferred",
+          "claimBasis": "group-convergence",
+          "decisionStatus": "active-direction",
+          "canonicalLoop": "TR6",
+          "approvedOn": "2026-09-10"
         },
         {
           "id": "JOSH-R5",
           "code": "R5",
           "name": "Consumer-Driven Banking Awareness & Adoption",
           "type": "reinforcing",
-          "structureStatus": "referenced-not-supplied",
-          "sequence": [],
+          "structureStatus": "reconstructed-and-approved",
+          "sequence": [
+            "CV-PREVIEW",
+            "CV-CONSENT",
+            "CV-COMBINED",
+            "CV-RELEVANCE",
+            "CV-REALIZED",
+            "CV-PREVIEW"
+          ],
           "linkIds": [],
-          "epistemicStatus": "unresolved",
-          "claimBasis": "analytical-inference",
-          "decisionStatus": "unresolved"
+          "epistemicStatus": "inferred",
+          "claimBasis": "group-convergence",
+          "decisionStatus": "active-direction",
+          "canonicalLoop": "TR5",
+          "approvedOn": "2026-09-10"
         },
         {
           "id": "JOSH-B2",
           "code": "B2",
           "name": "Personalized Value & Breakage",
           "type": "balancing",
-          "structureStatus": "referenced-not-supplied",
-          "sequence": [],
+          "structureStatus": "reconstructed-and-approved",
+          "sequence": [
+            "CV-RELEVANCE",
+            "CV-REDEEM",
+            "CV-BREAKAGE",
+            "CV-HEADROOM",
+            "CV-RELEVANCE"
+          ],
           "linkIds": [],
-          "epistemicStatus": "unresolved",
-          "claimBasis": "analytical-inference",
-          "decisionStatus": "unresolved"
+          "epistemicStatus": "inferred",
+          "claimBasis": "group-convergence",
+          "decisionStatus": "active-direction",
+          "canonicalLoop": "TB1",
+          "approvedOn": "2026-09-10"
         }
       ],
       "leveragePoints": [
@@ -736,16 +794,13 @@
           }
         ],
         "whatConverged": "Both contributors include a learning mechanism that improves relevance over time.",
-        "whatDiffers": "Sly places learning inside a reinforcing loop, where it compounds. Josh attaches personalization learning to a balancing loop, where it would stabilise rather than compound. These imply different behaviour over time from the same mechanism.",
+        "whatDiffers": "Sly places learning inside a reinforcing loop where it compounds. Josh's personalization thread turned out to sit on the breakage brake rather than on a learning loop, so the two are describing different mechanisms rather than contradicting each other.",
         "whyItMatters": "If the same mechanism is reinforcing in one model and balancing in another, at least one loop is mis-specified. This cannot be resolved without Josh's loop structure.",
         "epistemicStatus": "contested",
         "claimBasis": "analytical-inference",
         "decisionStatus": "unresolved",
         "residualDivergenceIds": [
           "DV-04"
-        ],
-        "blockedBy": [
-          "GAP-01"
         ]
       }
     ],
@@ -1522,7 +1577,7 @@
               "CV-HEADROOM",
               "CV-RELEVANCE"
             ],
-            "note": "RESOLVED FROM TRANSCRIPT, 5 Sept working session: Josh states increasing personalization 'increases less breakage for BMO, like it's not great financially'. Personalization to breakage is the inverse link. Enters the same brake through personalization rather than through redemption.",
+            "note": "CONFIRMED BY JOSH, 10 Sept. Originally resolved from the 5 Sept working session: Josh states increasing personalization 'increases less breakage for BMO, like it's not great financially'. Personalization to breakage is the inverse link. Enters the same brake through personalization rather than through redemption.",
             "evidence": "Working session transcript, 1:30:38"
           }
         },
@@ -1774,12 +1829,12 @@
             "evidence": "Working session transcript, 1:56:05"
           }
         },
-        "convergence": "corroborated",
+        "convergence": "author-confirmed",
         "derivation": {
           "confidence": "high",
-          "status": "corroborated-not-yet-confirmed",
+          "status": "confirmed-by-author-10-sept",
           "basis": "Josh states the chain almost completely in JL02: a value preview gives members a reason to participate, and progressive consent helps the loop gain enough participation to produce useful experiences and visible proof. Reason-to-participate to consent to signal to experiences to proof is a closed reinforcing path.",
-          "assumption": "That visible proof feeds back to the value preview rather than terminating. His phrase implies the return arrow; he does not draw it."
+          "assumption": "The return arrow from visible proof back to the value preview was the only inferred element. Josh confirmed it on 10 Sept."
         },
         "finding": "Josh named this loop out loud and gave both its hook (cash value) and its barrier (low trust in consumer-driven banking). Zero negative links, consistent with his reinforcing label. Overlaps the trust-and-consent brake at consent granted."
       },
@@ -1821,14 +1876,14 @@
             "note": "DERIVED from the loop name plus JL03. Josh supplied neither variables nor polarities."
           }
         },
-        "convergence": "derived",
+        "convergence": "author-approved",
         "derivation": {
-          "confidence": "low",
-          "status": "needs-confirmation",
+          "confidence": "low-construction-approved",
+          "status": "approved-by-author-10-sept",
           "basis": "The name pairs friction with engagement, and JL03 treats fragmentation as the thing to restructure. Two negative links - friction suppressing engagement, relevance reducing fragmentation - give an even count, consistent with a reinforcing label.",
-          "assumption": "That Josh intends a vicious cycle rather than a virtuous one. A reinforcing loop runs both ways, so this may be the same structure read from the opposite direction. The polarity pattern is entirely inferred."
+          "assumption": "The whole structure was constructed from a loop name plus parity arithmetic, then approved rather than authored. Josh confirmed it on 10 Sept, which settles the direction question but does not turn a construction into independent evidence. Treat the variables and polarities as a shared working model rather than as Josh's prior analysis."
         },
-        "finding": "The only Josh loop with no corroboration anywhere. He never raised fragmentation or friction in the 5 Sept session, and his written document does not describe the mechanism. This is the single remaining unknown in the team set."
+        "finding": "Approved by Josh on 10 Sept. It is still the only loop in the team set whose variables and polarities nobody stated before this consolidation proposed them - neither his document nor the 5 Sept session describes the mechanism. Approval records agreement, not evidence."
       }
     ],
     "rule": "Alignment records that contributors described the same construct. It does not merge their evidence, and it does not upgrade any claim's epistemic status.",
@@ -1955,10 +2010,8 @@
         "Determine whether Josh's 'breakage' term introduces a negative link Sly's model does not have."
       ],
       "recommendedNext": "Cannot be resolved without GAP-01.",
-      "status": "unresolved",
-      "blockedBy": [
-        "GAP-01"
-      ]
+      "status": "resolved",
+      "resolution": "Josh's balancing loop resolves to the breakage brake, not to a personalization-learning loop. The apparent contradiction came from his loop name pairing two mechanisms, not from a genuine disagreement about whether learning reinforces or balances."
     },
     {
       "id": "DV-05",
@@ -1988,34 +2041,31 @@
       "id": "GAP-01",
       "title": "Josh's causal loop structure was not supplied",
       "detail": "Josh's document names R4 (Digital Friction & Engagement), R5 (Consumer-Driven Banking Awareness & Adoption) and B2 (Personalized Value & Breakage) as the loops his leverage points act on, but supplies no variables, links or polarities for them. Loop-level convergence with Sly's R1 and B1 cannot be computed.",
-      "blocks": [
-        "CV-L05",
-        "DV-04",
-        "loop-level merge"
-      ],
+      "blocks": [],
       "askOf": "josh",
-      "ask": "Variables, links and polarities for R4, R5 and B2 — Parts 1–3 of the intake template."
+      "ask": "Variables, links and polarities for R4, R5 and B2 — Parts 1–3 of the intake template.",
+      "status": "closed",
+      "resolution": "CLOSED 10 Sept. All three loop structures reconstructed and approved by Josh. TR6's variables and polarities were constructed by this consolidation rather than supplied by him - recorded as approved, not as evidence."
     },
     {
       "id": "GAP-02",
       "title": "Loop numbering implies a team-wide loop register that is not in hand",
       "detail": "Sly's published model uses R1 and B1. Josh's uses R4, R5 and B2. Josh's numbering starts partway through a sequence, which implies Team Zig has a shared loop register containing at least R1-R5 and B1-B2 — and that Sly's published R1/B1 may or may not be the same R1/B1 Josh is counting from. If the numbering schemes are independent, two different loops may currently share the same label.",
-      "blocks": [
-        "any loop merge",
-        "convergence tab labelling"
-      ],
+      "blocks": [],
       "askOf": "team",
-      "ask": "Confirm whether a shared loop register exists. If it does, obtain it; if it does not, renumber on merge so no two loops share a code."
+      "ask": "Confirm whether a shared loop register exists. If it does, obtain it; if it does not, renumber on merge so no two loops share a code.",
+      "status": "closed",
+      "resolution": "CLOSED 10 Sept. Personal numbering retired; the nine canonical codes are now the only identifiers."
     },
     {
       "id": "GAP-03",
       "title": "Remaining contributors have not submitted",
       "detail": "Only Sylvester and Josh are represented. Convergence strength across two contributors is weak evidence of team convergence — a third independent agreement is what would make CV-L01 and CV-P01 genuinely strong.",
-      "blocks": [
-        "final convergence strength ratings"
-      ],
+      "blocks": [],
       "askOf": "team",
-      "ask": "Remaining Team Zig submissions via the intake template."
+      "ask": "Remaining Team Zig submissions via the intake template.",
+      "status": "closed",
+      "resolution": "CLOSED 10 Sept. All six contributors are represented."
     },
     {
       "id": "GAP-04",

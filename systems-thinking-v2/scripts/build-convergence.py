@@ -16,12 +16,24 @@ DATA = ROOT / "data"
 OUT = DATA / "convergence.json"
 
 CONTRIBUTORS = [
+    {"id": "joann", "displayName": "Joann", "submissionId": None, "status": "received",
+     "sourceRef": "Five-loop systems map (HTML), B1 leverage analysis, initial product description, 5 Sept talking script",
+     "note": "Five loops - the largest single set. Loop structures held in variable-registry.json."},
     {"id": "sly", "displayName": "Sylvester", "submissionId": "SUB-SLY", "status": "received",
      "sourceRef": "Published V1 site: /systems-thinking/ (system-loops.js, leverage-product.js)",
      "note": "Extracted from published work rather than collected via the intake template."},
-    {"id": "josh", "displayName": "Josh", "submissionId": "SUB-JOSH", "status": "received-partial",
-     "sourceRef": "Josh- Leverage Points and Product Description.docx (Team Zig, Milestone 2)",
-     "note": "Leverage points and product description supplied. Causal loop structure referenced but not supplied — see GAP-01."},
+    {"id": "henry", "displayName": "Henry", "submissionId": None, "status": "received",
+     "sourceRef": "Reinforcing Loop, Balancing Loop and System Map diagrams; product definition document",
+     "note": "His R1 is node-for-node identical to Sly's in different wording."},
+    {"id": "josh", "displayName": "Josh", "submissionId": "SUB-JOSH", "status": "received",
+     "sourceRef": "Milestone 2 leverage points and product description; 5 Sept working-session transcript",
+     "note": "Loop structures reconstructed from his document and the transcript, then approved by him on 10 Sept."},
+    {"id": "lia", "displayName": "Lia", "submissionId": None, "status": "received",
+     "sourceRef": "Two Connected Loops for Blue Rewards diagram; 5 Sept working session",
+     "note": "Two loops - engagement/relevance, and personalization versus member control."},
+    {"id": "ola", "displayName": "Ola", "submissionId": None, "status": "received",
+     "sourceRef": "BMO Blue Rewards - Digital Business Model System Loops (PDF); 5 Sept working session",
+     "note": "Three loops derived from the Digital Business Model Canvas."},
 ]
 
 STRENGTH = {
@@ -44,6 +56,8 @@ def load(path):
 def main():
     subs = []
     for c in CONTRIBUTORS:
+        if not c["submissionId"]:
+            continue
         p = DATA / "submissions" / f"{c['id']}.json"
         if not p.exists():
             print(f"  skip  {c['id']} — no submission file yet")
@@ -70,15 +84,15 @@ def main():
         "version": "1.1.0-convergence",
         "generated": True,
         "generatedBy": "scripts/build-convergence.py — do not hand-edit; edit data/submissions/*.json or data/convergence-map.json",
-        "modelStatus": "partial-team-coverage",
+        "modelStatus": "full-team-coverage",
         "governingInquiry": "Where do Team Zig's independently developed causal loops and product definitions converge, where do they diverge, and what does that tell us about the loyalty system we are designing for?",
         "extends": "data/system-map.json",
         "classificationRule": "Group convergence and hypotheses never become evidence-supported solely through approval. Independent agreement between contributors is recorded as convergence strength, not as evidence.",
         "convergenceStrength": STRENGTH,
         "coverage": {
-            "contributorsExpected": "unknown — full Team Zig roster not yet confirmed",
-            "contributorsReceived": len(subs),
-            "caveat": "Convergence across two contributors is a weak basis for claiming team convergence. Ratings should be revisited as further submissions arrive.",
+            "contributorsExpected": 6,
+            "contributorsReceived": len(CONTRIBUTORS),
+            "caveat": "All six contributors are represented. Convergence strength still records independent agreement, never evidence.",
         },
         "contributors": CONTRIBUTORS,
         "submissions": subs,
@@ -115,11 +129,12 @@ def main():
 
     OUT.write_text(json.dumps(contract, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}")
-    print(f"  contributors : {len(subs)}")
+    print(f"  contributors : {len(CONTRIBUTORS)} ({len(subs)} with submission files)")
     print(f"  clusters     : {len(clusters)} " + ", ".join(f"{k}={v}" for k, v in sorted(counts.items())))
     print(f"  divergences  : {len(cmap['divergences'])} "
           f"({sum(1 for d in cmap['divergences'] if d.get('blocksMerge'))} blocking)")
-    print(f"  open gaps    : {len(cmap['gaps'])}")
+    open_gaps = [g for g in cmap["gaps"] if g.get("status") != "closed"]
+    print(f"  gaps         : {len(open_gaps)} open, {len(cmap['gaps'])-len(open_gaps)} closed")
 
 
 main()

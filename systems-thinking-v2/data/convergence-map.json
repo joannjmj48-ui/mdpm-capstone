@@ -1,46 +1,76 @@
 {
   "analysisVersion": "0.1.0",
-  "analysedSubmissions": ["SUB-SLY", "SUB-JOSH"],
+  "analysedSubmissions": [
+    "SUB-SLY",
+    "SUB-JOSH"
+  ],
   "analysisNote": "Curated cross-contributor analysis. Matching is judgement, not string comparison — every cluster names the specific items it merges so the reasoning can be reconstructed and disputed. Strength describes how independently contributors arrived at the same claim; it never upgrades epistemic status.",
-
   "leverageConvergence": [
     {
       "id": "CV-L01",
       "theme": "The system goal must be realized value, not issued value or activity",
       "strength": "converged",
       "members": [
-        {"submissionId": "SUB-SLY", "itemId": "L04", "framing": "Realized value as the system goal — align measures and decision rules around appropriate member value realization rather than value issued, activity alone, or breakage."},
-        {"submissionId": "SUB-JOSH", "itemId": "JL01", "framing": "Reorient the system around member goal achievement — measure performance through worthwhile, realized value."}
+        {
+          "submissionId": "SUB-SLY",
+          "itemId": "L04",
+          "framing": "Realized value as the system goal — align measures and decision rules around appropriate member value realization rather than value issued, activity alone, or breakage."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "JL01",
+          "framing": "Reorient the system around member goal achievement — measure performance through worthwhile, realized value."
+        }
       ],
       "whatConverged": "Both contributors independently identified the system's goal as the highest-leverage intervention, both placed it at Meadows #3, and both explicitly rejected activity, issuance or breakage as the measure of success. Neither treats this as something a product feature can deliver on its own.",
       "whyItMatters": "Two independent analyses landing on the same Meadows level, with the same rejection of the same wrong metrics, is the strongest signal in the merged set. It is the most defensible shared foundation Team Zig currently has.",
       "epistemicStatus": "inferred",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
-      "residualDivergenceIds": ["DV-01"]
+      "residualDivergenceIds": [
+        "DV-01"
+      ]
     },
     {
       "id": "CV-L02",
       "theme": "Connected, visible value-state information is the enabling foundation",
       "strength": "converged",
       "members": [
-        {"submissionId": "SUB-SLY", "itemId": "L01", "framing": "Shared value-state information — a reliable view of what is identified, eligible, pursued, qualified, earned, pending, posted, redeemed, fulfilled, or unresolved."},
-        {"submissionId": "SUB-JOSH", "itemId": "JL03", "framing": "Restructure fragmented data and channels into an ambient loyalty experience — connect goals, Blue Rewards activity, relationship data, authorized cross-bank data, intent signals and ISO 20022 payment information."}
+        {
+          "submissionId": "SUB-SLY",
+          "itemId": "L01",
+          "framing": "Shared value-state information — a reliable view of what is identified, eligible, pursued, qualified, earned, pending, posted, redeemed, fulfilled, or unresolved."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "JL03",
+          "framing": "Restructure fragmented data and channels into an ambient loyalty experience — connect goals, Blue Rewards activity, relationship data, authorized cross-bank data, intent signals and ISO 20022 payment information."
+        }
       ],
       "whatConverged": "Both classify this at Meadows #6 information flows, and both argue that nothing downstream can improve while value-state data stays fragmented. Both treat it as a precondition rather than as the product itself.",
       "whyItMatters": "This is the shared dependency underneath both product directions. Whichever wedge the team chooses, this capability is on the critical path.",
       "epistemicStatus": "inferred",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
-      "residualDivergenceIds": ["DV-03"]
+      "residualDivergenceIds": [
+        "DV-03"
+      ]
     },
     {
       "id": "CV-L03",
       "theme": "Missing and at-risk value must be detected and resolved",
       "strength": "partial",
       "members": [
-        {"submissionId": "SUB-SLY", "itemId": "L03", "framing": "Exception detection and recovery — the primary product-action leverage point and the basis of the product wedge."},
-        {"submissionId": "SUB-JOSH", "itemId": "JL03", "framing": "Merchant and RTR integrations could confirm qualifying payments, update rewards and resolve missing value — one capability within the data and channel restructure."}
+        {
+          "submissionId": "SUB-SLY",
+          "itemId": "L03",
+          "framing": "Exception detection and recovery — the primary product-action leverage point and the basis of the product wedge."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "JL03",
+          "framing": "Merchant and RTR integrations could confirm qualifying payments, update rewards and resolve missing value — one capability within the data and channel restructure."
+        }
       ],
       "whatConverged": "Both models contain recovery of missing value, and both connect it to member trust.",
       "whatDiffers": "Sly makes recovery the highest-leverage product action and the entire starting point. Josh treats it as a downstream benefit of integrating data and payment rails. Same mechanism, very different weight and sequencing.",
@@ -48,49 +78,73 @@
       "epistemicStatus": "contested",
       "claimBasis": "analytical-inference",
       "decisionStatus": "unresolved",
-      "residualDivergenceIds": ["DV-02"]
+      "residualDivergenceIds": [
+        "DV-02"
+      ]
     },
     {
       "id": "CV-L04",
       "theme": "Consent-aware account connection as an adoption mechanism",
       "strength": "unique",
       "members": [
-        {"submissionId": "SUB-JOSH", "itemId": "JL02", "framing": "Make CDB value visible before asking members to connect accounts — value preview, then progressive consent."}
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "JL02",
+          "framing": "Make CDB value visible before asking members to connect accounts — value preview, then progressive consent."
+        }
       ],
       "whatConverged": "No counterpart in Sly's model. Sly's boundary does not include consumer-driven banking, so no equivalent leverage point exists to merge with.",
       "whyItMatters": "This is not a disagreement — it is scope Sly's model never covered. It cannot be marked converged or contested until the team settles the boundary question in DV-03.",
       "epistemicStatus": "unresolved",
       "claimBasis": "analytical-inference",
       "decisionStatus": "hypothesis",
-      "residualDivergenceIds": ["DV-03"]
+      "residualDivergenceIds": [
+        "DV-03"
+      ]
     },
     {
       "id": "CV-L05",
       "theme": "Learning from realized outcomes improves future decisions",
       "strength": "partial",
       "members": [
-        {"submissionId": "SUB-SLY", "itemId": "L02", "framing": "Decisioning based on realized outcomes — feed realization, failure and recovery outcomes back into future decisions. Placed in a reinforcing loop (R1)."},
-        {"submissionId": "SUB-JOSH", "itemId": "JL01", "framing": "Continued learning can move personalization toward a segment of one. Attached to B2 — Personalized Value & Breakage, a balancing loop."}
+        {
+          "submissionId": "SUB-SLY",
+          "itemId": "L02",
+          "framing": "Decisioning based on realized outcomes — feed realization, failure and recovery outcomes back into future decisions. Placed in a reinforcing loop (R1)."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "JL01",
+          "framing": "Continued learning can move personalization toward a segment of one. Attached to B2 — Personalized Value & Breakage, a balancing loop."
+        }
       ],
       "whatConverged": "Both contributors include a learning mechanism that improves relevance over time.",
-      "whatDiffers": "Sly places learning inside a reinforcing loop, where it compounds. Josh attaches personalization learning to a balancing loop, where it would stabilise rather than compound. These imply different behaviour over time from the same mechanism.",
+      "whatDiffers": "Sly places learning inside a reinforcing loop where it compounds. Josh's personalization thread turned out to sit on the breakage brake rather than on a learning loop, so the two are describing different mechanisms rather than contradicting each other.",
       "whyItMatters": "If the same mechanism is reinforcing in one model and balancing in another, at least one loop is mis-specified. This cannot be resolved without Josh's loop structure.",
       "epistemicStatus": "contested",
       "claimBasis": "analytical-inference",
       "decisionStatus": "unresolved",
-      "residualDivergenceIds": ["DV-04"],
-      "blockedBy": ["GAP-01"]
+      "residualDivergenceIds": [
+        "DV-04"
+      ]
     }
   ],
-
   "productConvergence": [
     {
       "id": "CV-P01",
       "theme": "Members must be able to see earned, pending, redeemed and missing value",
       "strength": "converged",
       "members": [
-        {"submissionId": "SUB-SLY", "itemId": "PM02", "framing": "Track — make qualification, earning, posting, redemption, fulfilment and unresolved states visible."},
-        {"submissionId": "SUB-JOSH", "itemId": "JPM04", "framing": "Easily track goal progress as well as earned, pending, redeemed or missing rewards."}
+        {
+          "submissionId": "SUB-SLY",
+          "itemId": "PM02",
+          "framing": "Track — make qualification, earning, posting, redemption, fulfilment and unresolved states visible."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "JPM04",
+          "framing": "Easily track goal progress as well as earned, pending, redeemed or missing rewards."
+        }
       ],
       "whatConverged": "Near-identical capability, described independently in near-identical state language — including the same insistence that missing or unresolved value be visible, not just successful value.",
       "whyItMatters": "The single most defensible product capability in the merged set. Both contributors would build it, and neither treats it as optional.",
@@ -103,8 +157,16 @@
       "theme": "Surface worthwhile, relevant opportunities the member can act on",
       "strength": "converged",
       "members": [
-        {"submissionId": "SUB-SLY", "itemId": "PM01", "framing": "Discover — surface worthwhile, attainable reward opportunities a member can understand and act upon."},
-        {"submissionId": "SUB-JOSH", "itemId": "JPM03", "framing": "Receive timely, goal-linked opportunities and incentives."}
+        {
+          "submissionId": "SUB-SLY",
+          "itemId": "PM01",
+          "framing": "Discover — surface worthwhile, attainable reward opportunities a member can understand and act upon."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "JPM03",
+          "framing": "Receive timely, goal-linked opportunities and incentives."
+        }
       ],
       "whatConverged": "Both include relevance-driven opportunity surfacing as a member-facing capability.",
       "whatDiffers": "Sly qualifies relevance as worthwhile and attainable; Josh qualifies it as goal-linked. Josh's version requires the member to have stated a goal first.",
@@ -112,15 +174,25 @@
       "epistemicStatus": "inferred",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
-      "residualDivergenceIds": ["DV-01"]
+      "residualDivergenceIds": [
+        "DV-01"
+      ]
     },
     {
       "id": "CV-P03",
       "theme": "Same channel assumption",
       "strength": "converged",
       "members": [
-        {"submissionId": "SUB-SLY", "itemId": "channelAssumption", "framing": "Embedded within existing authenticated BMO and Blue Rewards digital touchpoints, connecting to rather than replacing current systems."},
-        {"submissionId": "SUB-JOSH", "itemId": "channelAssumption", "framing": "Begins in existing BMO and Blue Rewards channels and, with member permission, combines BMO, loyalty, partner and connected financial data."}
+        {
+          "submissionId": "SUB-SLY",
+          "itemId": "channelAssumption",
+          "framing": "Embedded within existing authenticated BMO and Blue Rewards digital touchpoints, connecting to rather than replacing current systems."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "channelAssumption",
+          "framing": "Begins in existing BMO and Blue Rewards channels and, with member permission, combines BMO, loyalty, partner and connected financial data."
+        }
       ],
       "whatConverged": "Both independently assume an embedded experience in existing authenticated channels, and both explicitly decline to replace underlying loyalty, banking or partner systems.",
       "whyItMatters": "Removes a whole class of architectural argument from the team's remaining decisions.",
@@ -133,26 +205,41 @@
       "theme": "Goal setting and goal-progress tracking",
       "strength": "unique",
       "members": [
-        {"submissionId": "SUB-JOSH", "itemId": "JPM01", "framing": "Set custom financial and reward goals, preferences and data permissions."},
-        {"submissionId": "SUB-JOSH", "itemId": "JPM02", "framing": "Compare how spending, saving, payment and redemption choices could help achieve goals."}
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "JPM01",
+          "framing": "Set custom financial and reward goals, preferences and data permissions."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "itemId": "JPM02",
+          "framing": "Compare how spending, saving, payment and redemption choices could help achieve goals."
+        }
       ],
       "whatConverged": "No counterpart in Sly's product definition. Sly's model has no member-stated goal construct at all.",
       "whyItMatters": "This is the concrete product consequence of DV-01. If the team adopts Josh's organizing objective, these capabilities become mandatory; if it adopts Sly's, they are optional.",
       "epistemicStatus": "unresolved",
       "claimBasis": "analytical-inference",
       "decisionStatus": "hypothesis",
-      "residualDivergenceIds": ["DV-01"]
+      "residualDivergenceIds": [
+        "DV-01"
+      ]
     }
   ],
-
   "divergences": [
     {
       "id": "DV-01",
       "title": "What organizes the system: delivered outcome or stated intent?",
       "severity": "material",
       "positions": [
-        {"submissionId": "SUB-SLY", "position": "Member value realization — did the worthwhile value the member was promised actually get delivered and become usable? Measurable from system events without asking the member anything."},
-        {"submissionId": "SUB-JOSH", "position": "Member goal achievement — did the member advance the goal they set? Requires the member to state a goal, and requires consent to combine data against it."}
+        {
+          "submissionId": "SUB-SLY",
+          "position": "Member value realization — did the worthwhile value the member was promised actually get delivered and become usable? Measurable from system events without asking the member anything."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Member goal achievement — did the member advance the goal they set? Requires the member to state a goal, and requires consent to combine data against it."
+        }
       ],
       "whyItMatters": "These are close enough to be mistaken for the same idea and different enough to produce different products. Realization can be measured passively; goal achievement cannot. Adopting Josh's objective adds a member-input dependency, a consent dependency, and a cold-start problem for members who never set a goal. Adopting Sly's leaves the system unable to distinguish value the member wanted from value the member merely received.",
       "resolutionOptions": [
@@ -168,8 +255,14 @@
       "title": "Where the product starts: protect value in motion, or direct value toward goals?",
       "severity": "material",
       "positions": [
-        {"submissionId": "SUB-SLY", "position": "Start at the end of the chain. Wedge = Proactive Value Assurance and Recovery: detect at-risk value, resolve or route it, verify realization."},
-        {"submissionId": "SUB-JOSH", "position": "Start at the front of the chain. Emphasis on goal-linked opportunity surfacing and comparison at the moment of decision. (Wedge inferred, not stated — needs Josh's confirmation.)"}
+        {
+          "submissionId": "SUB-SLY",
+          "position": "Start at the end of the chain. Wedge = Proactive Value Assurance and Recovery: detect at-risk value, resolve or route it, verify realization."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Start at the front of the chain. Emphasis on goal-linked opportunity surfacing and comparison at the moment of decision. (Wedge inferred, not stated — needs Josh's confirmation.)"
+        }
       ],
       "whyItMatters": "Both models describe the same end-to-end product surface, but enter it from opposite ends. The choice determines the first cohort (members with value at risk vs. members with a stated goal), the first journey, the first metric, and what the team can demonstrate at the capstone.",
       "resolutionOptions": [
@@ -185,8 +278,14 @@
       "title": "Boundary conflict: is consumer-driven banking inside the system?",
       "severity": "blocking",
       "positions": [
-        {"submissionId": "SUB-SLY", "position": "Boundary covers the loyalty program, its partners, and its service pathways. No CDB, cross-bank data, or payment-rail variable exists in the model."},
-        {"submissionId": "SUB-JOSH", "position": "Boundary includes consumer-driven banking, authorized cross-bank data, ISO 20022 payment information, RTR and merchant integrations."}
+        {
+          "submissionId": "SUB-SLY",
+          "position": "Boundary covers the loyalty program, its partners, and its service pathways. No CDB, cross-bank data, or payment-rail variable exists in the model."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Boundary includes consumer-driven banking, authorized cross-bank data, ISO 20022 payment information, RTR and merchant integrations."
+        }
       ],
       "whyItMatters": "This is not a difference of opinion inside one system — the two contributors are modelling systems of different size. Merging nodes and relationships across a boundary mismatch produces a map that is internally inconsistent, which is why this blocks the structural merge rather than merely qualifying it.",
       "resolutionOptions": [
@@ -203,8 +302,14 @@
       "title": "Is personalization learning reinforcing or balancing?",
       "severity": "material",
       "positions": [
-        {"submissionId": "SUB-SLY", "position": "Learning from realized outcomes sits inside R1 and compounds — better outcomes produce better information, which produces better decisions."},
-        {"submissionId": "SUB-JOSH", "position": "Personalization learning is attached to B2 — Personalized Value & Breakage — a balancing loop that would stabilise rather than compound."}
+        {
+          "submissionId": "SUB-SLY",
+          "position": "Learning from realized outcomes sits inside R1 and compounds — better outcomes produce better information, which produces better decisions."
+        },
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Personalization learning is attached to B2 — Personalized Value & Breakage — a balancing loop that would stabilise rather than compound."
+        }
       ],
       "whyItMatters": "The same mechanism cannot be both without a difference somewhere in the link polarities. At least one loop is mis-specified, or the two are describing different mechanisms under similar names.",
       "resolutionOptions": [
@@ -212,16 +317,22 @@
         "Determine whether Josh's 'breakage' term introduces a negative link Sly's model does not have."
       ],
       "recommendedNext": "Cannot be resolved without GAP-01.",
-      "status": "unresolved",
-      "blockedBy": ["GAP-01"]
+      "status": "resolved",
+      "resolution": "Josh's balancing loop resolves to the breakage brake, not to a personalization-learning loop. The apparent contradiction came from his loop name pairing two mechanisms, not from a genuine disagreement about whether learning reinforces or balances."
     },
     {
       "id": "DV-05",
       "title": "Evidence asymmetry between submissions",
       "severity": "procedural",
       "positions": [
-        {"submissionId": "SUB-JOSH", "position": "Cites external sources: Deloitte loyalty research, Canada's CDB framework, Google's UK portability rules, loyalBe."},
-        {"submissionId": "SUB-SLY", "position": "One internal contract source; most claims are legacy evidence synthesis or analytical inference with source traceability still pending."}
+        {
+          "submissionId": "SUB-JOSH",
+          "position": "Cites external sources: Deloitte loyalty research, Canada's CDB framework, Google's UK portability rules, loyalBe."
+        },
+        {
+          "submissionId": "SUB-SLY",
+          "position": "One internal contract source; most claims are legacy evidence synthesis or analytical inference with source traceability still pending."
+        }
       ],
       "whyItMatters": "Where the two models overlap, Josh's citations must not silently promote Sly's shared claims to 'supported'. The classification model already forbids this, but a merge performed carelessly would do it anyway.",
       "resolutionOptions": [
@@ -232,37 +343,44 @@
       "status": "open"
     }
   ],
-
   "gaps": [
     {
       "id": "GAP-01",
       "title": "Josh's causal loop structure was not supplied",
       "detail": "Josh's document names R4 (Digital Friction & Engagement), R5 (Consumer-Driven Banking Awareness & Adoption) and B2 (Personalized Value & Breakage) as the loops his leverage points act on, but supplies no variables, links or polarities for them. Loop-level convergence with Sly's R1 and B1 cannot be computed.",
-      "blocks": ["CV-L05", "DV-04", "loop-level merge"],
+      "blocks": [],
       "askOf": "josh",
-      "ask": "Variables, links and polarities for R4, R5 and B2 — Parts 1–3 of the intake template."
+      "ask": "Variables, links and polarities for R4, R5 and B2 — Parts 1–3 of the intake template.",
+      "status": "closed",
+      "resolution": "CLOSED 10 Sept. All three loop structures reconstructed and approved by Josh. TR6's variables and polarities were constructed by this consolidation rather than supplied by him - recorded as approved, not as evidence."
     },
     {
       "id": "GAP-02",
       "title": "Loop numbering implies a team-wide loop register that is not in hand",
       "detail": "Sly's published model uses R1 and B1. Josh's uses R4, R5 and B2. Josh's numbering starts partway through a sequence, which implies Team Zig has a shared loop register containing at least R1-R5 and B1-B2 — and that Sly's published R1/B1 may or may not be the same R1/B1 Josh is counting from. If the numbering schemes are independent, two different loops may currently share the same label.",
-      "blocks": ["any loop merge", "convergence tab labelling"],
+      "blocks": [],
       "askOf": "team",
-      "ask": "Confirm whether a shared loop register exists. If it does, obtain it; if it does not, renumber on merge so no two loops share a code."
+      "ask": "Confirm whether a shared loop register exists. If it does, obtain it; if it does not, renumber on merge so no two loops share a code.",
+      "status": "closed",
+      "resolution": "CLOSED 10 Sept. Personal numbering retired; the nine canonical codes are now the only identifiers."
     },
     {
       "id": "GAP-03",
       "title": "Remaining contributors have not submitted",
       "detail": "Only Sylvester and Josh are represented. Convergence strength across two contributors is weak evidence of team convergence — a third independent agreement is what would make CV-L01 and CV-P01 genuinely strong.",
-      "blocks": ["final convergence strength ratings"],
+      "blocks": [],
       "askOf": "team",
-      "ask": "Remaining Team Zig submissions via the intake template."
+      "ask": "Remaining Team Zig submissions via the intake template.",
+      "status": "closed",
+      "resolution": "CLOSED 10 Sept. All six contributors are represented."
     },
     {
       "id": "GAP-04",
       "title": "Josh's product wedge is inferred, not stated",
       "detail": "JPM03 was marked as Josh's wedge candidate because his leverage points centre on goal-linked opportunity surfacing. Josh did not designate a starting point. DV-02 depends on this inference being correct.",
-      "blocks": ["DV-02"],
+      "blocks": [
+        "DV-02"
+      ],
       "askOf": "josh",
       "ask": "If you could only build one capability first, which one — and why that one?"
     }
