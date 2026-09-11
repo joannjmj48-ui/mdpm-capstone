@@ -120,6 +120,7 @@ def check_submission(sub, reg_vars=None, reg_loops=None):
 
 
 def check_convergence_refs(c):
+    c_contributors = c.get("contributors", [])
     """Every itemId a convergence cluster cites must exist in that submission.
     A cluster that merges an item nobody wrote is untraceable by definition."""
     index = {}
@@ -140,13 +141,20 @@ def check_convergence_refs(c):
         if cluster["strength"] not in c.get("convergenceStrength", {}):
             err(f"{cluster['id']}: unknown strength {cluster['strength']!r}")
         subs_seen = set()
+        people = {c["id"] for c in c_contributors}
         for m in cluster.get("members", []):
-            s_id, i_id = m["submissionId"], m["itemId"]
-            if s_id not in index:
-                err(f"{cluster['id']}: cites unknown submission {s_id}")
-            elif i_id not in index[s_id]:
-                err(f"{cluster['id']}: cites {i_id}, which does not exist in {s_id}")
-            subs_seen.add(s_id)
+            who = m.get("contributor") or m.get("submissionId")
+            if m.get("submissionId"):
+                s_id, i_id = m["submissionId"], m["itemId"]
+                if s_id not in index:
+                    err(f"{cluster['id']}: cites unknown submission {s_id}")
+                elif i_id not in index[s_id]:
+                    err(f"{cluster['id']}: cites {i_id}, which does not exist in {s_id}")
+            elif who not in people:
+                err(f"{cluster['id']}: cites unknown contributor {who!r}")
+            elif not m.get("framing"):
+                err(f"{cluster['id']}/{who}: no framing given, so the match cannot be checked")
+            subs_seen.add(who)
         if cluster["strength"] == "converged" and len(subs_seen) < 2:
             err(f"{cluster['id']}: rated 'converged' but draws on only "
                 f"{len(subs_seen)} contributor(s) — convergence requires independent agreement")

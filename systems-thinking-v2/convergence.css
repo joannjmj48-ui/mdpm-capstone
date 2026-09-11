@@ -223,3 +223,20 @@
   border: 1px solid var(--border); padding: 1px 6px; border-radius: 3px;
 }
 #loyalty-map-v2 .cv-phwho em { font-family: var(--font-mono); font-size: 10.5px; font-style: normal; color: var(--primary); margin-left: .2rem; }
+
+/* ---------- full-ring loop diagrams ---------- */
+#loyalty-map-v2 .cv-ring { display: block; width: 100%; height: auto; margin: .6rem 0 .2rem; }
+#loyalty-map-v2 .cv-nd { fill: var(--secondary); stroke: var(--border); stroke-width: 1.4; }
+#loyalty-map-v2 .cv-nd.is-first { stroke: var(--primary); stroke-width: 2.2; }
+#loyalty-map-v2 .cv-ndt { fill: var(--foreground); font-size: 11.5px; font-family: var(--font-sans); }
+#loyalty-map-v2 .cv-arc { fill: none; stroke: var(--green); stroke-width: 2; }
+#loyalty-map-v2 .cv-arc.is-neg { stroke: var(--destructive); stroke-width: 2.4; }
+#loyalty-map-v2 .cv-mk-p { fill: var(--green); }
+#loyalty-map-v2 .cv-mk-n { fill: var(--destructive); }
+#loyalty-map-v2 .cv-sgn { fill: var(--green); font-family: var(--font-mono); font-size: 19px; font-weight: 700; }
+#loyalty-map-v2 .cv-sgn.is-neg { fill: var(--destructive); font-size: 23px; }
+#loyalty-map-v2 .cv-ctr { fill: var(--green); font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; letter-spacing: .12em; }
+#loyalty-map-v2 .cv-ctr.is-bal { fill: var(--destructive); }
+#loyalty-map-v2 .cv-ctr2 { fill: var(--muted-foreground); font-size: 11.5px; font-family: var(--font-sans); }
+#loyalty-map-v2 .cv-src { display: block; margin-top: .2rem; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted-foreground); }
+#loyalty-map-v2 .cv-personloops { grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr)); }

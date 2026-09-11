@@ -44,11 +44,95 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
     });
   }
 
+  function nameOf(m) {
+    var id = m.contributor || m.submissionId;
+    var byId = DATA.contributors.filter(function (c) { return c.id === id; })[0];
+    var bySub = DATA.contributors.filter(function (c) { return c.submissionId === id; })[0];
+    return (byId || bySub || {}).displayName || id;
+  }
+
   function memberList(members) {
     return members.map(function (m) {
-      var who = (DATA.contributors.filter(function (c) { return c.submissionId === m.submissionId; })[0] || {}).displayName || m.submissionId;
-      return '<li><span class="cv-who">' + esc(who) + '</span><code>' + esc(m.itemId) + "</code><p>" + esc(m.framing) + "</p></li>";
+      return '<li><span class="cv-who">' + esc(nameOf(m)) + '</span><code>' + esc(m.itemId) + "</code><p>" +
+        esc(m.framing) + "</p>" + (m.source ? '<span class="cv-src">' + esc(m.source) + "</span>" : "") + "</li>";
     }).join("");
+  }
+
+  // ---- full-ring loop diagram -------------------------------------------
+  function wrap(label, per) {
+    var words = String(label).split(" "), lines = [""];
+    words.forEach(function (w) {
+      var i = lines.length - 1;
+      if ((lines[i] + " " + w).trim().length > per) lines.push(w);
+      else lines[i] = (lines[i] + " " + w).trim();
+    });
+    return lines.slice(0, 2);
+  }
+
+  function loopSvg(chain, negPairs, small) {
+    if (!chain || chain.length < 3) return "";
+    var seq = chain.slice(0, chain.length - 1);              // drop the repeated closing node
+    var n = seq.length;
+    if (n < 2) return "";
+    var neg = {};
+    (negPairs || []).forEach(function (pr) { neg[pr[0] + ">" + pr[1]] = true; });
+
+    var W = small ? 480 : 620, H = small ? 430 : 560;
+    var CX = W / 2, CY = H / 2 + (small ? 4 : 6);
+    var R = small ? 132 : 176;
+    var HW = small ? 62 : 78, HH = small ? 21 : 26;
+    var uid = "r" + Math.random().toString(36).slice(2, 8);
+    var out = ['<svg class="cv-ring" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Causal loop diagram">'];
+    out.push('<defs><marker id="p' + uid + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 z" class="cv-mk-p"/></marker>' +
+             '<marker id="n' + uid + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 z" class="cv-mk-n"/></marker></defs>');
+
+    var pos = seq.map(function (_, i) {
+      var a = (-90 + i * (360 / n)) * Math.PI / 180;
+      return [CX + R * Math.cos(a), CY + R * Math.sin(a)];
+    });
+
+    for (var i = 0; i < n; i++) {
+      var a = pos[i], b = pos[(i + 1) % n];
+      var isNeg = neg[seq[i] + ">" + seq[(i + 1) % n]];
+      var dx = b[0] - a[0], dy = b[1] - a[1], L = Math.sqrt(dx * dx + dy * dy) || 1;
+      var bnd = Math.min(dx ? HW / Math.abs(dx) : 1e9, dy ? HH / Math.abs(dy) : 1e9);
+      var g = 14 / L;
+      var sx = a[0] + dx * (bnd + g), sy = a[1] + dy * (bnd + g);
+      var ex = b[0] - dx * (bnd + g), ey = b[1] - dy * (bnd + g);
+      var bend = Math.min(46, L * 0.14);
+      var px = -dy / L, py = dx / L;
+      var mx0 = (sx + ex) / 2, my0 = (sy + ey) / 2;
+      if ((mx0 - CX) * px + (my0 - CY) * py < 0) { px = -px; py = -py; }
+      var mx = mx0 + px * bend, my = my0 + py * bend;
+      out.push('<path d="M ' + sx.toFixed(1) + " " + sy.toFixed(1) + " Q " + mx.toFixed(1) + " " + my.toFixed(1) +
+        " " + ex.toFixed(1) + " " + ey.toFixed(1) + '" class="cv-arc' + (isNeg ? " is-neg" : "") +
+        '" marker-end="url(#' + (isNeg ? "n" : "p") + uid + ')"/>');
+      var sgx = mx0 + px * (bend + 26), sgy = my0 + py * (bend + 26);
+      out.push('<text x="' + sgx.toFixed(1) + '" y="' + (sgy + 7).toFixed(1) + '" class="cv-sgn' +
+        (isNeg ? " is-neg" : "") + '" text-anchor="middle">' + (isNeg ? "&#8722;" : "+") + "</text>");
+    }
+
+    seq.forEach(function (id, i) {
+      var v = VARS[id], label = v ? v.label : id;
+      var x = pos[i][0], y = pos[i][1];
+      out.push('<rect x="' + (x - HW).toFixed(1) + '" y="' + (y - HH).toFixed(1) + '" width="' + HW * 2 +
+        '" height="' + HH * 2 + '" rx="3" class="cv-nd' + (i === 0 ? " is-first" : "") + '"/>');
+      var lines = wrap(label, small ? 15 : 18);
+      if (lines.length > 1) {
+        out.push('<text x="' + x.toFixed(1) + '" y="' + (y - 3).toFixed(1) + '" class="cv-ndt" text-anchor="middle">' + esc(lines[0]) + "</text>");
+        out.push('<text x="' + x.toFixed(1) + '" y="' + (y + 12).toFixed(1) + '" class="cv-ndt" text-anchor="middle">' + esc(lines[1]) + "</text>");
+      } else {
+        out.push('<text x="' + x.toFixed(1) + '" y="' + (y + 5).toFixed(1) + '" class="cv-ndt" text-anchor="middle">' + esc(lines[0]) + "</text>");
+      }
+    });
+
+    var negs = (negPairs || []).length;
+    out.push('<text x="' + CX + '" y="' + (CY - 4) + '" class="cv-ctr' + (negs % 2 ? " is-bal" : "") + '" text-anchor="middle">' +
+      (negs % 2 ? "BALANCING" : "REINFORCING") + "</text>");
+    out.push('<text x="' + CX + '" y="' + (CY + 17) + '" class="cv-ctr2" text-anchor="middle">' +
+      negs + " minus" + (negs === 1 ? "" : "es") + " &#183; " + (negs % 2 ? "pushes back" : "compounds") + "</text>");
+    out.push("</svg>");
+    return out.join("");
   }
 
   function clusterCard(c) {
@@ -74,8 +158,7 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
     if (d.blocksMerge) parts.push('<span class="cv-flag">blocks structural merge</span>');
     parts.push("</div><h4>" + esc(d.title) + "</h4></header>");
     parts.push('<div class="cv-positions">' + d.positions.map(function (p) {
-      var who = (DATA.contributors.filter(function (c) { return c.submissionId === p.submissionId; })[0] || {}).displayName || p.submissionId;
-      return '<div><span class="cv-who">' + esc(who) + "</span><p>" + esc(p.position) + "</p></div>";
+      return '<div><span class="cv-who">' + esc(nameOf(p)) + "</span><p>" + esc(p.position) + "</p></div>";
     }).join("") + "</div>");
     parts.push('<div class="cv-field"><span>Why it matters</span><p>' + esc(d.whyItMatters) + "</p></div>");
     if (d.resolutionOptions && d.resolutionOptions.length) {
@@ -146,7 +229,7 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       '<span class="cv-tally">' + people.length + " of 6</span></div>");
     parts.push("<h4>" + esc(loop.name) + "</h4></header>");
     parts.push('<p class="cv-loopsum">' + esc(loop.summary) + "</p>");
-    parts.push(chainStrip(loop.canonicalChain, loop.negativeLinks));
+    parts.push(loopSvg(loop.canonicalChain, loop.negativeLinks));
     parts.push('<p class="cv-parity"><strong>' + esc(loop.type) + "</strong> &middot; " +
       negs + " minus" + (negs === 1 ? "" : "es") + " &middot; " + parity + "</p>");
     if (loop.derivation) {
@@ -173,7 +256,7 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
         '<div class="cv-ploop-head"><strong>' + esc(c.name) + "</strong>" +
         (c.originalCode && c.originalCode !== "-" ? '<code>their code: ' + esc(c.originalCode) + "</code>" : "") +
         '<code class="cv-maps">maps to ' + esc(l.id) + "</code></div>" +
-        chainStrip(c.chain, l.negativeLinks) +
+        (c.chain && c.chain.length ? loopSvg(c.chain, l.negativeLinks, true) : '<p class="cv-nochain">Structure not supplied.</p>') +
         '<p class="cv-pnote">' + esc(c.note) + "</p>" +
         (c.evidence ? '<p class="cv-eff">' + esc(c.evidence) + "</p>" : "") +
         "</div>");
@@ -206,23 +289,23 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
         "</div>" +
       "</header>" +
       '<div class="cv-subnav" role="group" aria-label="Choose a convergence view">' +
-        '<button type="button" class="btn btn-primary" data-cv-panel="converge" aria-pressed="true">Convergence</button>' +
-        '<button type="button" class="btn" data-cv-panel="allloops" aria-pressed="false">Everyone&rsquo;s loops</button>' +
-        '<button type="button" class="btn" data-cv-panel="canon" aria-pressed="false">Converged loops</button>' +
+        '<button type="button" class="btn btn-primary" data-cv-panel="converge" aria-pressed="true">Where we agree</button>' +
+        '<button type="button" class="btn" data-cv-panel="allloops" aria-pressed="false">Every loop, by author</button>' +
+        '<button type="button" class="btn" data-cv-panel="canon" aria-pressed="false">The team&rsquo;s nine loops</button>' +
         '<button type="button" class="btn" data-cv-panel="diverge" aria-pressed="false">Divergence</button>' +
-        '<button type="button" class="btn" data-cv-panel="gaps" aria-pressed="false">Open gaps</button>' +
+        '<button type="button" class="btn" data-cv-panel="gaps" aria-pressed="false">Gaps (all closed)</button>' +
         '<button type="button" class="btn" data-cv-panel="who" aria-pressed="false">Contributors</button>' +
       "</div>" +
       '<div class="cv-panel" data-cv-panel-body="converge">' +
-        "<h3>Leverage points</h3>" +
+        "<h3>Leverage points &mdash; where to intervene</h3>" +
         '<div class="cv-grid">' + DATA.convergence.leverage.map(clusterCard).join("") + "</div>" +
-        "<h3>Product definition</h3>" +
+        "<h3>Product definition &mdash; what to build</h3>" +
         '<div class="cv-grid">' + DATA.convergence.product.map(clusterCard).join("") + "</div>" +
         '<p class="cv-fine">Convergence strength describes how independently contributors arrived at the same claim. It never upgrades epistemic status: ' +
         esc(DATA.classificationRule) + "</p>" +
       "</div>" +
       '<div class="cv-panel" data-cv-panel-body="allloops" hidden>' +
-        '<p class="cv-lead">Every loop anyone drew, as they drew it, grouped by author. Each one is labelled with the canonical loop it resolves to, so you can see which of your loops is also someone else&rsquo;s.</p>' +
+        '<p class="cv-lead">Every loop anyone drew, drawn as a full loop, grouped by author. Each one is labelled with the canonical loop it resolves to, so you can see which of your loops is also someone else&rsquo;s.</p>' +
         ["joann","sly","henry","josh","lia","ola"].map(personSection).join("") +
       "</div>" +
       '<div class="cv-panel" data-cv-panel-body="canon" hidden>' +

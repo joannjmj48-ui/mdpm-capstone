@@ -70,10 +70,10 @@ def main():
     cmap = load(DATA / "convergence-map.json")
     registry = load(DATA / "variable-registry.json")
 
-    known = {s["id"] for s in subs}
+    people = {c["id"] for c in CONTRIBUTORS}
     for declared in cmap.get("analysedSubmissions", []):
-        if declared not in known:
-            sys.exit(f"convergence-map.json analyses {declared}, which has no submission file")
+        if declared not in people:
+            sys.exit(f"convergence-map.json analyses {declared!r}, who is not a declared contributor")
 
     clusters = cmap["leverageConvergence"] + cmap["productConvergence"]
     counts = {}

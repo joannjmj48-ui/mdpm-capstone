@@ -1,10 +1,14 @@
 {
   "analysisVersion": "0.1.0",
   "analysedSubmissions": [
-    "SUB-SLY",
-    "SUB-JOSH"
+    "joann",
+    "sly",
+    "henry",
+    "josh",
+    "lia",
+    "ola"
   ],
-  "analysisNote": "Curated cross-contributor analysis. Matching is judgement, not string comparison — every cluster names the specific items it merges so the reasoning can be reconstructed and disputed. Strength describes how independently contributors arrived at the same claim; it never upgrades epistemic status.",
+  "analysisNote": "Curated cross-contributor analysis across all six contributors. Matching is judgement, not string comparison - every cluster names the specific item it merges so the reasoning can be reconstructed and disputed. Strength describes how independently contributors arrived at the same claim; it never upgrades epistemic status.",
   "leverageConvergence": [
     {
       "id": "CV-L01",
@@ -12,18 +16,31 @@
       "strength": "converged",
       "members": [
         {
-          "submissionId": "SUB-SLY",
+          "contributor": "sly",
           "itemId": "L04",
-          "framing": "Realized value as the system goal — align measures and decision rules around appropriate member value realization rather than value issued, activity alone, or breakage."
+          "framing": "Realized value as the system goal - align measures and decision rules around member value realization rather than value issued, activity alone, or breakage."
         },
         {
-          "submissionId": "SUB-JOSH",
+          "contributor": "josh",
           "itemId": "JL01",
-          "framing": "Reorient the system around member goal achievement — measure performance through worthwhile, realized value."
+          "framing": "Reorient the system around member goal achievement - measure performance through worthwhile, realized value.",
+          "source": "Milestone 2 document; 5 Sept session"
+        },
+        {
+          "contributor": "joann",
+          "itemId": "B1 leverage",
+          "framing": "Take breakage off the scorecard. 'A measure you can't count is a slogan' - the intervention is the scoreboard, not a feature.",
+          "source": "Talking script, 5 Sept"
+        },
+        {
+          "contributor": "ola",
+          "itemId": "B1",
+          "framing": "Frames the constraint as realization versus programme margin, which is the same scorecard tension.",
+          "source": "Digital Business Model System Loops"
         }
       ],
-      "whatConverged": "Both contributors independently identified the system's goal as the highest-leverage intervention, both placed it at Meadows #3, and both explicitly rejected activity, issuance or breakage as the measure of success. Neither treats this as something a product feature can deliver on its own.",
-      "whyItMatters": "Two independent analyses landing on the same Meadows level, with the same rejection of the same wrong metrics, is the strongest signal in the merged set. It is the most defensible shared foundation Team Zig currently has.",
+      "whatConverged": "Four contributors independently located the highest-leverage intervention at the system's goal, and all four rejected activity, issuance or breakage as the measure of success. Sly and Josh both placed it at Meadows #3 explicitly. Sly said so directly on the call: his first leverage point 'is exactly what you have there, Josh'.",
+      "whyItMatters": "Four independent analyses landing on the same level, rejecting the same wrong metrics, is the strongest signal in the set. It is the most defensible shared foundation Team Zig has.",
       "epistemicStatus": "inferred",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
@@ -37,18 +54,36 @@
       "strength": "converged",
       "members": [
         {
-          "submissionId": "SUB-SLY",
+          "contributor": "sly",
           "itemId": "L01",
-          "framing": "Shared value-state information — a reliable view of what is identified, eligible, pursued, qualified, earned, pending, posted, redeemed, fulfilled, or unresolved."
+          "framing": "Shared value-state information - a reliable view of what is identified, eligible, pursued, qualified, earned, pending, posted, redeemed, fulfilled or unresolved."
         },
         {
-          "submissionId": "SUB-JOSH",
+          "contributor": "josh",
           "itemId": "JL03",
-          "framing": "Restructure fragmented data and channels into an ambient loyalty experience — connect goals, Blue Rewards activity, relationship data, authorized cross-bank data, intent signals and ISO 20022 payment information."
+          "framing": "Restructure fragmented data and channels into an ambient loyalty experience."
+        },
+        {
+          "contributor": "joann",
+          "itemId": "The ledger",
+          "framing": "One page showing earned, pending with a post date, redeemed, expiring - in dollars, not points.",
+          "source": "Talking script, 5 Sept"
+        },
+        {
+          "contributor": "henry",
+          "itemId": "Reward Status Accuracy, Visibility & Clarity",
+          "framing": "A named variable in his balancing loop; restoring it is what resolves unresolved value.",
+          "source": "Balancing Loop diagram"
+        },
+        {
+          "contributor": "ola",
+          "itemId": "Real-Time Status",
+          "framing": "The node her reliability loop runs on - visibility into points and redemptions.",
+          "source": "System Loops PDF"
         }
       ],
-      "whatConverged": "Both classify this at Meadows #6 information flows, and both argue that nothing downstream can improve while value-state data stays fragmented. Both treat it as a precondition rather than as the product itself.",
-      "whyItMatters": "This is the shared dependency underneath both product directions. Whichever wedge the team chooses, this capability is on the critical path.",
+      "whatConverged": "Five of six. Sly and Josh classify it at Meadows #6 information flows; Joann, Henry and Ola each built it into their models as a named variable or capability. Nobody treats it as optional and nobody treats it as the product on its own.",
+      "whyItMatters": "This is the shared dependency underneath every product direction in the set, and it is phase 1 of the sequence the team is converging on.",
       "epistemicStatus": "inferred",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
@@ -59,95 +94,150 @@
     {
       "id": "CV-L03",
       "theme": "Missing and at-risk value must be detected and resolved",
-      "strength": "partial",
+      "strength": "converged",
       "members": [
         {
-          "submissionId": "SUB-SLY",
+          "contributor": "sly",
           "itemId": "L03",
-          "framing": "Exception detection and recovery — the primary product-action leverage point and the basis of the product wedge."
+          "framing": "Exception detection and recovery - the primary product-action leverage point and the basis of his product wedge."
         },
         {
-          "submissionId": "SUB-JOSH",
+          "contributor": "henry",
+          "itemId": "Detection, Explanation & Resolution Effort",
+          "framing": "The corrective mechanism in his balancing loop - the only contributor to close the correction into a loop.",
+          "source": "Balancing Loop diagram"
+        },
+        {
+          "contributor": "joann",
+          "itemId": "Missing-value detection",
+          "framing": "Phase 2 of her sequence: 'You can only spot a miss once you know what should have posted.'",
+          "source": "Talking script, 5 Sept"
+        },
+        {
+          "contributor": "josh",
           "itemId": "JL03",
-          "framing": "Merchant and RTR integrations could confirm qualifying payments, update rewards and resolve missing value — one capability within the data and channel restructure."
+          "framing": "Merchant and RTR integrations could confirm qualifying payments, update rewards and resolve missing value."
         }
       ],
-      "whatConverged": "Both models contain recovery of missing value, and both connect it to member trust.",
-      "whatDiffers": "Sly makes recovery the highest-leverage product action and the entire starting point. Josh treats it as a downstream benefit of integrating data and payment rails. Same mechanism, very different weight and sequencing.",
-      "whyItMatters": "The difference is not cosmetic: it decides whether the team builds recovery first and discovery later, or the reverse.",
-      "epistemicStatus": "contested",
-      "claimBasis": "analytical-inference",
-      "decisionStatus": "unresolved",
+      "whatConverged": "Four contributors include detection and recovery of missing value, and all four connect it to member trust.",
+      "whatDiffers": "Sly and Henry make it the central mechanism. Joann makes it phase 2, dependent on the ledger existing first. Josh treats it as a downstream benefit of integrating data and payment rails.",
+      "whyItMatters": "The mechanism is agreed; only its position in the build order differs, which the phase sequence in DV-02 settles.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
       "residualDivergenceIds": [
         "DV-02"
       ]
     },
     {
       "id": "CV-L04",
-      "theme": "Consent-aware account connection as an adoption mechanism",
-      "strength": "unique",
+      "theme": "Consent is spent by intrusion, so personalization has a ceiling",
+      "strength": "converged",
       "members": [
         {
-          "submissionId": "SUB-JOSH",
+          "contributor": "joann",
+          "itemId": "B2 Trust & consent",
+          "framing": "'Personalization runs on consent, and consent is spent by intrusion.' Every permission paired with the capability it unlocks.",
+          "source": "Initial product description"
+        },
+        {
+          "contributor": "lia",
+          "itemId": "Balancing loop",
+          "framing": "More data use raises privacy concerns, lowers trust, lowers willingness to share - 'more relevant, still in control'.",
+          "source": "Two Connected Loops diagram"
+        },
+        {
+          "contributor": "josh",
           "itemId": "JL02",
-          "framing": "Make CDB value visible before asking members to connect accounts — value preview, then progressive consent."
+          "framing": "Make CDB value visible before asking members to connect accounts - a value preview, then progressive consent."
         }
       ],
-      "whatConverged": "No counterpart in Sly's model. Sly's boundary does not include consumer-driven banking, so no equivalent leverage point exists to merge with.",
-      "whyItMatters": "This is not a disagreement — it is scope Sly's model never covered. It cannot be marked converged or contested until the team settles the boundary question in DV-03.",
-      "epistemicStatus": "unresolved",
-      "claimBasis": "analytical-inference",
-      "decisionStatus": "hypothesis",
-      "residualDivergenceIds": [
-        "DV-03"
-      ]
+      "whatConverged": "Three contributors independently modelled the same ceiling, two of them as a closed balancing loop. Josh reached it from the adoption side rather than the erosion side, but names the same mechanism.",
+      "whyItMatters": "It is the only constraint in the set that acts on the flywheel's fuel rather than its output, and it caps how hard the relevance loop can be pushed.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction"
     },
     {
       "id": "CV-L05",
-      "theme": "Learning from realized outcomes improves future decisions",
-      "strength": "partial",
+      "theme": "Learning from realized outcomes improves future relevance",
+      "strength": "converged",
       "members": [
         {
-          "submissionId": "SUB-SLY",
+          "contributor": "sly",
           "itemId": "L02",
-          "framing": "Decisioning based on realized outcomes — feed realization, failure and recovery outcomes back into future decisions. Placed in a reinforcing loop (R1)."
+          "framing": "Decisioning based on realized outcomes - feed realization, failure and recovery outcomes, not only impressions or activations, back into future decisions."
         },
         {
-          "submissionId": "SUB-JOSH",
-          "itemId": "JL01",
-          "framing": "Continued learning can move personalization toward a segment of one. Attached to B2 — Personalized Value & Breakage, a balancing loop."
+          "contributor": "joann",
+          "itemId": "R1",
+          "framing": "Permissioned signal richness improves decisioning relevance, which improves realized value.",
+          "source": "Five-loop systems map"
+        },
+        {
+          "contributor": "henry",
+          "itemId": "Member Data & Insight to Personalization Quality",
+          "framing": "The learning arc of his reinforcing loop.",
+          "source": "Reinforcing Loop diagram"
+        },
+        {
+          "contributor": "lia",
+          "itemId": "Behavioral Insights to Offer Relevance",
+          "framing": "'BMO can learn more about what they usually spend money on.'",
+          "source": "Two Connected Loops diagram"
+        },
+        {
+          "contributor": "ola",
+          "itemId": "Transaction Data to Relevant Offers",
+          "framing": "'More spend data feeds more analytics, which serves relevant offers.'",
+          "source": "System Loops PDF"
         }
       ],
-      "whatConverged": "Both contributors include a learning mechanism that improves relevance over time.",
-      "whatDiffers": "Sly places learning inside a reinforcing loop where it compounds. Josh's personalization thread turned out to sit on the breakage brake rather than on a learning loop, so the two are describing different mechanisms rather than contradicting each other.",
-      "whyItMatters": "If the same mechanism is reinforcing in one model and balancing in another, at least one loop is mis-specified. This cannot be resolved without Josh's loop structure.",
-      "epistemicStatus": "contested",
-      "claimBasis": "analytical-inference",
-      "decisionStatus": "unresolved",
-      "residualDivergenceIds": [
-        "DV-04"
-      ]
+      "whatConverged": "Five of six built the same learning arc into their reinforcing loop. It is the mechanism that makes the shared flywheel compound rather than merely repeat.",
+      "whatDiffers": "Only Sly insists the feedback be realized outcomes rather than impressions or activations. That distinction is his alone and is the sharpest version of the claim.",
+      "whyItMatters": "The team agrees the learning arc exists. Sly's refinement - learn from what was realized, not what was shown - is the part worth adopting deliberately rather than by default.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction"
     }
   ],
   "productConvergence": [
     {
       "id": "CV-P01",
-      "theme": "Members must be able to see earned, pending, redeemed and missing value",
+      "theme": "Members must see earned, pending, redeemed and missing value",
       "strength": "converged",
       "members": [
         {
-          "submissionId": "SUB-SLY",
+          "contributor": "sly",
           "itemId": "PM02",
-          "framing": "Track — make qualification, earning, posting, redemption, fulfilment and unresolved states visible."
+          "framing": "Track - make qualification, earning, posting, redemption, fulfilment and unresolved states visible."
         },
         {
-          "submissionId": "SUB-JOSH",
+          "contributor": "josh",
           "itemId": "JPM04",
           "framing": "Easily track goal progress as well as earned, pending, redeemed or missing rewards."
+        },
+        {
+          "contributor": "joann",
+          "itemId": "The six-state ledger",
+          "framing": "Earned, pending with a date, posted, redeemed, missing, expiring - in dollars, not points.",
+          "source": "Talking script"
+        },
+        {
+          "contributor": "henry",
+          "itemId": "Track and resolve",
+          "framing": "'Track the value they have earned, and resolve missing or unclear rewards.'",
+          "source": "Product definition"
+        },
+        {
+          "contributor": "ola",
+          "itemId": "Real-time status",
+          "framing": "'Members able to see what they are getting, their redemptions.'",
+          "source": "System Loops PDF"
         }
       ],
-      "whatConverged": "Near-identical capability, described independently in near-identical state language — including the same insistence that missing or unresolved value be visible, not just successful value.",
-      "whyItMatters": "The single most defensible product capability in the merged set. Both contributors would build it, and neither treats it as optional.",
+      "whatConverged": "Five of six, described independently in near-identical state language - including the same insistence that missing or unresolved value be visible, not only successful value.",
+      "whyItMatters": "The most defensible product capability in the set. Five people would build it and none treat it as optional. It is phase 1.",
       "epistemicStatus": "inferred",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction"
@@ -158,19 +248,37 @@
       "strength": "converged",
       "members": [
         {
-          "submissionId": "SUB-SLY",
+          "contributor": "sly",
           "itemId": "PM01",
-          "framing": "Discover — surface worthwhile, attainable reward opportunities a member can understand and act upon."
+          "framing": "Discover - surface worthwhile, attainable reward opportunities a member can understand and act upon."
         },
         {
-          "submissionId": "SUB-JOSH",
+          "contributor": "josh",
           "itemId": "JPM03",
-          "framing": "Receive timely, goal-linked opportunities and incentives."
+          "framing": "Receive timely, goal-linked opportunities and incentives. Confirmed as his starting capability."
+        },
+        {
+          "contributor": "henry",
+          "itemId": "Discover relevant opportunities",
+          "framing": "'Tied to spending they already intend to do.'",
+          "source": "Product definition"
+        },
+        {
+          "contributor": "lia",
+          "itemId": "Offer relevance",
+          "framing": "'If the offers actually fit their everyday spending, members might feel they are getting more value.'",
+          "source": "5 Sept session"
+        },
+        {
+          "contributor": "joann",
+          "itemId": "Opportunities legible as help",
+          "framing": "Offers that state why this member is seeing this offer now - 'relevance is demonstrated rather than asserted'.",
+          "source": "Initial product description"
         }
       ],
-      "whatConverged": "Both include relevance-driven opportunity surfacing as a member-facing capability.",
-      "whatDiffers": "Sly qualifies relevance as worthwhile and attainable; Josh qualifies it as goal-linked. Josh's version requires the member to have stated a goal first.",
-      "whyItMatters": "The qualifier determines the data dependency: Sly's can be inferred from behaviour, Josh's requires explicit member input.",
+      "whatConverged": "Five of six include relevance-driven opportunity surfacing as a member-facing capability.",
+      "whatDiffers": "The qualifier differs and it matters. Sly and Henry qualify relevance by what the member already intends to buy - inferable from behaviour. Josh qualifies it by a goal the member has stated - which requires member input and consent first.",
+      "whyItMatters": "The qualifier sets the data dependency, and therefore whether this can ship before or after goal capture.",
       "epistemicStatus": "inferred",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
@@ -180,21 +288,33 @@
     },
     {
       "id": "CV-P03",
-      "theme": "Same channel assumption",
+      "theme": "Same channel assumption: embedded, not a new destination",
       "strength": "converged",
       "members": [
         {
-          "submissionId": "SUB-SLY",
+          "contributor": "sly",
           "itemId": "channelAssumption",
-          "framing": "Embedded within existing authenticated BMO and Blue Rewards digital touchpoints, connecting to rather than replacing current systems."
+          "framing": "Embedded within existing authenticated BMO and Blue Rewards touchpoints, connecting to rather than replacing current systems."
         },
         {
-          "submissionId": "SUB-JOSH",
+          "contributor": "josh",
           "itemId": "channelAssumption",
-          "framing": "Begins in existing BMO and Blue Rewards channels and, with member permission, combines BMO, loyalty, partner and connected financial data."
+          "framing": "Begins in existing BMO and Blue Rewards channels and, with permission, combines BMO, loyalty, partner and connected financial data."
+        },
+        {
+          "contributor": "henry",
+          "itemId": "Embedded experience",
+          "framing": "'Embedded within existing BMO and Blue Rewards digital channels.'",
+          "source": "Product definition"
+        },
+        {
+          "contributor": "joann",
+          "itemId": "Inside the BMO app",
+          "framing": "'It lives inside the BMO app, on top of the accrual engine we already have. It doesn't issue points and it doesn't set what they're worth.'",
+          "source": "Talking script"
         }
       ],
-      "whatConverged": "Both independently assume an embedded experience in existing authenticated channels, and both explicitly decline to replace underlying loyalty, banking or partner systems.",
+      "whatConverged": "Four of six independently assume an embedded experience in existing authenticated channels, and all four explicitly decline to replace the underlying loyalty, banking or partner systems. Nobody proposed a standalone app.",
       "whyItMatters": "Removes a whole class of architectural argument from the team's remaining decisions.",
       "epistemicStatus": "assumed",
       "claimBasis": "group-convergence",
@@ -202,25 +322,27 @@
     },
     {
       "id": "CV-P04",
-      "theme": "Goal setting and goal-progress tracking",
-      "strength": "unique",
+      "theme": "Member-stated goals as the organizing unit of value",
+      "strength": "partial",
       "members": [
         {
-          "submissionId": "SUB-JOSH",
+          "contributor": "josh",
           "itemId": "JPM01",
           "framing": "Set custom financial and reward goals, preferences and data permissions."
         },
         {
-          "submissionId": "SUB-JOSH",
-          "itemId": "JPM02",
-          "framing": "Compare how spending, saving, payment and redemption choices could help achieve goals."
+          "contributor": "joann",
+          "itemId": "Declare a goal",
+          "framing": "'Makes the unit of value the member's own goal - a trip, a debt paydown, a savings target.'",
+          "source": "Initial product description"
         }
       ],
-      "whatConverged": "No counterpart in Sly's product definition. Sly's model has no member-stated goal construct at all.",
-      "whyItMatters": "This is the concrete product consequence of DV-01. If the team adopts Josh's organizing objective, these capabilities become mandatory; if it adopts Sly's, they are optional.",
-      "epistemicStatus": "unresolved",
-      "claimBasis": "analytical-inference",
-      "decisionStatus": "hypothesis",
+      "whatConverged": "Two contributors build the product around a goal the member states, rather than around a points balance.",
+      "whatDiffers": "Joann treats the goal as the unit of value but keeps realized value as the measurable proxy. Josh treats goal achievement as the system's organizing objective outright.",
+      "whyItMatters": "This is the concrete product consequence of DV-01, and it is phase 3 rather than phase 1 in the agreed sequence.",
+      "epistemicStatus": "inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
       "residualDivergenceIds": [
         "DV-01"
       ]
@@ -229,26 +351,27 @@
   "divergences": [
     {
       "id": "DV-01",
-      "title": "What organizes the system: delivered outcome or stated intent?",
-      "severity": "material",
+      "title": "What organizes the system - settled",
+      "severity": "settled",
       "positions": [
         {
-          "submissionId": "SUB-SLY",
-          "position": "Member value realization — did the worthwhile value the member was promised actually get delivered and become usable? Measurable from system events without asking the member anything."
+          "position": "Member value realization — did the worthwhile value the member was promised actually get delivered and become usable? Measurable from system events without asking the member anything.",
+          "contributor": "sly"
         },
         {
-          "submissionId": "SUB-JOSH",
-          "position": "Member goal achievement — did the member advance the goal they set? Requires the member to state a goal, and requires consent to combine data against it."
+          "position": "Member goal achievement — did the member advance the goal they set? Requires the member to state a goal, and requires consent to combine data against it.",
+          "contributor": "josh"
         }
       ],
-      "whyItMatters": "These are close enough to be mistaken for the same idea and different enough to produce different products. Realization can be measured passively; goal achievement cannot. Adopting Josh's objective adds a member-input dependency, a consent dependency, and a cold-start problem for members who never set a goal. Adopting Sly's leaves the system unable to distinguish value the member wanted from value the member merely received.",
+      "whyItMatters": "Nesting keeps both contributors' reasoning. Sly's model stays measurable from day one; Josh's objective stays the point of the exercise. It also avoids the cold-start problem - members who never set a goal still have realized value measured for them.",
       "resolutionOptions": [
         "Treat realization as the measurable proxy and goal achievement as the intent it serves — nest rather than choose.",
         "Adopt goal achievement as the system goal and accept the member-input dependency.",
         "Keep both and test whether goal-setters behave differently from non-goal-setters."
       ],
-      "recommendedNext": "Nesting is the least destructive option and preserves both contributors' reasoning, but it must be tested against the cold-start case rather than assumed.",
-      "status": "unresolved"
+      "recommendedNext": "Settled 10 Sept. Main variable: Realized Value. Ultimate goal: member goal achievement.",
+      "status": "resolved",
+      "resolution": "Realized Value is the main variable and the system's organizing construct. Member goal achievement is the ultimate goal it serves. Realization is the measurable proxy: it can be read from system events without asking the member anything, which means the system can be run and improved before any member has stated a goal. Goal achievement is what realization is for, and it enters the product at phase 3 rather than phase 1."
     },
     {
       "id": "DV-02",
@@ -256,28 +379,28 @@
       "severity": "material",
       "positions": [
         {
-          "submissionId": "SUB-JOANN",
-          "position": "Start with the ledger. Six value states, six failure modes, one capability each. 'Make it true' — everything else needs the state model to exist first."
+          "position": "Start with the ledger. Six value states, six failure modes, one capability each. 'Make it true' — everything else needs the state model to exist first.",
+          "contributor": "joann"
         },
         {
-          "submissionId": "SUB-OLA",
-          "position": "Start with real-time status visibility. Her reliability loop (TR4) runs on members being able to see where value stands."
+          "position": "Start with real-time status visibility. Her reliability loop (TR4) runs on members being able to see where value stands.",
+          "contributor": "ola"
         },
         {
-          "submissionId": "SUB-SLY",
-          "position": "Start at the end of the chain. Proactive Value Assurance and Recovery: detect at-risk value, resolve or route it, verify realization."
+          "position": "Start at the end of the chain. Proactive Value Assurance and Recovery: detect at-risk value, resolve or route it, verify realization.",
+          "contributor": "sly"
         },
         {
-          "submissionId": "SUB-JOSH",
-          "position": "Start at the front. Goal-linked opportunity surfacing — confirmed 10 Sept, not inferred."
+          "position": "Start at the front. Goal-linked opportunity surfacing — confirmed 10 Sept, not inferred.",
+          "contributor": "josh"
         },
         {
-          "submissionId": "SUB-HENRY",
-          "position": "No explicit starting point; his definition spans discovery, comparison, tracking and resolution."
+          "position": "No explicit starting point; his definition spans discovery, comparison, tracking and resolution.",
+          "contributor": "henry"
         },
         {
-          "submissionId": "SUB-LIA",
-          "position": "Relevance with member control — 'easier and more relevant to use, while still giving members control'."
+          "position": "Relevance with member control — 'easier and more relevant to use, while still giving members control'.",
+          "contributor": "lia"
         }
       ],
       "whyItMatters": "With Josh's wedge confirmed, the positions are genuinely different rather than ambiguous. But they are not competing: they sit in dependency order. You cannot detect that value is missing until you know what should have posted, and you cannot personalize credibly until delivery is reliable enough to have earned the consent that personalization runs on.",
@@ -341,12 +464,12 @@
       "severity": "blocking",
       "positions": [
         {
-          "submissionId": "SUB-SLY",
-          "position": "Boundary covers the loyalty program, its partners, and its service pathways. No CDB, cross-bank data, or payment-rail variable exists in the model."
+          "position": "Boundary covers the loyalty program, its partners, and its service pathways. No CDB, cross-bank data, or payment-rail variable exists in the model.",
+          "contributor": "sly"
         },
         {
-          "submissionId": "SUB-JOSH",
-          "position": "Boundary includes consumer-driven banking, authorized cross-bank data, ISO 20022 payment information, RTR and merchant integrations."
+          "position": "Boundary includes consumer-driven banking, authorized cross-bank data, ISO 20022 payment information, RTR and merchant integrations.",
+          "contributor": "josh"
         }
       ],
       "whyItMatters": "This is not a difference of opinion inside one system — the two contributors are modelling systems of different size. Merging nodes and relationships across a boundary mismatch produces a map that is internally inconsistent, which is why this blocks the structural merge rather than merely qualifying it.",
@@ -365,12 +488,12 @@
       "severity": "material",
       "positions": [
         {
-          "submissionId": "SUB-SLY",
-          "position": "Learning from realized outcomes sits inside R1 and compounds — better outcomes produce better information, which produces better decisions."
+          "position": "Learning from realized outcomes sits inside R1 and compounds — better outcomes produce better information, which produces better decisions.",
+          "contributor": "sly"
         },
         {
-          "submissionId": "SUB-JOSH",
-          "position": "Personalization learning is attached to B2 — Personalized Value & Breakage — a balancing loop that would stabilise rather than compound."
+          "position": "Personalization learning is attached to B2 — Personalized Value & Breakage — a balancing loop that would stabilise rather than compound.",
+          "contributor": "josh"
         }
       ],
       "whyItMatters": "The same mechanism cannot be both without a difference somewhere in the link polarities. At least one loop is mis-specified, or the two are describing different mechanisms under similar names.",
@@ -388,12 +511,12 @@
       "severity": "procedural",
       "positions": [
         {
-          "submissionId": "SUB-JOSH",
-          "position": "Cites external sources: Deloitte loyalty research, Canada's CDB framework, Google's UK portability rules, loyalBe."
+          "position": "Cites external sources: Deloitte loyalty research, Canada's CDB framework, Google's UK portability rules, loyalBe.",
+          "contributor": "josh"
         },
         {
-          "submissionId": "SUB-SLY",
-          "position": "One internal contract source; most claims are legacy evidence synthesis or analytical inference with source traceability still pending."
+          "position": "One internal contract source; most claims are legacy evidence synthesis or analytical inference with source traceability still pending.",
+          "contributor": "sly"
         }
       ],
       "whyItMatters": "Where the two models overlap, Josh's citations must not silently promote Sly's shared claims to 'supported'. The classification model already forbids this, but a merge performed carelessly would do it anyway.",
