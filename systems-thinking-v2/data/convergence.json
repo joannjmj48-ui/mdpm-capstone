@@ -1945,26 +1945,88 @@
     },
     {
       "id": "DV-02",
-      "title": "Where the product starts: protect value in motion, or direct value toward goals?",
+      "title": "Where the product starts — three answers that turn out to be three phases",
       "severity": "material",
       "positions": [
         {
+          "submissionId": "SUB-JOANN",
+          "position": "Start with the ledger. Six value states, six failure modes, one capability each. 'Make it true' — everything else needs the state model to exist first."
+        },
+        {
+          "submissionId": "SUB-OLA",
+          "position": "Start with real-time status visibility. Her reliability loop (TR4) runs on members being able to see where value stands."
+        },
+        {
           "submissionId": "SUB-SLY",
-          "position": "Start at the end of the chain. Wedge = Proactive Value Assurance and Recovery: detect at-risk value, resolve or route it, verify realization."
+          "position": "Start at the end of the chain. Proactive Value Assurance and Recovery: detect at-risk value, resolve or route it, verify realization."
         },
         {
           "submissionId": "SUB-JOSH",
-          "position": "Start at the front of the chain. Emphasis on goal-linked opportunity surfacing and comparison at the moment of decision. (Wedge inferred, not stated — needs Josh's confirmation.)"
+          "position": "Start at the front. Goal-linked opportunity surfacing — confirmed 10 Sept, not inferred."
+        },
+        {
+          "submissionId": "SUB-HENRY",
+          "position": "No explicit starting point; his definition spans discovery, comparison, tracking and resolution."
+        },
+        {
+          "submissionId": "SUB-LIA",
+          "position": "Relevance with member control — 'easier and more relevant to use, while still giving members control'."
         }
       ],
-      "whyItMatters": "Both models describe the same end-to-end product surface, but enter it from opposite ends. The choice determines the first cohort (members with value at risk vs. members with a stated goal), the first journey, the first metric, and what the team can demonstrate at the capstone.",
+      "whyItMatters": "With Josh's wedge confirmed, the positions are genuinely different rather than ambiguous. But they are not competing: they sit in dependency order. You cannot detect that value is missing until you know what should have posted, and you cannot personalize credibly until delivery is reliable enough to have earned the consent that personalization runs on.",
       "resolutionOptions": [
-        "Recovery first — narrower, has a detectable trigger, produces an observable member outcome without needing goals.",
-        "Discovery first — broader reach, but depends on goal capture and consent landing first.",
-        "Sequence explicitly: recovery proves reliability, then goals direct relevance."
+        "Adopt Joann's four-phase sequence, which already contains every other position as a phase.",
+        "Pick one wedge and treat the others as later releases without a stated dependency argument.",
+        "Run discovery and recovery in parallel and accept the consent risk."
       ],
-      "recommendedNext": "Confirm with Josh whether JPM03 is genuinely his intended starting point before treating this as a real disagreement — the inference may be wrong.",
-      "status": "unresolved"
+      "recommendedNext": "Joann's phasing resolves this without anyone losing their position: 1 Make it true (the ledger — Joann, Ola) · 2 Make it safe (missing-value detection — Sly) · 3 Make it relevant (goal-linked surfacing — Josh, Lia) · 4 Make it wider (beyond BMO's channels — Josh's CDB loop). Henry's definition spans phases 1 to 3. Put this to the team as a sequencing proposal rather than a choice between wedges.",
+      "status": "resolvable",
+      "synthesis": {
+        "headline": "Four phases, and every contributor's starting point is already one of them.",
+        "phases": [
+          {
+            "n": 1,
+            "name": "Make it true",
+            "what": "The six-state ledger. Earned, pending, posted, redeemed, missing, expiring — in dollars.",
+            "who": [
+              "Joann",
+              "Ola"
+            ],
+            "loop": "TR4 reliability and trust"
+          },
+          {
+            "n": 2,
+            "name": "Make it safe",
+            "what": "Missing-value detection and recovery. Only possible once the state model exists.",
+            "who": [
+              "Sly",
+              "Henry"
+            ],
+            "loop": "TB3 value gap"
+          },
+          {
+            "n": 3,
+            "name": "Make it relevant",
+            "what": "Goal-linked opportunity surfacing. Spends the trust that phases 1 and 2 earn.",
+            "who": [
+              "Josh",
+              "Lia",
+              "Henry"
+            ],
+            "loop": "TR1 relevance flywheel"
+          },
+          {
+            "n": 4,
+            "name": "Make it wider",
+            "what": "Context beyond BMO's own channels. Needs consent, which needs a record of trustworthiness.",
+            "who": [
+              "Josh"
+            ],
+            "loop": "TR5 connected-data adoption"
+          }
+        ],
+        "note": "The sequence is not a compromise. Each phase is a precondition for the next, and each maps to a loop the team converged on independently."
+      }
     },
     {
       "id": "DV-03",
@@ -2071,11 +2133,11 @@
       "id": "GAP-04",
       "title": "Josh's product wedge is inferred, not stated",
       "detail": "JPM03 was marked as Josh's wedge candidate because his leverage points centre on goal-linked opportunity surfacing. Josh did not designate a starting point. DV-02 depends on this inference being correct.",
-      "blocks": [
-        "DV-02"
-      ],
+      "blocks": [],
       "askOf": "josh",
-      "ask": "If you could only build one capability first, which one — and why that one?"
+      "ask": "If you could only build one capability first, which one — and why that one?",
+      "status": "closed",
+      "resolution": "CLOSED 10 Sept, confirmed via Joann. Josh's starting capability is goal-linked opportunity surfacing (JPM03), as inferred. DV-02 no longer rests on an inference."
     }
   ]
 }

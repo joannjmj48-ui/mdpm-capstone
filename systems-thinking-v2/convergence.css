@@ -204,3 +204,22 @@
 #loyalty-map-v2 .cv-diagcell strong { font-size: var(--font-size-h3); color: var(--foreground); }
 #loyalty-map-v2 .cv-was { font-style: normal; color: var(--muted-foreground); text-decoration: line-through; }
 #loyalty-map-v2 .cv-note { font-size: 13px; color: var(--muted-foreground); margin-top: .7rem; }
+
+/* phase synthesis */
+#loyalty-map-v2 .cv-synth { margin-top: 1rem; padding: 1rem 1.1rem; background: var(--sunken); border-radius: var(--radius); }
+#loyalty-map-v2 .cv-phases { list-style: none; margin: .8rem 0 0; padding: 0; display: grid; gap: .7rem; }
+#loyalty-map-v2 .cv-phases li { display: grid; grid-template-columns: 2rem 1fr; gap: 0 .8rem; align-items: start; }
+#loyalty-map-v2 .cv-phn {
+  display: flex; align-items: center; justify-content: center;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--primary); color: var(--primary-foreground);
+  font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+}
+#loyalty-map-v2 .cv-phases strong { font-size: 15px; }
+#loyalty-map-v2 .cv-phases p { margin: .15rem 0 0; font-size: 13.5px; color: var(--muted-foreground); }
+#loyalty-map-v2 .cv-phwho { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; margin-top: .4rem; }
+#loyalty-map-v2 .cv-phwho span {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .04em;
+  border: 1px solid var(--border); padding: 1px 6px; border-radius: 3px;
+}
+#loyalty-map-v2 .cv-phwho em { font-family: var(--font-mono); font-size: 10.5px; font-style: normal; color: var(--primary); margin-left: .2rem; }

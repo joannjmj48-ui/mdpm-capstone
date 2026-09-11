@@ -82,6 +82,16 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       parts.push('<div class="cv-field"><span>Ways to resolve it</span><ul class="cv-options">' +
         d.resolutionOptions.map(function (o) { return "<li>" + esc(o) + "</li>"; }).join("") + "</ul></div>");
     }
+    if (d.synthesis) {
+      parts.push('<div class="cv-synth"><span class="cv-kicker">' + esc(d.synthesis.headline) + "</span>");
+      parts.push('<ol class="cv-phases">' + d.synthesis.phases.map(function (ph) {
+        return '<li><span class="cv-phn">' + ph.n + "</span><div><strong>" + esc(ph.name) + "</strong>" +
+          "<p>" + esc(ph.what) + "</p>" +
+          '<div class="cv-phwho">' + ph.who.map(function (w) { return "<span>" + esc(w) + "</span>"; }).join("") +
+          '<em>' + esc(ph.loop) + "</em></div></div></li>";
+      }).join("") + "</ol>");
+      parts.push('<p class="cv-note">' + esc(d.synthesis.note) + "</p></div>");
+    }
     if (d.recommendedNext) parts.push('<div class="cv-field is-next"><span>Suggested next step</span><p>' + esc(d.recommendedNext) + "</p></div>");
     parts.push("</article>");
     return parts.join("");
