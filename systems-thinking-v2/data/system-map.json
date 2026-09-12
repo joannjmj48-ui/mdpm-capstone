@@ -1859,10 +1859,10 @@
       "applicableTabs": [
         "transition"
       ],
-      "definition": "The stock of points a member already holds. Earned value posts into it, and it is what makes value available to spend. Signing up grants roughly 750 points, so a new member holds a balance having earned nothing, and a long-standing member holds one regardless of this week's activity.",
-      "roleInSystem": "Sits between Earned and Available Value. Earned value accumulates into the balance once posted; the balance is what a member draws on. It is also why the progression is sequential without being one mandatory journey - a member joins the cycle at whichever state their balance already puts them in.",
-      "whyItMatters": "Raised on 12 September: 'you're assuming they're starting from zero - you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at Opportunity, which almost none do.",
-      "known": "Sign-up grants roughly 750 points.",
+      "definition": "The stock of posted points a member holds. It fills two ways. Most of it is earned through qualifying activity and posts once processed. The rest arrives at enrolment: signing up grants roughly 750 points, which is still earned — enrolment is the qualifying behaviour — it simply completes in one step.",
+      "roleInSystem": "Sits between Earned and Available Value. It is why the progression is sequential without being one mandatory journey: a member joins the cycle at whichever state their balance already puts them in. A brand-new member is already holding available value, and a five-year customer holds a balance regardless of this week's activity.",
+      "whyItMatters": "Raised on 12 September: 'you're assuming they're starting from zero — you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at the catalogue, which almost none do. The sign-up grant is the clearest case: the offer is weighed by a prospect, enrolment earns it, and it posts immediately.",
+      "known": "Sign-up grants roughly 750 points, earned by enrolling.",
       "provisional": "The actual sign-up grant, expiry behaviour and how balance is segmented by member type are not yet established.",
       "opportunityImplication": "A member's entry state is a design input for onboarding and for the ledger.",
       "status": "active",
@@ -1912,7 +1912,7 @@
     {
       "id": "potential-value",
       "label": "Potential Value",
-      "definition": "The rewards that reached a particular member, and which that member is weighing up. Two things have happened: the catalogue was filtered to them, and they are working out what it is worth to them — is it attainable, is it worth the effort, is it what they actually want. It is called potential value because this is where value first exists in the member's eyes, as something they could have. Nothing is theirs yet.",
+      "definition": "The rewards that reached a particular member, and which that member is weighing up. Two things have happened: the catalogue was filtered to them, and they are working out what it is worth to them — is it attainable, is it worth the effort, is it what they actually want. It is called potential value because this is where value first exists in the member's eyes, as something they could have. Nothing is theirs yet. At the very front of the chain the person weighing it may not be a member yet: a join-and-get-750-points offer is weighed by a prospect, who becomes a member by acting on it.",
       "entryCondition": "The opportunity is surfaced to this member as relevant and eligible, and the member begins weighing it.",
       "exitCondition": "The member decides to act and completes the qualifying requirement.",
       "order": 2,
@@ -1929,7 +1929,7 @@
     {
       "id": "earned-value",
       "label": "Earned Value",
-      "definition": "Value the member has decided to act on and acted to secure — they completed the qualifying purchase, activity or requirement. The decision has been made and carried out, but the value may not have posted yet.",
+      "definition": "Value the member has decided to act on and acted to secure — they completed the qualifying purchase, activity or requirement. The decision has been made and carried out, but the value may not have posted yet. Enrolment counts: signing up is itself a qualifying behaviour, which is how a sign-up grant of roughly 750 points is earned rather than simply appearing.",
       "entryCondition": "The member acts on the opportunity and satisfies the applicable qualification rule.",
       "exitCondition": "The earned value posts into the member's balance and becomes usable.",
       "order": 3,
@@ -1941,7 +1941,7 @@
         "SRC-CONTRACT-001"
       ],
       "region": "The five value states",
-      "plainLanguage": "The member did the thing. It's theirs, even if it hasn't landed yet."
+      "plainLanguage": "The member did the thing — including, at the very start, signing up. It's theirs, even if it hasn't landed yet."
     },
     {
       "id": "available-value",
