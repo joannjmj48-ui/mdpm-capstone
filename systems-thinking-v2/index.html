@@ -822,6 +822,7 @@ svg {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
 <link rel="stylesheet" href="narrative.css?v=1">
 <link rel="stylesheet" href="regions.css?v=2">
+<link rel="stylesheet" href="opportunity.css?v=1">
 </head>
 <body>
 <div id="loyalty-map-v2" class="lm2-root">
@@ -829,8 +830,8 @@ svg {
   <div class="viz-controls" aria-label="Choose a map view">
     <button type="button" class="btn btn-primary" data-map-view="current" aria-pressed="true">1. Current System</button>
     <button type="button" class="btn" data-map-view="transition" aria-pressed="false">2. How Value Progresses</button>
-    <button type="button" class="btn" data-map-view="future" aria-pressed="false">3. Future Opportunity</button>
-    <button type="button" class="btn" data-map-view="external" aria-pressed="false">4. Outside the Boundary</button>
+    <button type="button" class="btn" data-map-view="future" aria-pressed="false">4. Future Opportunity</button>
+    <button type="button" class="btn" data-map-view="external" aria-pressed="false">3. Outside the Boundary</button>
   </div>
 
   <div class="lm2-instruction-row" aria-label="Map help options">
@@ -2065,7 +2066,7 @@ svg {
       "role": "It would create the usable context required for decisioning without treating ownership as unrestricted access to all member data.",
       "why": "Relevant orchestration depends on knowing which signals belong together and which uses the person has consented to.",
       "known": "Program and banking relationships generate different data. Privacy, consent and organizational access conditions apply to any connection.",
-      "provisional": "The current identity architecture, consent model, data rights and cross-organizational access are not established.",
+      "provisional": "The current identity architecture, consent model, data rights and cross-organizational access are not established. Constrained by TB2 Trust and consent. Joann, Lia and Josh each modelled permission as something intrusion spends rather than a resource the system holds. Personalization intensity raises perceived intrusion, which narrows consent, which thins the very signal this capability depends on. This capability is therefore a consequence of being trusted, not a precondition that can simply be built.",
       "opportunity": "Connect only the context required to create explainable member and partner value under clear governance.",
       "chain": [
         "Identity resolution",
@@ -2126,7 +2127,7 @@ svg {
       "role": "Carries selected opportunities and value coherently through channels, fulfilment, access and recovery.",
       "why": "Relevant targeting cannot produce meaningful engagement if access, posting, redemption or issue resolution fails.",
       "known": "Channels and service capabilities already exist, while some public signals show reliability and handoff issues.",
-      "provisional": "The degree of coordination required, implementation cost and risk of tightly coupled failures remain unknown.",
+      "provisional": "The degree of coordination required, implementation cost and risk of tightly coupled failures remain unknown. Constrained by TB3 Value gap. Henry and Sly drew this as a closed loop rather than a capability: promised value that does not visibly arrive creates uncertainty, which triggers detection and resolution effort, which restores clarity. Coordinated delivery only holds if that correction loop is working; installing the capability does not by itself close the gap.",
       "opportunity": "Test whether fit-for-purpose coordination improves access and reliable fulfilment without creating tightly coupled failure modes.",
       "chain": [
         "Relevant decision",
@@ -2181,7 +2182,7 @@ svg {
       "role": "It is the client’s ultimate organizational outcome and prevents revenue growth from being assessed without the costs and liabilities required to produce it.",
       "why": "Engagement, membership and higher spending are not sufficient evidence of ROI unless they are incremental and exceed rewards, technology, operating and risk costs.",
       "known": "Potential benefits include acquisition, product use, share of wallet, retention, partner revenue, insight and economies of scale.",
-      "provisional": "Incrementality, partner economics, conversion persistence, total costs and the time required to realize returns remain unmeasured.",
+      "provisional": "Incrementality, partner economics, conversion persistence, total costs and the time required to realize returns remain unmeasured. Constrained by TB1 Program economics. Joann, Ola and Josh independently found the brake that sits under this outcome: realization up, redemption up, breakage revenue down, margin headroom down, offer generosity down. This outcome is reachable only if breakage is replaced as the measure, which is what the conversion pathway below is for.",
       "opportunity": "Build a measurement model that connects engagement and relationship movement to causal, long-term net value.",
       "chain": [
         "Consumer relationship value",
@@ -3115,6 +3116,14 @@ svg {
           "future",
           null,
           "FUT-R08"
+        ],
+        [
+          "net-value",
+          "member-value",
+          "Reinvested relationship value",
+          "inferred",
+          null,
+          "FUT-R09"
         ]
       ]
     },
@@ -3217,6 +3226,7 @@ svg {
     "Relationship economics after full costs": "Relationship structure may contribute to net value only after incrementality, liabilities and costs.",
     "Distinct partner + organizational returns": "Partner returns may contribute to organizational value but remain distinct from member outcomes.",
     "Relevant opportunities + fulfilment": "Future partner participation may support relevant opportunities and fulfilment.",
+    "Reinvested relationship value": "Net relationship value returns to fund the value members can realize, closing the pathway instead of terminating at an outcome. This is the only revenue source in the team's analysis that grows when redemption grows, which is why it is the candidate replacement for breakage.",
     "Governance context": "Regulation, privacy and consent conditions shape which emerging technologies and uses are permissible.",
     "Capability signals": "New technological possibilities can raise expectations for relevance, immediacy, portability and ease of use.",
     "Market reference points": "Competing ecosystems influence the standards people use to compare value, flexibility, service and access.",
@@ -3574,6 +3584,13 @@ svg {
       "epistemicStatus": "Assumed",
       "claimBasis": "Group convergence",
       "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "FUT-R09": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Hypothesis",
       "transitionIds": [],
       "evidenceRefs": []
     },
@@ -4584,7 +4601,8 @@ svg {
 })();
 </script>
 <script src="convergence.js?v=9"></script>
-<script src="narrative.js?v=3"></script>
+<script src="narrative.js?v=4"></script>
 <script src="regions.js?v=1"></script>
+<script src="opportunity.js?v=1"></script>
 </body>
 </html>

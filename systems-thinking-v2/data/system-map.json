@@ -999,7 +999,7 @@
       "roleInSystem": "It would create the usable context required for decisioning without treating ownership as unrestricted access to all member data.",
       "whyItMatters": "Relevant orchestration depends on knowing which signals belong together and which uses the person has consented to.",
       "known": "Program and banking relationships generate different data. Privacy, consent and organizational access conditions apply to any connection.",
-      "provisional": "The current identity architecture, consent model, data rights and cross-organizational access are not established.",
+      "provisional": "The current identity architecture, consent model, data rights and cross-organizational access are not established. Constrained by TB2 Trust and consent. Joann, Lia and Josh each modelled permission as something intrusion spends rather than a resource the system holds. Personalization intensity raises perceived intrusion, which narrows consent, which thins the very signal this capability depends on. This capability is therefore a consequence of being trusted, not a precondition that can simply be built.",
       "opportunityImplication": "Connect only the context required to create explainable member and partner value under clear governance.",
       "status": "proposed",
       "epistemicStatus": "Assumed",
@@ -1066,7 +1066,8 @@
           ],
           "traceabilityStatus": "decision-recorded"
         }
-      ]
+      ],
+      "constrainedBy": "TB2 Trust and consent"
     },
     {
       "id": "orchestration",
@@ -1177,7 +1178,7 @@
       "roleInSystem": "Carries selected opportunities and value coherently through channels, fulfilment, access and recovery.",
       "whyItMatters": "Relevant targeting cannot produce meaningful engagement if access, posting, redemption or issue resolution fails.",
       "known": "Channels and service capabilities already exist, while some public signals show reliability and handoff issues.",
-      "provisional": "The degree of coordination required, implementation cost and risk of tightly coupled failures remain unknown.",
+      "provisional": "The degree of coordination required, implementation cost and risk of tightly coupled failures remain unknown. Constrained by TB3 Value gap. Henry and Sly drew this as a closed loop rather than a capability: promised value that does not visibly arrive creates uncertainty, which triggers detection and resolution effort, which restores clarity. Coordinated delivery only holds if that correction loop is working; installing the capability does not by itself close the gap.",
       "opportunityImplication": "Test whether fit-for-purpose coordination improves access and reliable fulfilment without creating tightly coupled failure modes.",
       "status": "proposed",
       "epistemicStatus": "Assumed",
@@ -1234,7 +1235,8 @@
           ],
           "traceabilityStatus": "decision-recorded"
         }
-      ]
+      ],
+      "constrainedBy": "TB3 Value gap"
     },
     {
       "id": "intersection",
@@ -1325,7 +1327,7 @@
       "roleInSystem": "It is the client’s ultimate organizational outcome and prevents revenue growth from being assessed without the costs and liabilities required to produce it.",
       "whyItMatters": "Engagement, membership and higher spending are not sufficient evidence of ROI unless they are incremental and exceed rewards, technology, operating and risk costs.",
       "known": "Potential benefits include acquisition, product use, share of wallet, retention, partner revenue, insight and economies of scale.",
-      "provisional": "Incrementality, partner economics, conversion persistence, total costs and the time required to realize returns remain unmeasured.",
+      "provisional": "Incrementality, partner economics, conversion persistence, total costs and the time required to realize returns remain unmeasured. Constrained by TB1 Program economics. Joann, Ola and Josh independently found the brake that sits under this outcome: realization up, redemption up, breakage revenue down, margin headroom down, offer generosity down. This outcome is reachable only if breakage is replaced as the measure, which is what the conversion pathway below is for.",
       "opportunityImplication": "Build a measurement model that connects engagement and relationship movement to causal, long-term net value.",
       "status": "proposed",
       "epistemicStatus": "Assumed",
@@ -1375,7 +1377,8 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
-      ]
+      ],
+      "constrainedBy": "TB1 Program economics"
     },
     {
       "id": "neither",
@@ -3359,6 +3362,32 @@
       "provenance": "Added 10 Sept 2026 in response to faculty feedback that the appendix systems map read as one-way flow into a single outcome. Proposed by Josh, actioned by Joann.",
       "flowLens": "participation",
       "polarity": "+"
+    },
+    {
+      "id": "FUT-R09",
+      "sourceId": "net-value",
+      "targetId": "member-value",
+      "from": "net-value",
+      "to": "member-value",
+      "label": "Reinvested relationship value",
+      "displayLabel": "Reinvested relationship value",
+      "relationshipDefinition": "Net relationship value returns to fund the value members can realize, closing the pathway instead of terminating at an outcome. This is the only revenue source in the team's analysis that grows when redemption grows, which is why it is the candidate replacement for breakage.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "future"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "hypothesis",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-future",
+      "polarity": "+",
+      "flowLens": "value",
+      "provenance": "Added 12 Sept 2026. Closes the conversion pathway that Joann and Josh both drew as a loop (TR2) but which this view left open."
     }
   ],
   "overlays": [
@@ -3712,7 +3741,7 @@
     },
     {
       "id": "future",
-      "label": "3. Future Opportunity",
+      "label": "4. Future Opportunity",
       "heading": "Future Opportunity",
       "purpose": "Show a hypothesized improved system if relevant value-state transitions are strengthened.",
       "contextParagraph": "This view shows a hypothesized improved system in which governed context, coordinated decisions, delivery, fulfilment and recovery could help more loyalty value become relevant, earned, available and ultimately realized. The capabilities and downstream outcomes remain opportunity hypotheses rather than a committed solution architecture or proven causal model.",
@@ -3735,7 +3764,8 @@
         "FUT-R05",
         "FUT-R06",
         "FUT-R07",
-        "FUT-R08"
+        "FUT-R08",
+        "FUT-R09"
       ],
       "transitionIds": [
         "VT01",
@@ -3753,7 +3783,7 @@
     },
     {
       "id": "external",
-      "label": "4. Outside the Boundary",
+      "label": "3. Outside the Boundary",
       "heading": "Outside the System Boundary",
       "purpose": "Show external actors and conditions without treating them as internal components.",
       "contextParagraph": "This view isolates external actors and conditions that may influence the bounded system. Only relationships among external factors are drawn; possible links to current and future nodes remain narrative and contextual rather than established internal flows.",
