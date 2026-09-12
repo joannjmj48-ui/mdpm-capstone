@@ -2954,7 +2954,7 @@
       "to": "potential-value",
       "label": "Relevance and eligibility",
       "displayLabel": "Relevance and eligibility",
-      "relationshipDefinition": "Decisioning determines which of the catalogue's rewards reach this member as relevant and eligible — and therefore what the member has to weigh up at all.",
+      "relationshipDefinition": "Decisioning determines which of the catalogue's rewards reach this member as relevant and eligible — and therefore what the member has to weigh up at all. The filtering happens before the member is aware of anything, which is why the data layer shapes what an opportunity becomes rather than only acting on it later.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -3636,90 +3636,6 @@
       "provenance": "Added 12 Sept 2026. Closes the conversion pathway that Joann and Josh both drew as a loop (TR2) but which this view left open."
     },
     {
-      "id": "TRN-R01",
-      "sourceId": "channels",
-      "targetId": "opportunity",
-      "from": "channels",
-      "to": "opportunity",
-      "label": "Where the member sees it",
-      "displayLabel": "Where the member sees it",
-      "relationshipDefinition": "A member only meets an opportunity where the programme puts it. The app, the site, a notification, a partner surface — an opportunity that no channel carries does not reach anyone, however well it was chosen.",
-      "kind": "other",
-      "flowType": "structural-flow",
-      "direction": "directed",
-      "conditions": [],
-      "applicableTabs": [
-        "transition"
-      ],
-      "epistemicStatus": "Inferred",
-      "claimBasis": "group-convergence",
-      "decisionStatus": "active-direction",
-      "evidenceRefs": [],
-      "valueTransitionIds": [
-        "VT01"
-      ],
-      "state": "inferred-current",
-      "flowLens": "information",
-      "polarity": "+",
-      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
-    },
-    {
-      "id": "TRN-R02",
-      "sourceId": "service",
-      "targetId": "opportunity",
-      "from": "service",
-      "to": "opportunity",
-      "label": "Help understanding it",
-      "displayLabel": "Help understanding it",
-      "relationshipDefinition": "Seeing an opportunity and understanding it are different things. When the terms, eligibility or worth are not clear, service is what closes that gap — and an opportunity the member cannot make sense of stalls at the same point as one they never saw.",
-      "kind": "other",
-      "flowType": "structural-flow",
-      "direction": "directed",
-      "conditions": [],
-      "applicableTabs": [
-        "transition"
-      ],
-      "epistemicStatus": "Inferred",
-      "claimBasis": "group-convergence",
-      "decisionStatus": "active-direction",
-      "evidenceRefs": [],
-      "valueTransitionIds": [
-        "VT01"
-      ],
-      "state": "inferred-current",
-      "flowLens": "information",
-      "polarity": "+",
-      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
-    },
-    {
-      "id": "TRN-R03",
-      "sourceId": "data",
-      "targetId": "opportunity",
-      "from": "data",
-      "to": "opportunity",
-      "label": "What gets surfaced at all",
-      "displayLabel": "What gets surfaced at all",
-      "relationshipDefinition": "Decisioning determines which of the catalogue's rewards become visible opportunities at all. The filtering happens before the member is aware of anything, which is why the data layer shapes the opportunity rather than only acting on it later.",
-      "kind": "other",
-      "flowType": "structural-flow",
-      "direction": "directed",
-      "conditions": [],
-      "applicableTabs": [
-        "transition"
-      ],
-      "epistemicStatus": "Inferred",
-      "claimBasis": "group-convergence",
-      "decisionStatus": "active-direction",
-      "evidenceRefs": [],
-      "valueTransitionIds": [
-        "VT01"
-      ],
-      "state": "inferred-current",
-      "flowLens": "information",
-      "polarity": "+",
-      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
-    },
-    {
       "id": "TRN-R04",
       "sourceId": "points-balance",
       "targetId": "available-value",
@@ -3780,7 +3696,7 @@
       "to": "potential-value",
       "label": "Where they weigh it",
       "displayLabel": "Where they weigh it",
-      "relationshipDefinition": "The member compares, reads the terms and works out what it is worth inside a channel. A reward the channel presents badly is weighed badly, whatever the offer itself is.",
+      "relationshipDefinition": "The member compares, reads the terms and works out what it is worth inside a channel — and only inside a channel: a reward no channel carries never reaches anyone, however well it was chosen. A reward the channel presents badly is weighed badly, whatever the offer itself is.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -3864,7 +3780,7 @@
       "to": "potential-value",
       "label": "Answers can I get this",
       "displayLabel": "Answers can I get this",
-      "relationshipDefinition": "Eligibility questions, terms and qualification rules are what a member needs resolved before they can decide. Service is what answers them, and unanswered questions stall the assessment.",
+      "relationshipDefinition": "Eligibility questions, terms and qualification rules are what a member needs resolved before they can decide — including simply understanding what the offer is. Service is what answers them, and unanswered questions stall the assessment.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -4071,34 +3987,6 @@
       "provenance": "Added 12 Sept 2026 with the governance actors, from the stakeholder grid."
     },
     {
-      "id": "TRN-R11",
-      "sourceId": "friction",
-      "targetId": "opportunity",
-      "from": "friction",
-      "to": "opportunity",
-      "label": "Never surfaces",
-      "displayLabel": "Never surfaces",
-      "relationshipDefinition": "Fragmented channels and systems mean worthwhile propositions never become visible opportunities at all. Nothing downstream can recover value the member was never shown.",
-      "kind": "other",
-      "flowType": "structural-flow",
-      "direction": "directed",
-      "conditions": [],
-      "applicableTabs": [
-        "transition"
-      ],
-      "epistemicStatus": "Inferred",
-      "claimBasis": "group-convergence",
-      "decisionStatus": "active-direction",
-      "evidenceRefs": [],
-      "valueTransitionIds": [
-        "VT01"
-      ],
-      "state": "inferred-current",
-      "flowLens": "condition",
-      "polarity": "-",
-      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins."
-    },
-    {
       "id": "TRN-R12",
       "sourceId": "friction",
       "targetId": "potential-value",
@@ -4106,7 +3994,7 @@
       "to": "potential-value",
       "label": "Too unclear to judge",
       "displayLabel": "Too unclear to judge",
-      "relationshipDefinition": "Unclear terms, eligibility or worth stall the member's assessment. They have seen the offer and cannot tell whether it is worth pursuing, so it goes no further.",
+      "relationshipDefinition": "Unclear terms, eligibility or worth stall the member's assessment — or stop it starting, when the interface buries the offer so thoroughly that it never surfaces. Either way the member cannot tell whether it is worth pursuing, so it goes no further.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -4540,9 +4428,6 @@
         "TR-R09",
         "TR-R10",
         "TR-R11",
-        "TRN-R01",
-        "TRN-R02",
-        "TRN-R03",
         "TRN-R04",
         "TRN-R05",
         "TRN-R06",
@@ -4550,7 +4435,6 @@
         "TRN-R08",
         "TRN-R09",
         "TRN-R10",
-        "TRN-R11",
         "TRN-R12",
         "TRN-R13",
         "TRN-R14",
