@@ -53,7 +53,7 @@ def stakeholder_link(node):
     if not targets:
         return None
     return {"phase": "Who holds power here", "targets": targets,
-            "explanation": "From the power and interest grid on the Stakeholders tab. Analytical judgement, not an org chart."}
+            "explanation": "From the power and interest grid. Analytical judgement, not an org chart."}
 
 nodes = {}
 for n in contract["nodes"]:
