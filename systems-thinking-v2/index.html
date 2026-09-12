@@ -826,7 +826,6 @@ svg {
 </head>
 <body>
 <div id="loyalty-map-v2" class="lm2-root">
-  <div class="lm2-version-badge">Version 2 research workspace</div>
   <div class="viz-controls" aria-label="Choose a map view">
     <button type="button" class="btn btn-primary" data-map-view="current" aria-pressed="true">1. Current System</button>
     <button type="button" class="btn" data-map-view="transition" aria-pressed="false">2. How Value Progresses</button>
@@ -1012,18 +1011,6 @@ svg {
     color: var(--foreground);
   }
   #loyalty-map-v2 [hidden] { display: none !important; }
-  #loyalty-map-v2 .lm2-version-badge {
-    width: fit-content;
-    margin: 0 0 0.65rem auto;
-    padding: 0.25rem 0.55rem;
-    border: 1px solid color-mix(in srgb, var(--ring) 32%, var(--border));
-    border-radius: 999px;
-    color: var(--muted-foreground);
-    background: color-mix(in srgb, var(--accent) 28%, var(--card));
-    font-size: var(--font-size-small);
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
   #loyalty-map-v2 .viz-controls {
     width: 100%;
     padding: 0.3rem;
