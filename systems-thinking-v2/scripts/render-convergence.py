@@ -293,15 +293,11 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
         '<button type="button" class="btn" data-cv-panel="allloops" aria-pressed="false">Every loop, by author</button>' +
         '<button type="button" class="btn" data-cv-panel="canon" aria-pressed="false">The team&rsquo;s nine loops</button>' +
         '<button type="button" class="btn" data-cv-panel="diverge" aria-pressed="false">Divergence</button>' +
-        '<button type="button" class="btn" data-cv-panel="gaps" aria-pressed="false">Gaps (all closed)</button>' +
         '<button type="button" class="btn" data-cv-panel="who" aria-pressed="false">Contributors</button>' +
       "</div>" +
       '<div class="cv-panel" data-cv-panel-body="converge">' +
-        "<h3>Leverage points &mdash; where to intervene</h3>" +
         '<div class="cv-grid">' + DATA.convergence.leverage.map(clusterCard).join("") + "</div>" +
-        "<h3>Product definition &mdash; what to build</h3>" +
-        '<div class="cv-grid">' + DATA.convergence.product.map(clusterCard).join("") + "</div>" +
-        '<p class="cv-fine">Convergence strength describes how independently contributors arrived at the same claim. It never upgrades epistemic status: ' +
+        '<p class="cv-fine">Product-definition convergence now sits on the Causal Loop Convergence page, with the loops it derives from. Convergence strength describes how independently contributors arrived at the same claim. It never upgrades epistemic status: ' +
         esc(DATA.classificationRule) + "</p>" +
       "</div>" +
       '<div class="cv-panel" data-cv-panel-body="allloops" hidden>' +
@@ -327,9 +323,6 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       '<div class="cv-panel" data-cv-panel-body="diverge" hidden>' +
         '<div class="cv-grid">' + DATA.divergences.map(divergenceCard).join("") + "</div>" +
       "</div>" +
-      '<div class="cv-panel" data-cv-panel-body="gaps" hidden>' +
-        '<div class="cv-grid">' + DATA.gaps.map(gapCard).join("") + "</div>" +
-      "</div>" +
       '<div class="cv-panel" data-cv-panel-body="who" hidden>' +
         '<div class="cv-grid">' + DATA.contributors.map(contributorCard).join("") + "</div>" +
       "</div>" +
@@ -337,7 +330,7 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
 
   root.appendChild(section);
 
-  var button = el("button", "btn", "Team Convergence");
+  var button = el("button", "btn", "Leverage Points Convergence");
   button.type = "button";
   button.setAttribute("data-cv-view", "convergence");
   button.setAttribute("aria-pressed", "false");
