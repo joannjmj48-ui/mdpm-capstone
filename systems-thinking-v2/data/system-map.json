@@ -568,7 +568,7 @@
       ],
       "region": "Value realization",
       "regionByView": {
-        "transition": "Conditions and entry"
+        "transition": "Conditions and feedback"
       },
       "stakeholderRefs": [
         9,
@@ -1041,7 +1041,7 @@
       ],
       "region": "Structural conditions",
       "regionByView": {
-        "transition": "Conditions and entry"
+        "transition": "Conditions and feedback"
       },
       "stakeholderRefs": [
         4,
@@ -1969,7 +1969,7 @@
       "traceabilityStatus": "pending",
       "claims": [],
       "regionByView": {
-        "transition": "Conditions and entry"
+        "transition": "Conditions and feedback"
       },
       "stakeholderRefs": [
         7

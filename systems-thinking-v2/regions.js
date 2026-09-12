@@ -18,7 +18,7 @@
     transition: [
       {id: "rstates", label: "The five value states",       hint: "What value is at each stage"},
       {id: "rmoves",  label: "What moves it between them",  hint: "Each one touches several stages"},
-      {id: "rentry",  label: "Conditions and entry",        hint: "What stalls it, and where members join"}
+      {id: "rentry",  label: "Conditions and feedback",     hint: "What stalls it, what carries over, what feeds back"}
     ]
   };
 
