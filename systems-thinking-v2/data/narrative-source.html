@@ -222,6 +222,40 @@ figcaption {
 .lev-list em { font-style: normal; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-soft); }
 .lev-none { font-size: 13.5px; color: var(--balance); margin-top: .4rem; }
 
+
+/* ---------- before / after ---------- */
+.ba-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); }
+.ba-col { background: var(--surface); border: 1px solid var(--rule); padding: 20px 22px; }
+.ba-col.is-after { border-left: 3px solid var(--reinforce); }
+.ba-col.is-before { border-left: 3px solid var(--balance); }
+.ba-col > h3 { font-size: 19px; margin-bottom: 4px; }
+.ba-col > p.ba-sub { font-size: 14px; color: var(--ink-soft); margin-bottom: 14px; }
+.ba-loop { display: grid; grid-template-columns: 4.2rem 1fr; gap: 0 12px; padding: 11px 0; border-top: 1px solid var(--rule-soft); align-items: start; }
+.ba-loop code { font-family: var(--f-mono); font-size: 11px; font-weight: 600; letter-spacing: .06em; padding: 2px 6px; text-align: center; }
+.ba-loop.is-dominant code { background: var(--reinforce); color: var(--surface); }
+.ba-loop.is-binding code  { background: var(--balance); color: var(--surface); }
+.ba-loop.is-weak code     { background: var(--sunken); color: var(--ink-soft); }
+.ba-loop.is-off code      { background: transparent; color: var(--ink-soft); border: 1px dashed var(--ink-soft); }
+.ba-loop strong { font-size: 14.5px; font-weight: 500; display: block; }
+.ba-loop span { font-size: 13px; color: var(--ink-soft); }
+.ba-loop.is-weak strong, .ba-loop.is-off strong { color: var(--ink-soft); }
+.ba-state { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase; }
+.ba-chart { margin-top: 26px; }
+.ba-chart svg { display: block; width: 100%; height: auto; }
+.ba-axis { stroke: var(--rule); stroke-width: 1; }
+.ba-before-line { fill: none; stroke: var(--balance); stroke-width: 2.4; }
+.ba-after-line  { fill: none; stroke: var(--reinforce); stroke-width: 2.8; }
+.ba-mark { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 4 4; }
+.ba-t { font-family: var(--f-body); font-size: 13px; fill: var(--ink-soft); }
+.ba-t.is-key { font-weight: 600; }
+.ba-caveat { font-size: 13.5px; color: var(--ink-soft); margin-top: 14px; max-width: 74ch; }
+.ba-moves { margin-top: 26px; }
+.ba-move { display: grid; grid-template-columns: auto 1fr; gap: 0 14px; padding: 13px 0; border-top: 1px solid var(--rule-soft); }
+.ba-move .ba-lvl { font-family: var(--f-mono); font-size: 11px; font-weight: 600; color: var(--accent); white-space: nowrap; }
+.ba-move strong { font-size: 15px; font-weight: 500; }
+.ba-move p { font-size: 14px; color: var(--ink-soft); margin-top: 2px; }
+.ba-move .ba-by { font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-soft); }
+
 /* ---------- matrix ---------- */
 
 .matrix-wrap { overflow-x: auto; }
@@ -589,6 +623,64 @@ footer code { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink); 
     </div>
 
     <p class="note" style="margin-top:24px">Full registry: 28 variables, every alias recorded, in <code style="font-family:var(--f-mono);font-size:13px">data/variable-registry.json</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head spine">
+      <div class="eyebrow">What the leverage points actually do</div>
+      <h2>Before and after</h2>
+      <p>Strengthening the flywheel does not change the system &mdash; it already turns, and settles wherever the brakes allow. What changes the system is acting on the brakes. This is the loop set before any intervention, and after the three moves the team converged on.</p>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-col is-before">
+        <h3>Before</h3>
+        <p class="ba-sub">The engine turns and the brakes decide where it stops.</p>
+        <div class="ba-loop is-weak"><code>TR1</code><div><strong>Relevance flywheel</strong><span class="ba-state">turning &middot; capped</span><span>Compounds, but only up to the ceiling the brakes set.</span></div></div>
+        <div class="ba-loop is-binding"><code>TB1</code><div><strong>Breakage brake</strong><span class="ba-state">binding</span><span>Redemption up, breakage down, generosity down. The programme settles wherever the margin will tolerate.</span></div></div>
+        <div class="ba-loop is-weak"><code>TB3</code><div><strong>Value gap</strong><span class="ba-state">slow &middot; delayed</span><span>Correction only starts after value has already gone missing, and the member has usually noticed first.</span></div></div>
+        <div class="ba-loop is-off"><code>TR2</code><div><strong>Conversion flywheel</strong><span class="ba-state">unfunded</span><span>Exists in the map as an intended outcome. Nothing is scored on it, so nothing drives it.</span></div></div>
+      </div>
+
+      <div class="ba-col is-after">
+        <h3>After</h3>
+        <p class="ba-sub">The binding brake stops binding, and the leak closes sooner.</p>
+        <div class="ba-loop is-dominant"><code>TR1</code><div><strong>Relevance flywheel</strong><span class="ba-state">uncapped</span><span>Same loop, higher ceiling. Now worth pushing, which it was not before.</span></div></div>
+        <div class="ba-loop is-off"><code>TB1</code><div><strong>Breakage brake</strong><span class="ba-state">neutralised</span><span>The inverse link still exists &mdash; a point that gets used cannot also go unused &mdash; but it no longer costs anything, because breakage is no longer the measure.</span></div></div>
+        <div class="ba-loop is-dominant"><code>TB3</code><div><strong>Value gap</strong><span class="ba-state">fast &middot; corrective</span><span>Detection happens before the member chases it. The brake becomes a repair mechanism rather than a loss.</span></div></div>
+        <div class="ba-loop is-dominant"><code>TR2</code><div><strong>Conversion flywheel</strong><span class="ba-state">funded</span><span>The replacement revenue, and the only source in the set that grows when redemption grows.</span></div></div>
+      </div>
+    </div>
+
+    <figure class="ba-chart">
+      <svg viewBox="0 0 900 300" role="img" aria-label="Realized value over time. Before intervention it rises then flattens at the margin ceiling. After the leverage points are applied it dips briefly during recovery investment, then continues rising.">
+        <line class="ba-axis" x1="64" y1="248" x2="864" y2="248"></line>
+        <line class="ba-axis" x1="64" y1="40" x2="64" y2="248"></line>
+        <text class="ba-t" x="64" y="272">time</text>
+        <text class="ba-t" x="10" y="44" transform="rotate(-90 22 130)">realized value</text>
+
+        <line class="ba-mark" x1="386" y1="40" x2="386" y2="248"></line>
+        <text class="ba-t is-key" x="396" y="58" fill="#2b5ce6">leverage applied</text>
+
+        <path class="ba-before-line" d="M 64 236 C 160 214 280 188 386 180 C 520 172 700 170 864 169"></path>
+        <path class="ba-after-line"  d="M 64 236 C 160 214 280 188 386 180 C 440 178 470 190 500 186 C 600 172 720 118 864 66"></path>
+
+        <text class="ba-t" x="700" y="192" fill="#b4531f">before &mdash; settles at the ceiling</text>
+        <text class="ba-t is-key" x="640" y="58" fill="#0e7c6b">after &mdash; keeps compounding</text>
+        <text class="ba-t" x="404" y="212">recovery cost</text>
+      </svg>
+      <figcaption>Behaviour over time, drawn qualitatively from the loop structure. These are shapes the structure implies, not projected figures &mdash; nobody has measured realized value yet, which is the point of the ledger.</figcaption>
+    </figure>
+
+    <div class="ba-moves spine" style="max-width:78ch">
+      <div class="ba-move"><span class="ba-lvl">Meadows #3</span><div><strong>Take breakage off the scorecard</strong><p>The only move in the thirteen that changes what kind of loop something is. A balancing loop with no consequential inverse link is not balancing any more. This converts the brake, rather than weakening it.</p><span class="ba-by">Joann JN-L1 &middot; Sly L04 &middot; Josh JL01 &middot; Ola OL-L2</span></div></div>
+      <div class="ba-move"><span class="ba-lvl">Meadows #6</span><div><strong>Build the ledger, and detect what goes missing</strong><p>Shortens the delay on the value-gap brake so it corrects before the member absorbs the loss &mdash; and produces the realized-value number that makes the scorecard argument possible at all.</p><span class="ba-by">Joann JN-L2 &middot; Sly L01, L03 &middot; Henry HN-L1 &middot; Ola OL-L1</span></div></div>
+      <div class="ba-move"><span class="ba-lvl">Meadows #6</span><div><strong>Learn from what was realized, not what was shown</strong><p>Raises the gain on the flywheel. Worth doing only once the ceiling has moved &mdash; before that it spins a capped loop faster.</p><span class="ba-by">Sly L02 &middot; Josh JL03 &middot; Lia LA-L1</span></div></div>
+    </div>
+
+    <p class="ba-caveat">The order matters and it is not a preference. The scorecard change is not the team&rsquo;s to make, and it cannot be argued without a realized-value number &mdash; which the ledger produces as a by-product of doing its job. So the instrument comes first, the goal change second, and only then is the flywheel worth pushing.</p>
   </div>
 </section>
 
