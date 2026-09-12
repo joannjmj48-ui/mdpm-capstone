@@ -6,6 +6,21 @@
 (function () {
   "use strict";
 
+  var BY_VIEW = {
+    current: [
+      {id: "rpop",  label: "Member populations",    hint: "Who is in the system"},
+      {id: "rval",  label: "Value realization",     hint: "The main variable and its feedback"},
+      {id: "rpart", label: "Partner ecosystem",     hint: "Who supplies the value"},
+      {id: "rback", label: "Enabling backbone",     hint: "What delivers it"},
+      {id: "rcond", label: "Structural conditions", hint: "What obstructs it"}
+    ],
+    transition: [
+      {id: "rstates", label: "The five value states",       hint: "What value is at each stage"},
+      {id: "rmoves",  label: "What moves it between them",  hint: "Each one touches several stages"},
+      {id: "rentry",  label: "Conditions and entry",        hint: "What stalls it, and where members join"}
+    ]
+  };
+
   var REGIONS = [
     {id: "rpop",  label: "Member populations",    hint: "Who is in the system"},
     {id: "rval",  label: "Value realization",     hint: "The main variable and its feedback"},
@@ -18,9 +33,10 @@
   if (!grid) return;
 
   function inject() {
-    if (grid.getAttribute("data-view") !== "current") return;
+    var regions = BY_VIEW[grid.getAttribute("data-view")];
+    if (!regions) return;
     if (grid.querySelector(".lm2-region")) return;
-    REGIONS.forEach(function (r, i) {
+    regions.forEach(function (r, i) {
       var band = document.createElement("div");
       band.className = "lm2-band";
       band.style.gridRow = String(i + 1);

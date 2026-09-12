@@ -370,7 +370,10 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Partner ecosystem"
+      "region": "Partner ecosystem",
+      "regionByView": {
+        "transition": "What moves value between them"
+      }
     },
     {
       "id": "member-value",
@@ -540,7 +543,10 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Value realization"
+      "region": "Value realization",
+      "regionByView": {
+        "transition": "Conditions and entry"
+      }
     },
     {
       "id": "products",
@@ -622,7 +628,10 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Enabling backbone"
+      "region": "Enabling backbone",
+      "regionByView": {
+        "transition": "What moves value between them"
+      }
     },
     {
       "id": "data",
@@ -715,7 +724,10 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Enabling backbone"
+      "region": "Enabling backbone",
+      "regionByView": {
+        "transition": "What moves value between them"
+      }
     },
     {
       "id": "channels",
@@ -805,7 +817,10 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Enabling backbone"
+      "region": "Enabling backbone",
+      "regionByView": {
+        "transition": "What moves value between them"
+      }
     },
     {
       "id": "service",
@@ -897,7 +912,10 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Enabling backbone"
+      "region": "Enabling backbone",
+      "regionByView": {
+        "transition": "What moves value between them"
+      }
     },
     {
       "id": "friction",
@@ -979,7 +997,10 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Structural conditions"
+      "region": "Structural conditions",
+      "regionByView": {
+        "transition": "Conditions and entry"
+      }
     },
     {
       "id": "identity",
@@ -1829,7 +1850,7 @@
       "id": "points-balance",
       "canonicalName": "Points balance",
       "displayLabel": "Points balance",
-      "subtitle": "Where a member already is",
+      "subtitle": "Posted points a member already holds",
       "type": "stock",
       "kind": "state",
       "category": "Standing stock",
@@ -1838,8 +1859,8 @@
       "applicableTabs": [
         "transition"
       ],
-      "definition": "The value a member is already holding, independent of any single offer. Signing up grants roughly 750 points, so a new member starts holding available value having earned nothing. A member who has banked for five years holds a balance regardless of what they did this week.",
-      "roleInSystem": "Shows that the progression is sequential without being one mandatory journey. Value cannot reach Available Value without being earned, but a member can join the cycle at whichever state their balance already puts them in.",
+      "definition": "The stock of points a member already holds. Earned value posts into it, and it is what makes value available to spend. Signing up grants roughly 750 points, so a new member holds a balance having earned nothing, and a long-standing member holds one regardless of this week's activity.",
+      "roleInSystem": "Sits between Earned and Available Value. Earned value accumulates into the balance once posted; the balance is what a member draws on. It is also why the progression is sequential without being one mandatory journey - a member joins the cycle at whichever state their balance already puts them in.",
       "whyItMatters": "Raised on 12 September: 'you're assuming they're starting from zero - you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at Opportunity, which almost none do.",
       "known": "Sign-up grants roughly 750 points.",
       "provisional": "The actual sign-up grant, expiry behaviour and how balance is segmented by member type are not yet established.",
@@ -1857,14 +1878,17 @@
       "incomingRelationshipIds": [],
       "outgoingRelationshipIds": [],
       "valueStatesInfluenced": [
-        "available-value",
-        "realized-value"
+        "earned-value",
+        "available-value"
       ],
       "jtbdRefs": [],
       "dvoRefs": [],
       "evidenceRefs": [],
       "traceabilityStatus": "pending",
-      "claims": []
+      "claims": [],
+      "regionByView": {
+        "transition": "Conditions and entry"
+      }
     }
   ],
   "valueStates": [
@@ -1883,12 +1907,12 @@
         "SRC-CONTRACT-001"
       ],
       "plainLanguage": "The system has put an offer in front of the member. Nothing is theirs yet.",
-      "openQuestion": "Needs to state why this opportunity was shown to this member, what it is worth, and what action is required. Raised in the 883 functional requirements and again on 12 September."
+      "region": "The five value states"
     },
     {
       "id": "potential-value",
       "label": "Potential Value",
-      "definition": "An opportunity that has been matched to a particular member's needs, behaviour or context, and for which that member has a plausible eligible path. CONTESTED: the team questioned on 12 September whether this is a state at all. Nothing has been earned, so it is arguably not yet value - and if we cannot say what observably changes between Opportunity and Potential Value, it does not need its own stage name.",
+      "definition": "An opportunity the system has matched to a particular member, and which that member has decided to pursue. Two decisions meet here: the system decides what is relevant and eligible, and the member decides whether to act. That member decision is what distinguishes this state from an offer simply being surfaced.",
       "entryCondition": "Member relevance and plausible eligibility are established.",
       "exitCondition": "Applicable qualification requirements are satisfied.",
       "order": 2,
@@ -1899,9 +1923,8 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "reviewStatus": "contested",
-      "plainLanguage": "The offer has been matched to this member. Still nothing theirs yet.",
-      "openQuestion": "Decide one of three: rename it so it does not claim to be value; merge it into Opportunity; or state the observable change that distinguishes a targeted offer from any other offer in the member's bucket. The call could not identify that change."
+      "plainLanguage": "The offer fits this member, and the member has decided to go for it.",
+      "region": "The five value states"
     },
     {
       "id": "earned-value",
@@ -1916,7 +1939,8 @@
       "decisionStatus": "active-direction",
       "evidenceRefs": [
         "SRC-CONTRACT-001"
-      ]
+      ],
+      "region": "The five value states"
     },
     {
       "id": "available-value",
@@ -1931,7 +1955,8 @@
       "decisionStatus": "active-direction",
       "evidenceRefs": [
         "SRC-CONTRACT-001"
-      ]
+      ],
+      "region": "The five value states"
     },
     {
       "id": "realized-value",
@@ -1947,7 +1972,8 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "plainLanguage": "The member used it, and we can show what it was worth."
+      "plainLanguage": "The member used it, and we can show what it was worth.",
+      "region": "The five value states"
     }
   ],
   "valueTransitions": [
@@ -2470,8 +2496,8 @@
       "targetId": "engagement",
       "from": "member-value",
       "to": "engagement",
-      "label": "VT05 · Continued / expanded participation",
-      "displayLabel": "VT05 · Continued / expanded participation",
+      "label": "Continued / expanded participation",
+      "displayLabel": "Continued / expanded participation",
       "relationshipDefinition": "Worthwhile realized outcomes may influence sustained participation; the causal effect is unvalidated.",
       "kind": "other",
       "flowType": "structural-flow",
@@ -2604,8 +2630,8 @@
       "targetId": "potential-value",
       "from": "opportunity",
       "to": "potential-value",
-      "label": "VT01 · Establish relevance + plausible eligibility",
-      "displayLabel": "VT01 · Establish relevance + plausible eligibility",
+      "label": "Establish relevance + plausible eligibility",
+      "displayLabel": "Establish relevance + plausible eligibility",
       "relationshipDefinition": "The opportunity becomes Potential Value when relevance and a plausible eligible path are established.",
       "kind": "other",
       "flowType": "structural-flow",
@@ -2629,8 +2655,8 @@
       "targetId": "earned-value",
       "from": "potential-value",
       "to": "earned-value",
-      "label": "VT02 · Satisfy qualification requirements",
-      "displayLabel": "VT02 · Satisfy qualification requirements",
+      "label": "Satisfy qualification requirements",
+      "displayLabel": "Satisfy qualification requirements",
       "relationshipDefinition": "Potential Value becomes Earned Value when applicable requirements are satisfied.",
       "kind": "other",
       "flowType": "structural-flow",
@@ -2654,8 +2680,8 @@
       "targetId": "available-value",
       "from": "earned-value",
       "to": "available-value",
-      "label": "VT03 · Post + release + activate",
-      "displayLabel": "VT03 · Post + release + activate",
+      "label": "Post + release + activate",
+      "displayLabel": "Post + release + activate",
       "relationshipDefinition": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
       "kind": "other",
       "flowType": "structural-flow",
@@ -2679,8 +2705,8 @@
       "targetId": "realized-value",
       "from": "available-value",
       "to": "realized-value",
-      "label": "VT04 · Use + convert into worthwhile outcome",
-      "displayLabel": "VT04 · Use + convert into worthwhile outcome",
+      "label": "Use + convert into worthwhile outcome",
+      "displayLabel": "Use + convert into worthwhile outcome",
       "relationshipDefinition": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
       "kind": "other",
       "flowType": "structural-flow",
@@ -3545,6 +3571,33 @@
       "flowLens": "value",
       "polarity": "+",
       "provenance": "Added 12 Sept 2026 from Josh's challenge that members do not start from zero."
+    },
+    {
+      "id": "TRN-R05",
+      "sourceId": "earned-value",
+      "targetId": "points-balance",
+      "from": "earned-value",
+      "to": "points-balance",
+      "label": "Posts into the balance",
+      "displayLabel": "Posts into the balance",
+      "relationshipDefinition": "Earned value accumulates into the member's standing balance once it posts. Points that are earned but not yet posted sit outside the balance, which is the gap a member experiences as pending.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "flowLens": "value",
+      "polarity": "+",
+      "delay": true,
+      "provenance": "Added 12 Sept 2026. The balance sits between earned and available value, not beside them."
     }
   ],
   "overlays": [
@@ -3872,7 +3925,8 @@
         "TRN-R01",
         "TRN-R02",
         "TRN-R03",
-        "TRN-R04"
+        "TRN-R04",
+        "TRN-R05"
       ],
       "transitionIds": [
         "VT01",
@@ -3903,12 +3957,11 @@
       "viewNote": {
         "title": "What it's for",
         "paragraphs": [
-          "It's a diagnostic tool for locating loss. “Members don't get value” is unactionable. Splitting it into five steps lets you ask which step — and each step has a different owner and a different fix. VT03 failing is an operations and posting problem. VT04 failing is a discovery and channel problem. Without the split you'd treat them as one thing and fix the wrong one.",
-          "This is a value progression, not a systems map. It shows the language we use for each stage, not the structure of the system — that is view 1.",
-          "The progression is sequential - value cannot reach Available Value without being earned first - but an individual member can join it at any point. Signing up grants roughly 750 points, so a new member starts holding Available Value without having earned anything. The diagram shows the end-to-end flow, not one mandatory journey.",
-          "Under review from 12 September: A state earns its own name only if we can say what observably changes when value enters it. If we cannot tell what refines an offer from one stage into the next, it does not require an independent stage name. Agreed 12 September. Potential Value is the state this test currently challenges, because nobody could name what observably changes between an offer and a targeted offer."
-        ],
-        "footnote": "VT01–VT05 are the value transitions: the five steps value passes through, each a place it can stall."
+          "It's a diagnostic tool for locating loss. “Members don't get value” is unactionable. Splitting it into five steps lets you ask which step — and each step has a different owner and a different fix. Posting failing is an operations problem. Use and conversion failing is a discovery and channel problem. Without the split you'd treat them as one thing and fix the wrong one.",
+          "This is a value progression, not a systems map. It shows the language we use at each stage, not the structure of the system — that is view 1.",
+          "Read it in three bands. The top row is the five states value passes through. The middle row is what moves it between them, and each of those touches several stages rather than one: a member sees an opportunity in a channel, service explains it, data decides what gets surfaced at all. The bottom row is what stalls value, and where members actually join.",
+          "The sequence holds — value cannot reach available without being earned — but a member can join at any point. Signing up grants roughly 750 points, so a new member holds a balance having earned nothing."
+        ]
       }
     },
     {
@@ -4059,10 +4112,5 @@
       "why": "This is the specific source of the confusion raised on the call. One is a process that runs continuously; the other is a state a single unit of value reaches.",
       "needsDecision": "Rename one of them. Leaving both is what makes the language inconsistent."
     }
-  },
-  "valueStateRules": {
-    "stageTest": "A state earns its own name only if we can say what observably changes when value enters it. If we cannot tell what refines an offer from one stage into the next, it does not require an independent stage name. Agreed 12 September.",
-    "entryPoint": "The progression is sequential - value cannot reach Available Value without being earned first - but an individual member can join it at any point. Signing up grants roughly 750 points, so a new member starts holding Available Value without having earned anything. The diagram shows the end-to-end flow, not one mandatory journey.",
-    "valueBegins": "Value begins when something becomes the member's. Opportunity and Potential Value sit before that line, which is why calling either of them 'value' is under review."
   }
 }

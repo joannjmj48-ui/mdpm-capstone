@@ -821,8 +821,8 @@ svg {
 <link rel="stylesheet" href="convergence.css?v=9">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
 <link rel="stylesheet" href="narrative.css?v=1">
-<link rel="stylesheet" href="regions.css?v=2">
-<link rel="stylesheet" href="opportunity.css?v=4">
+<link rel="stylesheet" href="regions.css?v=3">
+<link rel="stylesheet" href="opportunity.css?v=5">
 </head>
 <body>
 <div id="loyalty-map-v2" class="lm2-root">
@@ -1312,13 +1312,13 @@ svg {
     align-items: stretch;
   }
   #loyalty-map-v2 .lm2-grid[data-view="transition"] {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 0.62fr) repeat(5, minmax(0, 1fr));
     column-gap: 1.35rem;
-    row-gap: 4.25rem;
+    row-gap: 3.1rem;
     grid-template-areas:
-      "opportunity potential earned available realized"
-      "partner products data service channels"
-      "friction friction balance engagement engagement";
+      "rstates opportunity potential earned   available  realized"
+      "rmoves  partner     products  data     service    channels"
+      "rentry  friction    friction  balance  balance    engagement";
   }
   #loyalty-map-v2 .lm2-grid[data-view="current"] {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2431,15 +2431,15 @@ svg {
     },
     "points-balance": {
       "label": "Points balance",
-      "sub": "Where a member already is",
+      "sub": "Posted points a member already holds",
       "kind": "state",
       "phase": "How Value Progresses",
       "status": "Inferred",
       "basis": "Group convergence",
       "decision": "Active direction",
       "category": "Standing stock",
-      "definition": "The value a member is already holding, independent of any single offer. Signing up grants roughly 750 points, so a new member starts holding available value having earned nothing. A member who has banked for five years holds a balance regardless of what they did this week.",
-      "role": "Shows that the progression is sequential without being one mandatory journey. Value cannot reach Available Value without being earned, but a member can join the cycle at whichever state their balance already puts them in.",
+      "definition": "The stock of points a member already holds. Earned value posts into it, and it is what makes value available to spend. Signing up grants roughly 750 points, so a new member holds a balance having earned nothing, and a long-standing member holds one regardless of this week's activity.",
+      "role": "Sits between Earned and Available Value. Earned value accumulates into the balance once posted; the balance is what a member draws on. It is also why the progression is sequential without being one mandatory journey - a member joins the cycle at whichever state their balance already puts them in.",
       "why": "Raised on 12 September: 'you're assuming they're starting from zero - you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at Opportunity, which almost none do.",
       "known": "Sign-up grants roughly 750 points.",
       "provisional": "The actual sign-up grant, expiry behaviour and how balance is segmented by member type are not yet established.",
@@ -2510,7 +2510,7 @@ svg {
       "basis": "Group convergence",
       "decision": "Active direction",
       "category": "Controlled value state",
-      "definition": "An opportunity that has been matched to a particular member's needs, behaviour or context, and for which that member has a plausible eligible path. CONTESTED: the team questioned on 12 September whether this is a state at all. Nothing has been earned, so it is arguably not yet value - and if we cannot say what observably changes between Opportunity and Potential Value, it does not need its own stage name.",
+      "definition": "An opportunity the system has matched to a particular member, and which that member has decided to pursue. Two decisions meet here: the system decides what is relevant and eligible, and the member decides whether to act. That member decision is what distinguishes this state from an offer simply being surfaced.",
       "role": "Entry condition: Member relevance and plausible eligibility are established. Exit condition: Applicable qualification requirements are satisfied.",
       "why": "This state is analytically distinct so qualification, posting, access, use and perceived worth are not collapsed into generic value.",
       "known": "The state definition is an approved group-converged modeling decision. Current volumes, conversion rates and delays are not yet established.",
@@ -2821,7 +2821,7 @@ svg {
         [
           "member-value",
           "engagement",
-          "VT05 · Continued / expanded participation",
+          "Continued / expanded participation",
           "inferred",
           null,
           "CUR-R13"
@@ -2946,7 +2946,7 @@ svg {
         [
           "member-value",
           "engagement",
-          "VT05 · Continued / expanded participation",
+          "Continued / expanded participation",
           "inferred",
           null,
           "CUR-R13"
@@ -2954,7 +2954,7 @@ svg {
         [
           "opportunity",
           "potential-value",
-          "VT01 · Establish relevance + plausible eligibility",
+          "Establish relevance + plausible eligibility",
           "current",
           null,
           "TR-R01"
@@ -2962,7 +2962,7 @@ svg {
         [
           "potential-value",
           "earned-value",
-          "VT02 · Satisfy qualification requirements",
+          "Satisfy qualification requirements",
           "current",
           null,
           "TR-R02"
@@ -2970,7 +2970,7 @@ svg {
         [
           "earned-value",
           "available-value",
-          "VT03 · Post + release + activate",
+          "Post + release + activate",
           "current",
           null,
           "TR-R03"
@@ -2978,7 +2978,7 @@ svg {
         [
           "available-value",
           "realized-value",
-          "VT04 · Use + convert into worthwhile outcome",
+          "Use + convert into worthwhile outcome",
           "current",
           null,
           "TR-R04"
@@ -3070,6 +3070,14 @@ svg {
           "inferred",
           null,
           "TRN-R04"
+        ],
+        [
+          "earned-value",
+          "points-balance",
+          "Posts into the balance",
+          "inferred",
+          null,
+          "TRN-R05"
         ]
       ]
     },
@@ -3090,7 +3098,7 @@ svg {
         [
           "member-value",
           "engagement",
-          "VT05 · Continued / expanded participation",
+          "Continued / expanded participation",
           "inferred",
           null,
           "CUR-R13"
@@ -3237,7 +3245,7 @@ svg {
     "Relevance + eligibility context": "Decisioning may help assess relevance and eligibility without itself creating value.",
     "Presentation + access": "Channels present opportunities and provide action or available-value access.",
     "Posting + fulfilment + recovery": "Operations support posting, release, fulfilment and recovery.",
-    "VT05 · Continued / expanded participation": "Worthwhile realized outcomes may influence sustained participation; the causal effect is unvalidated.",
+    "Continued / expanded participation": "Worthwhile realized outcomes may influence sustained participation; the causal effect is unvalidated.",
     "Value realization + participation signals": "Observed outcomes and participation provide signals for measurement and future decisions.",
     "Identity + permission handoffs": "Identity or permission handoffs may interrupt usable context.",
     "Channel continuity constraints": "Separate surfaces may create repeated steps or inconsistent context.",
@@ -3250,10 +3258,10 @@ svg {
     "Member-clients transact through products": "Members who also bank with BMO interact with the products and transactions backbone directly, which is what makes combined signal possible.",
     "Clients hold and transact through products": "Client-only participants interact with the products backbone even where they do not participate in the loyalty programme.",
     "Engagement returns to realization": "Sustained engagement produces further opportunities to realize value, closing the pair rather than terminating at the outcome.",
-    "VT01 · Establish relevance + plausible eligibility": "The opportunity becomes Potential Value when relevance and a plausible eligible path are established.",
-    "VT02 · Satisfy qualification requirements": "Potential Value becomes Earned Value when applicable requirements are satisfied.",
-    "VT03 · Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
-    "VT04 · Use + convert into worthwhile outcome": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
+    "Establish relevance + plausible eligibility": "The opportunity becomes Potential Value when relevance and a plausible eligible path are established.",
+    "Satisfy qualification requirements": "Potential Value becomes Earned Value when applicable requirements are satisfied.",
+    "Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
+    "Use + convert into worthwhile outcome": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
     "Propositions + benefits": "Partner contributions create sources of opportunity.",
     "Products + participation routes": "Products and transactions create opportunity and earning routes.",
     "Data and user decisioning": "Two decisions meet here, not one. The system decides what is relevant and eligible, and the member decides whether to act on it. The state only advances when both have happened, which is what distinguishes this step from an offer simply being surfaced.",
@@ -3265,6 +3273,7 @@ svg {
     "Help understanding it": "Sly, 12 September: 'if you see an opportunity, you don't really understand, and you need more information - service and operations can help you understand it.'",
     "What gets surfaced at all": "Sly, 12 September: 'maybe there's some data behind the scenes that is actually showing that opportunity to you.' Decisioning determines which propositions become visible opportunities.",
     "Enter at any stage": "A standing balance places the member directly at available value without passing through opportunity, potential or earned value for that balance. The sequence between states still holds; the member's entry point into it does not have to be the start.",
+    "Posts into the balance": "Earned value accumulates into the member's standing balance once it posts. Points that are earned but not yet posted sit outside the balance, which is the gap a member experiences as pending.",
     "Governed permitted context": "Permissioned identity may provide usable context under governance.",
     "Coordinated value-path decision": "A selected value pathway may be carried into delivery and operations.",
     "Access + reliable fulfilment": "Coordinated delivery may improve access, fulfilment and recovery.",
@@ -3603,6 +3612,13 @@ svg {
       "evidenceRefs": []
     },
     "TRN-R04": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "TRN-R05": {
       "epistemicStatus": "Inferred",
       "claimBasis": "Group convergence",
       "decisionStatus": "Active direction",
@@ -4684,8 +4700,8 @@ svg {
 </script>
 <script src="convergence.js?v=14"></script>
 <script src="narrative.js?v=9"></script>
-<script src="regions.js?v=1"></script>
+<script src="regions.js?v=2"></script>
 <script src="opportunity.js?v=2"></script>
-<script src="view-notes.js?v=3"></script>
+<script src="view-notes.js?v=4"></script>
 </body>
 </html>

@@ -12,7 +12,8 @@
     "rcond  friction .     .          .";
 }
 
-#loyalty-map-v2 #lm2-canvas .lm2-grid[data-view="current"] .lm2-node { position: relative; z-index: 1; }
+#loyalty-map-v2 #lm2-canvas .lm2-grid[data-view="current"] .lm2-node,
+#loyalty-map-v2 #lm2-canvas .lm2-grid[data-view="transition"] .lm2-node { position: relative; z-index: 1; }
 
 #loyalty-map-v2 .lm2-band {
   grid-column: 1 / -1;
@@ -50,8 +51,8 @@
 }
 
 /* the bands belong to the current view only */
-#loyalty-map-v2 .lm2-grid:not([data-view="current"]) .lm2-region,
-#loyalty-map-v2 .lm2-grid:not([data-view="current"]) .lm2-band { display: none; }
+#loyalty-map-v2 .lm2-grid:not([data-view="current"]):not([data-view="transition"]) .lm2-region,
+#loyalty-map-v2 .lm2-grid:not([data-view="current"]):not([data-view="transition"]) .lm2-band { display: none; }
 
 @media (max-width: 900px) {
   #loyalty-map-v2 .lm2-region,
