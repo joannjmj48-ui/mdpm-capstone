@@ -4097,6 +4097,34 @@
       "flowLens": "participation",
       "polarity": "+",
       "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins."
+    },
+    {
+      "id": "TRN-R16",
+      "sourceId": "engagement",
+      "targetId": "data",
+      "from": "engagement",
+      "to": "data",
+      "label": "Participation signals sharpen the filter",
+      "displayLabel": "Participation signals sharpen the filter",
+      "relationshipDefinition": "What a member did with the value they realized becomes signal: what they took up, what they ignored, what they redeemed. Decisioning uses it to filter the catalogue better next time. This is the return leg — it is what makes the progression a cycle rather than a one-way pipe, and it is why Meaningful engagement sits in this view at all.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT05"
+      ],
+      "state": "active-direction",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": true
     }
   ],
   "overlays": [
@@ -4438,7 +4466,8 @@
         "TRN-R12",
         "TRN-R13",
         "TRN-R14",
-        "TRN-R15"
+        "TRN-R15",
+        "TRN-R16"
       ],
       "transitionIds": [
         "VT01",
