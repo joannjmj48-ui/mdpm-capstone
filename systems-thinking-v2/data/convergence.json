@@ -1019,6 +1019,221 @@
       }
     ]
   },
+  "leveragePointsByAuthor": {
+    "version": "1.0.0",
+    "purpose": "Every contributor's leverage points as they wrote them, before merging. The merged themes are in convergence-map.json; this is the record each person can find their own work in.",
+    "statusKey": {
+      "stated": "The contributor named this as a leverage point.",
+      "inferred": "Not stated as a leverage point. Reconstructed from their loop diagram, product definition or what they said in the 5 September session, and labelled so it is not mistaken for their own claim."
+    },
+    "contributors": [
+      {
+        "id": "joann",
+        "displayName": "Joann",
+        "points": [
+          {
+            "ref": "JN-L1",
+            "title": "Take breakage off the scorecard",
+            "role": "System-level anchor",
+            "effect": "Disarms TB1",
+            "mechanism": "B1 brakes because of one link: redemption up, breakage down. You cannot unmake that link - a point that gets used cannot also go unused, which is arithmetic. But you can make it stop mattering. The minus only brakes the loop because breakage revenue funds the room to be generous. Take breakage off the scorecard and redemption rising costs nothing.",
+            "signal": "It is the only link in either loop where two things disagree. Everything else moves together.",
+            "result": "A balancing loop with no inverse link is not balancing, it is reinforcing. The brake becomes an engine. Replacement revenue is the conversion flywheel, the only source that grows when redemption grows.",
+            "classification": "Meadows: #3 system goals",
+            "dependency": "Not ours to change alone. The proposal is to build the instrument that would let anyone have the conversation with evidence, because right now breakage is the only number on the table.",
+            "evidence": "Talking script, 5 September",
+            "status": "stated"
+          },
+          {
+            "ref": "JN-L2",
+            "title": "The ledger as the measurement instrument",
+            "role": "Information foundation",
+            "effect": "Enables TB3 and supplies TB1's replacement number",
+            "mechanism": "One page in the logged-in profile: what you earned, what is pending and when it lands, what you redeemed and what it was worth, what is about to expire - in dollars, not points. Six value states, six failure modes, one capability each.",
+            "signal": "A measure you cannot count is a slogan, so the feature is the instrument.",
+            "result": "The moment the product puts a dollar figure on a redemption for the member, the business has a realized-value number it never had - as a by-product of the page doing its job, not a report someone builds. And being a logged-in profile, it joins to the banking relationship.",
+            "classification": "Meadows: #6 information flows",
+            "dependency": "Reads from the accrual engine; it is not the system of record.",
+            "evidence": "Talking script, 5 September",
+            "status": "stated"
+          }
+        ]
+      },
+      {
+        "id": "sly",
+        "displayName": "Sylvester",
+        "points": [
+          {
+            "ref": "L01",
+            "title": "Shared value-state information",
+            "role": "Required information foundation",
+            "effect": "Strengthens R1 and weakens B1",
+            "mechanism": "Create a reliable view of what is identified, eligible, pursued, qualified, earned, pending, posted, redeemed, fulfilled, or unresolved.",
+            "signal": "The system cannot improve value realization when members and operators cannot see where value currently sits or where it became interrupted.",
+            "result": "Acting here can improve member transparency, supply better outcome information, expose at-risk value earlier, and reduce avoidable handoffs and delays.",
+            "classification": "Abson: Design · Meadows: #6 information flows; #9 delays",
+            "dependency": "Requires event connectivity, common definitions, and permissioned identity resolution.",
+            "evidence": "",
+            "status": "stated"
+          },
+          {
+            "ref": "L02",
+            "title": "Decisioning based on realized outcomes",
+            "role": "Longer-term learning capability",
+            "effect": "Strengthens R1",
+            "mechanism": "Feed realization, failure, and recovery outcomes—not only impressions or activations—back into future decisions.",
+            "signal": "Offer and opportunity decisions remain incomplete if the system learns only that something was shown or activated, rather than whether value was actually realized.",
+            "result": "Acting here can improve future relevance, timing, eligibility, and delivery decisions using evidence from completed member outcomes.",
+            "classification": "Abson: Feedbacks + Design · Meadows: #7 reinforcing feedback; #6 information flows",
+            "dependency": "Requires outcome attribution and an operating process that acts on learning.",
+            "evidence": "",
+            "status": "stated"
+          },
+          {
+            "ref": "L03",
+            "title": "Exception detection and recovery",
+            "role": "Primary product-action leverage point",
+            "effect": "Weakens B1 and supports R1",
+            "mechanism": "Identify at-risk value, diagnose the interruption, resolve or route it, verify realization, and capture the result.",
+            "signal": "Failures currently reduce value realization and trust, but each detected and resolved failure can also become information for future improvement.",
+            "result": "Acting here can restore individual value, reduce unresolved exceptions, strengthen trust, and generate evidence about recurring breakdowns.",
+            "classification": "Abson: Feedbacks + Design · Meadows: #8 balancing feedback; #6 information flows; #5 rules; #9 delays",
+            "dependency": "Requires resolution authority, ownership, partner and service integration, and safeguards against false intervention.",
+            "evidence": "",
+            "status": "stated"
+          },
+          {
+            "ref": "L04",
+            "title": "Realized value as the system goal",
+            "role": "System-level anchor",
+            "effect": "Governs both loops",
+            "mechanism": "Align measures and decision rules around appropriate member value realization rather than value issued, activity alone, or breakage.",
+            "signal": "Local teams can optimize offers, points issuance, redemption, or service metrics while worthwhile value continues to disappear across the total journey.",
+            "result": "Acting here can align discovery, fulfilment, recovery, decisioning, and measurement around the same member outcome.",
+            "classification": "Abson: Intent · Meadows: #3 system goals",
+            "dependency": "Requires executive alignment and economic validation; a product cannot impose this system goal alone.",
+            "evidence": "",
+            "status": "stated"
+          }
+        ]
+      },
+      {
+        "id": "henry",
+        "displayName": "Henry",
+        "points": [
+          {
+            "ref": "HN-L1",
+            "title": "Alerts, visibility, explanations and support workflows",
+            "role": "Corrective levers on the value gap",
+            "effect": "Strengthens TB3",
+            "mechanism": "Named on his balancing loop as the possible levers acting between issue and discrepancy signals and detection, explanation and resolution effort.",
+            "signal": "More unresolved value increases friction; more signals trigger corrective action; successful resolution reduces unresolved value.",
+            "result": "Moves the system back toward clarity, confidence and usable value.",
+            "classification": "Meadows: #6 information flows; #8 balancing feedback (classification inferred - Henry did not state a Meadows level)",
+            "dependency": "Requires reward status accuracy and visibility to be reliable first.",
+            "evidence": "Balancing Loop diagram",
+            "status": "stated"
+          }
+        ]
+      },
+      {
+        "id": "josh",
+        "displayName": "Josh",
+        "points": [
+          {
+            "ref": "JL01",
+            "title": "Reorient the system around member goal achievement",
+            "role": "System-level anchor",
+            "effect": "Governs B2",
+            "mechanism": "Set member goal achievement as the system's organizing objective and measure performance through worthwhile, realized value. Members state goals and preferences; BMO combines those signals with observed behaviour to prioritize rewards, experiences and suitable banking products that advance each job.",
+            "signal": "Need-based segments provide the starting structure; continued learning can move personalization toward a segment of one.",
+            "result": "Goal setup, progress tracking, opportunity ranking and coordinated loyalty-and-banking recommendations would operationalize the change.",
+            "classification": "Meadows: #3 system goals — very high leverage",
+            "dependency": "",
+            "evidence": "Deloitte found loyalty programs increased perceived value for 80% of members, yet consumers actively used only five of eight enrolled programs, supporting a sharper focus on useful value.",
+            "status": "stated"
+          },
+          {
+            "ref": "JL02",
+            "title": "Make CDB value visible before asking members to connect accounts",
+            "role": "Adoption precondition",
+            "effect": "Strengthens R5",
+            "mechanism": "Use a concrete, immediate member benefit as the entry point to consumer-driven banking. Blue Rewards shows how connecting an account may uncover eligible spending, improve reward recommendations or reveal a faster path toward a stated goal. A value preview, followed by a linking incentive or immediately useful insight, gives members a reason to participate.",
+            "signal": "The request should then explain what data BMO needs, what additional value it enables and how access can be changed or withdrawn.",
+            "result": "Combines a compelling hook with progressive consent, helping R5 gain enough participation to produce useful experiences and visible proof.",
+            "classification": "Meadows: #6 information flows; #5 rules of the system — high leverage",
+            "dependency": "",
+            "evidence": "",
+            "status": "stated"
+          },
+          {
+            "ref": "JL03",
+            "title": "Restructure fragmented data and channels into an ambient loyalty experience",
+            "role": "Information and channel foundation",
+            "effect": "Acts across R4, B2 and R5",
+            "mechanism": "Connect member goals and preferences with Blue Rewards activity, BMO relationship data, authorized cross-bank data, digital-intent signals and ISO 20022 payment information. These flows surface opportunities through BMO channels, wallets, approved external services and participating retailers.",
+            "signal": "At purchase, members could compare offers, redemption options, payment methods and suitable BMO products against their goal. Merchant and RTR integrations could confirm qualifying payments, update rewards and resolve missing value.",
+            "result": "Canada's CDB framework, Google's UK portability rules and loyalBe demonstrate enabling models. An April 2027 capstone would let BMO test consent and decision rules before broader adoption.",
+            "classification": "Meadows: #6 information flows, supported by #5 rules of the system — high leverage",
+            "dependency": "",
+            "evidence": "",
+            "status": "stated"
+          }
+        ]
+      },
+      {
+        "id": "lia",
+        "displayName": "Lia",
+        "points": [
+          {
+            "ref": "LA-L1",
+            "title": "Offer relevance",
+            "role": "Leverage on the reinforcing loop",
+            "effect": "Strengthens TR1",
+            "mechanism": "If the offers are more relevant, members are more likely to actually find them useful.",
+            "signal": "It is really about how BMO uses the information they already have.",
+            "result": "Members feel they are getting more value, so they keep using the programme and BMO keeps learning.",
+            "classification": "Meadows: #6 information flows - stated by Lia, who connected this leverage point to information flows explicitly",
+            "dependency": "Bounded by member control: more relevant, still in control.",
+            "evidence": "5 September session",
+            "status": "stated"
+          }
+        ]
+      },
+      {
+        "id": "ola",
+        "displayName": "Ola",
+        "points": [
+          {
+            "ref": "OL-L1",
+            "title": "Real-time status visibility",
+            "role": "Trust foundation",
+            "effect": "Strengthens TR4",
+            "mechanism": "When members can see what they are getting and what they have redeemed, trust increases, which drives engagement and revenue, which funds further visibility.",
+            "signal": "Drawn as a closed reinforcing loop rather than a one-way capability.",
+            "result": "The loop Joann's ledger acts on directly.",
+            "classification": "Not classified against Meadows by Ola",
+            "dependency": "Requires the status data to be accurate and current.",
+            "evidence": "Digital Business Model System Loops; 5 September session",
+            "status": "inferred"
+          },
+          {
+            "ref": "OL-L2",
+            "title": "Measure realization against programme margin",
+            "role": "Scorecard tension",
+            "effect": "Names TB1",
+            "mechanism": "As members realize more value they redeem more, which leads to breakage falling, which constrains what the programme can invest.",
+            "signal": "Ola raised this on the call and noted Josh had reached the same point.",
+            "result": "The same scorecard tension Joann's leverage point acts on.",
+            "classification": "Not classified against Meadows by Ola",
+            "dependency": "Needs the replacement revenue question answered.",
+            "evidence": "5 September session",
+            "status": "inferred"
+          }
+        ]
+      }
+    ]
+  },
   "registry": {
     "variables": [
       {

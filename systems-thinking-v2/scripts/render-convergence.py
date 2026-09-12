@@ -265,6 +265,29 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
     return out.join("");
   }
 
+  function lpCard(p) {
+    var rows = [
+      ["Mechanism", p.mechanism], ["Signal", p.signal], ["Result", p.result],
+      ["Classification", p.classification], ["Depends on", p.dependency], ["Evidence", p.evidence]
+    ].filter(function (r) { return r[1]; });
+    return '<article class="cv-lp' + (p.status === "inferred" ? " is-inferred" : "") + '">' +
+      '<div class="cv-lp-head"><code>' + esc(p.ref) + "</code>" +
+      (p.effect ? '<span class="cv-lp-eff">' + esc(p.effect) + "</span>" : "") +
+      (p.status === "inferred" ? '<span class="cv-lp-flag">reconstructed, not stated</span>' : "") +
+      "</div><h5>" + esc(p.title) + "</h5>" +
+      (p.role ? '<p class="cv-lp-role">' + esc(p.role) + "</p>" : "") +
+      rows.map(function (r) {
+        return '<div class="cv-field"><span>' + r[0] + "</span><p>" + esc(r[1]) + "</p></div>";
+      }).join("") + "</article>";
+  }
+
+  function lpSection(c) {
+    return '<section class="cv-person"><h4>' + esc(c.displayName) +
+      '<span class="cv-personcount">' + c.points.length + " leverage point" +
+      (c.points.length === 1 ? "" : "s") + "</span></h4>" +
+      '<div class="cv-lp-grid">' + c.points.map(lpCard).join("") + "</div></section>";
+  }
+
   var DIAG = DATA.structuralDiagnostic;
 
   var summary = DATA.convergence.summary || {};
@@ -290,6 +313,7 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       "</header>" +
       '<div class="cv-subnav" role="group" aria-label="Choose a convergence view">' +
         '<button type="button" class="btn btn-primary" data-cv-panel="converge" aria-pressed="true">Where we agree</button>' +
+        '<button type="button" class="btn" data-cv-panel="alllev" aria-pressed="false">Every leverage point, by author</button>' +
         '<button type="button" class="btn" data-cv-panel="allloops" aria-pressed="false">Every loop, by author</button>' +
         '<button type="button" class="btn" data-cv-panel="canon" aria-pressed="false">The team&rsquo;s nine loops</button>' +
         '<button type="button" class="btn" data-cv-panel="diverge" aria-pressed="false">Divergence</button>' +
@@ -299,6 +323,10 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
         '<div class="cv-grid">' + DATA.convergence.leverage.map(clusterCard).join("") + "</div>" +
         '<p class="cv-fine">Product-definition convergence now sits on the Causal Loop Convergence page, with the loops it derives from. Convergence strength describes how independently contributors arrived at the same claim. It never upgrades epistemic status: ' +
         esc(DATA.classificationRule) + "</p>" +
+      "</div>" +
+      '<div class="cv-panel" data-cv-panel-body="alllev" hidden>' +
+        '<p class="cv-lead">Every leverage point as its author wrote it, before merging. The merged themes are under Where we agree; this is where each person finds their own work. Anything reconstructed rather than stated is marked.</p>' +
+        DATA.leveragePointsByAuthor.contributors.map(lpSection).join("") +
       "</div>" +
       '<div class="cv-panel" data-cv-panel-body="allloops" hidden>' +
         '<p class="cv-lead">Every loop anyone drew, drawn as a full loop, grouped by author. Each one is labelled with the canonical loop it resolves to, so you can see which of your loops is also someone else&rsquo;s.</p>' +

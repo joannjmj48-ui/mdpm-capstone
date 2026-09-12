@@ -69,6 +69,7 @@ def main():
 
     cmap = load(DATA / "convergence-map.json")
     registry = load(DATA / "variable-registry.json")
+    lps = load(DATA / "leverage-points.json")
 
     people = {c["id"] for c in CONTRIBUTORS}
     for declared in cmap.get("analysedSubmissions", []):
@@ -103,6 +104,7 @@ def main():
             "leverage": cmap["leverageConvergence"],
             "product": cmap["productConvergence"],
         },
+        "leveragePointsByAuthor": lps,
         "registry": {
             "variables": registry["variables"],
             "loops": registry["loops"],
