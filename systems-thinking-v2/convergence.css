@@ -279,3 +279,12 @@
 #loyalty-map-v2 .cv-levlist em {
   font-style: normal; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted-foreground);
 }
+
+/* The original tab bar sized buttons at width:25% for exactly four views.
+   With six, the last wrapped alone and stretched to the full row. Let each
+   tab take its natural width and wrap normally. */
+#loyalty-map-v2 div.viz-controls .btn {
+  flex: 0 1 auto;
+  width: auto;
+  white-space: nowrap;
+}

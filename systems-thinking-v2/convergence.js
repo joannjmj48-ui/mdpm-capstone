@@ -374,7 +374,7 @@
 
   root.appendChild(section);
 
-  var button = el("button", "btn", "4. Leverage Points + Causal Loop Convergence");
+  var button = el("button", "btn", "4. Convergence");
   button.type = "button";
   button.setAttribute("data-cv-view", "convergence");
   button.setAttribute("aria-pressed", "false");
