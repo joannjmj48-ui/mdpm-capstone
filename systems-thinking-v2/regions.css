@@ -7,7 +7,7 @@
   grid-template-areas:
     "rpop   mo         mc         co         ."
     "rval   value      .          engagement ."
-    "rgov   leadership finance    .          ."
+    "rgov   .          leadership finance    ."
     "rpart  partner    .          .          ."
     "rback  products   data       channels   service"
     "rcond  friction   .          .          .";
