@@ -137,7 +137,13 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Member populations"
+      "region": "Member populations",
+      "stakeholderRefs": [
+        9,
+        10,
+        12,
+        14
+      ]
     },
     {
       "id": "member-client",
@@ -206,7 +212,11 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Member populations"
+      "region": "Member populations",
+      "stakeholderRefs": [
+        9,
+        10
+      ]
     },
     {
       "id": "client-only",
@@ -273,7 +283,11 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Member populations"
+      "region": "Member populations",
+      "stakeholderRefs": [
+        12,
+        13
+      ]
     },
     {
       "id": "partner",
@@ -373,7 +387,12 @@
       "region": "Partner ecosystem",
       "regionByView": {
         "transition": "What moves value between them"
-      }
+      },
+      "stakeholderRefs": [
+        11,
+        5,
+        8
+      ]
     },
     {
       "id": "member-value",
@@ -465,7 +484,11 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "region": "Value realization"
+      "region": "Value realization",
+      "stakeholderRefs": [
+        1,
+        2
+      ]
     },
     {
       "id": "engagement",
@@ -546,7 +569,11 @@
       "region": "Value realization",
       "regionByView": {
         "transition": "Conditions and entry"
-      }
+      },
+      "stakeholderRefs": [
+        9,
+        2
+      ]
     },
     {
       "id": "products",
@@ -631,7 +658,11 @@
       "region": "Enabling backbone",
       "regionByView": {
         "transition": "What moves value between them"
-      }
+      },
+      "stakeholderRefs": [
+        3,
+        7
+      ]
     },
     {
       "id": "data",
@@ -727,7 +758,10 @@
       "region": "Enabling backbone",
       "regionByView": {
         "transition": "What moves value between them"
-      }
+      },
+      "stakeholderRefs": [
+        4
+      ]
     },
     {
       "id": "channels",
@@ -820,7 +854,11 @@
       "region": "Enabling backbone",
       "regionByView": {
         "transition": "What moves value between them"
-      }
+      },
+      "stakeholderRefs": [
+        4,
+        1
+      ]
     },
     {
       "id": "service",
@@ -915,7 +953,11 @@
       "region": "Enabling backbone",
       "regionByView": {
         "transition": "What moves value between them"
-      }
+      },
+      "stakeholderRefs": [
+        1,
+        3
+      ]
     },
     {
       "id": "friction",
@@ -1000,7 +1042,11 @@
       "region": "Structural conditions",
       "regionByView": {
         "transition": "Conditions and entry"
-      }
+      },
+      "stakeholderRefs": [
+        4,
+        1
+      ]
     },
     {
       "id": "identity",
@@ -1088,7 +1134,11 @@
           "traceabilityStatus": "decision-recorded"
         }
       ],
-      "constrainedBy": "TB2 Trust and consent"
+      "constrainedBy": "TB2 Trust and consent",
+      "stakeholderRefs": [
+        4,
+        6
+      ]
     },
     {
       "id": "orchestration",
@@ -1179,6 +1229,10 @@
           ],
           "traceabilityStatus": "decision-recorded"
         }
+      ],
+      "stakeholderRefs": [
+        4,
+        2
       ]
     },
     {
@@ -1257,7 +1311,11 @@
           "traceabilityStatus": "decision-recorded"
         }
       ],
-      "constrainedBy": "TB3 Value gap"
+      "constrainedBy": "TB3 Value gap",
+      "stakeholderRefs": [
+        1,
+        4
+      ]
     },
     {
       "id": "intersection",
@@ -1328,6 +1386,10 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
+      ],
+      "stakeholderRefs": [
+        2,
+        3
       ]
     },
     {
@@ -1399,7 +1461,11 @@
           "traceabilityStatus": "source-link-pending"
         }
       ],
-      "constrainedBy": "TB1 Program economics"
+      "constrainedBy": "TB1 Program economics",
+      "stakeholderRefs": [
+        2,
+        7
+      ]
     },
     {
       "id": "neither",
@@ -1486,6 +1552,9 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
+      ],
+      "stakeholderRefs": [
+        13
       ]
     },
     {
@@ -1577,6 +1646,10 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
+      ],
+      "stakeholderRefs": [
+        9,
+        13
       ]
     },
     {
@@ -1667,6 +1740,9 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
+      ],
+      "stakeholderRefs": [
+        4
       ]
     },
     {
@@ -1756,6 +1832,9 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
+      ],
+      "stakeholderRefs": [
+        6
       ]
     },
     {
@@ -1844,6 +1923,9 @@
           "evidenceRefs": [],
           "traceabilityStatus": "source-link-pending"
         }
+      ],
+      "stakeholderRefs": [
+        5
       ]
     },
     {
@@ -1888,7 +1970,10 @@
       "claims": [],
       "regionByView": {
         "transition": "Conditions and entry"
-      }
+      },
+      "stakeholderRefs": [
+        7
+      ]
     }
   ],
   "valueStates": [
@@ -4261,5 +4346,10 @@
       "why": "This is the specific source of the confusion raised on the call. One is a process that runs continuously; the other is a state a single unit of value reaches.",
       "needsDecision": "Rename one of them. Leaving both is what makes the language inconsistent."
     }
+  },
+  "stakeholderBinding": {
+    "source": "data/stakeholders.json",
+    "note": "Which stakeholders hold power over each part of the system. The grid answers who can move the system; this binds that answer to the components they can move. Assignment is analytical judgement, not an org chart.",
+    "sharpEdge": "Finance and Risk sit in keep satisfied - high power, low interest - and they own the points liability, which makes them the owners of the breakage brake. The team's highest-leverage intervention has to be agreed by the quadrant the team talks to least."
   }
 }

@@ -25,6 +25,30 @@ decision = lambda v: DECISION.get(v, title_case(v or ""))
 
 overlays = {o["id"]: o for o in contract["overlays"]}
 
+# who holds power over each component, bound from the stakeholder grid
+_sh_path = ROOT / "data" / "stakeholders.json"
+_people, _quad = {}, {}
+if _sh_path.exists():
+    _sh = json.loads(_sh_path.read_text(encoding="utf-8"))
+    for q in _sh["quadrants"]:
+        for person in q["stakeholders"]:
+            _people[person["n"]] = person
+            _quad[person["n"]] = q["label"]
+
+def stakeholder_link(node):
+    refs = node.get("stakeholderRefs") or []
+    if not refs:
+        return None
+    targets = []
+    for r in refs:
+        person = _people.get(r)
+        if person:
+            targets.append(f"{r} \u00b7 {person['name']} ({_quad[r]})")
+    if not targets:
+        return None
+    return {"phase": "Who holds power here", "targets": targets,
+            "explanation": "From the power and interest grid. Analytical judgement, not an org chart."}
+
 nodes = {}
 for n in contract["nodes"]:
     nodes[n["id"]] = {
@@ -37,7 +61,7 @@ for n in contract["nodes"]:
         "why": n.get("whyItMatters"), "known": n.get("known"),
         "provisional": n.get("provisional"), "opportunity": n.get("opportunityImplication"),
         "chain": n.get("chain") or [], "dimensions": n.get("dimensions") or [],
-        "systemLinks": n.get("systemLinks") or [],
+        "systemLinks": (n.get("systemLinks") or []) + ([stakeholder_link(n)] if stakeholder_link(n) else []),
     }
 
 for st in contract["valueStates"]:
