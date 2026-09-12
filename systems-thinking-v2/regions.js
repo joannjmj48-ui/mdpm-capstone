@@ -10,6 +10,7 @@
     current: [
       {id: "rpop",  label: "Member populations",    hint: "Who is in the system"},
       {id: "rval",  label: "Value realization",     hint: "The main variable and its feedback"},
+      {id: "rgov",  label: "Governance and economics", hint: "Who sets the goal and funds it"},
       {id: "rpart", label: "Partner ecosystem",     hint: "Who supplies the value"},
       {id: "rback", label: "Enabling backbone",     hint: "What delivers it"},
       {id: "rcond", label: "Structural conditions", hint: "What obstructs it"}

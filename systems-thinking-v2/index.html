@@ -821,7 +821,7 @@ svg {
 <link rel="stylesheet" href="convergence.css?v=9">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
 <link rel="stylesheet" href="narrative.css?v=1">
-<link rel="stylesheet" href="regions.css?v=4">
+<link rel="stylesheet" href="regions.css?v=5">
 <link rel="stylesheet" href="opportunity.css?v=5">
 <link rel="stylesheet" href="legend.css?v=1">
 <link rel="stylesheet" href="stakeholders.css?v=1">
@@ -2643,6 +2643,61 @@ svg {
         }
       ]
     },
+    "finance": {
+      "label": "Finance and risk",
+      "sub": "Owns the liability",
+      "kind": "governance",
+      "phase": "Current System",
+      "status": "Inferred",
+      "basis": "Group convergence",
+      "decision": "Active direction",
+      "category": "Governance and economics",
+      "definition": "The function that owns the outstanding points liability and the programme's margin. It decides how much the programme can afford to give away, and it is scored on breakage - the value members never collect.",
+      "role": "Sets the economic ceiling the rest of the system operates under. Offer generosity, point value and how much can be funded are decided here, not in the product.",
+      "why": "It appears in the stakeholder grid as keep satisfied - high power, low interest - and it owns the only constraint the team identified as arithmetic rather than behavioural. The highest-leverage intervention in the analysis has to be agreed by the stakeholder the team engages with least.",
+      "known": "Holds the outstanding points liability and is measured on breakage.",
+      "provisional": "How generosity decisions are actually made, and what would have to replace breakage as a measure, are not established.",
+      "opportunity": "Realized value is the candidate replacement measure, which is what the ledger would produce.",
+      "chain": [],
+      "dimensions": [],
+      "systemLinks": [
+        {
+          "phase": "Who holds power here",
+          "targets": [
+            "7 · Finance & Risk (Keep satisfied)"
+          ],
+          "explanation": "From the power and interest grid. Analytical judgement, not an org chart."
+        }
+      ]
+    },
+    "leadership": {
+      "label": "Programme leadership",
+      "sub": "Sets the goal and the priorities",
+      "kind": "governance",
+      "phase": "Current System",
+      "status": "Inferred",
+      "basis": "Group convergence",
+      "decision": "Active direction",
+      "category": "Governance and economics",
+      "definition": "The client team and its executive sponsors - the people who decide what the programme is for, what gets built, and what the organisation is measured on.",
+      "role": "Sets the system goal and allocates the capacity that delivers it.",
+      "why": "Changing what the system optimises for is the highest-leverage intervention four contributors identified, and it is decided here. The product can supply the evidence; it cannot make the decision.",
+      "known": "Sits in manage closely - high power, high interest.",
+      "provisional": "Where goal-setting authority actually sits between the client team, sponsors and the wider business is not established.",
+      "opportunity": "This is the audience for the realized-value argument.",
+      "chain": [],
+      "dimensions": [],
+      "systemLinks": [
+        {
+          "phase": "Who holds power here",
+          "targets": [
+            "1 · Emerging Business team (Manage closely)",
+            "2 · BMO exec sponsors / leadership (Manage closely)"
+          ],
+          "explanation": "From the power and interest grid. Analytical judgement, not an org chart."
+        }
+      ]
+    },
     "opportunity": {
       "label": "Opportunity",
       "sub": "VT01 begins here",
@@ -2911,7 +2966,9 @@ svg {
         "data": "data",
         "channels": "channels",
         "service": "service",
-        "friction": "friction"
+        "friction": "friction",
+        "finance": "finance",
+        "leadership": "leadership"
       },
       "edges": [
         [
@@ -3113,6 +3170,54 @@ svg {
           "inferred",
           null,
           "CUR-R25"
+        ],
+        [
+          "finance",
+          "products",
+          "Funds what can be offered",
+          "inferred",
+          null,
+          "CUR-R26"
+        ],
+        [
+          "member-value",
+          "finance",
+          "Realized value reduces breakage",
+          "inferred",
+          null,
+          "CUR-R27"
+        ],
+        [
+          "leadership",
+          "member-value",
+          "Sets what the system optimises for",
+          "inferred",
+          null,
+          "CUR-R28"
+        ],
+        [
+          "leadership",
+          "data",
+          "Sets decision priorities",
+          "inferred",
+          null,
+          "CUR-R29"
+        ],
+        [
+          "leadership",
+          "service",
+          "Allocates operating capacity",
+          "inferred",
+          null,
+          "CUR-R30"
+        ],
+        [
+          "finance",
+          "leadership",
+          "Reports the economics",
+          "inferred",
+          null,
+          "CUR-R31"
         ]
       ]
     },
@@ -3490,6 +3595,12 @@ svg {
     "Member-clients transact through products": "Members who also bank with BMO interact with the products and transactions backbone directly, which is what makes combined signal possible.",
     "Clients hold and transact through products": "Client-only participants interact with the products backbone even where they do not participate in the loyalty programme.",
     "Engagement returns to realization": "Sustained engagement produces further opportunities to realize value, closing the pair rather than terminating at the outcome.",
+    "Funds what can be offered": "Margin headroom decides how generous an offer can be and what a point is worth. The product does not set this.",
+    "Realized value reduces breakage": "Value members actually collect is value the programme no longer keeps. This is the inverse link behind the breakage brake, and it is arithmetic: a point that gets used cannot also go unused.",
+    "Sets what the system optimises for": "The organising goal - whether the system is scored on value issued, activity, breakage or realized value - is decided here.",
+    "Sets decision priorities": "What decisioning is pointed at, and what counts as a good decision, follows from what leadership asks to be measured.",
+    "Allocates operating capacity": "How much capacity exists for posting, fulfilment and recovery is a funding decision, not an operational one.",
+    "Reports the economics": "Liability, margin and breakage are what leadership sees when deciding what the programme can do.",
     "Reaches the member, who weighs it": "Two changes at once. The catalogue narrows to one person — decisioning selects what is relevant and eligible, a channel surfaces it. And the member starts assessing it: whether it is attainable, worth the effort, and what they actually want. Value first exists in the member's eyes at this point, as something they could have.",
     "Member decides to act, and acts": "The member commits: they make the qualifying purchase or complete the required activity. This is the step where value becomes theirs.",
     "Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
@@ -3714,6 +3825,48 @@ svg {
       "evidenceRefs": []
     },
     "CUR-R25": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R26": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R27": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R28": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R29": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R30": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "CUR-R31": {
       "epistemicStatus": "Inferred",
       "claimBasis": "Group convergence",
       "decisionStatus": "Active direction",
@@ -4982,7 +5135,7 @@ svg {
 </script>
 <script src="convergence.js?v=15"></script>
 <script src="narrative.js?v=10"></script>
-<script src="regions.js?v=2"></script>
+<script src="regions.js?v=3"></script>
 <script src="opportunity.js?v=2"></script>
 <script src="view-notes.js?v=6"></script>
 <script src="legend.js?v=1"></script>

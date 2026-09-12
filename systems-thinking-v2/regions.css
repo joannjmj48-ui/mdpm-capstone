@@ -5,11 +5,12 @@
   column-gap: 2.6rem;
   row-gap: 4.6rem;
   grid-template-areas:
-    "rpop   mo       mc    co         ."
-    "rval   value    .     engagement ."
-    "rpart  partner  .     .          ."
-    "rback  products data  channels   service"
-    "rcond  friction .     .          .";
+    "rpop   mo         mc         co         ."
+    "rval   value      .          engagement ."
+    "rgov   leadership finance    .          ."
+    "rpart  partner    .          .          ."
+    "rback  products   data       channels   service"
+    "rcond  friction   .          .          .";
 }
 
 #loyalty-map-v2 #lm2-canvas .lm2-grid[data-view="current"] .lm2-node,
