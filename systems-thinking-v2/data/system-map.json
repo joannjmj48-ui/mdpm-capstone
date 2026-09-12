@@ -412,7 +412,7 @@
       "definition": "The value members actually obtain and can use — the amount of worthwhile value that makes it all the way through to them. This is the system's main variable: the thing the whole map is organised around and the measure the team agreed to be judged on.",
       "roleInSystem": "This is the system main variable. It connects relevance, qualification, posting, access, use, fulfilment and perceived worth without treating activity alone as success.",
       "whyItMatters": "The system exists to improve the amount, relevance, reliability, accessibility, usefulness and appropriate speed with which loyalty opportunities become realized member value across its relationship pathways.",
-      "known": "The analytical model distinguishes Opportunity, Potential, Earned, Available and Realized. Empirical transition rates and drop-offs remain unknown.",
+      "known": "The analytical model distinguishes Opportunity, Potential Value, Earned Value, Available Value and Realized Value. Empirical transition rates and drop-offs remain unknown.",
       "provisional": "The largest realization gaps, causal drivers, population differences and incremental outcomes remain unresolved.",
       "opportunityImplication": "Improve value progression across multiple dimensions while preserving credible standalone Member-Only value and avoiding speed-only optimization.",
       "status": "observed",
@@ -420,10 +420,10 @@
       "baselineDisplayStatus": "Supported",
       "chain": [
         "Opportunity",
-        "Potential",
-        "Earned",
-        "Available",
-        "Realized"
+        "Potential Value",
+        "Earned Value",
+        "Available Value",
+        "Realized Value"
       ],
       "dimensions": [
         "Realization rate",
@@ -516,7 +516,7 @@
       "epistemicStatus": "Inferred",
       "baselineDisplayStatus": "Supported",
       "chain": [
-        "Realized",
+        "Realized Value",
         "Continued or expanded participation",
         "Meaningful Engagement",
         "Outcome learning"
@@ -779,7 +779,7 @@
         "transition"
       ],
       "definition": "The digital, physical and communication touchpoints through which decisions, offers, information and experiences reach people.",
-      "roleInSystem": "Makes opportunities discoverable and actionable and makes Available accessible for use through appropriate touchpoints.",
+      "roleInSystem": "Makes opportunities discoverable and actionable and makes Available Value accessible for use through appropriate touchpoints.",
       "whyItMatters": "The client already operates mature banking channels, while the program also has standalone surfaces and partner touchpoints.",
       "known": "Multiple channels exist. Separate access, authentication and feature availability have produced some directional signals of discontinuity.",
       "provisional": "Multiple channels are not inherently fragmented. The quality of orchestration, ownership and handoffs across them remains unclear.",
@@ -876,7 +876,7 @@
         "transition"
       ],
       "definition": "The operational backbone that calculates and fulfils rewards, supports members, manages issues and coordinates program administration.",
-      "roleInSystem": "Supports qualification, posting, release, fulfilment, recovery and especially the movement from Earned to Available.",
+      "roleInSystem": "Supports qualification, posting, release, fulfilment, recovery and especially the movement from Earned Value to Available Value.",
       "whyItMatters": "The financial institution already has substantial operating capacity. Reusing relevant capabilities for the program could improve consistency and create economies of scale.",
       "known": "Reliable reward posting, redemption and service recovery influence whether members trust the value proposition. Public signals identify some cross-system support handoffs.",
       "provisional": "The actual degree of integration, duplication or fragmentation between the client and program operating models is unknown.",
@@ -1942,7 +1942,7 @@
         "transition"
       ],
       "definition": "The stock of posted points a member holds. It fills two ways. Most of it is earned through qualifying activity and posts once processed. The rest arrives at enrolment: signing up grants roughly 750 points, which is still earned — enrolment is the qualifying behaviour — it simply completes in one step.",
-      "roleInSystem": "Sits between Earned and Available. It is why the progression is sequential without being one mandatory journey: a member joins the cycle at whichever state their balance already puts them in. A brand-new member is already holding available value, and a five-year customer holds a balance regardless of this week's activity.",
+      "roleInSystem": "Sits between Earned Value and Available Value. It is why the progression is sequential without being one mandatory journey: a member joins the cycle at whichever state their balance already puts them in. A brand-new member is already holding available value, and a five-year customer holds a balance regardless of this week's activity.",
       "whyItMatters": "re assuming they're starting from zero — you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at the catalogue, which almost none do. The sign-up grant is the clearest case: the offer is weighed by a prospect, enrolment earns it, and it posts immediately.",
       "known": "Sign-up grants roughly 750 points, earned by enrolling.",
       "provisional": "The actual sign-up grant, expiry behaviour and how balance is segmented by member type are not yet established.",
@@ -2075,7 +2075,7 @@
     },
     {
       "id": "potential-value",
-      "label": "Potential",
+      "label": "Potential Value",
       "definition": "The rewards that reached a particular member, and which that member is weighing up. Two things have happened: the catalogue was filtered to them, and they are working out what it is worth to them — is it attainable, is it worth the effort, is it what they actually want. It is called potential value because this is where value first exists in the member's eyes, as something they could have. Nothing is theirs yet. At the very front of the chain the person weighing it may not be a member yet: a join-and-get-750-points offer is weighed by a prospect, who becomes a member by acting on it.",
       "entryCondition": "The opportunity is surfaced to this member as relevant and eligible, and the member begins weighing it.",
       "exitCondition": "The member decides to act and completes the qualifying requirement.",
@@ -2088,12 +2088,11 @@
         "SRC-CONTRACT-001"
       ],
       "plainLanguage": "The rewards that reached this person, and they're working out whether it's worth it. At the very front of the chain that person may still be a prospect.",
-      "region": "The five value states",
-      "priorLabel": "Potential Value"
+      "region": "The five value states"
     },
     {
       "id": "earned-value",
-      "label": "Earned",
+      "label": "Earned Value",
       "definition": "Value the member has decided to act on and acted to secure — they completed the qualifying purchase, activity or requirement. The decision has been made and carried out, but the value may not have posted yet. Enrolment counts: signing up is itself a qualifying behaviour, which is how a sign-up grant of roughly 750 points is earned rather than simply appearing.",
       "entryCondition": "The member acts on the opportunity and satisfies the applicable qualification rule.",
       "exitCondition": "The earned value posts into the member's balance and becomes usable.",
@@ -2106,13 +2105,12 @@
         "SRC-CONTRACT-001"
       ],
       "region": "The five value states",
-      "plainLanguage": "The member did the thing — including, at the very start, signing up. It's theirs, even if it hasn't landed yet.",
-      "priorLabel": "Earned Value"
+      "plainLanguage": "The member did the thing — including, at the very start, signing up. It's theirs, even if it hasn't landed yet."
     },
     {
       "id": "available-value",
-      "label": "Available",
-      "definition": "Earned value that has been posted, released, activated or otherwise made accessible for use.",
+      "label": "Available Value",
+      "definition": "Earned Value value that has been posted, released, activated or otherwise made accessible for use.",
       "entryCondition": "The member can operationally access or use the earned entitlement.",
       "exitCondition": "The member successfully uses or converts the value.",
       "order": 4,
@@ -2124,12 +2122,11 @@
         "SRC-CONTRACT-001"
       ],
       "region": "The five value states",
-      "plainLanguage": "It's posted into the balance and ready to spend.",
-      "priorLabel": "Available Value"
+      "plainLanguage": "It's posted into the balance and ready to spend."
     },
     {
       "id": "realized-value",
-      "label": "Realized",
+      "label": "Realized Value",
       "definition": "Value the member has successfully used or converted into a worthwhile outcome that the system can measure. Reworded on 12 September to make the outcome measurable rather than only perceived, so the product can show a member that their value has been measured.",
       "entryCondition": "Successful use or conversion produces a recognized outcome.",
       "exitCondition": "The value episode is evaluated and may influence subsequent participation.",
@@ -2142,8 +2139,7 @@
         "SRC-CONTRACT-001"
       ],
       "plainLanguage": "The member used it, and we can show what it was worth.",
-      "region": "The five value states",
-      "priorLabel": "Realized Value"
+      "region": "The five value states"
     }
   ],
   "valueTransitions": [
@@ -2857,7 +2853,7 @@
       "to": "available-value",
       "label": "Post + release + activate",
       "displayLabel": "Post + release + activate",
-      "relationshipDefinition": "Earned becomes Available when the entitlement is operationally accessible.",
+      "relationshipDefinition": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -2882,7 +2878,7 @@
       "to": "realized-value",
       "label": "Use + convert into worthwhile outcome",
       "displayLabel": "Use + convert into worthwhile outcome",
-      "relationshipDefinition": "Available becomes Realized through successful use or conversion into perceived worth.",
+      "relationshipDefinition": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -4446,7 +4442,7 @@
       "label": "1. Current System",
       "heading": "Current System",
       "purpose": "Show what exists today and where value progression may be enabled, interrupted, delayed or obscured.",
-      "contextParagraph": "This view shows the populations, partners, value flows and institutional capabilities operating today. It highlights where loyalty value may progress or stall between Opportunity, Potential, Earned, Available and Realized, while preserving uncertainty about the actual degree of integration, fragmentation and causal effect.",
+      "contextParagraph": "This view shows the populations, partners, value flows and institutional capabilities operating today. It highlights where loyalty value may progress or stall between Opportunity, Potential Value, Earned Value, Available Value and Realized Value, while preserving uncertainty about the actual degree of integration, fragmentation and causal effect.",
       "nodeIds": [
         "member-only",
         "member-client",
@@ -4739,7 +4735,7 @@
     ],
     "openCollision": {
       "issue": "Resolved 12 September.",
-      "resolution": "Realized value is the main variable — the amount of worthwhile value members actually obtain. The five stages drop the word entirely and read Opportunity, Potential, Earned, Available, Realized, because the band is already labelled as value states and repeating it on each one is what caused the collision.",
+      "resolution": "Two things carry the name realized value, and that is deliberate. The fifth stage, Realized Value, is the moment a single reward gets used and its worth becomes observable. The main variable, Realized value, is the running total of everything that has reached that stage. The stage is an event; the main variable is what accumulates from it. Every stage keeps the word Value so the five names read consistently.",
       "needsDecision": null
     }
   },
