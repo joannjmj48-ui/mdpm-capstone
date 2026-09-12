@@ -73,7 +73,7 @@ layouts = {
     "transition": {"opportunity": "opportunity", "potential-value": "potential", "earned-value": "earned",
                    "available-value": "available", "realized-value": "realized", "partner": "partner",
                    "products": "products", "data": "data", "service": "service", "channels": "channels",
-                   "friction": "friction", "engagement": "engagement"},
+                   "friction": "friction", "engagement": "engagement", "points-balance": "balance"},
     "future": {"identity": "identity", "orchestration": "orchestration", "delivery": "delivery", "partner": "partner",
                "member-value": "value", "engagement": "futureengagement", "intersection": "intersection", "net-value": "net"},
     "external": {"regulation": "regulation", "technology-landscape": "technology", "expectations": "expectations",

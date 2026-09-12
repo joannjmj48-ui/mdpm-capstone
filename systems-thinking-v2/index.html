@@ -1318,7 +1318,7 @@ svg {
     grid-template-areas:
       "opportunity potential earned available realized"
       "partner products data service channels"
-      "friction friction . engagement engagement";
+      "friction friction balance engagement engagement";
   }
   #loyalty-map-v2 .lm2-grid[data-view="current"] {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2429,6 +2429,28 @@ svg {
         }
       ]
     },
+    "points-balance": {
+      "label": "Points balance",
+      "sub": "Where a member already is",
+      "kind": "state",
+      "phase": "How Value Progresses",
+      "status": "Inferred",
+      "basis": "Group convergence",
+      "decision": "Active direction",
+      "category": "Standing stock",
+      "definition": "The value a member is already holding, independent of any single offer. Signing up grants roughly 750 points, so a new member starts holding available value having earned nothing. A member who has banked for five years holds a balance regardless of what they did this week.",
+      "role": "Shows that the progression is sequential without being one mandatory journey. Value cannot reach Available Value without being earned, but a member can join the cycle at whichever state their balance already puts them in.",
+      "why": "Raised on 12 September: 'you're assuming they're starting from zero - you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at Opportunity, which almost none do.",
+      "known": "Sign-up grants roughly 750 points.",
+      "provisional": "The actual sign-up grant, expiry behaviour and how balance is segmented by member type are not yet established.",
+      "opportunity": "A member's entry state is a design input for onboarding and for the ledger.",
+      "chain": [
+        "Points balance",
+        "Member enters at whichever state their balance allows"
+      ],
+      "dimensions": [],
+      "systemLinks": []
+    },
     "opportunity": {
       "label": "Opportunity",
       "sub": "VT01 begins here",
@@ -2438,7 +2460,7 @@ svg {
       "basis": "Group convergence",
       "decision": "Active direction",
       "category": "Controlled value state",
-      "definition": "An available loyalty proposition, benefit, offer or earning possibility that the member could act on. It is not yet value: nothing has been earned, promised or committed to the member. The faculty asked what we mean by opportunity, so this definition also has to say why an opportunity was shown, what it is worth, and what action it requires.",
+      "definition": "An available loyalty proposition, benefit, offer or earning possibility that a member could act on. It is created as much by the system as by the partner: data and decisioning determines what is surfaced, a channel shows it, and service can explain it. It is not yet value - nothing has been earned, promised or committed to the member. The definition must also say why this opportunity was shown to this member, what it is worth, and what action it requires.",
       "role": "Entry condition: A proposition, benefit or earning possibility exists. Exit condition: Relevance and a plausible eligible path are established.",
       "why": "This state is analytically distinct so qualification, posting, access, use and perceived worth are not collapsed into generic value.",
       "known": "The state definition is an approved group-converged modeling decision. Current volumes, conversion rates and delays are not yet established.",
@@ -2917,7 +2939,8 @@ svg {
         "service": "service",
         "channels": "channels",
         "friction": "friction",
-        "engagement": "engagement"
+        "engagement": "engagement",
+        "points-balance": "balance"
       },
       "edges": [
         [
@@ -2979,7 +3002,7 @@ svg {
         [
           "data",
           "potential-value",
-          "Relevance + eligibility context",
+          "Data and user decisioning",
           "inferred",
           null,
           "TR-R07"
@@ -3015,6 +3038,38 @@ svg {
           "inferred",
           null,
           "TR-R11"
+        ],
+        [
+          "channels",
+          "opportunity",
+          "Where the member sees it",
+          "inferred",
+          null,
+          "TRN-R01"
+        ],
+        [
+          "service",
+          "opportunity",
+          "Help understanding it",
+          "inferred",
+          null,
+          "TRN-R02"
+        ],
+        [
+          "data",
+          "opportunity",
+          "What gets surfaced at all",
+          "inferred",
+          null,
+          "TRN-R03"
+        ],
+        [
+          "points-balance",
+          "available-value",
+          "Enter at any stage",
+          "inferred",
+          null,
+          "TRN-R04"
         ]
       ]
     },
@@ -3179,7 +3234,7 @@ svg {
     "Participation + partner returns": "Member participation may create sales, affinity, insight or reach, but incrementality is unresolved.",
     "Qualification + transaction evidence": "Product activity can create qualification and transaction evidence where use is permitted.",
     "Opportunities + earning conditions": "Products and transactions generate opportunities, participation routes and earning conditions.",
-    "Relevance + eligibility context": "Permitted context may support relevance and eligibility assessment.",
+    "Relevance + eligibility context": "Decisioning may help assess relevance and eligibility without itself creating value.",
     "Presentation + access": "Channels present opportunities and provide action or available-value access.",
     "Posting + fulfilment + recovery": "Operations support posting, release, fulfilment and recovery.",
     "VT05 · Continued / expanded participation": "Worthwhile realized outcomes may influence sustained participation; the causal effect is unvalidated.",
@@ -3201,10 +3256,15 @@ svg {
     "VT04 · Use + convert into worthwhile outcome": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
     "Propositions + benefits": "Partner contributions create sources of opportunity.",
     "Products + participation routes": "Products and transactions create opportunity and earning routes.",
+    "Data and user decisioning": "Two decisions meet here, not one. The system decides what is relevant and eligible, and the member decides whether to act on it. The state only advances when both have happened, which is what distinguishes this step from an offer simply being surfaced.",
     "Posting + release reliability": "Operations influence whether earned entitlements become accessible.",
     "Access + use pathway": "Channels influence whether available value can be discovered and used.",
     "Fulfilment + recovery": "Fulfilment and recovery influence successful value use.",
     "Qualification + posting stalls": "Interface friction may stall qualification, posting or release.",
+    "Where the member sees it": "Sly, 12 September: 'if you see an opportunity, where are you seeing it? You're seeing it within a channel.' An opportunity that no channel carries does not reach anyone.",
+    "Help understanding it": "Sly, 12 September: 'if you see an opportunity, you don't really understand, and you need more information - service and operations can help you understand it.'",
+    "What gets surfaced at all": "Sly, 12 September: 'maybe there's some data behind the scenes that is actually showing that opportunity to you.' Decisioning determines which propositions become visible opportunities.",
+    "Enter at any stage": "A standing balance places the member directly at available value without passing through opportunity, potential or earned value for that balance. The sequence between states still holds; the member's entry point into it does not have to be the start.",
     "Governed permitted context": "Permissioned identity may provide usable context under governance.",
     "Coordinated value-path decision": "A selected value pathway may be carried into delivery and operations.",
     "Access + reliable fulfilment": "Coordinated delivery may improve access, fulfilment and recovery.",
@@ -3513,6 +3573,40 @@ svg {
         "VT02",
         "VT03"
       ],
+      "evidenceRefs": []
+    },
+    "TRN-R01": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT01"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R02": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT01"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R03": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT01"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R04": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
       "evidenceRefs": []
     },
     "FUT-R01": {

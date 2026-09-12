@@ -1824,13 +1824,54 @@
           "traceabilityStatus": "source-link-pending"
         }
       ]
+    },
+    {
+      "id": "points-balance",
+      "canonicalName": "Points balance",
+      "displayLabel": "Points balance",
+      "subtitle": "Where a member already is",
+      "type": "stock",
+      "kind": "state",
+      "category": "Standing stock",
+      "boundaryStatus": "inside",
+      "phase": "How Value Progresses",
+      "applicableTabs": [
+        "transition"
+      ],
+      "definition": "The value a member is already holding, independent of any single offer. Signing up grants roughly 750 points, so a new member starts holding available value having earned nothing. A member who has banked for five years holds a balance regardless of what they did this week.",
+      "roleInSystem": "Shows that the progression is sequential without being one mandatory journey. Value cannot reach Available Value without being earned, but a member can join the cycle at whichever state their balance already puts them in.",
+      "whyItMatters": "Raised on 12 September: 'you're assuming they're starting from zero - you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at Opportunity, which almost none do.",
+      "known": "Sign-up grants roughly 750 points.",
+      "provisional": "The actual sign-up grant, expiry behaviour and how balance is segmented by member type are not yet established.",
+      "opportunityImplication": "A member's entry state is a design input for onboarding and for the ledger.",
+      "status": "active",
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "chain": [
+        "Points balance",
+        "Member enters at whichever state their balance allows"
+      ],
+      "dimensions": [],
+      "systemLinks": [],
+      "incomingRelationshipIds": [],
+      "outgoingRelationshipIds": [],
+      "valueStatesInfluenced": [
+        "available-value",
+        "realized-value"
+      ],
+      "jtbdRefs": [],
+      "dvoRefs": [],
+      "evidenceRefs": [],
+      "traceabilityStatus": "pending",
+      "claims": []
     }
   ],
   "valueStates": [
     {
       "id": "opportunity",
       "label": "Opportunity",
-      "definition": "An available loyalty proposition, benefit, offer or earning possibility that the member could act on. It is not yet value: nothing has been earned, promised or committed to the member. The faculty asked what we mean by opportunity, so this definition also has to say why an opportunity was shown, what it is worth, and what action it requires.",
+      "definition": "An available loyalty proposition, benefit, offer or earning possibility that a member could act on. It is created as much by the system as by the partner: data and decisioning determines what is surfaced, a channel shows it, and service can explain it. It is not yet value - nothing has been earned, promised or committed to the member. The definition must also say why this opportunity was shown to this member, what it is worth, and what action it requires.",
       "entryCondition": "A proposition, benefit or earning possibility exists.",
       "exitCondition": "Relevance and a plausible eligible path are established.",
       "order": 1,
@@ -1841,7 +1882,7 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "plainLanguage": "An offer exists and the member could act on it. Nothing is theirs yet.",
+      "plainLanguage": "The system has put an offer in front of the member. Nothing is theirs yet.",
       "openQuestion": "Needs to state why this opportunity was shown to this member, what it is worth, and what action is required. Raised in the 883 functional requirements and again on 12 September."
     },
     {
@@ -2714,9 +2755,9 @@
       "targetId": "potential-value",
       "from": "data",
       "to": "potential-value",
-      "label": "Relevance + eligibility context",
-      "displayLabel": "Relevance + eligibility context",
-      "relationshipDefinition": "Permitted context may support relevance and eligibility assessment.",
+      "label": "Data and user decisioning",
+      "displayLabel": "Data and user decisioning",
+      "relationshipDefinition": "Two decisions meet here, not one. The system decides what is relevant and eligible, and the member decides whether to act on it. The state only advances when both have happened, which is what distinguishes this step from an offer simply being surfaced.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -3394,6 +3435,116 @@
       "polarity": "+",
       "flowLens": "value",
       "provenance": "Added 12 Sept 2026. Closes the conversion pathway that Joann and Josh both drew as a loop (TR2) but which this view left open."
+    },
+    {
+      "id": "TRN-R01",
+      "sourceId": "channels",
+      "targetId": "opportunity",
+      "from": "channels",
+      "to": "opportunity",
+      "label": "Where the member sees it",
+      "displayLabel": "Where the member sees it",
+      "relationshipDefinition": "Sly, 12 September: 'if you see an opportunity, where are you seeing it? You're seeing it within a channel.' An opportunity that no channel carries does not reach anyone.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT01"
+      ],
+      "state": "inferred-current",
+      "flowLens": "information",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026 from Sylvester's challenge that the enabling capabilities touch every state change, not one each."
+    },
+    {
+      "id": "TRN-R02",
+      "sourceId": "service",
+      "targetId": "opportunity",
+      "from": "service",
+      "to": "opportunity",
+      "label": "Help understanding it",
+      "displayLabel": "Help understanding it",
+      "relationshipDefinition": "Sly, 12 September: 'if you see an opportunity, you don't really understand, and you need more information - service and operations can help you understand it.'",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT01"
+      ],
+      "state": "inferred-current",
+      "flowLens": "information",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026 from Sylvester's challenge that the enabling capabilities touch every state change, not one each."
+    },
+    {
+      "id": "TRN-R03",
+      "sourceId": "data",
+      "targetId": "opportunity",
+      "from": "data",
+      "to": "opportunity",
+      "label": "What gets surfaced at all",
+      "displayLabel": "What gets surfaced at all",
+      "relationshipDefinition": "Sly, 12 September: 'maybe there's some data behind the scenes that is actually showing that opportunity to you.' Decisioning determines which propositions become visible opportunities.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT01"
+      ],
+      "state": "inferred-current",
+      "flowLens": "information",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026 from Sylvester's challenge that the enabling capabilities touch every state change, not one each."
+    },
+    {
+      "id": "TRN-R04",
+      "sourceId": "points-balance",
+      "targetId": "available-value",
+      "from": "points-balance",
+      "to": "available-value",
+      "label": "Enter at any stage",
+      "displayLabel": "Enter at any stage",
+      "relationshipDefinition": "A standing balance places the member directly at available value without passing through opportunity, potential or earned value for that balance. The sequence between states still holds; the member's entry point into it does not have to be the start.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [],
+      "state": "inferred-current",
+      "flowLens": "value",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026 from Josh's challenge that members do not start from zero."
     }
   ],
   "overlays": [
@@ -3695,7 +3846,8 @@
         "service",
         "channels",
         "friction",
-        "engagement"
+        "engagement",
+        "points-balance"
       ],
       "valueStateIds": [
         "opportunity",
@@ -3716,7 +3868,11 @@
         "TR-R08",
         "TR-R09",
         "TR-R10",
-        "TR-R11"
+        "TR-R11",
+        "TRN-R01",
+        "TRN-R02",
+        "TRN-R03",
+        "TRN-R04"
       ],
       "transitionIds": [
         "VT01",
