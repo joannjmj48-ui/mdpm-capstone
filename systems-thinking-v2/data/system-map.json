@@ -1895,9 +1895,9 @@
     {
       "id": "opportunity",
       "label": "Opportunity",
-      "definition": "An available loyalty proposition, benefit, offer or earning possibility that a member could act on. It is created as much by the system as by the partner: data and decisioning determines what is surfaced, a channel shows it, and service can explain it. It is not yet value - nothing has been earned, promised or committed to the member. The definition must also say why this opportunity was shown to this member, what it is worth, and what action it requires.",
-      "entryCondition": "A proposition, benefit or earning possibility exists.",
-      "exitCondition": "Relevance and a plausible eligible path are established.",
+      "definition": "Every reward, benefit, offer and earning possibility the programme makes available — the whole catalogue, before any member filter is applied. It is programme-level, not member-level: an opportunity exists whether or not any particular member ever sees it. Nothing here is anyone's.",
+      "entryCondition": "A partner, product or programme proposition exists and is live.",
+      "exitCondition": "The system surfaces it to a particular member as relevant and eligible.",
       "order": 1,
       "entityType": "value-state",
       "epistemicStatus": "Assumed",
@@ -1906,14 +1906,14 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "plainLanguage": "The system has put an offer in front of the member. Nothing is theirs yet.",
+      "plainLanguage": "Every reward the programme offers. Not yet pointed at anyone.",
       "region": "The five value states"
     },
     {
       "id": "potential-value",
       "label": "Potential Value",
-      "definition": "An opportunity the system has matched to a particular member — relevant to their needs, behaviour or context, with a plausible eligible path. The matching has happened; the member has not yet acted.",
-      "entryCondition": "Member relevance and plausible eligibility are established.",
+      "definition": "The subset of the catalogue that actually reaches a particular member — surfaced to them, relevant to their needs or behaviour, and with a plausible eligible path. The observable change from Opportunity is the filter: the catalogue is programme-wide, this is what got through to one person. Members never see the catalogue; they only ever see what reached them.",
+      "entryCondition": "The system surfaces the opportunity to this member as relevant and eligible.",
       "exitCondition": "The member decides to act and completes the qualifying requirement.",
       "order": 2,
       "entityType": "value-state",
@@ -1923,7 +1923,7 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "plainLanguage": "The offer fits this member. They haven't done anything about it yet.",
+      "plainLanguage": "The rewards that actually reached this member. Still nothing theirs.",
       "region": "The five value states"
     },
     {
@@ -1957,7 +1957,8 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "region": "The five value states"
+      "region": "The five value states",
+      "plainLanguage": "It's posted into the balance and ready to spend."
     },
     {
       "id": "realized-value",
@@ -1982,7 +1983,7 @@
       "id": "VT01",
       "fromState": "opportunity",
       "toState": "potential-value",
-      "definition": "Relevance and a plausible eligible path are established for a particular member and context.",
+      "definition": "The programme-wide catalogue is filtered and surfaced to a particular member as relevant and eligible.",
       "entryConditions": [
         "Relevance and a plausible eligible path are established for a particular member and context."
       ],
@@ -2631,9 +2632,9 @@
       "targetId": "potential-value",
       "from": "opportunity",
       "to": "potential-value",
-      "label": "Establish relevance + plausible eligibility",
-      "displayLabel": "Establish relevance + plausible eligibility",
-      "relationshipDefinition": "The opportunity becomes Potential Value when relevance and a plausible eligible path are established.",
+      "label": "Filtered to this member",
+      "displayLabel": "Filtered to this member",
+      "relationshipDefinition": "The catalogue narrows to one person. Decisioning selects which of the available rewards are relevant and eligible for this member, and a channel surfaces them. This filtering is the observable state change: what exists becomes what reached you.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -3960,7 +3961,7 @@
         "paragraphs": [
           "It's a diagnostic tool for locating loss. “Members don't get value” is unactionable. Splitting it into five steps lets you ask which step — and each step has a different owner and a different fix. Posting failing is an operations problem. Use and conversion failing is a discovery and channel problem. Without the split you'd treat them as one thing and fix the wrong one.",
           "This is a value progression, not a systems map. It shows the language we use at each stage, not the structure of the system — that is view 1.",
-          "Read it in three bands. The top row is the five states value passes through. The middle row is what moves it between them, and each of those touches several stages rather than one: a member sees an opportunity in a channel, service explains it, data decides what gets surfaced at all. The bottom row is what stalls value, and where members actually join.",
+          "Read it in three bands. The top row is the five states value passes through — it starts programme-wide as the whole catalogue, narrows to one member, then becomes theirs. The middle row is what moves it between them, and each of those touches several stages rather than one: a member sees an opportunity in a channel, service explains it, data decides what gets surfaced at all. The bottom row is what stalls value, and where members actually join.",
           "The sequence holds — value cannot reach available without being earned — but a member can join at any point. Signing up grants roughly 750 points, so a new member holds a balance having earned nothing."
         ]
       }

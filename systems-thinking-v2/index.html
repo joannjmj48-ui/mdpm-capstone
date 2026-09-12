@@ -2460,8 +2460,8 @@ svg {
       "basis": "Group convergence",
       "decision": "Active direction",
       "category": "Controlled value state",
-      "definition": "An available loyalty proposition, benefit, offer or earning possibility that a member could act on. It is created as much by the system as by the partner: data and decisioning determines what is surfaced, a channel shows it, and service can explain it. It is not yet value - nothing has been earned, promised or committed to the member. The definition must also say why this opportunity was shown to this member, what it is worth, and what action it requires.",
-      "role": "Entry condition: A proposition, benefit or earning possibility exists. Exit condition: Relevance and a plausible eligible path are established.",
+      "definition": "Every reward, benefit, offer and earning possibility the programme makes available — the whole catalogue, before any member filter is applied. It is programme-level, not member-level: an opportunity exists whether or not any particular member ever sees it. Nothing here is anyone's.",
+      "role": "Entry condition: A partner, product or programme proposition exists and is live. Exit condition: The system surfaces it to a particular member as relevant and eligible.",
       "why": "This state is analytically distinct so qualification, posting, access, use and perceived worth are not collapsed into generic value.",
       "known": "The state definition is an approved group-converged modeling decision. Current volumes, conversion rates and delays are not yet established.",
       "provisional": "Structural relationship may be supported; incremental targeting effects remain inferred or assumed.",
@@ -2483,7 +2483,7 @@ svg {
           "targets": [
             "Opportunity → Potential-Value"
           ],
-          "explanation": "Relevance and a plausible eligible path are established for a particular member and context."
+          "explanation": "The programme-wide catalogue is filtered and surfaced to a particular member as relevant and eligible."
         },
         {
           "phase": "Member progress / JTBD",
@@ -2510,8 +2510,8 @@ svg {
       "basis": "Group convergence",
       "decision": "Active direction",
       "category": "Controlled value state",
-      "definition": "An opportunity the system has matched to a particular member — relevant to their needs, behaviour or context, with a plausible eligible path. The matching has happened; the member has not yet acted.",
-      "role": "Entry condition: Member relevance and plausible eligibility are established. Exit condition: The member decides to act and completes the qualifying requirement.",
+      "definition": "The subset of the catalogue that actually reaches a particular member — surfaced to them, relevant to their needs or behaviour, and with a plausible eligible path. The observable change from Opportunity is the filter: the catalogue is programme-wide, this is what got through to one person. Members never see the catalogue; they only ever see what reached them.",
+      "role": "Entry condition: The system surfaces the opportunity to this member as relevant and eligible. Exit condition: The member decides to act and completes the qualifying requirement.",
       "why": "This state is analytically distinct so qualification, posting, access, use and perceived worth are not collapsed into generic value.",
       "known": "The state definition is an approved group-converged modeling decision. Current volumes, conversion rates and delays are not yet established.",
       "provisional": "Qualification mechanics may be supported; effects on participation or realization require evidence.",
@@ -2954,7 +2954,7 @@ svg {
         [
           "opportunity",
           "potential-value",
-          "Establish relevance + plausible eligibility",
+          "Filtered to this member",
           "current",
           null,
           "TR-R01"
@@ -3258,7 +3258,7 @@ svg {
     "Member-clients transact through products": "Members who also bank with BMO interact with the products and transactions backbone directly, which is what makes combined signal possible.",
     "Clients hold and transact through products": "Client-only participants interact with the products backbone even where they do not participate in the loyalty programme.",
     "Engagement returns to realization": "Sustained engagement produces further opportunities to realize value, closing the pair rather than terminating at the outcome.",
-    "Establish relevance + plausible eligibility": "The opportunity becomes Potential Value when relevance and a plausible eligible path are established.",
+    "Filtered to this member": "The catalogue narrows to one person. Decisioning selects which of the available rewards are relevant and eligible for this member, and a channel surfaces them. This filtering is the observable state change: what exists becomes what reached you.",
     "Member decides to act, and acts": "The member commits: they make the qualifying purchase or complete the required activity. This is the step where value becomes theirs.",
     "Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
     "Use + convert into worthwhile outcome": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
@@ -4702,6 +4702,6 @@ svg {
 <script src="narrative.js?v=9"></script>
 <script src="regions.js?v=2"></script>
 <script src="opportunity.js?v=2"></script>
-<script src="view-notes.js?v=4"></script>
+<script src="view-notes.js?v=5"></script>
 </body>
 </html>
