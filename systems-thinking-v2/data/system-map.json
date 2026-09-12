@@ -1912,9 +1912,9 @@
     {
       "id": "potential-value",
       "label": "Potential Value",
-      "definition": "An opportunity the system has matched to a particular member, and which that member has decided to pursue. Two decisions meet here: the system decides what is relevant and eligible, and the member decides whether to act. That member decision is what distinguishes this state from an offer simply being surfaced.",
+      "definition": "An opportunity the system has matched to a particular member — relevant to their needs, behaviour or context, with a plausible eligible path. The matching has happened; the member has not yet acted.",
       "entryCondition": "Member relevance and plausible eligibility are established.",
-      "exitCondition": "Applicable qualification requirements are satisfied.",
+      "exitCondition": "The member decides to act and completes the qualifying requirement.",
       "order": 2,
       "entityType": "value-state",
       "epistemicStatus": "Assumed",
@@ -1923,15 +1923,15 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "plainLanguage": "The offer fits this member, and the member has decided to go for it.",
+      "plainLanguage": "The offer fits this member. They haven't done anything about it yet.",
       "region": "The five value states"
     },
     {
       "id": "earned-value",
       "label": "Earned Value",
-      "definition": "Value to which the member has become entitled by satisfying applicable activity, membership, status, eligibility or program requirements.",
-      "entryCondition": "The applicable qualification rule has been satisfied.",
-      "exitCondition": "The earned value is posted, released, activated or otherwise made accessible.",
+      "definition": "Value the member has decided to act on and acted to secure — they completed the qualifying purchase, activity or requirement. The decision has been made and carried out, but the value may not have posted yet.",
+      "entryCondition": "The member acts on the opportunity and satisfies the applicable qualification rule.",
+      "exitCondition": "The earned value posts into the member's balance and becomes usable.",
       "order": 3,
       "entityType": "value-state",
       "epistemicStatus": "Assumed",
@@ -1940,7 +1940,8 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "region": "The five value states"
+      "region": "The five value states",
+      "plainLanguage": "The member did the thing. It's theirs, even if it hasn't landed yet."
     },
     {
       "id": "available-value",
@@ -2020,7 +2021,7 @@
       "id": "VT02",
       "fromState": "potential-value",
       "toState": "earned-value",
-      "definition": "The member understands and completes applicable qualification requirements.",
+      "definition": "The member decides to act on the opportunity and completes the applicable qualification requirement.",
       "entryConditions": [
         "The member understands and completes applicable qualification requirements."
       ],
@@ -2655,9 +2656,9 @@
       "targetId": "earned-value",
       "from": "potential-value",
       "to": "earned-value",
-      "label": "Satisfy qualification requirements",
-      "displayLabel": "Satisfy qualification requirements",
-      "relationshipDefinition": "Potential Value becomes Earned Value when applicable requirements are satisfied.",
+      "label": "Member decides to act, and acts",
+      "displayLabel": "Member decides to act, and acts",
+      "relationshipDefinition": "The member commits: they make the qualifying purchase or complete the required activity. This is the step where value becomes theirs.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -2781,9 +2782,9 @@
       "targetId": "potential-value",
       "from": "data",
       "to": "potential-value",
-      "label": "Data and user decisioning",
-      "displayLabel": "Data and user decisioning",
-      "relationshipDefinition": "Two decisions meet here, not one. The system decides what is relevant and eligible, and the member decides whether to act on it. The state only advances when both have happened, which is what distinguishes this step from an offer simply being surfaced.",
+      "label": "Relevance and eligibility",
+      "displayLabel": "Relevance and eligibility",
+      "relationshipDefinition": "Decisioning determines which surfaced opportunities are relevant to this member and which they have a plausible eligible path to.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
