@@ -114,7 +114,7 @@ def main():
         "structuralDiagnostic": {
             "headline": "The appendix map read as one-way flow into a single outcome.",
             "scope": "This is a critique of the systems map - its actors, components and the relationships between them. It is not a critique of the causal loop work, which is a separate artefact with a separate job.",
-            "measured": "In the Current System view, 8 of 17 relationships pointed into Member Value Realization. Its in-degree was 8 while every other component sat between 0 and 3. Only 7 relationships ran between the surrounding components at all.",
+            "measured": "In the Current System view, 8 of 17 relationships pointed into the main variable. Its in-degree was 8 while every other component sat between 0 and 3. Only 7 relationships ran between the surrounding components at all.",
             "interpretation": "That shape is hub-and-spoke: the ecosystem feeds one outcome and barely touches itself. It reads as a funnel because structurally it is one - and a map of a system should show the system, not only what it produces.",
             "byView": [
                 {"view": "Relationships in the view", "before": 17, "after": 25},
@@ -122,7 +122,7 @@ def main():
                 {"view": "Between other components", "before": 7, "after": 14},
                 {"view": "Member Value share of map", "before": "47%", "after": "36%"},
             ],
-            "remedy": "Eight targeted relationships, no rebuild and no new nodes: partners into products; products already into decisioning; decisioning into delivery channels; the operational backbone supporting both decisioning and channels; each member population touching more than one part of the system; and engagement returning to realization rather than terminating there. Relationships between the surrounding components doubled, and Member Value Realization went from carrying 47% of the map to 36%.",
+            "remedy": "Eight targeted relationships, no rebuild and no new nodes: partners into products; products already into decisioning; decisioning into delivery channels; the operational backbone supporting both decisioning and channels; each member population touching more than one part of the system; and engagement returning to realization rather than terminating there. Relationships between the surrounding components doubled, and The main variable went from carrying 47% of the map to 36%.",
             "note": "All eight are marked Inferred and group-converged, so they render in the inferred line style and are visibly distinguishable from the original evidence-traced structure.",
         },
         "divergences": cmap["divergences"],

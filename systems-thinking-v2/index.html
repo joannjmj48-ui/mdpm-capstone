@@ -882,7 +882,7 @@ svg {
     <strong class="lm2-legend-title">Legend</strong>
     <div class="lm2-legend-items text-small">
       <button type="button" class="lm2-legend-item" data-legend-help="A group participating in or affected by the system." data-tooltip="A group participating in or affected by the system."><i class="lm2-key lm2-key-population"></i>Population</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="The focal Member Value Realization process or a downstream participation behaviour." data-tooltip="The focal Member Value Realization process or a downstream participation behaviour."><i class="lm2-key lm2-key-value"></i>Process / behaviour</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="The main variable, realized value, or a downstream participation behaviour." data-tooltip="The main variable, realized value, or a downstream participation behaviour."><i class="lm2-key lm2-key-value"></i>Process / behaviour</button>
       <button type="button" class="lm2-legend-item" data-legend-help="A controlled analytical state in the Opportunity-to-Realized-Value progression; it is not an operating component." data-tooltip="A controlled analytical state in the Opportunity-to-Realized-Value progression; it is not an operating component."><i class="lm2-key lm2-key-value"></i>Value state</button>
       <button type="button" class="lm2-legend-item" data-legend-help="An organization or ecosystem participant that helps deliver value." data-tooltip="An organization or ecosystem participant that helps deliver value."><i class="lm2-key lm2-key-partner"></i>Partner</button>
       <button type="button" class="lm2-legend-item" data-legend-help="An organizational capability required to enable the system." data-tooltip="An organizational capability required to enable the system."><i class="lm2-key lm2-key-capability"></i>Capability</button>
@@ -1869,18 +1869,18 @@ svg {
       ]
     },
     "member-value": {
-      "label": "Member Value Realization",
-      "sub": "Opportunity → Potential → Earned → Available → Realized",
+      "label": "Realized value",
+      "sub": "The main variable",
       "kind": "value",
       "phase": "Current and future focus",
       "status": "Assumed",
       "basis": "Group convergence",
       "decision": "Active direction",
       "category": "Focal system process / organizing construct",
-      "definition": "The process through which an applicable loyalty opportunity progresses through the relevant value states until a member successfully uses or converts it into an outcome they perceive as worthwhile.",
+      "definition": "The value members actually obtain and can use — the amount of worthwhile value that makes it all the way through to them. This is the system's main variable: the thing the whole map is organised around and the measure the team agreed to be judged on.",
       "role": "This is the system main variable. It connects relevance, qualification, posting, access, use, fulfilment and perceived worth without treating activity alone as success.",
       "why": "The system exists to improve the amount, relevance, reliability, accessibility, usefulness and appropriate speed with which loyalty opportunities become realized member value across its relationship pathways.",
-      "known": "The analytical model distinguishes Opportunity, Potential Value, Earned Value, Available Value and Realized Value. Empirical transition rates and drop-offs remain unknown.",
+      "known": "The analytical model distinguishes Opportunity, Potential, Earned, Available and Realized. Empirical transition rates and drop-offs remain unknown.",
       "provisional": "The largest realization gaps, causal drivers, population differences and incremental outcomes remain unresolved.",
       "opportunity": "Improve value progression across multiple dimensions while preserving credible standalone Member-Only value and avoiding speed-only optimization.",
       "chain": [
@@ -2033,7 +2033,7 @@ svg {
       "decision": "Unresolved",
       "category": "Shared enabling backbone",
       "definition": "The digital, physical and communication touchpoints through which decisions, offers, information and experiences reach people.",
-      "role": "Makes opportunities discoverable and actionable and makes Available Value accessible for use through appropriate touchpoints.",
+      "role": "Makes opportunities discoverable and actionable and makes Available accessible for use through appropriate touchpoints.",
       "why": "The client already operates mature banking channels, while the program also has standalone surfaces and partner touchpoints.",
       "known": "Multiple channels exist. Separate access, authentication and feature availability have produced some directional signals of discontinuity.",
       "provisional": "Multiple channels are not inherently fragmented. The quality of orchestration, ownership and handoffs across them remains unclear.",
@@ -2073,7 +2073,7 @@ svg {
       "decision": "Unresolved",
       "category": "Shared enabling backbone",
       "definition": "The operational backbone that calculates and fulfils rewards, supports members, manages issues and coordinates program administration.",
-      "role": "Supports qualification, posting, release, fulfilment, recovery and especially the movement from Earned Value to Available Value.",
+      "role": "Supports qualification, posting, release, fulfilment, recovery and especially the movement from Earned to Available.",
       "why": "The financial institution already has substantial operating capacity. Reusing relevant capabilities for the program could improve consistency and create economies of scale.",
       "known": "Reliable reward posting, redemption and service recovery influence whether members trust the value proposition. Public signals identify some cross-system support handoffs.",
       "provisional": "The actual degree of integration, duplication or fragmentation between the client and program operating models is unknown.",
@@ -2623,7 +2623,7 @@ svg {
       "decision": "Active direction",
       "category": "Standing stock",
       "definition": "The stock of posted points a member holds. It fills two ways. Most of it is earned through qualifying activity and posts once processed. The rest arrives at enrolment: signing up grants roughly 750 points, which is still earned — enrolment is the qualifying behaviour — it simply completes in one step.",
-      "role": "Sits between Earned and Available Value. It is why the progression is sequential without being one mandatory journey: a member joins the cycle at whichever state their balance already puts them in. A brand-new member is already holding available value, and a five-year customer holds a balance regardless of this week's activity.",
+      "role": "Sits between Earned and Available. It is why the progression is sequential without being one mandatory journey: a member joins the cycle at whichever state their balance already puts them in. A brand-new member is already holding available value, and a five-year customer holds a balance regardless of this week's activity.",
       "why": "Raised on 12 September: 'you're assuming they're starting from zero — you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at the catalogue, which almost none do. The sign-up grant is the clearest case: the offer is weighed by a prospect, enrolment earns it, and it posts immediately.",
       "known": "Sign-up grants roughly 750 points, earned by enrolling.",
       "provisional": "The actual sign-up grant, expiry behaviour and how balance is segmented by member type are not yet established.",
@@ -2749,7 +2749,7 @@ svg {
       ]
     },
     "potential-value": {
-      "label": "Potential Value",
+      "label": "Potential",
       "sub": "VT02 begins here",
       "kind": "state",
       "phase": "Main Variable Transition",
@@ -2764,7 +2764,7 @@ svg {
       "provisional": "Qualification mechanics may be supported; effects on participation or realization require evidence.",
       "opportunity": "Reduce effort, preparation, complexity and failure in earning value.",
       "chain": [
-        "Potential Value",
+        "Potential",
         "VT02",
         "Earned-Value"
       ],
@@ -2799,7 +2799,7 @@ svg {
       ]
     },
     "earned-value": {
-      "label": "Earned Value",
+      "label": "Earned",
       "sub": "VT03 begins here",
       "kind": "state",
       "phase": "Main Variable Transition",
@@ -2814,7 +2814,7 @@ svg {
       "provisional": "Posting and fulfilment flows may be supported; systemic fragmentation remains provisional.",
       "opportunity": "Improve legibility, trust, posting reliability, accessibility and recovery for earned value.",
       "chain": [
-        "Earned Value",
+        "Earned",
         "VT03",
         "Available-Value"
       ],
@@ -2849,7 +2849,7 @@ svg {
       ]
     },
     "available-value": {
-      "label": "Available Value",
+      "label": "Available",
       "sub": "VT04 begins here",
       "kind": "state",
       "phase": "Main Variable Transition",
@@ -2864,7 +2864,7 @@ svg {
       "provisional": "The structural transition is defined; effects of specific mechanisms remain hypotheses.",
       "opportunity": "Convert more available value into worthwhile outcomes through usability, contextual reach, flexibility and successful fulfilment.",
       "chain": [
-        "Available Value",
+        "Available",
         "VT04",
         "Realized-Value"
       ],
@@ -2899,7 +2899,7 @@ svg {
       ]
     },
     "realized-value": {
-      "label": "Realized Value",
+      "label": "Realized",
       "sub": "VT05 begins here",
       "kind": "state",
       "phase": "Main Variable Transition",
@@ -2914,7 +2914,7 @@ svg {
       "provisional": "Treat as inferred until behaviour-over-time evidence validates it.",
       "opportunity": "Reinforce continued participation through consistently worthwhile outcomes and learning.",
       "chain": [
-        "Realized Value",
+        "Realized",
         "VT05",
         "Meaningful engagement"
       ],
@@ -2954,7 +2954,7 @@ svg {
   var views = {
     "current": {
       "label": "Current System",
-      "description": "This view shows the populations, partners, value flows and institutional capabilities operating today. It highlights where loyalty value may progress or stall between Opportunity, Potential, Earned, Available and Realized Value, while preserving uncertainty about the actual degree of integration, fragmentation and causal effect.",
+      "description": "This view shows the populations, partners, value flows and institutional capabilities operating today. It highlights where loyalty value may progress or stall between Opportunity, Potential, Earned, Available and Realized, while preserving uncertainty about the actual degree of integration, fragmentation and causal effect.",
       "areas": {
         "member-only": "mo",
         "member-client": "mc",
@@ -3223,7 +3223,7 @@ svg {
     },
     "transition": {
       "label": "How value progresses",
-      "description": "This view uses Member Value Realization as the system main variable. It shows how loyalty opportunities progress from Opportunity to Potential, Earned, Available and ultimately Realized Value; where that progression may stall; and which system conditions, member needs and broad opportunity areas could improve the amount, relevance, reliability, accessibility, usefulness and appropriate speed of realized value.",
+      "description": "This view uses Realized value as the system main variable. It shows how loyalty opportunities progress from Opportunity to Potential, Earned, Available and ultimately Realized; where that progression may stall; and which system conditions, member needs and broad opportunity areas could improve the amount, relevance, reliability, accessibility, usefulness and appropriate speed of realized value.",
       "areas": {
         "opportunity": "opportunity",
         "potential-value": "potential",
@@ -3603,8 +3603,8 @@ svg {
     "Reports the economics": "Liability, margin and breakage are what leadership sees when deciding what the programme can do.",
     "Reaches the member, who weighs it": "Two changes at once. The catalogue narrows to one person — decisioning selects what is relevant and eligible, a channel surfaces it. And the member starts assessing it: whether it is attainable, worth the effort, and what they actually want. Value first exists in the member's eyes at this point, as something they could have.",
     "Member decides to act, and acts": "The member commits: they make the qualifying purchase or complete the required activity. This is the step where value becomes theirs.",
-    "Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
-    "Use + convert into worthwhile outcome": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
+    "Post + release + activate": "Earned becomes Available when the entitlement is operationally accessible.",
+    "Use + convert into worthwhile outcome": "Available becomes Realized through successful use or conversion into perceived worth.",
     "Propositions + benefits": "Partner contributions create sources of opportunity.",
     "Products + participation routes": "Products and transactions create opportunity and earning routes.",
     "Relevance and eligibility": "Decisioning determines which of the catalogue's rewards reach this member as relevant and eligible — and therefore what the member has to weigh up at all.",
@@ -5133,11 +5133,11 @@ svg {
     ?.addEventListener("load", initialize, { once: true });
 })();
 </script>
-<script src="convergence.js?v=15"></script>
+<script src="convergence.js?v=16"></script>
 <script src="narrative.js?v=10"></script>
 <script src="regions.js?v=5"></script>
 <script src="opportunity.js?v=2"></script>
-<script src="view-notes.js?v=6"></script>
+<script src="view-notes.js?v=7"></script>
 <script src="legend.js?v=1"></script>
 <script src="stakeholders.js?v=1"></script>
 </body>
