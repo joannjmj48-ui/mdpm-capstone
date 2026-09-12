@@ -420,10 +420,10 @@
       "baselineDisplayStatus": "Supported",
       "chain": [
         "Opportunity",
-        "Potential Value",
-        "Earned Value",
-        "Available Value",
-        "Realized Value"
+        "Potential",
+        "Earned",
+        "Available",
+        "Realized"
       ],
       "dimensions": [
         "Realization rate",
@@ -516,7 +516,7 @@
       "epistemicStatus": "Inferred",
       "baselineDisplayStatus": "Supported",
       "chain": [
-        "Realized Value",
+        "Realized",
         "Continued or expanded participation",
         "Meaningful Engagement",
         "Outcome learning"
