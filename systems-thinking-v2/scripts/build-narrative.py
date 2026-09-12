@@ -12,6 +12,43 @@ import re, pathlib, json
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 src = (ROOT / "data" / "narrative-source.html").read_text(encoding="utf-8")
 
+# --- graft the leverage points acting on each loop into its card ----------
+import json as _json, re as _re
+_lp = _json.loads((ROOT / "data" / "leverage-points.json").read_text(encoding="utf-8"))
+_reg = _json.loads((ROOT / "data" / "variable-registry.json").read_text(encoding="utf-8"))
+_points = [dict(p, author=c["displayName"]) for c in _lp["contributors"] for p in c["points"]]
+_chains = {l["id"]: set(l["canonicalChain"]) for l in _reg["loops"]}
+
+def _acting(loop_id):
+    chain = _chains.get(loop_id, set())
+    return [p for p in _points if chain & set(p.get("targets", []))]
+
+def _block(loop_id):
+    acting = _acting(loop_id)
+    if not acting:
+        return ('<div class="lev"><span>Leverage points acting on this loop</span>'
+                '<p class="lev-none">None. No contributor proposed intervening here.</p></div>')
+    items = "".join(
+        f'<li><code>{p["ref"]}</code><strong>{p["title"]}</strong><em>{p["author"]}</em></li>'
+        for p in acting)
+    return ('<div class="lev"><span>Leverage points acting on this loop</span>'
+            f'<ul class="lev-list">{items}</ul></div>')
+
+def _graft(m):
+    return m.group(0) + _block(m.group(1))
+
+# insert the block just before each tagged card closes
+def _inject(html):
+    out, i = [], 0
+    for m in _re.finditer(r'<(article|figure)[^>]*data-loop="([A-Z0-9]+)"[^>]*>', html):
+        tag, loop = m.group(1), m.group(2)
+        close = html.index("</" + tag + ">", m.end())
+        out.append(html[i:close]); out.append(_block(loop)); i = close
+    out.append(html[i:])
+    return "".join(out)
+
+src = _inject(src)
+
 style = re.search(r"<style>(.*?)</style>", src, re.S).group(1)
 body = src.split("</style>", 1)[1].strip()
 

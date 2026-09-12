@@ -159,6 +159,13 @@ section { padding: 56px 0; border-bottom: 1px solid var(--rule-soft); }
   border: 1px solid var(--rule); padding: 3px 8px; color: var(--ink-soft);
 }
 #narrative-view .who.solid { border-color: var(--ink); color: var(--ink); }
+#narrative-view .lev { margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--rule-soft); }
+#narrative-view .lev > span { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); font-family: var(--f-mono); }
+#narrative-view .lev-list { list-style: none; margin: .5rem 0 0; padding: 0; display: grid; gap: .3rem; }
+#narrative-view .lev-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem; font-size: 13.5px; }
+#narrative-view .lev-list code { font-family: var(--f-mono); font-size: 10.5px; font-weight: 600; background: var(--accent-w); color: var(--accent); padding: 1px 5px; }
+#narrative-view .lev-list em { font-style: normal; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-soft); }
+#narrative-view .lev-none { font-size: 13.5px; color: var(--balance); margin-top: .4rem; }
 #narrative-view /* ---------- matrix ---------- */
 
 .matrix-wrap { overflow-x: auto; }

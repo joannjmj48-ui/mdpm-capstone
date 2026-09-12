@@ -2799,7 +2799,7 @@ svg {
         [
           "member-value",
           "engagement",
-          "Continued / expanded participation",
+          "VT05 · Continued / expanded participation",
           "inferred",
           null,
           "CUR-R13"
@@ -2923,7 +2923,7 @@ svg {
         [
           "member-value",
           "engagement",
-          "Continued / expanded participation",
+          "VT05 · Continued / expanded participation",
           "inferred",
           null,
           "CUR-R13"
@@ -2931,7 +2931,7 @@ svg {
         [
           "opportunity",
           "potential-value",
-          "Establish relevance + plausible eligibility",
+          "VT01 · Establish relevance + plausible eligibility",
           "current",
           null,
           "TR-R01"
@@ -2939,7 +2939,7 @@ svg {
         [
           "potential-value",
           "earned-value",
-          "Satisfy qualification requirements",
+          "VT02 · Satisfy qualification requirements",
           "current",
           null,
           "TR-R02"
@@ -2947,7 +2947,7 @@ svg {
         [
           "earned-value",
           "available-value",
-          "Post + release + activate",
+          "VT03 · Post + release + activate",
           "current",
           null,
           "TR-R03"
@@ -2955,7 +2955,7 @@ svg {
         [
           "available-value",
           "realized-value",
-          "Use + convert into worthwhile outcome",
+          "VT04 · Use + convert into worthwhile outcome",
           "current",
           null,
           "TR-R04"
@@ -3035,7 +3035,7 @@ svg {
         [
           "member-value",
           "engagement",
-          "Continued / expanded participation",
+          "VT05 · Continued / expanded participation",
           "inferred",
           null,
           "CUR-R13"
@@ -3182,7 +3182,7 @@ svg {
     "Relevance + eligibility context": "Permitted context may support relevance and eligibility assessment.",
     "Presentation + access": "Channels present opportunities and provide action or available-value access.",
     "Posting + fulfilment + recovery": "Operations support posting, release, fulfilment and recovery.",
-    "Continued / expanded participation": "Worthwhile realized outcomes may influence sustained participation; the causal effect is unvalidated.",
+    "VT05 · Continued / expanded participation": "Worthwhile realized outcomes may influence sustained participation; the causal effect is unvalidated.",
     "Value realization + participation signals": "Observed outcomes and participation provide signals for measurement and future decisions.",
     "Identity + permission handoffs": "Identity or permission handoffs may interrupt usable context.",
     "Channel continuity constraints": "Separate surfaces may create repeated steps or inconsistent context.",
@@ -3195,10 +3195,10 @@ svg {
     "Member-clients transact through products": "Members who also bank with BMO interact with the products and transactions backbone directly, which is what makes combined signal possible.",
     "Clients hold and transact through products": "Client-only participants interact with the products backbone even where they do not participate in the loyalty programme.",
     "Engagement returns to realization": "Sustained engagement produces further opportunities to realize value, closing the pair rather than terminating at the outcome.",
-    "Establish relevance + plausible eligibility": "The opportunity becomes Potential Value when relevance and a plausible eligible path are established.",
-    "Satisfy qualification requirements": "Potential Value becomes Earned Value when applicable requirements are satisfied.",
-    "Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
-    "Use + convert into worthwhile outcome": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
+    "VT01 · Establish relevance + plausible eligibility": "The opportunity becomes Potential Value when relevance and a plausible eligible path are established.",
+    "VT02 · Satisfy qualification requirements": "Potential Value becomes Earned Value when applicable requirements are satisfied.",
+    "VT03 · Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
+    "VT04 · Use + convert into worthwhile outcome": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
     "Propositions + benefits": "Partner contributions create sources of opportunity.",
     "Products + participation routes": "Products and transactions create opportunity and earning routes.",
     "Posting + release reliability": "Operations influence whether earned entitlements become accessible.",
@@ -3914,7 +3914,8 @@ svg {
       group.appendChild(svgEl("line",{x1:position.anchorX,y1:position.anchorY,x2:position.x,y2:position.y,class:"lm2-label-leader"}));
       group.appendChild(svgEl("rect",{x:position.x-width/2,y:position.y-13,width:width,height:26,rx:9}));
       var text=svgEl("text",{x:position.x,y:position.y+4,"text-anchor":"middle"});
-      text.textContent=label.toLowerCase();
+      // lower-case the prose but keep transition codes such as VT01 readable
+      text.textContent=label.toLowerCase().replace(/\bvt(\d{2})\b/g,function(_,n){return "VT"+n;});
       group.appendChild(text);
       labelsLayer.appendChild(group);
     });
@@ -4588,7 +4589,7 @@ svg {
 })();
 </script>
 <script src="convergence.js?v=14"></script>
-<script src="narrative.js?v=6"></script>
+<script src="narrative.js?v=7"></script>
 <script src="regions.js?v=1"></script>
 <script src="opportunity.js?v=1"></script>
 <script src="view-notes.js?v=2"></script>

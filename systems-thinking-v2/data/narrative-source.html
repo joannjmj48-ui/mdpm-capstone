@@ -214,6 +214,14 @@ figcaption {
 }
 .who.solid { border-color: var(--ink); color: var(--ink); }
 
+.lev { margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--rule-soft); }
+.lev > span { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); font-family: var(--f-mono); }
+.lev-list { list-style: none; margin: .5rem 0 0; padding: 0; display: grid; gap: .3rem; }
+.lev-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem; font-size: 13.5px; }
+.lev-list code { font-family: var(--f-mono); font-size: 10.5px; font-weight: 600; background: var(--accent-w); color: var(--accent); padding: 1px 5px; }
+.lev-list em { font-style: normal; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-soft); }
+.lev-none { font-size: 13.5px; color: var(--balance); margin-top: .4rem; }
+
 /* ---------- matrix ---------- */
 
 .matrix-wrap { overflow-x: auto; }
@@ -318,7 +326,7 @@ footer code { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink); 
       <p>Joann, Sly, Henry, Lia and Ola each drew this loop without seeing the others. Sly put it best on the call: <em>node for node &mdash; different words, same loop and same outcome.</em> Nobody drew a minus anywhere in it, which is why it compounds.</p>
     </div>
 
-    <figure class="figure">
+    <figure class="figure" data-loop="TR1">
       <div class="figscroll">
         <svg viewBox="0 0 800 600" role="img" aria-label="Reinforcing loop: realized value increases sustained engagement, which increases transactions and participation, which increases permissioned signal richness, which increases decisioning relevance, which increases relevant visible opportunities, which increases realized value. All six links are positive.">
           <circle class="n-ring" cx="400" cy="300" r="112"></circle>
@@ -388,7 +396,7 @@ footer code { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink); 
 
     <div class="brakes">
 
-      <article class="brake">
+      <article class="brake" data-loop="TB1">
         <div class="brake-top"><span class="code">B &middot; ECONOMICS</span><span class="tally">3 of 6</span>
           <h3>The breakage brake</h3></div>
         <p>Redemption is what members want. The programme is funded on points nobody uses. So member success and programme margin are wired in opposition.</p>
@@ -404,7 +412,7 @@ footer code { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink); 
         <p class="finding">The only brake whose minus is arithmetic rather than behavioural: a point that gets used cannot also go unused. You cannot design it away &mdash; you can only stop scoring on it.</p>
       </article>
 
-      <article class="brake">
+      <article class="brake" data-loop="TB2">
         <div class="brake-top"><span class="code">B &middot; CONSENT</span><span class="tally">3 of 6</span>
           <h3>The permission brake</h3></div>
         <p>Personalization runs on permission it can spend. Push intensity too hard, members feel watched, consent narrows, and the signal the engine runs on thins out.</p>
@@ -420,7 +428,7 @@ footer code { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink); 
         <p class="finding">The only brake that acts on the engine's fuel rather than its output. It caps how hard R1 can be pushed before it starts eating itself.</p>
       </article>
 
-      <article class="brake is-partial">
+      <article class="brake is-partial" data-loop="TB3">
         <div class="brake-top"><span class="code">B &middot; DELIVERY</span><span class="tally">3 of 6 &middot; partial</span>
           <h3>The value-gap brake</h3></div>
         <p>Value that was promised but never visibly arrived. Uncertainty builds, friction rises, and effort goes into detecting and resolving what should have worked the first time.</p>
@@ -436,7 +444,7 @@ footer code { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink); 
         <p class="finding">Henry and Sly describe the same breakdown from opposite ends &mdash; Henry from the member's uncertainty, Sly from the operation's capacity. Both land on unresolved value cutting realization and trust. Marked partial because the cause differs even though the effect matches.</p>
       </article>
 
-      <article class="brake">
+      <article class="brake" data-loop="TR5">
         <div class="brake-top"><span class="code">R &middot; ADOPTION</span><span class="tally">Josh</span>
           <h3>Connected-data adoption</h3></div>
         <p>Not a brake &mdash; a second engine, and the one loop Josh&rsquo;s write-up genuinely supports even though he never drew it. Showing a member what connecting an account returns gives them a reason to connect.</p>
