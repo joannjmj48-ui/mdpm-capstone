@@ -1943,7 +1943,7 @@
       ],
       "definition": "The stock of posted points a member holds. It fills two ways. Most of it is earned through qualifying activity and posts once processed. The rest arrives at enrolment: signing up grants roughly 750 points, which is still earned — enrolment is the qualifying behaviour — it simply completes in one step.",
       "roleInSystem": "Sits between Earned and Available. It is why the progression is sequential without being one mandatory journey: a member joins the cycle at whichever state their balance already puts them in. A brand-new member is already holding available value, and a five-year customer holds a balance regardless of this week's activity.",
-      "whyItMatters": "Raised on 12 September: 'you're assuming they're starting from zero — you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at the catalogue, which almost none do. The sign-up grant is the clearest case: the offer is weighed by a prospect, enrolment earns it, and it posts immediately.",
+      "whyItMatters": "re assuming they're starting from zero — you can have available value even if you haven't earned points on a specific offer.' Without this the diagram implies every member starts at the catalogue, which almost none do. The sign-up grant is the clearest case: the offer is weighed by a prospect, enrolment earns it, and it posts immediately.",
       "known": "Sign-up grants roughly 750 points, earned by enrolling.",
       "provisional": "The actual sign-up grant, expiry behaviour and how balance is segmented by member type are not yet established.",
       "opportunityImplication": "A member's entry state is a design input for onboarding and for the ledger.",
@@ -3646,7 +3646,7 @@
       "to": "opportunity",
       "label": "Where the member sees it",
       "displayLabel": "Where the member sees it",
-      "relationshipDefinition": "Sly, 12 September: 'if you see an opportunity, where are you seeing it? You're seeing it within a channel.' An opportunity that no channel carries does not reach anyone.",
+      "relationshipDefinition": "A member only meets an opportunity where the programme puts it. The app, the site, a notification, a partner surface — an opportunity that no channel carries does not reach anyone, however well it was chosen.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -3664,7 +3664,7 @@
       "state": "inferred-current",
       "flowLens": "information",
       "polarity": "+",
-      "provenance": "Added 12 Sept 2026 from Sylvester's challenge that the enabling capabilities touch every state change, not one each."
+      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
     },
     {
       "id": "TRN-R02",
@@ -3674,7 +3674,7 @@
       "to": "opportunity",
       "label": "Help understanding it",
       "displayLabel": "Help understanding it",
-      "relationshipDefinition": "Sly, 12 September: 'if you see an opportunity, you don't really understand, and you need more information - service and operations can help you understand it.'",
+      "relationshipDefinition": "Seeing an opportunity and understanding it are different things. When the terms, eligibility or worth are not clear, service is what closes that gap — and an opportunity the member cannot make sense of stalls at the same point as one they never saw.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -3692,7 +3692,7 @@
       "state": "inferred-current",
       "flowLens": "information",
       "polarity": "+",
-      "provenance": "Added 12 Sept 2026 from Sylvester's challenge that the enabling capabilities touch every state change, not one each."
+      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
     },
     {
       "id": "TRN-R03",
@@ -3702,7 +3702,7 @@
       "to": "opportunity",
       "label": "What gets surfaced at all",
       "displayLabel": "What gets surfaced at all",
-      "relationshipDefinition": "Sly, 12 September: 'maybe there's some data behind the scenes that is actually showing that opportunity to you.' Decisioning determines which propositions become visible opportunities.",
+      "relationshipDefinition": "Decisioning determines which of the catalogue's rewards become visible opportunities at all. The filtering happens before the member is aware of anything, which is why the data layer shapes the opportunity rather than only acting on it later.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -3720,7 +3720,7 @@
       "state": "inferred-current",
       "flowLens": "information",
       "polarity": "+",
-      "provenance": "Added 12 Sept 2026 from Sylvester's challenge that the enabling capabilities touch every state change, not one each."
+      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
     },
     {
       "id": "TRN-R04",
@@ -3801,7 +3801,7 @@
       "state": "inferred-current",
       "flowLens": "value",
       "polarity": "+",
-      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
+      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
     },
     {
       "id": "TRN-R07",
@@ -3829,7 +3829,7 @@
       "state": "inferred-current",
       "flowLens": "value",
       "polarity": "+",
-      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
+      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
     },
     {
       "id": "TRN-R08",
@@ -3857,7 +3857,7 @@
       "state": "inferred-current",
       "flowLens": "value",
       "polarity": "+",
-      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
+      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
     },
     {
       "id": "TRN-R09",
@@ -3885,7 +3885,7 @@
       "state": "inferred-current",
       "flowLens": "information",
       "polarity": "+",
-      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
+      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
     },
     {
       "id": "TRN-R10",
@@ -3913,7 +3913,7 @@
       "state": "inferred-current",
       "flowLens": "information",
       "polarity": "+",
-      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
+      "provenance": "Added 12 Sept 2026. The enabling capabilities touch every state change rather than one each, raised in the working session."
     },
     {
       "id": "CUR-R26",
