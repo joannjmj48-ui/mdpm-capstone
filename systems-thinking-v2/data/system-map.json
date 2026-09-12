@@ -4454,10 +4454,10 @@
     },
     {
       "id": "future",
-      "label": "7. Opportunity + Product",
-      "heading": "Future Opportunity",
+      "label": "7. Product",
+      "heading": "What would have to be true",
       "purpose": "Show a hypothesized improved system if relevant value-state transitions are strengthened.",
-      "contextParagraph": "This view shows a hypothesized improved system in which governed context, coordinated decisions, delivery, fulfilment and recovery could help more loyalty value become relevant, earned, available and ultimately realized. The capabilities and downstream outcomes remain opportunity hypotheses rather than a committed solution architecture or proven causal model.",
+      "contextParagraph": "Three capabilities the system does not have yet, and the outcomes the team hopes they produce. They are preconditions for the product described below, not a committed architecture - every one is a hypothesis, and each carries the balancing loop that decides whether it holds.",
       "nodeIds": [
         "identity",
         "orchestration",

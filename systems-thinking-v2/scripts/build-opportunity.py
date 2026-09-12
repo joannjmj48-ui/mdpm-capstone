@@ -19,7 +19,10 @@ for c in cm["productConvergence"]:
         "<h4>" + c["theme"] + "</h4><p>" + c["whatConverged"] + "</p>"
         + ('<p class="op-diff"><strong>What differs.</strong> ' + c["whatDiffers"] + "</p>" if c.get("whatDiffers") else "")
         + '<p class="op-why">' + c["whyItMatters"] + "</p>"
-        '<div class="op-drawn">' + who + "</div></article>")
+        + (('<div class="op-trace"><span>What the analysis suggests</span><p>' + c["tracesTo"]["suggests"] + "</p>"
+            + ("".join('<em class="op-tag">' + x + "</em>" for x in c["tracesTo"]["loops"] + c["tracesTo"]["leverage"]))
+            + "</div>") if c.get("tracesTo") else "")
+        + '<div class="op-drawn">' + who + "</div></article>")
 
 def author(c):
     caps = "".join(
@@ -50,9 +53,9 @@ authors = "".join(author(c) for c in pdefs["contributors"])
 html = ('<div class="op-wrap">'
  '<header class="op-hero"><span class="op-kicker">What we would build to get there</span>'
  "<h3>Initial product features and descriptions</h3>"
- "<p>The capabilities above are a hypothesis about what the system could become. These are first drafts of what the "
- "product should do, written independently by all six of us &mdash; read against the loops, the overlap is much larger "
- "than the disagreement.</p></header>"
+ "<p>First drafts of what the product should do, written independently by all six of us, read against the systems "
+ "analysis. This is material for the discussion rather than a decided feature set &mdash; what each of us proposed, and "
+ "what the loops and leverage points suggest about it.</p></header>"
  '<div class="op-subnav" role="group" aria-label="Choose a product view">'
    '<button type="button" class="btn btn-primary" data-op-panel="converged" aria-pressed="true">Where we converged</button>'
    '<button type="button" class="btn" data-op-panel="authors" aria-pressed="false">Product definition by author</button>'

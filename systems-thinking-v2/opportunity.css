@@ -103,3 +103,16 @@
   text-transform: uppercase; color: var(--muted-foreground);
 }
 #loyalty-map-v2 .op-row p { margin: .1rem 0 0; font-size: 13px; }
+#loyalty-map-v2 .op-trace {
+  margin-top: .6rem; padding-top: .55rem; border-top: 1px solid var(--border);
+}
+#loyalty-map-v2 .op-trace > span {
+  display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--primary);
+}
+#loyalty-map-v2 .op-trace p { margin: .2rem 0 .45rem; font-size: 13px; }
+#loyalty-map-v2 .op-tag {
+  display: inline-block; font-style: normal; font-family: var(--font-mono); font-size: 10px;
+  border: 1px solid var(--border); padding: 1px 6px; border-radius: 3px;
+  color: var(--muted-foreground); margin: 0 4px 4px 0;
+}

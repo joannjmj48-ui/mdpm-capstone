@@ -240,7 +240,19 @@
       "whyItMatters": "The most defensible product capability in the set. Five people would build it and none treat it as optional. It is phase 1.",
       "epistemicStatus": "inferred",
       "claimBasis": "group-convergence",
-      "decisionStatus": "active-direction"
+      "decisionStatus": "active-direction",
+      "tracesTo": {
+        "loops": [
+          "TR4 reliability and trust",
+          "TB3 value gap"
+        ],
+        "leverage": [
+          "Joann's ledger",
+          "Sly's shared value-state information",
+          "Ola's structure of information flows"
+        ],
+        "suggests": "The loops put this earliest. Reliability is what builds trust, and the value gap cannot be corrected until someone can see what should have posted. Five of six proposed it independently, which is the strongest agreement in the set."
+      }
     },
     {
       "id": "CV-P02",
@@ -284,7 +296,17 @@
       "decisionStatus": "active-direction",
       "residualDivergenceIds": [
         "DV-01"
-      ]
+      ],
+      "tracesTo": {
+        "loops": [
+          "TR1 relevance flywheel"
+        ],
+        "leverage": [
+          "Sly's decisioning on realized outcomes",
+          "Lia's offer relevance"
+        ],
+        "suggests": "This turns the loop everyone drew. The analysis suggests it pays off later than it looks: relevance spends trust, and the flywheel is capped until the brakes ease, so pushing it first spins a capped loop faster."
+      }
     },
     {
       "id": "CV-P03",
@@ -318,7 +340,12 @@
       "whyItMatters": "Removes a whole class of architectural argument from the team's remaining decisions.",
       "epistemicStatus": "assumed",
       "claimBasis": "group-convergence",
-      "decisionStatus": "active-direction"
+      "decisionStatus": "active-direction",
+      "tracesTo": {
+        "loops": [],
+        "leverage": [],
+        "suggests": "Not a feature but a constraint everyone assumed independently. Worth confirming out loud on Monday, since it quietly rules out a standalone app."
+      }
     },
     {
       "id": "CV-P04",
@@ -351,7 +378,17 @@
       "decisionStatus": "active-direction",
       "residualDivergenceIds": [
         "DV-01"
-      ]
+      ],
+      "tracesTo": {
+        "loops": [
+          "TR2 conversion flywheel"
+        ],
+        "leverage": [
+          "Josh's goal achievement as the system goal",
+          "Sly's realized value as the system goal"
+        ],
+        "suggests": "The settled position nests these: realized value is the measurable proxy, goal achievement is what it serves. That makes goal capture phase three, because the system has to work for members who never set a goal."
+      }
     }
   ],
   "divergences": [
