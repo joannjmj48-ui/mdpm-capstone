@@ -1281,40 +1281,43 @@
         "points": [
           {
             "ref": "OL-L1",
-            "title": "Real-time status visibility",
-            "role": "Trust foundation",
-            "effect": "Strengthens TR4",
-            "mechanism": "When members can see what they are getting and what they have redeemed, trust increases, which drives engagement and revenue, which funds further visibility.",
-            "signal": "Drawn as a closed reinforcing loop rather than a one-way capability.",
-            "result": "The loop Joann's ledger acts on directly.",
-            "classification": "Not classified against Meadows by Ola",
-            "dependency": "Requires the status data to be accurate and current.",
-            "evidence": "Digital Business Model System Loops; 5 September session",
-            "status": "inferred",
+            "title": "Structure of information flows",
+            "role": "Enabling foundation",
+            "effect": "Strengthens TR1 and TR4",
+            "mechanism": "Connect loyalty and banking systems so member context, eligibility, offers and value carry across BMO's product ecosystem. Open banking pushes this further, extending that information flow across institutional boundaries entirely.",
+            "signal": "Members and BMO are both currently acting on incomplete information.",
+            "result": "Closing that gap changes behaviour directly rather than incentivizing around it.",
+            "classification": "Meadows: #6 information flows",
+            "dependency": "Requires connectivity across loyalty, banking and, for the open-banking case, other institutions.",
+            "evidence": "System Loops PDF, page 2",
+            "status": "stated",
+            "author": "Ola",
             "targets": [
+              "CV-SIGNAL",
+              "CV-COMBINED",
               "CV-STATUS",
-              "CV-TRUST"
-            ],
-            "author": "Ola"
+              "CV-RELEVANCE"
+            ]
           },
           {
             "ref": "OL-L2",
-            "title": "Measure realization against programme margin",
-            "role": "Scorecard tension",
-            "effect": "Names TB1",
-            "mechanism": "As members realize more value they redeem more, which leads to breakage falling, which constrains what the programme can invest.",
-            "signal": "Ola raised this on the call and noted Josh had reached the same point.",
-            "result": "The same scorecard tension Joann's leverage point acts on.",
-            "classification": "Not classified against Meadows by Ola",
-            "dependency": "Needs the replacement revenue question answered.",
-            "evidence": "5 September session",
-            "status": "inferred",
+            "title": "Strength of the balancing loop",
+            "role": "Governs the brake",
+            "effect": "Turns TB1 into an active lever",
+            "mechanism": "Realized value going up quietly erodes the breakage margin that funds the programme. Turn that into an active lever — real-time margin monitoring tied to redemption rate — so BMO governs the trade-off instead of absorbing it.",
+            "signal": "We do not know how BMO is managing that currently.",
+            "result": "The trade-off becomes something the organisation decides rather than something that happens to it.",
+            "classification": "Meadows: #8 balancing feedback — level named by Ola",
+            "dependency": "Requires redemption and margin data in near real time.",
+            "evidence": "System Loops PDF, page 2",
+            "status": "stated",
+            "author": "Ola",
             "targets": [
               "CV-REALIZED",
+              "CV-REDEEM",
               "CV-BREAKAGE",
               "CV-HEADROOM"
-            ],
-            "author": "Ola"
+            ]
           }
         ]
       }

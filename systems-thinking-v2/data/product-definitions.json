@@ -183,21 +183,33 @@
     {
       "id": "ola",
       "displayName": "Ola",
-      "status": "not-supplied",
-      "source": "System Loops PDF; 5 Sept session",
-      "title": "Not supplied as a written definition",
-      "oneSentence": "Ola's submission is a loop set rather than a product definition. Her loops point at real-time status visibility building trust, and at realization running against programme margin.",
-      "primaryUser": "Not stated.",
-      "coreJob": "Not stated.",
+      "status": "supplied",
+      "source": "System Loops PDF, page 3",
+      "title": "The Value Hub",
+      "oneSentence": "A connected capability inside Blue Rewards, surfaced contextually in BMO's banking app, that shows members relevant earning and redemption opportunities matched to spending they are already doing, gives them a clear standardised view of what they have earned and what it is worth, and detects and helps resolve value that did not show up as promised.",
+      "primaryUser": "Every member — the definition is explicit that it does these three things for every member.",
+      "coreJob": "Show me what I can get, what I've got and what it's worth, and fix it when it doesn't arrive.",
       "capabilities": [
         {
-          "name": "Real-time status visibility",
-          "description": "Implied by her reliability loop rather than written as a capability — members able to see what they are getting and what they have redeemed.",
+          "name": "Surface relevant opportunities",
+          "description": "Earning and redemption opportunities matched to spending the member is already doing.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "A standardised view of earned value",
+          "description": "Clear and consistent: what has been earned, and what it is worth.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Detect and resolve missing value",
+          "description": "Find value that did not show up as promised, and help resolve it.",
           "facing": "member-facing",
           "isWedge": false
         }
       ],
-      "position": "Recorded as implied, not authored. Worth asking her to confirm or replace.",
+      "position": "Names the product — The Value Hub — and places it contextually inside the banking app rather than in the loyalty programme alone. The only definition that treats all three capabilities as a single connected thing rather than a sequence.",
       "outOfScope": "Not stated."
     }
   ]
