@@ -117,7 +117,7 @@ js = """/* GENERATED FROM data/narrative-source.html by scripts/build-narrative.
   var button = document.createElement("button");
   button.type = "button";
   button.className = "btn";
-  button.textContent = "Causal Loop Convergence";
+  button.textContent = "5. Causal Loop Convergence";
   button.setAttribute("data-nv-view", "narrative");
   button.setAttribute("aria-pressed", "false");
   controls.appendChild(button);
