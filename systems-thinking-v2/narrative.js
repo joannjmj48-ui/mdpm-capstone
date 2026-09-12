@@ -16,7 +16,7 @@
   var button = document.createElement("button");
   button.type = "button";
   button.className = "btn";
-  button.textContent = "5. Causal Loop Convergence";
+  button.textContent = "5. Conclusion";
   button.setAttribute("data-nv-view", "narrative");
   button.setAttribute("aria-pressed", "false");
   controls.appendChild(button);

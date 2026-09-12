@@ -265,3 +265,17 @@
 #loyalty-map-v2 .cv-lp-role { margin: 0 0 .2rem; font-size: 12px; color: var(--muted-foreground); font-family: var(--font-mono); }
 #loyalty-map-v2 .cv-lp .cv-field { margin-top: .55rem; }
 #loyalty-map-v2 .cv-lp .cv-field p { font-size: 13.5px; }
+
+/* leverage marked on the loop rings */
+#loyalty-map-v2 .cv-nd.is-lever { stroke: var(--primary); stroke-width: 2; stroke-dasharray: 5 3; }
+#loyalty-map-v2 .cv-lev-dot { fill: var(--primary); }
+#loyalty-map-v2 .cv-levlist { list-style: none; margin: .45rem 0 0; padding: 0; display: grid; gap: .3rem; }
+#loyalty-map-v2 .cv-levlist li { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem; font-size: 13px; }
+#loyalty-map-v2 .cv-levlist code {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  background: var(--accent); color: var(--accent-foreground); padding: 1px 5px; border-radius: 3px;
+}
+#loyalty-map-v2 .cv-levlist strong { font-weight: 500; }
+#loyalty-map-v2 .cv-levlist em {
+  font-style: normal; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted-foreground);
+}

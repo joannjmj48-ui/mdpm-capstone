@@ -69,13 +69,14 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
     return lines.slice(0, 2);
   }
 
-  function loopSvg(chain, negPairs, small) {
+  function loopSvg(chain, negPairs, small, markLeverage) {
     if (!chain || chain.length < 3) return "";
     var seq = chain.slice(0, chain.length - 1);              // drop the repeated closing node
     var n = seq.length;
     if (n < 2) return "";
     var neg = {};
     (negPairs || []).forEach(function (pr) { neg[pr[0] + ">" + pr[1]] = true; });
+    var lev = markLeverage ? leverageTargets(chain) : {};
 
     var W = small ? 480 : 620, H = small ? 430 : 560;
     var CX = W / 2, CY = H / 2 + (small ? 4 : 6);
@@ -116,7 +117,12 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       var v = VARS[id], label = v ? v.label : id;
       var x = pos[i][0], y = pos[i][1];
       out.push('<rect x="' + (x - HW).toFixed(1) + '" y="' + (y - HH).toFixed(1) + '" width="' + HW * 2 +
-        '" height="' + HH * 2 + '" rx="3" class="cv-nd' + (i === 0 ? " is-first" : "") + '"/>');
+        '" height="' + HH * 2 + '" rx="3" class="cv-nd' + (i === 0 ? " is-first" : "") +
+        (lev[id] ? " is-lever" : "") + '"/>');
+      if (lev[id]) {
+        out.push('<circle cx="' + (x + HW - 9).toFixed(1) + '" y="0" cy="' + (y - HH + 9).toFixed(1) +
+          '" r="5.5" class="cv-lev-dot"/>');
+      }
       var lines = wrap(label, small ? 15 : 18);
       if (lines.length > 1) {
         out.push('<text x="' + x.toFixed(1) + '" y="' + (y - 3).toFixed(1) + '" class="cv-ndt" text-anchor="middle">' + esc(lines[0]) + "</text>");
@@ -229,7 +235,7 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       '<span class="cv-tally">' + people.length + " of 6</span></div>");
     parts.push("<h4>" + esc(loop.name) + "</h4></header>");
     parts.push('<p class="cv-loopsum">' + esc(loop.summary) + "</p>");
-    parts.push(loopSvg(loop.canonicalChain, loop.negativeLinks));
+    parts.push(loopSvg(loop.canonicalChain, loop.negativeLinks, false, true));
     parts.push('<p class="cv-parity"><strong>' + esc(loop.type) + "</strong> &middot; " +
       negs + " minus" + (negs === 1 ? "" : "es") + " &middot; " + parity + "</p>");
     if (loop.derivation) {
@@ -237,6 +243,14 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
         esc(loop.derivation.confidence) + ' confidence</span><p>' + esc(loop.derivation.assumption) + "</p></div>");
     }
     parts.push('<div class="cv-field"><span>What this tells us</span><p>' + esc(loop.finding) + "</p></div>");
+    var acting = leverageOn(loop.canonicalChain);
+    if (acting.length) {
+      parts.push('<div class="cv-field"><span>Leverage points acting on this loop</span>' +
+        '<ul class="cv-levlist">' + acting.map(function (p) {
+          return "<li><code>" + esc(p.ref) + "</code><strong>" + esc(p.title) + "</strong>" +
+            '<em>' + esc(p.author) + "</em></li>";
+        }).join("") + "</ul></div>");
+    }
     parts.push('<div class="cv-drawnby">' + people.map(function (k) {
       return '<span class="cv-who">' + esc(PEOPLE[k] || k) + "</span>";
     }).join("") + "</div>");
@@ -286,6 +300,25 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
       '<span class="cv-personcount">' + c.points.length + " leverage point" +
       (c.points.length === 1 ? "" : "s") + "</span></h4>" +
       '<div class="cv-lp-grid">' + c.points.map(lpCard).join("") + "</div></section>";
+  }
+
+  var LEV = [];
+  DATA.leveragePointsByAuthor.contributors.forEach(function (c) {
+    c.points.forEach(function (p) { LEV.push(p); });
+  });
+  function leverageOn(chain) {
+    var inChain = {};
+    (chain || []).forEach(function (v) { inChain[v] = true; });
+    return LEV.filter(function (p) {
+      return (p.targets || []).some(function (v) { return inChain[v]; });
+    });
+  }
+  function leverageTargets(chain) {
+    var hit = {};
+    leverageOn(chain).forEach(function (p) {
+      (p.targets || []).forEach(function (v) { hit[v] = true; });
+    });
+    return hit;
   }
 
   var DIAG = DATA.structuralDiagnostic;
@@ -358,7 +391,7 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
 
   root.appendChild(section);
 
-  var button = el("button", "btn", "4. Leverage Points Convergence");
+  var button = el("button", "btn", "4. Leverage Points + Causal Loop Convergence");
   button.type = "button";
   button.setAttribute("data-cv-view", "convergence");
   button.setAttribute("aria-pressed", "false");

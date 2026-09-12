@@ -1042,7 +1042,14 @@
             "classification": "Meadows: #3 system goals",
             "dependency": "Not ours to change alone. The proposal is to build the instrument that would let anyone have the conversation with evidence, because right now breakage is the only number on the table.",
             "evidence": "Talking script, 5 September",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-REDEEM",
+              "CV-BREAKAGE",
+              "CV-HEADROOM",
+              "CV-GENEROSITY"
+            ],
+            "author": "Joann"
           },
           {
             "ref": "JN-L2",
@@ -1055,7 +1062,13 @@
             "classification": "Meadows: #6 information flows",
             "dependency": "Reads from the accrual engine; it is not the system of record.",
             "evidence": "Talking script, 5 September",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-STATUS",
+              "CV-UNRESOLVED",
+              "CV-REALIZED"
+            ],
+            "author": "Joann"
           }
         ]
       },
@@ -1074,7 +1087,14 @@
             "classification": "Abson: Design · Meadows: #6 information flows; #9 delays",
             "dependency": "Requires event connectivity, common definitions, and permissioned identity resolution.",
             "evidence": "",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-STATUS",
+              "CV-SIGNAL",
+              "CV-UNRESOLVED",
+              "CV-REALIZED"
+            ],
+            "author": "Sylvester"
           },
           {
             "ref": "L02",
@@ -1087,7 +1107,14 @@
             "classification": "Abson: Feedbacks + Design · Meadows: #7 reinforcing feedback; #6 information flows",
             "dependency": "Requires outcome attribution and an operating process that acts on learning.",
             "evidence": "",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-SIGNAL",
+              "CV-RELEVANCE",
+              "CV-OFFERS",
+              "CV-REALIZED"
+            ],
+            "author": "Sylvester"
           },
           {
             "ref": "L03",
@@ -1100,7 +1127,14 @@
             "classification": "Abson: Feedbacks + Design · Meadows: #8 balancing feedback; #6 information flows; #5 rules; #9 delays",
             "dependency": "Requires resolution authority, ownership, partner and service integration, and safeguards against false intervention.",
             "evidence": "",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-UNRESOLVED",
+              "CV-DETECT",
+              "CV-REALIZED",
+              "CV-TRUST"
+            ],
+            "author": "Sylvester"
           },
           {
             "ref": "L04",
@@ -1113,7 +1147,11 @@
             "classification": "Abson: Intent · Meadows: #3 system goals",
             "dependency": "Requires executive alignment and economic validation; a product cannot impose this system goal alone.",
             "evidence": "",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-REALIZED"
+            ],
+            "author": "Sylvester"
           }
         ]
       },
@@ -1132,7 +1170,13 @@
             "classification": "Meadows: #6 information flows; #8 balancing feedback (classification inferred - Henry did not state a Meadows level)",
             "dependency": "Requires reward status accuracy and visibility to be reliable first.",
             "evidence": "Balancing Loop diagram",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-DETECT",
+              "CV-STATUS",
+              "CV-FRICTION"
+            ],
+            "author": "Henry"
           }
         ]
       },
@@ -1151,7 +1195,13 @@
             "classification": "Meadows: #3 system goals — very high leverage",
             "dependency": "",
             "evidence": "Deloitte found loyalty programs increased perceived value for 80% of members, yet consumers actively used only five of eight enrolled programs, supporting a sharper focus on useful value.",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-GOAL",
+              "CV-RELEVANCE",
+              "CV-REALIZED"
+            ],
+            "author": "Josh"
           },
           {
             "ref": "JL02",
@@ -1164,7 +1214,13 @@
             "classification": "Meadows: #6 information flows; #5 rules of the system — high leverage",
             "dependency": "",
             "evidence": "",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-PREVIEW",
+              "CV-CONSENT",
+              "CV-COMBINED"
+            ],
+            "author": "Josh"
           },
           {
             "ref": "JL03",
@@ -1177,7 +1233,14 @@
             "classification": "Meadows: #6 information flows, supported by #5 rules of the system — high leverage",
             "dependency": "",
             "evidence": "",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-FRAGMENT",
+              "CV-SIGNAL",
+              "CV-COMBINED",
+              "CV-STATUS"
+            ],
+            "author": "Josh"
           }
         ]
       },
@@ -1196,7 +1259,13 @@
             "classification": "Meadows: #6 information flows - stated by Lia, who connected this leverage point to information flows explicitly",
             "dependency": "Bounded by member control: more relevant, still in control.",
             "evidence": "5 September session",
-            "status": "stated"
+            "status": "stated",
+            "targets": [
+              "CV-OFFERS",
+              "CV-RELEVANCE",
+              "CV-SIGNAL"
+            ],
+            "author": "Lia"
           }
         ]
       },
@@ -1215,7 +1284,12 @@
             "classification": "Not classified against Meadows by Ola",
             "dependency": "Requires the status data to be accurate and current.",
             "evidence": "Digital Business Model System Loops; 5 September session",
-            "status": "inferred"
+            "status": "inferred",
+            "targets": [
+              "CV-STATUS",
+              "CV-TRUST"
+            ],
+            "author": "Ola"
           },
           {
             "ref": "OL-L2",
@@ -1228,11 +1302,18 @@
             "classification": "Not classified against Meadows by Ola",
             "dependency": "Needs the replacement revenue question answered.",
             "evidence": "5 September session",
-            "status": "inferred"
+            "status": "inferred",
+            "targets": [
+              "CV-REALIZED",
+              "CV-BREAKAGE",
+              "CV-HEADROOM"
+            ],
+            "author": "Ola"
           }
         ]
       }
-    ]
+    ],
+    "targetNote": "Which canonical variables each leverage point acts on. Used to mark leverage on the loop diagrams."
   },
   "registry": {
     "variables": [
