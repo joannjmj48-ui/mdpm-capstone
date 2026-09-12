@@ -1906,7 +1906,7 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "plainLanguage": "Every reward the programme offers. Not yet pointed at anyone.",
+      "plainLanguage": "Every reward the programme offers. Not yet pointed at anyone — and whoever eventually sees it may be a prospect, not a member.",
       "region": "The five value states"
     },
     {
@@ -1923,7 +1923,7 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "plainLanguage": "The rewards that reached this member, and they're working out whether it's worth it.",
+      "plainLanguage": "The rewards that reached this person, and they're working out whether it's worth it. At the very front of the chain that person may still be a prospect.",
       "region": "The five value states"
     },
     {
@@ -3601,6 +3601,146 @@
       "polarity": "+",
       "delay": true,
       "provenance": "Added 12 Sept 2026. The balance sits between earned and available value, not beside them."
+    },
+    {
+      "id": "TRN-R06",
+      "sourceId": "channels",
+      "targetId": "potential-value",
+      "from": "channels",
+      "to": "potential-value",
+      "label": "Where they weigh it",
+      "displayLabel": "Where they weigh it",
+      "relationshipDefinition": "The member compares, reads the terms and works out what it is worth inside a channel. A reward the channel presents badly is weighed badly, whatever the offer itself is.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT01"
+      ],
+      "state": "inferred-current",
+      "flowLens": "value",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
+    },
+    {
+      "id": "TRN-R07",
+      "sourceId": "channels",
+      "targetId": "earned-value",
+      "from": "channels",
+      "to": "earned-value",
+      "label": "Where the action is taken",
+      "displayLabel": "Where the action is taken",
+      "relationshipDefinition": "The qualifying action usually runs through a channel: activating an offer, linking a card, completing the purchase on a surface the programme can see. A channel that does not register the action means the member acted and the system did not notice.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT02"
+      ],
+      "state": "inferred-current",
+      "flowLens": "value",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
+    },
+    {
+      "id": "TRN-R08",
+      "sourceId": "channels",
+      "targetId": "available-value",
+      "from": "channels",
+      "to": "available-value",
+      "label": "Where the balance is seen",
+      "displayLabel": "Where the balance is seen",
+      "relationshipDefinition": "Value being posted and the member knowing it was posted are two different things. A channel is what turns available value into value the member is aware they hold.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT03"
+      ],
+      "state": "inferred-current",
+      "flowLens": "value",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
+    },
+    {
+      "id": "TRN-R09",
+      "sourceId": "service",
+      "targetId": "potential-value",
+      "from": "service",
+      "to": "potential-value",
+      "label": "Answers can I get this",
+      "displayLabel": "Answers can I get this",
+      "relationshipDefinition": "Eligibility questions, terms and qualification rules are what a member needs resolved before they can decide. Service is what answers them, and unanswered questions stall the assessment.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT01"
+      ],
+      "state": "inferred-current",
+      "flowLens": "information",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
+    },
+    {
+      "id": "TRN-R10",
+      "sourceId": "service",
+      "targetId": "earned-value",
+      "from": "service",
+      "to": "earned-value",
+      "label": "Decides the action counted",
+      "displayLabel": "Decides the action counted",
+      "relationshipDefinition": "Qualification processing determines whether what the member did actually satisfies the rule. This is where a member who believes they earned something and a system that disagrees part company.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT02"
+      ],
+      "state": "inferred-current",
+      "flowLens": "information",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026, completing Sylvester's challenge that the enabling capabilities touch every state change."
     }
   ],
   "overlays": [
@@ -3929,7 +4069,12 @@
         "TRN-R02",
         "TRN-R03",
         "TRN-R04",
-        "TRN-R05"
+        "TRN-R05",
+        "TRN-R06",
+        "TRN-R07",
+        "TRN-R08",
+        "TRN-R09",
+        "TRN-R10"
       ],
       "transitionIds": [
         "VT01",
@@ -3963,7 +4108,8 @@
           "It's a diagnostic tool for locating loss. “Members don't get value” is unactionable. Splitting it into five steps lets you ask which step — and each step has a different owner and a different fix. Posting failing is an operations problem. Use and conversion failing is a discovery and channel problem. Without the split you'd treat them as one thing and fix the wrong one.",
           "This is a value progression, not a systems map. It shows the language we use at each stage, not the structure of the system — that is view 1.",
           "Read it in three bands. The top row is the five states value passes through — it starts programme-wide as the whole catalogue, narrows to one member, then becomes theirs. The middle row is what moves it between them, and each of those touches several stages rather than one: a member sees an opportunity in a channel, service explains it, data decides what gets surfaced at all. The bottom row is what stalls value, and where members actually join.",
-          "The sequence holds — value cannot reach available without being earned — but a member can join at any point. Signing up grants roughly 750 points, so a new member holds a balance having earned nothing."
+          "The sequence holds — value cannot reach available without being earned — but a member can join at any point. Signing up grants roughly 750 points, so a new member holds a balance having earned nothing.",
+          "Note who is actually in each state. The last three belong to a member. The first two need not: a join-and-get-750-points offer is weighed by a prospect, who becomes a member by acting on it. Enrolment is itself a qualifying behaviour, which is why a sign-up grant is earned rather than simply appearing — it just completes in one step and posts immediately."
         ]
       }
     },

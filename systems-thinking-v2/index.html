@@ -3078,6 +3078,46 @@ svg {
           "inferred",
           null,
           "TRN-R05"
+        ],
+        [
+          "channels",
+          "potential-value",
+          "Where they weigh it",
+          "inferred",
+          null,
+          "TRN-R06"
+        ],
+        [
+          "channels",
+          "earned-value",
+          "Where the action is taken",
+          "inferred",
+          null,
+          "TRN-R07"
+        ],
+        [
+          "channels",
+          "available-value",
+          "Where the balance is seen",
+          "inferred",
+          null,
+          "TRN-R08"
+        ],
+        [
+          "service",
+          "potential-value",
+          "Answers can I get this",
+          "inferred",
+          null,
+          "TRN-R09"
+        ],
+        [
+          "service",
+          "earned-value",
+          "Decides the action counted",
+          "inferred",
+          null,
+          "TRN-R10"
         ]
       ]
     },
@@ -3274,6 +3314,11 @@ svg {
     "What gets surfaced at all": "Sly, 12 September: 'maybe there's some data behind the scenes that is actually showing that opportunity to you.' Decisioning determines which propositions become visible opportunities.",
     "Enter at any stage": "A standing balance places the member directly at available value without passing through opportunity, potential or earned value for that balance. The sequence between states still holds; the member's entry point into it does not have to be the start.",
     "Posts into the balance": "Earned value accumulates into the member's standing balance once it posts. Points that are earned but not yet posted sit outside the balance, which is the gap a member experiences as pending.",
+    "Where they weigh it": "The member compares, reads the terms and works out what it is worth inside a channel. A reward the channel presents badly is weighed badly, whatever the offer itself is.",
+    "Where the action is taken": "The qualifying action usually runs through a channel: activating an offer, linking a card, completing the purchase on a surface the programme can see. A channel that does not register the action means the member acted and the system did not notice.",
+    "Where the balance is seen": "Value being posted and the member knowing it was posted are two different things. A channel is what turns available value into value the member is aware they hold.",
+    "Answers can I get this": "Eligibility questions, terms and qualification rules are what a member needs resolved before they can decide. Service is what answers them, and unanswered questions stall the assessment.",
+    "Decides the action counted": "Qualification processing determines whether what the member did actually satisfies the rule. This is where a member who believes they earned something and a system that disagrees part company.",
     "Governed permitted context": "Permissioned identity may provide usable context under governance.",
     "Coordinated value-path decision": "A selected value pathway may be carried into delivery and operations.",
     "Access + reliable fulfilment": "Coordinated delivery may improve access, fulfilment and recovery.",
@@ -3623,6 +3668,51 @@ svg {
       "claimBasis": "Group convergence",
       "decisionStatus": "Active direction",
       "transitionIds": [],
+      "evidenceRefs": []
+    },
+    "TRN-R06": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT01"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R07": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT02"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R08": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT03"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R09": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT01"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R10": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT02"
+      ],
       "evidenceRefs": []
     },
     "FUT-R01": {
@@ -4702,6 +4792,6 @@ svg {
 <script src="narrative.js?v=9"></script>
 <script src="regions.js?v=2"></script>
 <script src="opportunity.js?v=2"></script>
-<script src="view-notes.js?v=5"></script>
+<script src="view-notes.js?v=6"></script>
 </body>
 </html>
