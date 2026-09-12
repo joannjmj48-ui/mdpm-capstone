@@ -3649,9 +3649,9 @@
     },
     {
       "id": "transition",
-      "label": "2. Main Variable Transition",
-      "heading": "Main Variable: Member Value Realization",
-      "purpose": "Show where different parts of the system can improve progression toward Realized Value.",
+      "label": "2. How Value Progresses",
+      "heading": "How value progresses",
+      "purpose": "Show the stages worthwhile value passes through on its way to the member, and where that progression may stall. This is a stage view, not a second systems map: value moves forward through the states and does not return to an earlier one.",
       "contextParagraph": "This view uses Member Value Realization as the system main variable. It shows how loyalty opportunities progress from Opportunity to Potential, Earned, Available and ultimately Realized Value; where that progression may stall; and which system conditions, member needs and broad opportunity areas could improve the amount, relevance, reliability, accessibility, usefulness and appropriate speed of realized value.",
       "nodeIds": [
         "partner",

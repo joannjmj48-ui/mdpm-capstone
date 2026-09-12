@@ -821,13 +821,14 @@ svg {
 <link rel="stylesheet" href="convergence.css?v=7">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
 <link rel="stylesheet" href="narrative.css?v=1">
+<link rel="stylesheet" href="regions.css?v=2">
 </head>
 <body>
 <div id="loyalty-map-v2" class="lm2-root">
   <div class="lm2-version-badge">Version 2 research workspace</div>
   <div class="viz-controls" aria-label="Choose a map view">
     <button type="button" class="btn btn-primary" data-map-view="current" aria-pressed="true">1. Current System</button>
-    <button type="button" class="btn" data-map-view="transition" aria-pressed="false">2. Main Variable Transition</button>
+    <button type="button" class="btn" data-map-view="transition" aria-pressed="false">2. How Value Progresses</button>
     <button type="button" class="btn" data-map-view="future" aria-pressed="false">3. Future Opportunity</button>
     <button type="button" class="btn" data-map-view="external" aria-pressed="false">4. Outside the Boundary</button>
   </div>
@@ -2914,7 +2915,7 @@ svg {
       ]
     },
     "transition": {
-      "label": "Main Variable: Member Value Realization",
+      "label": "How value progresses",
       "description": "This view uses Member Value Realization as the system main variable. It shows how loyalty opportunities progress from Opportunity to Potential, Earned, Available and ultimately Realized Value; where that progression may stall; and which system conditions, member needs and broad opportunity areas could improve the amount, relevance, reliability, accessibility, usefulness and appropriate speed of realized value.",
       "areas": {
         "opportunity": "opportunity",
@@ -4584,5 +4585,6 @@ svg {
 </script>
 <script src="convergence.js?v=7"></script>
 <script src="narrative.js?v=1"></script>
+<script src="regions.js?v=1"></script>
 </body>
 </html>
