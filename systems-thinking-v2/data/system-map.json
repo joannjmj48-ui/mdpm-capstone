@@ -507,7 +507,7 @@
         "future"
       ],
       "definition": "A sustained, multidimensional pattern of participation over time, described through frequency, breadth, continuity, completion and progression.",
-      "roleInSystem": "Meaningful Engagement may follow repeated worthwhile value realization and provides participation and outcome signals back into the system. It is not the main variable.",
+      "roleInSystem": "Where the progression ends and behaviour begins. It is the only step the system cannot act on directly: it can make value worth having, but the member decides whether to come back.",
       "whyItMatters": "Sustained participation may indicate that outcomes are worthwhile, but activity, earning, redemption or linked relationships do not by themselves prove realized value.",
       "known": "Participation is observable through actions such as earning, redeeming, using benefits or adopting relevant products. Activation initiates or renews that participation; repeated participation develops into engagement.",
       "provisional": "Engagement does not automatically cause conversion, affinity or revenue. Its effect depends on relevance, realized value, trust, suitability and reliable delivery.",
@@ -975,7 +975,7 @@
         "transition"
       ],
       "definition": "A marker for places where identity, information, value, decisions or service may not move reliably across organizational or technological boundaries.",
-      "roleInSystem": "It keeps the map attentive to the quality of interfaces without assuming that every separate system or channel is defective.",
+      "roleInSystem": "Obstructs every stage rather than one. Value can fail to surface, fail to be understood, fail to register, fail to post, or fail at redemption - and each is a different failure with a different owner.",
       "whyItMatters": "Separate surfaces, linking issues, delayed rewards and support transfers provide directional evidence that some interfaces may constrain value delivery.",
       "known": "Specific member-facing breakdowns have been reported. The existence of multiple channels and systems is also supported.",
       "provisional": "Those signals do not establish enterprise-wide fragmentation or prove that tighter integration will always create net gains.",
@@ -3057,9 +3057,9 @@
       "targetId": "earned-value",
       "from": "friction",
       "to": "earned-value",
-      "label": "Qualification + posting stalls",
-      "displayLabel": "Qualification + posting stalls",
-      "relationshipDefinition": "Interface friction may stall qualification, posting or release.",
+      "label": "Qualification stalls",
+      "displayLabel": "Qualification stalls",
+      "relationshipDefinition": "A member who acted but whose action was not registered, or whose qualification could not be determined, is stuck holding nothing despite having done the thing.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -3075,7 +3075,9 @@
         "VT02",
         "VT03"
       ],
-      "state": "inferred-current"
+      "state": "inferred-current",
+      "polarity": "-",
+      "flowLens": "condition"
     },
     {
       "id": "FUT-R01",
@@ -4072,6 +4074,146 @@
       "flowLens": "information",
       "polarity": "+",
       "provenance": "Added 12 Sept 2026 with the governance actors, from the stakeholder grid."
+    },
+    {
+      "id": "TRN-R11",
+      "sourceId": "friction",
+      "targetId": "opportunity",
+      "from": "friction",
+      "to": "opportunity",
+      "label": "Never surfaces",
+      "displayLabel": "Never surfaces",
+      "relationshipDefinition": "Fragmented channels and systems mean worthwhile propositions never become visible opportunities at all. Nothing downstream can recover value the member was never shown.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT01"
+      ],
+      "state": "inferred-current",
+      "flowLens": "condition",
+      "polarity": "-",
+      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins."
+    },
+    {
+      "id": "TRN-R12",
+      "sourceId": "friction",
+      "targetId": "potential-value",
+      "from": "friction",
+      "to": "potential-value",
+      "label": "Too unclear to judge",
+      "displayLabel": "Too unclear to judge",
+      "relationshipDefinition": "Unclear terms, eligibility or worth stall the member's assessment. They have seen the offer and cannot tell whether it is worth pursuing, so it goes no further.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT01"
+      ],
+      "state": "inferred-current",
+      "flowLens": "condition",
+      "polarity": "-",
+      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins."
+    },
+    {
+      "id": "TRN-R13",
+      "sourceId": "friction",
+      "targetId": "available-value",
+      "from": "friction",
+      "to": "available-value",
+      "label": "Posting delays and exceptions",
+      "displayLabel": "Posting delays and exceptions",
+      "relationshipDefinition": "Earned value that does not post, posts late, or lands in an unresolved exception never becomes usable. This is where most preventable loss sits.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT03"
+      ],
+      "state": "inferred-current",
+      "flowLens": "condition",
+      "polarity": "-",
+      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins."
+    },
+    {
+      "id": "TRN-R14",
+      "sourceId": "friction",
+      "targetId": "realized-value",
+      "from": "friction",
+      "to": "realized-value",
+      "label": "Redemption and fulfilment breakdowns",
+      "displayLabel": "Redemption and fulfilment breakdowns",
+      "relationshipDefinition": "Available value the member tries to use but cannot - a failed redemption, an unfulfilled benefit, a partner outage - stops at the last step, which is the most expensive place to lose it.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT04"
+      ],
+      "state": "inferred-current",
+      "flowLens": "condition",
+      "polarity": "-",
+      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins."
+    },
+    {
+      "id": "TRN-R15",
+      "sourceId": "realized-value",
+      "targetId": "engagement",
+      "from": "realized-value",
+      "to": "engagement",
+      "label": "Shapes what the member does next",
+      "displayLabel": "Shapes what the member does next",
+      "relationshipDefinition": "Where the progression ends and behaviour begins. A member who got something worthwhile is more likely to come back; one who did not is less likely. This is the only step the system cannot control directly.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "transition"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "group-convergence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [],
+      "valueTransitionIds": [
+        "VT05"
+      ],
+      "state": "inferred-current",
+      "flowLens": "participation",
+      "polarity": "+",
+      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins."
     }
   ],
   "overlays": [
@@ -4413,7 +4555,12 @@
         "TRN-R07",
         "TRN-R08",
         "TRN-R09",
-        "TRN-R10"
+        "TRN-R10",
+        "TRN-R11",
+        "TRN-R12",
+        "TRN-R13",
+        "TRN-R14",
+        "TRN-R15"
       ],
       "transitionIds": [
         "VT01",

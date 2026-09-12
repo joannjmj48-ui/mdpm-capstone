@@ -1921,7 +1921,7 @@ svg {
       "decision": "Active direction",
       "category": "Downstream behaviour and feedback signal",
       "definition": "A sustained, multidimensional pattern of participation over time, described through frequency, breadth, continuity, completion and progression.",
-      "role": "Meaningful Engagement may follow repeated worthwhile value realization and provides participation and outcome signals back into the system. It is not the main variable.",
+      "role": "Where the progression ends and behaviour begins. It is the only step the system cannot act on directly: it can make value worth having, but the member decides whether to come back.",
       "why": "Sustained participation may indicate that outcomes are worthwhile, but activity, earning, redemption or linked relationships do not by themselves prove realized value.",
       "known": "Participation is observable through actions such as earning, redeeming, using benefits or adopting relevant products. Activation initiates or renews that participation; repeated participation develops into engagement.",
       "provisional": "Engagement does not automatically cause conversion, affinity or revenue. Its effect depends on relevance, realized value, trust, suitability and reliable delivery.",
@@ -2113,7 +2113,7 @@ svg {
       "decision": "Unresolved",
       "category": "Structural condition",
       "definition": "A marker for places where identity, information, value, decisions or service may not move reliably across organizational or technological boundaries.",
-      "role": "It keeps the map attentive to the quality of interfaces without assuming that every separate system or channel is defective.",
+      "role": "Obstructs every stage rather than one. Value can fail to surface, fail to be understood, fail to register, fail to post, or fail at redemption - and each is a different failure with a different owner.",
       "why": "Separate surfaces, linking issues, delayed rewards and support transfers provide directional evidence that some interfaces may constrain value delivery.",
       "known": "Specific member-facing breakdowns have been reported. The existence of multiple channels and systems is also supported.",
       "provisional": "Those signals do not establish enterprise-wide fragmentation or prove that tighter integration will always create net gains.",
@@ -3331,7 +3331,7 @@ svg {
         [
           "friction",
           "earned-value",
-          "Qualification + posting stalls",
+          "Qualification stalls",
           "inferred",
           null,
           "TR-R11"
@@ -3415,6 +3415,46 @@ svg {
           "inferred",
           null,
           "TRN-R10"
+        ],
+        [
+          "friction",
+          "opportunity",
+          "Never surfaces",
+          "inferred",
+          null,
+          "TRN-R11"
+        ],
+        [
+          "friction",
+          "potential-value",
+          "Too unclear to judge",
+          "inferred",
+          null,
+          "TRN-R12"
+        ],
+        [
+          "friction",
+          "available-value",
+          "Posting delays and exceptions",
+          "inferred",
+          null,
+          "TRN-R13"
+        ],
+        [
+          "friction",
+          "realized-value",
+          "Redemption and fulfilment breakdowns",
+          "inferred",
+          null,
+          "TRN-R14"
+        ],
+        [
+          "realized-value",
+          "engagement",
+          "Shapes what the member does next",
+          "inferred",
+          null,
+          "TRN-R15"
         ]
       ]
     },
@@ -3611,7 +3651,7 @@ svg {
     "Posting + release reliability": "Operations influence whether earned entitlements become accessible.",
     "Access + use pathway": "Channels influence whether available value can be discovered and used.",
     "Fulfilment + recovery": "Fulfilment and recovery influence successful value use.",
-    "Qualification + posting stalls": "Interface friction may stall qualification, posting or release.",
+    "Qualification stalls": "A member who acted but whose action was not registered, or whose qualification could not be determined, is stuck holding nothing despite having done the thing.",
     "Where the member sees it": "A member only meets an opportunity where the programme puts it. The app, the site, a notification, a partner surface — an opportunity that no channel carries does not reach anyone, however well it was chosen.",
     "Help understanding it": "Seeing an opportunity and understanding it are different things. When the terms, eligibility or worth are not clear, service is what closes that gap — and an opportunity the member cannot make sense of stalls at the same point as one they never saw.",
     "What gets surfaced at all": "Decisioning determines which of the catalogue's rewards become visible opportunities at all. The filtering happens before the member is aware of anything, which is why the data layer shapes the opportunity rather than only acting on it later.",
@@ -3622,6 +3662,11 @@ svg {
     "Where the balance is seen": "Value being posted and the member knowing it was posted are two different things. A channel is what turns available value into value the member is aware they hold.",
     "Answers can I get this": "Eligibility questions, terms and qualification rules are what a member needs resolved before they can decide. Service is what answers them, and unanswered questions stall the assessment.",
     "Decides the action counted": "Qualification processing determines whether what the member did actually satisfies the rule. This is where a member who believes they earned something and a system that disagrees part company.",
+    "Never surfaces": "Fragmented channels and systems mean worthwhile propositions never become visible opportunities at all. Nothing downstream can recover value the member was never shown.",
+    "Too unclear to judge": "Unclear terms, eligibility or worth stall the member's assessment. They have seen the offer and cannot tell whether it is worth pursuing, so it goes no further.",
+    "Posting delays and exceptions": "Earned value that does not post, posts late, or lands in an unresolved exception never becomes usable. This is where most preventable loss sits.",
+    "Redemption and fulfilment breakdowns": "Available value the member tries to use but cannot - a failed redemption, an unfulfilled benefit, a partner outage - stops at the last step, which is the most expensive place to lose it.",
+    "Shapes what the member does next": "Where the progression ends and behaviour begins. A member who got something worthwhile is more likely to come back; one who did not is less likely. This is the only step the system cannot control directly.",
     "Governed permitted context": "Permissioned identity may provide usable context under governance.",
     "Coordinated value-path decision": "A selected value pathway may be carried into delivery and operations.",
     "Access + reliable fulfilment": "Coordinated delivery may improve access, fulfilment and recovery.",
@@ -4057,6 +4102,51 @@ svg {
       "decisionStatus": "Active direction",
       "transitionIds": [
         "VT02"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R11": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT01"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R12": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT01"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R13": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT03"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R14": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT04"
+      ],
+      "evidenceRefs": []
+    },
+    "TRN-R15": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Group convergence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [
+        "VT05"
       ],
       "evidenceRefs": []
     },
