@@ -33,9 +33,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  padding-right: 0.9rem;
+  padding: 0.4rem 0.9rem 0.4rem 0;
   border-right: 2px solid var(--border);
   text-align: right;
+  /* matches the band tint, so connector labels running behind the gutter
+     do not print through the band heading */
+  background: color-mix(in oklab, var(--foreground) 3.5%, var(--background));
 }
 #loyalty-map-v2 .lm2-region strong {
   font-size: var(--font-size-small);
@@ -49,6 +52,15 @@
   font-size: var(--font-size-small);
   color: var(--muted-foreground);
   line-height: 1.3;
+}
+
+/* Transition view: pull the band labels and their rule left so incoming
+   arrows have clear space before the first column of stages. */
+#loyalty-map-v2 #lm2-canvas .lm2-grid[data-view="transition"] {
+  grid-template-columns: minmax(0, 1.05fr) repeat(5, minmax(0, 1fr));
+}
+#loyalty-map-v2 #lm2-canvas .lm2-grid[data-view="transition"] .lm2-region {
+  margin-right: 1.6rem;
 }
 
 /* the bands belong to the current view only */
