@@ -42,7 +42,7 @@
 
 /* per-view explainer note */
 #loyalty-map-v2 .lm2-viewnote {
-  margin-top: 1.1rem;
+  margin: 1rem 0 0;
   background: var(--card);
   border: 1px solid var(--border);
   border-left: 3px solid var(--primary);

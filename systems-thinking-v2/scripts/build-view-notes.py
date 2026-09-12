@@ -23,7 +23,11 @@ js = """/* GENERATED FROM data/system-map.json by scripts/build-view-notes.py.
   var panel = document.createElement("aside");
   panel.className = "lm2-viewnote";
   panel.hidden = true;
-  root.appendChild(panel);
+  // sits at the top of the page, directly under the tabs: purpose first,
+  // then how to read, then the map itself
+  var controls = root.querySelector(".viz-controls");
+  if (controls && controls.nextSibling) root.insertBefore(panel, controls.nextSibling);
+  else root.appendChild(panel);
 
   function esc(s) {
     return String(s).replace(/[&<>]/g, function (c) {
