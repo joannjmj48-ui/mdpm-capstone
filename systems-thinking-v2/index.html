@@ -883,7 +883,7 @@ svg {
     <div class="lm2-legend-items text-small">
       <button type="button" class="lm2-legend-item" data-legend-help="A group participating in or affected by the system." data-tooltip="A group participating in or affected by the system."><i class="lm2-key lm2-key-population"></i>Population</button>
       <button type="button" class="lm2-legend-item" data-legend-help="The main variable, realized value, or a downstream participation behaviour." data-tooltip="The main variable, realized value, or a downstream participation behaviour."><i class="lm2-key lm2-key-value"></i>Process / behaviour</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="A controlled analytical state in the Opportunity-to-Realized-Value progression; it is not an operating component." data-tooltip="A controlled analytical state in the Opportunity-to-Realized-Value progression; it is not an operating component."><i class="lm2-key lm2-key-value"></i>Value state</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="One of the five stages value passes through on its way to the member. A stage, not an operating component." data-tooltip="One of the five stages value passes through on its way to the member. A stage, not an operating component."><i class="lm2-key lm2-key-value"></i>Value state</button>
       <button type="button" class="lm2-legend-item" data-legend-help="An organization or ecosystem participant that helps deliver value." data-tooltip="An organization or ecosystem participant that helps deliver value."><i class="lm2-key lm2-key-partner"></i>Partner</button>
       <button type="button" class="lm2-legend-item" data-legend-help="An organizational capability required to enable the system." data-tooltip="An organizational capability required to enable the system."><i class="lm2-key lm2-key-capability"></i>Capability</button>
       <button type="button" class="lm2-legend-item" data-legend-help="A hypothesized capability, behaviour or pathway that could emerge next." data-tooltip="A hypothesized capability, behaviour or pathway that could emerge next."><i class="lm2-key lm2-key-future"></i>Future opportunity</button>
@@ -2700,9 +2700,9 @@ svg {
     },
     "opportunity": {
       "label": "Opportunity",
-      "sub": "VT01 begins here",
+      "sub": "Reaches the member, who weighs it",
       "kind": "state",
-      "phase": "Main Variable Transition",
+      "phase": "How Value Progresses",
       "status": "Assumed",
       "basis": "Group convergence",
       "decision": "Active direction",
@@ -2715,8 +2715,8 @@ svg {
       "opportunity": "Improve identification, relevance, reach and understandability of worthwhile opportunities.",
       "chain": [
         "Opportunity",
-        "VT01",
-        "Potential-Value"
+        "Reaches the member, who weighs it",
+        "Potential"
       ],
       "dimensions": [
         "Transition rate",
@@ -2726,9 +2726,9 @@ svg {
       ],
       "systemLinks": [
         {
-          "phase": "VT01",
+          "phase": "Reaches the member, who weighs it",
           "targets": [
-            "Opportunity → Potential-Value"
+            "Opportunity → Potential"
           ],
           "explanation": "The catalogue is filtered and surfaced to a particular member, who begins assessing what the reward is worth to them."
         },
@@ -2750,9 +2750,9 @@ svg {
     },
     "potential-value": {
       "label": "Potential",
-      "sub": "VT02 begins here",
+      "sub": "Member decides to act, and acts",
       "kind": "state",
-      "phase": "Main Variable Transition",
+      "phase": "How Value Progresses",
       "status": "Assumed",
       "basis": "Group convergence",
       "decision": "Active direction",
@@ -2765,8 +2765,8 @@ svg {
       "opportunity": "Reduce effort, preparation, complexity and failure in earning value.",
       "chain": [
         "Potential",
-        "VT02",
-        "Earned-Value"
+        "Member decides to act, and acts",
+        "Earned"
       ],
       "dimensions": [
         "Qualification completion",
@@ -2776,9 +2776,9 @@ svg {
       ],
       "systemLinks": [
         {
-          "phase": "VT02",
+          "phase": "Member decides to act, and acts",
           "targets": [
-            "Potential-Value → Earned-Value"
+            "Potential → Earned"
           ],
           "explanation": "The member decides to act on the opportunity and completes the applicable qualification requirement."
         },
@@ -2800,9 +2800,9 @@ svg {
     },
     "earned-value": {
       "label": "Earned",
-      "sub": "VT03 begins here",
+      "sub": "Posts and becomes usable",
       "kind": "state",
-      "phase": "Main Variable Transition",
+      "phase": "How Value Progresses",
       "status": "Assumed",
       "basis": "Group convergence",
       "decision": "Active direction",
@@ -2815,8 +2815,8 @@ svg {
       "opportunity": "Improve legibility, trust, posting reliability, accessibility and recovery for earned value.",
       "chain": [
         "Earned",
-        "VT03",
-        "Available-Value"
+        "Posts and becomes usable",
+        "Available"
       ],
       "dimensions": [
         "Posting delay",
@@ -2826,9 +2826,9 @@ svg {
       ],
       "systemLinks": [
         {
-          "phase": "VT03",
+          "phase": "Posts and becomes usable",
           "targets": [
-            "Earned-Value → Available-Value"
+            "Earned → Available"
           ],
           "explanation": "Qualified value is correctly posted, released, activated and made accessible."
         },
@@ -2850,9 +2850,9 @@ svg {
     },
     "available-value": {
       "label": "Available",
-      "sub": "VT04 begins here",
+      "sub": "Used and converted into something worthwhile",
       "kind": "state",
-      "phase": "Main Variable Transition",
+      "phase": "How Value Progresses",
       "status": "Assumed",
       "basis": "Group convergence",
       "decision": "Active direction",
@@ -2865,8 +2865,8 @@ svg {
       "opportunity": "Convert more available value into worthwhile outcomes through usability, contextual reach, flexibility and successful fulfilment.",
       "chain": [
         "Available",
-        "VT04",
-        "Realized-Value"
+        "Used and converted into something worthwhile",
+        "Realized"
       ],
       "dimensions": [
         "Realization rate",
@@ -2876,9 +2876,9 @@ svg {
       ],
       "systemLinks": [
         {
-          "phase": "VT04",
+          "phase": "Used and converted into something worthwhile",
           "targets": [
-            "Available-Value → Realized-Value"
+            "Available → Realized"
           ],
           "explanation": "The member discovers, accesses, uses or converts available value into a worthwhile outcome."
         },
@@ -2900,9 +2900,9 @@ svg {
     },
     "realized-value": {
       "label": "Realized",
-      "sub": "VT05 begins here",
+      "sub": "Shapes what the member does next",
       "kind": "state",
-      "phase": "Main Variable Transition",
+      "phase": "How Value Progresses",
       "status": "Assumed",
       "basis": "Group convergence",
       "decision": "Active direction",
@@ -2915,7 +2915,7 @@ svg {
       "opportunity": "Reinforce continued participation through consistently worthwhile outcomes and learning.",
       "chain": [
         "Realized",
-        "VT05",
+        "Shapes what the member does next",
         "Meaningful engagement"
       ],
       "dimensions": [
@@ -2927,9 +2927,9 @@ svg {
       ],
       "systemLinks": [
         {
-          "phase": "VT05",
+          "phase": "Shapes what the member does next",
           "targets": [
-            "Realized-Value → Engagement"
+            "Realized → Meaningful engagement"
           ],
           "explanation": "The outcome is perceived as sufficiently worthwhile and trustworthy to influence future behaviour."
         },

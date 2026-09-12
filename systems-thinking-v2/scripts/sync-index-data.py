@@ -25,6 +25,12 @@ decision = lambda v: DECISION.get(v, title_case(v or ""))
 
 overlays = {o["id"]: o for o in contract["overlays"]}
 
+_labels = {s["id"]: s["label"] for s in contract["valueStates"]}
+_labels.update({n["id"]: n["displayLabel"] for n in contract["nodes"]})
+
+def _state_label(sid):
+    return _labels.get(sid, title_case(sid))
+
 # who holds power over each component, bound from the stakeholder grid
 _sh_path = ROOT / "data" / "stakeholders.json"
 _people, _quad = {}, {}
@@ -68,11 +74,11 @@ for st in contract["valueStates"]:
     out = next((t for t in contract["valueTransitions"] if t["fromState"] == st["id"]), None)
     jt = overlays[out["jtbdRefs"][0]] if out else None
     dv = overlays[out["dvoRefs"][0]] if out else None
-    to_label = (nodes.get(out["toState"], {}).get("label") or title_case(out["toState"])) if out else None
+    to_label = _state_label(out["toState"]) if out else None
     nodes[st["id"]] = {
         "label": st["label"],
-        "sub": f"{out['id']} begins here" if out else "Canonical value-state outcome",
-        "kind": "state", "phase": "Main Variable Transition",
+        "sub": (out["name"] if out else "The end of the progression"),
+        "kind": "state", "phase": "How Value Progresses",
         "status": st["epistemicStatus"], "basis": basis(st["claimBasis"]),
         "decision": decision(st["decisionStatus"]), "category": "Controlled value state",
         "definition": st["definition"],
@@ -81,10 +87,12 @@ for st in contract["valueStates"]:
         "known": "The state definition is an approved group-converged modeling decision. Current volumes, conversion rates and delays are not yet established.",
         "provisional": " ".join(out["openQuestions"]) if out else "The effect of Realized Value on subsequent behaviour remains unvalidated.",
         "opportunity": dv["statement"] if dv else "Evaluate the realized outcome and its relationship to future participation without assuming causality.",
-        "chain": [st["label"], out["id"], to_label] if out else [st["label"], "Outcome evaluation"],
+        "chain": [st["label"], out["name"], to_label] if out else [st["label"], "Outcome evaluation"],
         "dimensions": out["possibleIndicators"] if out else [],
         "systemLinks": ([
-            {"phase": out["id"], "targets": [f"{title_case(out['fromState'])} → {title_case(out['toState'])}"], "explanation": out["definition"]},
+            {"phase": out["name"],
+             "targets": [f"{_state_label(out['fromState'])} \u2192 {_state_label(out['toState'])}"],
+             "explanation": out["definition"]},
             {"phase": "Member progress / JTBD", "targets": [jt["statement"]], "explanation": "Analytical overlay • not an operating system component."},
             {"phase": "Digital Value Opportunity", "targets": [dv["statement"]], "explanation": "Group-converged opportunity space • not a proven leverage point."},
         ] if out else []),
