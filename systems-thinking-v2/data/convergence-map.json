@@ -335,11 +335,17 @@
           "itemId": "Declare a goal",
           "framing": "'Makes the unit of value the member's own goal - a trip, a debt paydown, a savings target.'",
           "source": "Initial product description"
+        },
+        {
+          "contributor": "sly",
+          "itemId": "L04",
+          "framing": "Realized value as the system goal — align measures and decision rules around member value realization rather than value issued, activity alone, or breakage. His product definition has no member-stated goal construct at all.",
+          "source": "Published leverage analysis; 5 Sept session"
         }
       ],
-      "whatConverged": "Two contributors build the product around a goal the member states, rather than around a points balance.",
-      "whatDiffers": "Joann treats the goal as the unit of value but keeps realized value as the measurable proxy. Josh treats goal achievement as the system's organizing objective outright.",
-      "whyItMatters": "This is the concrete product consequence of DV-01, and it is phase 3 rather than phase 1 in the agreed sequence.",
+      "whatConverged": "Three contributors organise the system around something other than a points balance. Two build it around a goal the member states; the third around whether promised value was delivered.",
+      "whatDiffers": "Joann treats the goal as the unit of value but keeps realized value as the measurable proxy. Josh treats goal achievement as the system's organizing objective outright. Sly organises around realized value and has no member-stated goal construct — his objective is measurable from system events without asking the member anything, which is the argument that settled DV-01.",
+      "whyItMatters": "This is the concrete product consequence of DV-01. The settlement nests them: realized value is the main variable and the measurable proxy, member goal achievement is the ultimate goal it serves. Goal capture is therefore phase 3, not phase 1 — the system has to work for members who never set a goal.",
       "epistemicStatus": "inferred",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
