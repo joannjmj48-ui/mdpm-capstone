@@ -1,0 +1,204 @@
+{
+  "version": "1.0.0",
+  "note": "Each contributor's product definition as they wrote it, before merging. The merged themes sit under Where we converged.",
+  "contributors": [
+    {
+      "id": "joann",
+      "displayName": "Joann",
+      "status": "supplied",
+      "source": "Initial Product Description",
+      "title": "A goal-linked rewards layer",
+      "oneSentence": "A goal-linked rewards layer for BMO Blue Rewards that turns a points balance into visible progress toward something the member is actually trying to achieve, and can measure.",
+      "primaryUser": "BMO customers and rewards-only members who are earning value they don't fully see, don't accurately price, and don't reliably collect.",
+      "coreJob": "Tell me what I've actually got, what it's worth, and what it would take to get where I'm going.",
+      "capabilities": [
+        {
+          "name": "Declare a goal, and set its terms",
+          "description": "State a financial or reward goal, the preferences that shape what counts as a good opportunity, and the data permissions that fund the personalization.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "See what a choice is worth before making it",
+          "description": "Compare how a spending, saving, payment or redemption decision moves them toward the goal — in dollars against the goal rather than points against nothing.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Receive opportunities that are legible as help",
+          "description": "Timely, goal-linked offers that state why this member is seeing this offer now and what it advances, so relevance is demonstrated rather than asserted.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Track what they have and what's missing",
+          "description": "Progress toward the goal, plus a reliable ledger of earned, pending, redeemed and missing rewards, with a path to resolve the missing ones.",
+          "facing": "member-facing",
+          "isWedge": true
+        }
+      ],
+      "position": "Takes a position it says should be tested: value members actually collect and understand is worth more over time than value they forfeit. Treats permission as an exchange rather than a gate — personalization intensity that outruns demonstrated value degrades the signal supply it depends on.",
+      "outOfScope": "Not a new points currency, not a standalone app, and not a replacement for offer economics, payment rails or reward issuance."
+    },
+    {
+      "id": "sly",
+      "displayName": "Sylvester",
+      "status": "supplied",
+      "source": "Published V1 site",
+      "title": "A transparent rewards experience with visible tracking and recovery",
+      "oneSentence": "A digital rewards experience that helps loyalty-program members discover worthwhile opportunities, see where promised value stands, and initiate or approve recovery when it is delayed, missing, or at risk.",
+      "primaryUser": "Loyalty-program members with worthwhile, eligible reward value already in motion and a detectable risk that some of it may be delayed, missed, or lost because of a qualification, posting, redemption, fulfilment, partner, or service breakdown.",
+      "coreJob": "Help me receive and use the worthwhile reward value I was promised—and recover it without diagnosing the system or repeatedly chasing support when something breaks.",
+      "capabilities": [
+        {
+          "name": "Discover",
+          "description": "Surface worthwhile, attainable reward opportunities that a member can understand and act upon.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Track",
+          "description": "Make qualification, earning, posting, redemption, fulfilment, and unresolved states visible.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Assure and recover",
+          "description": "Detect at-risk value, intervene or route it, and verify that promised value was realized.",
+          "facing": "member-facing",
+          "isWedge": true
+        },
+        {
+          "name": "Learn",
+          "description": "Use realized, failed, and recovered outcomes to improve future decisions and system performance.",
+          "facing": "behind-the-experience",
+          "isWedge": false
+        }
+      ],
+      "position": "Names a product wedge outright: Proactive Value Assurance and Recovery. Monitor worthwhile reward opportunities as they progress from qualification through earning, redemption, and fulfilment; identify when promised value is delayed, missing, or at risk; and either resolve the issue automatically or route it to the responsible service pathway with the necessary context. Members remain informed and retain approval over consequential actions, while recovery outcomes help identify and prevent recurring sources of value loss.",
+      "outOfScope": "Replacing loyalty, banking, partner, or service systems; maximizing redemption at any cost; treating intentional saving or informed rejection as value loss; forcing banking conversion; or masking structural failures through repeated case-by-case recovery."
+    },
+    {
+      "id": "henry",
+      "displayName": "Henry",
+      "status": "supplied",
+      "source": "Henry — product definition",
+      "title": "A personalized rewards value experience",
+      "oneSentence": "A personalized rewards value experience embedded within existing BMO and Blue Rewards digital channels that helps members discover relevant earning and redemption opportunities tied to spending they already intend to do, understand and compare reward value, requirements and trade-offs, track the value they have earned, and resolve missing or unclear rewards.",
+      "primaryUser": "Members who want to realize more worthwhile value with less effort and uncertainty.",
+      "coreJob": "Help me get more of the value I am owed without the effort and uncertainty.",
+      "capabilities": [
+        {
+          "name": "Discover relevant opportunities",
+          "description": "Tied to spending they already intend to do.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Understand and compare",
+          "description": "Reward value, requirements and trade-offs made comparable.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Track earned value",
+          "description": "Follow what has been earned.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Resolve missing or unclear rewards",
+          "description": "Close the gap when value does not arrive or cannot be understood.",
+          "facing": "member-facing",
+          "isWedge": false
+        }
+      ],
+      "position": "The only definition that spans discovery, comparison, tracking and resolution without naming a starting point.",
+      "outOfScope": "Not stated."
+    },
+    {
+      "id": "josh",
+      "displayName": "Josh",
+      "status": "supplied",
+      "source": "Milestone 2 document",
+      "title": "An integrated, goal-linked digital rewards experience",
+      "oneSentence": "An integrated digital rewards experience that surfaces relevant rewards, partner experiences and appropriate BMO products and services at the moment they can best help members achieve their goals.",
+      "primaryUser": "BMO customers and rewards-only members who want valuable opportunities without searching across channels, calculating reward value or chasing missing rewards.",
+      "coreJob": "Help me align my spending, saving, payment and reward choices with the goals I actually have — without hunting across channels or doing the math myself.",
+      "capabilities": [
+        {
+          "name": "Set goals and permissions",
+          "description": "Set custom financial and reward goals, preferences and data permissions.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Compare choices against goals",
+          "description": "Compare how spending, saving, payment and redemption choices could help them achieve their goals.",
+          "facing": "member-facing",
+          "isWedge": false
+        },
+        {
+          "name": "Receive goal-linked opportunities",
+          "description": "Receive timely, goal-linked opportunities and incentives.",
+          "facing": "member-facing",
+          "isWedge": true
+        },
+        {
+          "name": "Track progress and rewards",
+          "description": "Easily track goal progress as well as earned, pending, redeemed or missing rewards.",
+          "facing": "member-facing",
+          "isWedge": false
+        }
+      ],
+      "position": "The product uses visible progress, timely feedback and well-designed incentives to help members align their spending, saving, payment and reward choices with their goals.",
+      "outOfScope": "BMO and partners retain responsibility for offer economics, payments and reward issuance."
+    },
+    {
+      "id": "lia",
+      "displayName": "Lia",
+      "status": "supplied",
+      "source": "Two Connected Loops diagram; 5 Sept session",
+      "title": "Easier and more relevant, with members in control",
+      "oneSentence": "Make Blue Rewards easier and more relevant to use, while still giving members control.",
+      "primaryUser": "Members whose everyday spending should be producing more relevant offers than it does.",
+      "coreJob": "Show me offers that actually fit how I spend, without making me feel watched.",
+      "capabilities": [
+        {
+          "name": "More relevant offers",
+          "description": "Use the behavioural insight the programme already has to fit offers to everyday spending.",
+          "facing": "member-facing",
+          "isWedge": true
+        },
+        {
+          "name": "Member control over data",
+          "description": "Keep the member clear about, and in control of, how their data is used.",
+          "facing": "member-facing",
+          "isWedge": false
+        }
+      ],
+      "position": "The shortest definition in the set, and the only one that makes control a headline rather than a caveat.",
+      "outOfScope": "Not stated."
+    },
+    {
+      "id": "ola",
+      "displayName": "Ola",
+      "status": "not-supplied",
+      "source": "System Loops PDF; 5 Sept session",
+      "title": "Not supplied as a written definition",
+      "oneSentence": "Ola's submission is a loop set rather than a product definition. Her loops point at real-time status visibility building trust, and at realization running against programme margin.",
+      "primaryUser": "Not stated.",
+      "coreJob": "Not stated.",
+      "capabilities": [
+        {
+          "name": "Real-time status visibility",
+          "description": "Implied by her reliability loop rather than written as a capability — members able to see what they are getting and what they have redeemed.",
+          "facing": "member-facing",
+          "isWedge": false
+        }
+      ],
+      "position": "Recorded as implied, not authored. Worth asking her to confirm or replace.",
+      "outOfScope": "Not stated."
+    }
+  ]
+}
