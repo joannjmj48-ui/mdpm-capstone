@@ -2,8 +2,8 @@
 
 #loyalty-map-v2 #lm2-canvas .lm2-grid[data-view="current"] {
   grid-template-columns: minmax(0, 0.62fr) repeat(4, minmax(0, 1fr));
-  column-gap: 1.6rem;
-  row-gap: 2.4rem;
+  column-gap: 2.6rem;
+  row-gap: 4.6rem;
   grid-template-areas:
     "rpop   mo       mc    co         ."
     "rval   value    .     engagement ."
@@ -18,7 +18,7 @@
 #loyalty-map-v2 .lm2-band {
   grid-column: 1 / -1;
   z-index: 0;
-  margin: -1.1rem -0.85rem;
+  margin: -1.9rem -0.9rem;
   border-radius: var(--radius);
   background: color-mix(in oklab, var(--foreground) 3.5%, transparent);
   border: 1px solid var(--border);
