@@ -878,6 +878,27 @@ svg {
     </div>
   </section>
 
+  <section class="lm2-legend" aria-label="Map legend">
+    <strong class="lm2-legend-title">Legend</strong>
+    <div class="lm2-legend-items text-small">
+      <button type="button" class="lm2-legend-item" data-legend-help="A group participating in or affected by the system." data-tooltip="A group participating in or affected by the system."><i class="lm2-key lm2-key-population"></i>Population</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="The main variable, realized value, or a downstream participation behaviour." data-tooltip="The main variable, realized value, or a downstream participation behaviour."><i class="lm2-key lm2-key-value"></i>Process / behaviour</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="One of the five stages value passes through on its way to the member. A stage, not an operating component." data-tooltip="One of the five stages value passes through on its way to the member. A stage, not an operating component."><i class="lm2-key lm2-key-value"></i>Value state</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="An organization or ecosystem participant that helps deliver value." data-tooltip="An organization or ecosystem participant that helps deliver value."><i class="lm2-key lm2-key-partner"></i>Partner</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="An organizational capability required to enable the system." data-tooltip="An organizational capability required to enable the system."><i class="lm2-key lm2-key-capability"></i>Capability</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="A hypothesized capability, behaviour or pathway that could emerge next." data-tooltip="A hypothesized capability, behaviour or pathway that could emerge next."><i class="lm2-key lm2-key-future"></i>Future opportunity</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="A force outside the bounded system that may influence it without being controlled by it." data-tooltip="A force outside the bounded system that may influence it without being controlled by it."><i class="lm2-key lm2-key-external"></i>Outside boundary</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="The longer-term result the system is intended to produce." data-tooltip="The longer-term result the system is intended to produce."><i class="lm2-key lm2-key-outcome"></i>Intended outcome</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="A structural flow or approved analytical progression. A solid arrow does not by itself establish evidence or causality." data-tooltip="A structural flow or approved analytical progression. A solid arrow does not by itself establish evidence or causality."><i class="lm2-key-line"></i>Structural flow</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="A hypothesized connection that represents a possible future pathway." data-tooltip="A hypothesized connection that represents a possible future pathway."><i class="lm2-key-line lm2-key-line-future"></i>Future pathway</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="A plausible relationship that still requires validation." data-tooltip="A plausible relationship that still requires validation."><i class="lm2-key-line lm2-key-line-inferred"></i>Inferred relationship</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="Directly supported for this analysis. Source traceability is shown separately where it is still pending." data-tooltip="Directly supported for this analysis. Source traceability is shown separately where it is still pending."><i class="lm2-key lm2-key-capability"></i>Supported</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="A direction approved through Team Zig convergence. Approval makes it active direction, not empirical evidence." data-tooltip="A direction approved through Team Zig convergence. Approval makes it active direction, not empirical evidence."><i class="lm2-key lm2-key-value"></i>Group convergence</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="A future mechanism or outcome requiring validation; it is not a committed architecture or proven effect." data-tooltip="A future mechanism or outcome requiring validation; it is not a committed architecture or proven effect."><i class="lm2-key lm2-key-future"></i>Hypothesis</button>
+    </div>
+    <p id="lm2-legend-help" class="lm2-legend-help text-small" aria-live="polite">Select a legend item to see how it should be interpreted.</p>
+  </section>
+
   <section class="card lm2-detail" aria-live="polite" aria-label="Selected item explanation">
     <div class="lm2-detail-heading">
       <div class="viz-row">
@@ -944,27 +965,6 @@ svg {
         <div id="lm2-connection-list" class="lm2-connection-list"></div>
       </details>
     </div>
-  </section>
-
-  <section class="lm2-legend" aria-label="Map legend">
-    <strong class="lm2-legend-title">Legend</strong>
-    <div class="lm2-legend-items text-small">
-      <button type="button" class="lm2-legend-item" data-legend-help="A group participating in or affected by the system." data-tooltip="A group participating in or affected by the system."><i class="lm2-key lm2-key-population"></i>Population</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="The main variable, realized value, or a downstream participation behaviour." data-tooltip="The main variable, realized value, or a downstream participation behaviour."><i class="lm2-key lm2-key-value"></i>Process / behaviour</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="One of the five stages value passes through on its way to the member. A stage, not an operating component." data-tooltip="One of the five stages value passes through on its way to the member. A stage, not an operating component."><i class="lm2-key lm2-key-value"></i>Value state</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="An organization or ecosystem participant that helps deliver value." data-tooltip="An organization or ecosystem participant that helps deliver value."><i class="lm2-key lm2-key-partner"></i>Partner</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="An organizational capability required to enable the system." data-tooltip="An organizational capability required to enable the system."><i class="lm2-key lm2-key-capability"></i>Capability</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="A hypothesized capability, behaviour or pathway that could emerge next." data-tooltip="A hypothesized capability, behaviour or pathway that could emerge next."><i class="lm2-key lm2-key-future"></i>Future opportunity</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="A force outside the bounded system that may influence it without being controlled by it." data-tooltip="A force outside the bounded system that may influence it without being controlled by it."><i class="lm2-key lm2-key-external"></i>Outside boundary</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="The longer-term result the system is intended to produce." data-tooltip="The longer-term result the system is intended to produce."><i class="lm2-key lm2-key-outcome"></i>Intended outcome</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="A structural flow or approved analytical progression. A solid arrow does not by itself establish evidence or causality." data-tooltip="A structural flow or approved analytical progression. A solid arrow does not by itself establish evidence or causality."><i class="lm2-key-line"></i>Structural flow</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="A hypothesized connection that represents a possible future pathway." data-tooltip="A hypothesized connection that represents a possible future pathway."><i class="lm2-key-line lm2-key-line-future"></i>Future pathway</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="A plausible relationship that still requires validation." data-tooltip="A plausible relationship that still requires validation."><i class="lm2-key-line lm2-key-line-inferred"></i>Inferred relationship</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="Directly supported for this analysis. Source traceability is shown separately where it is still pending." data-tooltip="Directly supported for this analysis. Source traceability is shown separately where it is still pending."><i class="lm2-key lm2-key-capability"></i>Supported</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="A direction approved through Team Zig convergence. Approval makes it active direction, not empirical evidence." data-tooltip="A direction approved through Team Zig convergence. Approval makes it active direction, not empirical evidence."><i class="lm2-key lm2-key-value"></i>Group convergence</button>
-      <button type="button" class="lm2-legend-item" data-legend-help="A future mechanism or outcome requiring validation; it is not a committed architecture or proven effect." data-tooltip="A future mechanism or outcome requiring validation; it is not a committed architecture or proven effect."><i class="lm2-key lm2-key-future"></i>Hypothesis</button>
-    </div>
-    <p id="lm2-legend-help" class="lm2-legend-help text-small" aria-live="polite">Select a legend item to see how it should be interpreted.</p>
   </section>
 
 </div>
@@ -5134,7 +5134,7 @@ svg {
 })();
 </script>
 <script src="convergence.js?v=16"></script>
-<script src="narrative.js?v=13"></script>
+<script src="narrative.js?v=14"></script>
 <script src="regions.js?v=5"></script>
 <script src="opportunity.js?v=3"></script>
 <script src="view-notes.js?v=7"></script>
