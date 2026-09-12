@@ -1,0 +1,21 @@
+#loyalty-map-v2 .lm2-legend-items { display: flex; flex-direction: column; gap: .7rem; }
+#loyalty-map-v2 .lm2-legend-group { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .7rem; }
+#loyalty-map-v2 .lm2-legend-grouplabel {
+  flex: 0 0 100%;
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--muted-foreground);
+}
+#loyalty-map-v2 .lm2-glossary-toggle { margin-left: .75rem; }
+#loyalty-map-v2 .lm2-glossary {
+  margin-top: .9rem; padding-top: .85rem; border-top: 1px solid var(--border);
+}
+#loyalty-map-v2 .lm2-glossary-intro { margin: 0 0 .7rem; font-size: var(--font-size-small); color: var(--muted-foreground); }
+#loyalty-map-v2 .lm2-glossary-cols {
+  display: grid; gap: 1rem 1.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+#loyalty-map-v2 .lm2-glossary h4 { margin: 0 0 .4rem; font-size: var(--font-size-small); }
+#loyalty-map-v2 .lm2-glossary dl { margin: 0; font-size: var(--font-size-small); }
+#loyalty-map-v2 .lm2-glossary dt { font-weight: 600; margin-top: .35rem; }
+#loyalty-map-v2 .lm2-glossary dd { margin: 0; color: var(--muted-foreground); }
+#loyalty-map-v2 .lm2-key-priority { background: var(--primary); }

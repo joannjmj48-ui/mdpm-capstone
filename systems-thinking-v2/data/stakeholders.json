@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "title": "Stakeholder analysis — power and interest",
+  "source": "Joann's five-loop systems map (Stakeholder analysis + systems map V2).",
+  "framing": "Separate from the systems map and deliberately so: this answers who can move the system, not how the system moves. Members are individually low-power but collectively decisive — mass churn is the real source of member power, and it enters the map through partner coverage.",
+  "axes": {"x": "Interest", "y": "Power"},
+  "quadrants": [
+    {
+      "id": "manage", "label": "Manage closely", "power": "high", "interest": "high",
+      "guidance": "High power and high interest. These decide whether the work proceeds.",
+      "stakeholders": [
+        {"n": 1, "name": "Emerging Business team", "note": "The client."},
+        {"n": 2, "name": "BMO exec sponsors / leadership"},
+        {"n": 3, "name": "Cards & Credit business"},
+        {"n": 4, "name": "Data & Analytics / product tech"}
+      ]
+    },
+    {
+      "id": "satisfied", "label": "Keep satisfied", "power": "high", "interest": "low",
+      "guidance": "High power, low interest. They will not follow the detail, but they can stop it.",
+      "stakeholders": [
+        {"n": 5, "name": "Diversified Royalty Corp"},
+        {"n": 6, "name": "Regulators", "note": "Competition Bureau, IFRS."},
+        {"n": 7, "name": "Finance & Risk", "note": "Liability owners — and the owners of the breakage brake."},
+        {"n": 8, "name": "Expedia", "note": "Travel platform vendor."}
+      ]
+    },
+    {
+      "id": "informed", "label": "Keep informed", "power": "low", "interest": "high",
+      "guidance": "Low individual power, high interest. Collectively decisive: mass churn is the real source of member power.",
+      "stakeholders": [
+        {"n": 9, "name": "Everyday active members", "note": "The primary user in the team's product definitions."},
+        {"n": 10, "name": "Legacy AIR MILES collectors"},
+        {"n": 11, "name": "Earn / redeem partners", "note": "The supply side of partner coverage."}
+      ]
+    },
+    {
+      "id": "monitor", "label": "Monitor", "power": "low", "interest": "low",
+      "guidance": "Low power, low interest. Watch for change rather than manage.",
+      "stakeholders": [
+        {"n": 12, "name": "Non-BMO casual members"},
+        {"n": 13, "name": "Prospective members / public", "note": "The prospect who weighs a join offer before becoming a member."},
+        {"n": 14, "name": "Lapsed collectors"}
+      ]
+    }
+  ]
+}

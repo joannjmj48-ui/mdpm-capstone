@@ -391,7 +391,7 @@ JS = """/* GENERATED FROM data/convergence.json by scripts/render-convergence.py
 
   root.appendChild(section);
 
-  var button = el("button", "btn", "4. Convergence");
+  var button = el("button", "btn", "5. Convergence");
   button.type = "button";
   button.setAttribute("data-cv-view", "convergence");
   button.setAttribute("aria-pressed", "false");
