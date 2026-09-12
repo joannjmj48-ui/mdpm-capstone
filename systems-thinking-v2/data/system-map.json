@@ -2163,7 +2163,7 @@
         "products",
         "data"
       ],
-      "frictionOrDelay": "To be specified from evidence for each population and pathway.",
+      "frictionOrDelay": "Worthwhile propositions that never surface, and offers the member sees but cannot judge because the terms, eligibility or worth are unclear.",
       "jtbdRefs": [
         "JTBD-VT01"
       ],
@@ -2205,7 +2205,7 @@
         "channels",
         "identity"
       ],
-      "frictionOrDelay": "To be specified from evidence for each population and pathway.",
+      "frictionOrDelay": "Qualification that does not register: the member acted, and the system either did not see it or could not determine that it counted.",
       "jtbdRefs": [
         "JTBD-VT02"
       ],
@@ -2245,7 +2245,7 @@
         "partner",
         "friction"
       ],
-      "frictionOrDelay": "To be specified from evidence for each population and pathway.",
+      "frictionOrDelay": "Posting delays, and exceptions that go unresolved. Value sits earned but unusable, which is what a member experiences as pending and is where most preventable loss sits.",
       "jtbdRefs": [
         "JTBD-VT03"
       ],
@@ -2286,7 +2286,7 @@
         "partner",
         "orchestration"
       ],
-      "frictionOrDelay": "To be specified from evidence for each population and pathway.",
+      "frictionOrDelay": "Redemption and fulfilment breakdowns - a failed redemption, an unfulfilled benefit, a partner outage. The most expensive place to lose value, because everything upstream already worked.",
       "jtbdRefs": [
         "JTBD-VT04"
       ],
@@ -2326,7 +2326,7 @@
         "partner",
         "service"
       ],
-      "frictionOrDelay": "To be specified from evidence for each population and pathway.",
+      "frictionOrDelay": "Realized value that was not perceived as worthwhile, or arrived too late or with too much effort to change what the member does next.",
       "jtbdRefs": [
         "JTBD-VT05"
       ],
@@ -2681,7 +2681,6 @@
       "conditions": [],
       "applicableTabs": [
         "current",
-        "transition",
         "future"
       ],
       "epistemicStatus": "Inferred",
@@ -4515,7 +4514,7 @@
       "label": "2. How Value Progresses",
       "heading": "How value progresses",
       "purpose": "Show the stages worthwhile value passes through on its way to the member, and where that progression may stall. This is a stage view, not a second systems map: value moves forward through the states and does not return to an earlier one.",
-      "contextParagraph": "This view uses Realized value as the system main variable. It shows how loyalty opportunities progress from Opportunity to Potential, Earned, Available and ultimately Realized; where that progression may stall; and which system conditions, member needs and broad opportunity areas could improve the amount, relevance, reliability, accessibility, usefulness and appropriate speed of realized value.",
+      "contextParagraph": "How worthwhile value moves from an offer in the catalogue to something a member has used. Five stages, and between each one a step where value can stall. Naming the stages separately is what lets you say which step is failing, rather than treating the whole thing as one problem.",
       "nodeIds": [
         "partner",
         "products",
@@ -4534,7 +4533,6 @@
         "realized-value"
       ],
       "relationshipIds": [
-        "CUR-R13",
         "TR-R01",
         "TR-R02",
         "TR-R03",
