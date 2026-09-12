@@ -1830,7 +1830,7 @@
     {
       "id": "opportunity",
       "label": "Opportunity",
-      "definition": "An available loyalty proposition, benefit, offer, earning possibility or other source of value whose relevance to a specific member has not yet been established.",
+      "definition": "An available loyalty proposition, benefit, offer or earning possibility that the member could act on. It is not yet value: nothing has been earned, promised or committed to the member. The faculty asked what we mean by opportunity, so this definition also has to say why an opportunity was shown, what it is worth, and what action it requires.",
       "entryCondition": "A proposition, benefit or earning possibility exists.",
       "exitCondition": "Relevance and a plausible eligible path are established.",
       "order": 1,
@@ -1840,12 +1840,14 @@
       "decisionStatus": "active-direction",
       "evidenceRefs": [
         "SRC-CONTRACT-001"
-      ]
+      ],
+      "plainLanguage": "An offer exists and the member could act on it. Nothing is theirs yet.",
+      "openQuestion": "Needs to state why this opportunity was shown to this member, what it is worth, and what action is required. Raised in the 883 functional requirements and again on 12 September."
     },
     {
       "id": "potential-value",
       "label": "Potential Value",
-      "definition": "A loyalty opportunity relevant to a member needs, behaviours or context and for which the member has a plausible eligible path to value.",
+      "definition": "An opportunity that has been matched to a particular member's needs, behaviour or context, and for which that member has a plausible eligible path. CONTESTED: the team questioned on 12 September whether this is a state at all. Nothing has been earned, so it is arguably not yet value - and if we cannot say what observably changes between Opportunity and Potential Value, it does not need its own stage name.",
       "entryCondition": "Member relevance and plausible eligibility are established.",
       "exitCondition": "Applicable qualification requirements are satisfied.",
       "order": 2,
@@ -1855,7 +1857,10 @@
       "decisionStatus": "active-direction",
       "evidenceRefs": [
         "SRC-CONTRACT-001"
-      ]
+      ],
+      "reviewStatus": "contested",
+      "plainLanguage": "The offer has been matched to this member. Still nothing theirs yet.",
+      "openQuestion": "Decide one of three: rename it so it does not claim to be value; merge it into Opportunity; or state the observable change that distinguishes a targeted offer from any other offer in the member's bucket. The call could not identify that change."
     },
     {
       "id": "earned-value",
@@ -1890,7 +1895,7 @@
     {
       "id": "realized-value",
       "label": "Realized Value",
-      "definition": "Value the member has successfully used or converted into an outcome they perceive as worthwhile.",
+      "definition": "Value the member has successfully used or converted into a worthwhile outcome that the system can measure. Reworded on 12 September to make the outcome measurable rather than only perceived, so the product can show a member that their value has been measured.",
       "entryCondition": "Successful use or conversion produces a recognized outcome.",
       "exitCondition": "The value episode is evaluated and may influence subsequent participation.",
       "order": 5,
@@ -1900,7 +1905,8 @@
       "decisionStatus": "active-direction",
       "evidenceRefs": [
         "SRC-CONTRACT-001"
-      ]
+      ],
+      "plainLanguage": "The member used it, and we can show what it was worth."
     }
   ],
   "valueTransitions": [
@@ -3741,7 +3747,10 @@
       "viewNote": {
         "title": "What it's for",
         "paragraphs": [
-          "It's a diagnostic tool for locating loss. “Members don't get value” is unactionable. Splitting it into five steps lets you ask which step — and each step has a different owner and a different fix. VT03 failing is an operations and posting problem. VT04 failing is a discovery and channel problem. Without the split you'd treat them as one thing and fix the wrong one."
+          "It's a diagnostic tool for locating loss. “Members don't get value” is unactionable. Splitting it into five steps lets you ask which step — and each step has a different owner and a different fix. VT03 failing is an operations and posting problem. VT04 failing is a discovery and channel problem. Without the split you'd treat them as one thing and fix the wrong one.",
+          "This is a value progression, not a systems map. It shows the language we use for each stage, not the structure of the system — that is view 1.",
+          "The progression is sequential - value cannot reach Available Value without being earned first - but an individual member can join it at any point. Signing up grants roughly 750 points, so a new member starts holding Available Value without having earned anything. The diagram shows the end-to-end flow, not one mandatory journey.",
+          "Under review from 12 September: A state earns its own name only if we can say what observably changes when value enters it. If we cannot tell what refines an offer from one stage into the next, it does not require an independent stage name. Agreed 12 September. Potential Value is the state this test currently challenges, because nobody could name what observably changes between an offer and a targeted offer."
         ],
         "footnote": "VT01–VT05 are the value transitions: the five steps value passes through, each a place it can stall."
       }
@@ -3860,5 +3869,44 @@
     "Partner ecosystem",
     "Structural conditions",
     "Value realization"
-  ]
+  ],
+  "terminology": {
+    "decidedOn": "2026-09-12 working session",
+    "rule": "One term per concept. Where the team used several words for the same thing, the agreed term is the one listed as 'use'.",
+    "entries": [
+      {
+        "use": "Realized value",
+        "insteadOf": [
+          "Realized reward value",
+          "Member value realization rate",
+          "Perceived value",
+          "Value realized",
+          "Member Value Realization"
+        ],
+        "note": "Agreed on the call: 'we were all using different words for the same point... moving forward I'd recommend us just sticking to one.' This is the starting point for the data dictionary."
+      },
+      {
+        "use": "Permissioned signal richness",
+        "plainLanguage": "Transaction data - how much the system is permitted to know about a member.",
+        "note": "Flagged on the call as jargon needing a layman's translation."
+      },
+      {
+        "use": "Program trust",
+        "insteadOf": [
+          "Trust and engagement",
+          "Member trust"
+        ]
+      }
+    ],
+    "openCollision": {
+      "issue": "Two different things are currently both called realized value: the focal process node 'Member Value Realization' and the fifth value state 'Realized Value'.",
+      "why": "This is the specific source of the confusion raised on the call. One is a process that runs continuously; the other is a state a single unit of value reaches.",
+      "needsDecision": "Rename one of them. Leaving both is what makes the language inconsistent."
+    }
+  },
+  "valueStateRules": {
+    "stageTest": "A state earns its own name only if we can say what observably changes when value enters it. If we cannot tell what refines an offer from one stage into the next, it does not require an independent stage name. Agreed 12 September.",
+    "entryPoint": "The progression is sequential - value cannot reach Available Value without being earned first - but an individual member can join it at any point. Signing up grants roughly 750 points, so a new member starts holding Available Value without having earned anything. The diagram shows the end-to-end flow, not one mandatory journey.",
+    "valueBegins": "Value begins when something becomes the member's. Opportunity and Potential Value sit before that line, which is why calling either of them 'value' is under review."
+  }
 }

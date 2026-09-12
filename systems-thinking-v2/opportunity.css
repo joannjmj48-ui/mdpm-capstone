@@ -63,3 +63,19 @@
   padding-top: .55rem;
   border-top: 1px solid var(--border);
 }
+
+/* a value state under review */
+#loyalty-map-v2 .lm2-node[data-node-id="potential-value"] {
+  border-style: dashed;
+  border-color: var(--destructive);
+}
+#loyalty-map-v2 .lm2-node[data-node-id="potential-value"]::after {
+  content: "under review";
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--destructive);
+}
