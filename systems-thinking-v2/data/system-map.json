@@ -1912,8 +1912,8 @@
     {
       "id": "potential-value",
       "label": "Potential Value",
-      "definition": "The subset of the catalogue that actually reaches a particular member — surfaced to them, relevant to their needs or behaviour, and with a plausible eligible path. The observable change from Opportunity is the filter: the catalogue is programme-wide, this is what got through to one person. Members never see the catalogue; they only ever see what reached them.",
-      "entryCondition": "The system surfaces the opportunity to this member as relevant and eligible.",
+      "definition": "The rewards that reached a particular member, and which that member is weighing up. Two things have happened: the catalogue was filtered to them, and they are working out what it is worth to them — is it attainable, is it worth the effort, is it what they actually want. It is called potential value because this is where value first exists in the member's eyes, as something they could have. Nothing is theirs yet.",
+      "entryCondition": "The opportunity is surfaced to this member as relevant and eligible, and the member begins weighing it.",
       "exitCondition": "The member decides to act and completes the qualifying requirement.",
       "order": 2,
       "entityType": "value-state",
@@ -1923,7 +1923,7 @@
       "evidenceRefs": [
         "SRC-CONTRACT-001"
       ],
-      "plainLanguage": "The rewards that actually reached this member. Still nothing theirs.",
+      "plainLanguage": "The rewards that reached this member, and they're working out whether it's worth it.",
       "region": "The five value states"
     },
     {
@@ -1983,7 +1983,7 @@
       "id": "VT01",
       "fromState": "opportunity",
       "toState": "potential-value",
-      "definition": "The programme-wide catalogue is filtered and surfaced to a particular member as relevant and eligible.",
+      "definition": "The catalogue is filtered and surfaced to a particular member, who begins assessing what the reward is worth to them.",
       "entryConditions": [
         "Relevance and a plausible eligible path are established for a particular member and context."
       ],
@@ -2016,7 +2016,8 @@
       ],
       "openQuestions": [
         "Structural relationship may be supported; incremental targeting effects remain inferred or assumed."
-      ]
+      ],
+      "jtbdRestated": "Recognise an opportunity that is relevant and worthwhile to me."
     },
     {
       "id": "VT02",
@@ -2632,9 +2633,9 @@
       "targetId": "potential-value",
       "from": "opportunity",
       "to": "potential-value",
-      "label": "Filtered to this member",
-      "displayLabel": "Filtered to this member",
-      "relationshipDefinition": "The catalogue narrows to one person. Decisioning selects which of the available rewards are relevant and eligible for this member, and a channel surfaces them. This filtering is the observable state change: what exists becomes what reached you.",
+      "label": "Reaches the member, who weighs it",
+      "displayLabel": "Reaches the member, who weighs it",
+      "relationshipDefinition": "Two changes at once. The catalogue narrows to one person — decisioning selects what is relevant and eligible, a channel surfaces it. And the member starts assessing it: whether it is attainable, worth the effort, and what they actually want. Value first exists in the member's eyes at this point, as something they could have.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
@@ -2785,7 +2786,7 @@
       "to": "potential-value",
       "label": "Relevance and eligibility",
       "displayLabel": "Relevance and eligibility",
-      "relationshipDefinition": "Decisioning determines which surfaced opportunities are relevant to this member and which they have a plausible eligible path to.",
+      "relationshipDefinition": "Decisioning determines which of the catalogue's rewards reach this member as relevant and eligible — and therefore what the member has to weigh up at all.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
