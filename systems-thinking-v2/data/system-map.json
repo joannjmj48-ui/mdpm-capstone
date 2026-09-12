@@ -2147,7 +2147,7 @@
       "id": "VT01",
       "fromState": "opportunity",
       "toState": "potential-value",
-      "definition": "The catalogue is filtered and surfaced to a particular member, who begins assessing what the reward is worth to them.",
+      "definition": "The catalogue is filtered to a particular member and surfaced to them through a channel.",
       "entryConditions": [
         "Relevance and a plausible eligible path are established for a particular member and context."
       ],
@@ -2182,7 +2182,7 @@
         "Structural relationship may be supported; incremental targeting effects remain inferred or assumed."
       ],
       "jtbdRestated": "Recognise an opportunity that is relevant and worthwhile to me.",
-      "name": "Reaches the member, who weighs it"
+      "name": "Filtered and surfaced to one member"
     },
     {
       "id": "VT02",
@@ -2801,9 +2801,9 @@
       "targetId": "potential-value",
       "from": "opportunity",
       "to": "potential-value",
-      "label": "Reaches the member, who weighs it",
-      "displayLabel": "Reaches the member, who weighs it",
-      "relationshipDefinition": "Two changes at once. The catalogue narrows to one person — decisioning selects what is relevant and eligible, a channel surfaces it. And the member starts assessing it: whether it is attainable, worth the effort, and what they actually want. Value first exists in the member's eyes at this point, as something they could have.",
+      "label": "Filtered and surfaced to one member",
+      "displayLabel": "Filtered and surfaced to one member",
+      "relationshipDefinition": "The catalogue narrows to one person: decisioning selects what is relevant and eligible for them, and a channel puts it in front of them. That is the whole of the movement — it is the system's act, not the member's. What the member does with it once it arrives belongs to Potential Value, which is where the weighing happens.",
       "kind": "other",
       "flowType": "structural-flow",
       "direction": "directed",
