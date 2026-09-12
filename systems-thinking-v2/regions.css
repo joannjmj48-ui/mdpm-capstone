@@ -6,8 +6,8 @@
   row-gap: 4.6rem;
   grid-template-areas:
     "rpop   mo         mc         co         ."
-    "rval   value      .          engagement ."
-    "rgov   .          leadership finance    ."
+    "rval   .          value      engagement ."
+    "rgov   .          .          leadership finance"
     "rpart  partner    .          .          ."
     "rback  products   data       channels   service"
     "rcond  friction   .          .          .";
