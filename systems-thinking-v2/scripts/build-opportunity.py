@@ -49,9 +49,10 @@ authors = "".join(author(c) for c in pdefs["contributors"])
 
 html = ('<div class="op-wrap">'
  '<header class="op-hero"><span class="op-kicker">What we would build to get there</span>'
- "<h3>The product this opportunity rests on</h3>"
- "<p>The capabilities above are a hypothesis about what the system could become. This is what six people independently "
- "said the product should do &mdash; read against the loops, the overlap is much larger than the disagreement.</p></header>"
+ "<h3>Initial product features and descriptions</h3>"
+ "<p>The capabilities above are a hypothesis about what the system could become. These are first drafts of what the "
+ "product should do, written independently by all six of us &mdash; read against the loops, the overlap is much larger "
+ "than the disagreement.</p></header>"
  '<div class="op-subnav" role="group" aria-label="Choose a product view">'
    '<button type="button" class="btn btn-primary" data-op-panel="converged" aria-pressed="true">Where we converged</button>'
    '<button type="button" class="btn" data-op-panel="authors" aria-pressed="false">Product definition by author</button>'
