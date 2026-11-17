@@ -15,6 +15,12 @@
       {id: "rback", label: "Enabling backbone",     hint: "What delivers it"},
       {id: "rcond", label: "Structural conditions", hint: "What obstructs it"}
     ],
+    updated: [
+      {id: "rchain", label: "The chain, with the claim",  hint: "Six positions, not five"},
+      {id: "rauth",  label: "Who holds the evidence",     hint: "Any one of them can be the reason"},
+      {id: "rprod",  label: "What the product works with", hint: "Conditions, signals and feedback"},
+      {id: "rfail",  label: "When it does not arrive",    hint: "The path back"}
+    ],
     transition: [
       {id: "rstates", label: "The five value states",       hint: "What value is at each stage"},
       {id: "rmoves",  label: "What moves it between them",  hint: "Each one touches several stages"},

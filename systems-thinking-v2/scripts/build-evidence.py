@@ -128,8 +128,8 @@ body = (
 
     '<div class="ev-panel" data-ev-body="reqs" hidden>'
     '<p class="ev-lead">All 42 functional requirements, grouped by the value stage they act on. '
-    "A requirement that cannot be placed on the map is either acting somewhere the map does not draw, or doing something "
-    "the system does not yet do &mdash; and one whole cluster turns out to be the second.</p>"
+    "Grouping them this way is what exposed the gap: one whole cluster of six had nowhere on the September map to act, "
+    "which is why the Updated Systems Map now draws a recovery path.</p>"
     '<div class="ev-grid">' + "".join(cluster_card(c) for c in D["requirementClusters"]) + "</div>"
     "</div>"
 

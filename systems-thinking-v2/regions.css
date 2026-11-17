@@ -64,8 +64,8 @@
 }
 
 /* the bands belong to the current view only */
-#loyalty-map-v2 .lm2-grid:not([data-view="current"]):not([data-view="transition"]) .lm2-region,
-#loyalty-map-v2 .lm2-grid:not([data-view="current"]):not([data-view="transition"]) .lm2-band { display: none; }
+#loyalty-map-v2 .lm2-grid:not([data-view="current"]):not([data-view="transition"]):not([data-view="updated"]) .lm2-region,
+#loyalty-map-v2 .lm2-grid:not([data-view="current"]):not([data-view="transition"]):not([data-view="updated"]) .lm2-band { display: none; }
 
 @media (max-width: 900px) {
   #loyalty-map-v2 .lm2-region,

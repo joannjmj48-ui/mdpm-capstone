@@ -821,8 +821,8 @@ svg {
 <link rel="stylesheet" href="convergence.css?v=9">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
 <link rel="stylesheet" href="narrative.css?v=1">
-<link rel="stylesheet" href="regions.css?v=9">
-<link rel="stylesheet" href="evidence.css?v=1">
+<link rel="stylesheet" href="regions.css?v=10">
+<link rel="stylesheet" href="evidence.css?v=4">
 <link rel="stylesheet" href="opportunity.css?v=7">
 <link rel="stylesheet" href="legend.css?v=1">
 <link rel="stylesheet" href="stakeholders.css?v=1">
@@ -834,6 +834,7 @@ svg {
     <button type="button" class="btn" data-map-view="transition" aria-pressed="false">2. How Value Progresses</button>
     <button type="button" class="btn" data-map-view="future" aria-pressed="false">7. Opportunity + Product Description</button>
     <button type="button" class="btn" data-map-view="external" aria-pressed="false">3. Outside the Boundary</button>
+    <button type="button" class="btn" data-map-view="updated" aria-pressed="false">9. Updated Systems Map</button>
   </div>
 
   <div class="lm2-instruction-row" aria-label="Map help options">
@@ -893,6 +894,7 @@ svg {
       <button type="button" class="lm2-legend-item" data-legend-help="A structural flow or approved analytical progression. A solid arrow does not by itself establish evidence or causality." data-tooltip="A structural flow or approved analytical progression. A solid arrow does not by itself establish evidence or causality."><i class="lm2-key-line"></i>Structural flow</button>
       <button type="button" class="lm2-legend-item" data-legend-help="A hypothesized connection that represents a possible future pathway." data-tooltip="A hypothesized connection that represents a possible future pathway."><i class="lm2-key-line lm2-key-line-future"></i>Future pathway</button>
       <button type="button" class="lm2-legend-item" data-legend-help="A plausible relationship that still requires validation." data-tooltip="A plausible relationship that still requires validation."><i class="lm2-key-line lm2-key-line-inferred"></i>Inferred relationship</button>
+      <button type="button" class="lm2-legend-item" data-legend-help="Value leaving the forward chain: a returned purchase reversing an award that had already posted, or a loss dropping out of the chain into the recovery path. Only drawn on the Updated Systems Map." data-tooltip="Value leaving the forward chain: a returned purchase reversing an award that had already posted, or a loss dropping out of the chain into the recovery path. Only drawn on the Updated Systems Map."><i class="lm2-key-line lm2-key-line-reversal"></i>Value leaving the chain</button>
       <button type="button" class="lm2-legend-item" data-legend-help="Directly supported for this analysis. Source traceability is shown separately where it is still pending." data-tooltip="Directly supported for this analysis. Source traceability is shown separately where it is still pending."><i class="lm2-key lm2-key-capability"></i>Supported</button>
       <button type="button" class="lm2-legend-item" data-legend-help="A direction approved through Team Zig convergence. Approval makes it active direction, not empirical evidence." data-tooltip="A direction approved through Team Zig convergence. Approval makes it active direction, not empirical evidence."><i class="lm2-key lm2-key-value"></i>Group convergence</button>
       <button type="button" class="lm2-legend-item" data-legend-help="A future mechanism or outcome requiring validation; it is not a committed architecture or proven effect." data-tooltip="A future mechanism or outcome requiring validation; it is not a committed architecture or proven effect."><i class="lm2-key lm2-key-future"></i>Hypothesis</button>
@@ -1322,6 +1324,16 @@ svg {
       "rstates opportunity potential earned   available  realized"
       "rmoves  partner     products  data     service    channels"
       "rentry  friction    friction  balance  balance    engagement";
+  }
+  #loyalty-map-v2 .lm2-grid[data-view="updated"] {
+    grid-template-columns: minmax(0, 1.05fr) repeat(6, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 5rem;
+    grid-template-areas:
+      "rchain opportunity potential   claim    earned   available realized"
+      "rauth  sponsor     attribution merchant issuer   supplier  ."
+      "rprod  data        channels    service  friction balance   engagement"
+      "rfail  .           .           .        .        recovery  recovery";
   }
   #loyalty-map-v2 .lm2-grid[data-view="current"] {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2699,6 +2711,262 @@ svg {
         }
       ]
     },
+    "offer-claim": {
+      "label": "Saved and activated offers",
+      "sub": "The member has claimed it, not yet earned it",
+      "kind": "state",
+      "phase": "Current",
+      "status": "Supported",
+      "basis": "Evidence",
+      "decision": "Active direction",
+      "category": "Controlled value state",
+      "definition": "An offer the member has saved or opted into, but has not yet satisfied. The developer documentation exposes this directly: the Offer Service carries member states SAVE, SAVED, UNSAVED and OPT_IN, OPTED_IN, separately from whether any qualifying activity has happened.",
+      "role": "Sits between Potential Value and Earned Value. It is the position the five-stage model had no room for: the member has decided to pursue something but the system has recorded nothing it can award against. An offer that requires activation and is not activated earns nothing, however the member behaves afterwards.",
+      "why": "This is where a member can do everything right and still get nothing. They weighed the offer, chose it, bought the product, and never activated it. The programme is correct; the member is baffled.",
+      "known": "The Offer Service states are documented in the developer portal. FR30, FR31 and FR32 already require saving, viewing by offer state and activating.",
+      "provisional": "No member in the October study reached an activation step, so how often this fails and how members understand it are both untested. The gap is documented, not measured.",
+      "opportunity": "Make the claim visible and its consequence explicit, so the difference between saved and activated is never something the member has to infer.",
+      "chain": [
+        "Offer surfaced",
+        "Member saves or activates",
+        "Qualifying activity",
+        "Recognition",
+        "Award"
+      ],
+      "dimensions": [
+        "Saved",
+        "Activated",
+        "Expiry",
+        "Mass versus targeted"
+      ],
+      "systemLinks": []
+    },
+    "recovery": {
+      "label": "Correction and recovery",
+      "sub": "The path back when value does not arrive",
+      "kind": "capability",
+      "phase": "Current",
+      "status": "Supported",
+      "basis": "Evidence",
+      "decision": "Active direction",
+      "category": "Focal system process",
+      "definition": "Everything the system does after value fails to arrive: diagnosing why, assembling the evidence, routing the case to whoever can act, and restoring the points or the reward. It covers missing awards, reversed awards, undelivered rewards and refunds whose points were never returned.",
+      "role": "The return path the map has never drawn. Value leaves the chain at every stage; until now nothing brought it back. Six functional requirements — FR15, FR16, FR17, FR29, FR36 and FR37 — act here and nowhere else.",
+      "why": "This is where the breakage brake and the permission brake meet. An unrecovered loss is revenue to Finance and a trust cost to the member at the same time. The study's one Critical finding sits here: a participant believed an inquiry had been submitted when it had not.",
+      "known": "The issuance interfaces support returns and reversals. Members reported missing points and valued a pre-filled inquiry. The requirements for diagnosis and routing are written.",
+      "provisional": "Whether recovery restores trust or merely restores points is untested. One participant said a small balance increase would go unnoticed, which suggests restoring the points alone may not close the loop.",
+      "opportunity": "Treat recovery as a first-class part of the product rather than an exception path, and measure whether a recovered member re-engages.",
+      "chain": [
+        "Value does not arrive",
+        "Diagnosis",
+        "Evidence assembled",
+        "Routed to the responsible party",
+        "Restored or refused"
+      ],
+      "dimensions": [
+        "Diagnosis",
+        "Evidence",
+        "Responsibility",
+        "Restoration",
+        "Time to resolve"
+      ],
+      "systemLinks": [
+        {
+          "phase": "Who holds power here",
+          "targets": [
+            "1 · Emerging Business team (Manage closely)",
+            "7 · Finance & Risk (Keep satisfied)"
+          ],
+          "explanation": "From the power and interest grid. Analytical judgement, not an org chart."
+        }
+      ]
+    },
+    "auth-sponsor": {
+      "label": "Offer sponsor",
+      "sub": "Sets the terms",
+      "kind": "partner",
+      "phase": "Current",
+      "status": "Inferred",
+      "basis": "Evidence trace pending",
+      "decision": "Unresolved",
+      "category": "Evidence authority",
+      "definition": "The organization whose offer it is: it defines the eligibility criteria, the reward amount, the dates and the exclusions. A product brand sponsoring a receipt promotion need not be the merchant where the purchase happens.",
+      "role": "Owns the rules. When a member is told they did not qualify, the sponsor's terms are the reason, even though the member never dealt with the sponsor.",
+      "why": "The map previously treated partners as one supply-side box. Separating the sponsor shows that the party who sets the condition is often not the party the member interacted with.",
+      "known": "The Offer Service exposes sponsor information and offer codes. Partner terms differ materially between brands.",
+      "provisional": "No universal precedence rule across sponsors was established. Which offers stack, and under whose terms, is unresolved.",
+      "opportunity": "Carry the sponsor's terms into the member's view at the moment of decision rather than at the moment of failure.",
+      "chain": [
+        "Sponsor sets terms",
+        "Offer published",
+        "Member acts",
+        "Terms decide the outcome"
+      ],
+      "dimensions": [
+        "Eligibility criteria",
+        "Reward amount",
+        "Dates",
+        "Exclusions"
+      ],
+      "systemLinks": [
+        {
+          "phase": "Who holds power here",
+          "targets": [
+            "11 · Earn / redeem partners (Keep informed)"
+          ],
+          "explanation": "From the power and interest grid. Analytical judgement, not an org chart."
+        }
+      ]
+    },
+    "auth-merchant": {
+      "label": "Merchant and point of sale",
+      "sub": "Observes the purchase",
+      "kind": "partner",
+      "phase": "Current",
+      "status": "Inferred",
+      "basis": "Evidence trace pending",
+      "decision": "Unresolved",
+      "category": "Evidence authority",
+      "definition": "Where the transaction actually happens. A basket-calculated point-of-sale integration can see item-level detail; most other routes cannot.",
+      "role": "Holds the most detailed evidence of what was bought, and shares the least of it. Product-level eligibility depends on this evidence, and it is not uniformly available.",
+      "why": "The product's core tested task — telling a member what a specific laptop would earn — depends on evidence this party may never pass on.",
+      "known": "The POS integration documents basket, SKU and tender detail for the routes that use it.",
+      "provisional": "Which integrations the Blue Rewards app can actually use is explicitly outside what the documentation establishes.",
+      "opportunity": "Say what the system can and cannot see per route, rather than implying uniform product-level knowledge.",
+      "chain": [
+        "Purchase occurs",
+        "Detail captured or not",
+        "Evidence passed on",
+        "Eligibility decided"
+      ],
+      "dimensions": [
+        "Item detail",
+        "Tender",
+        "Channel",
+        "Location"
+      ],
+      "systemLinks": [
+        {
+          "phase": "Who holds power here",
+          "targets": [
+            "11 · Earn / redeem partners (Keep informed)"
+          ],
+          "explanation": "From the power and interest grid. Analytical judgement, not an org chart."
+        }
+      ]
+    },
+    "auth-issuer": {
+      "label": "Card issuer and network",
+      "sub": "Observes the payment",
+      "kind": "partner",
+      "phase": "Current",
+      "status": "Inferred",
+      "basis": "Evidence trace pending",
+      "decision": "Unresolved",
+      "category": "Evidence authority",
+      "definition": "The bank and payment network behind a card-linked offer. They see a merchant and an amount, usually not a product, and their settlement timing governs when a purchase can be recognized.",
+      "role": "Decides when a card-linked purchase becomes visible to the programme at all, and can reverse an award when a purchase is returned.",
+      "why": "This is the party behind the posting clock. A purchase made before a deadline can be recognized after it, through nobody's fault.",
+      "known": "Card Offers rules distinguish eligible BMO-issued products from eligible non-BMO Mastercard products. Returns and reversals are supported by the issuance interfaces.",
+      "provisional": "Settlement timing per issuer is not established, so the size of the recognition gap is unknown.",
+      "opportunity": "Make the waiting state explicit and name which clock the system is waiting on.",
+      "chain": [
+        "Payment made",
+        "Settlement",
+        "Recognition",
+        "Award or reversal"
+      ],
+      "dimensions": [
+        "Eligibility",
+        "Settlement timing",
+        "Returns",
+        "Caps"
+      ],
+      "systemLinks": [
+        {
+          "phase": "Who holds power here",
+          "targets": [
+            "3 · Cards & Credit business (Manage closely)"
+          ],
+          "explanation": "From the power and interest grid. Analytical judgement, not an org chart."
+        }
+      ]
+    },
+    "auth-attribution": {
+      "label": "Affiliate and receipt processing",
+      "sub": "Attributes the activity",
+      "kind": "partner",
+      "phase": "Current",
+      "status": "Inferred",
+      "basis": "Evidence trace pending",
+      "decision": "Unresolved",
+      "category": "Evidence authority",
+      "definition": "The services that connect an activity to a member when no direct integration does it: affiliate attribution for Shops, optical recognition and item matching for Blue Receipts.",
+      "role": "The weakest link in the evidence chain, and the one most likely to fail silently. Attribution that does not happen produces no record, and no record looks exactly like no purchase.",
+      "why": "A member can hold a valid receipt and still have no award, because the item did not match. The system is correct and the member is right to be confused.",
+      "known": "Shops requires attribution and retailer reports; receipt offers require recognition and item matching. Both are documented.",
+      "provisional": "Failure rates for attribution and matching are not available at any level.",
+      "opportunity": "Show the member what the system did and did not recognize, instead of only the outcome.",
+      "chain": [
+        "Activity happens",
+        "Attribution attempted",
+        "Matched or not",
+        "Award or silence"
+      ],
+      "dimensions": [
+        "Attribution",
+        "Item matching",
+        "Retailer reporting",
+        "Processing time"
+      ],
+      "systemLinks": [
+        {
+          "phase": "Who holds power here",
+          "targets": [
+            "11 · Earn / redeem partners (Keep informed)"
+          ],
+          "explanation": "From the power and interest grid. Analytical judgement, not an org chart."
+        }
+      ]
+    },
+    "auth-supplier": {
+      "label": "Reward supplier and fulfilment",
+      "sub": "Delivers the reward",
+      "kind": "partner",
+      "phase": "Current",
+      "status": "Inferred",
+      "basis": "Evidence trace pending",
+      "decision": "Unresolved",
+      "category": "Evidence authority",
+      "definition": "Whoever actually provides what the points were spent on: a gift-card issuer, a merchandise supplier, the travel platform. Redemption and fulfilment are separate events with separate timing.",
+      "role": "Owns the last step. Points can be correctly deducted and the reward still not arrive, which is a loss at Realized Value that no earlier part of the chain can detect.",
+      "why": "The second scenario the team prototyped lives here, and it is the part the usability study barely reached.",
+      "known": "Catalogue observations, supplier conditions and the separation of redemption from fulfilment are documented.",
+      "provisional": "Part 2 produced four task attempts across three participants, three of them unsuccessful. That is not enough to conclude anything about this step.",
+      "opportunity": "Treat fulfilment status as a tracked state, not a confirmation email.",
+      "chain": [
+        "Points redeemed",
+        "Order placed",
+        "Supplier fulfils",
+        "Member receives"
+      ],
+      "dimensions": [
+        "Availability",
+        "Fulfilment time",
+        "Supplier conditions",
+        "Cancellation"
+      ],
+      "systemLinks": [
+        {
+          "phase": "Who holds power here",
+          "targets": [
+            "8 · Expedia (Keep satisfied)",
+            "11 · Earn / redeem partners (Keep informed)"
+          ],
+          "explanation": "From the power and interest grid. Analytical judgement, not an org chart."
+        }
+      ]
+    },
     "opportunity": {
       "label": "Opportunity",
       "sub": "Filtered and surfaced to one member",
@@ -3575,6 +3843,256 @@ svg {
           "EXT-R05"
         ]
       ]
+    },
+    "updated": {
+      "label": "The system with its missing direction",
+      "description": "The September map ran one way: value moved forward through five stages and never came back. Three things since then say that is wrong. The developer documentation shows offers carry a member state before any earning happens, and that awards can be returned and reversed. The complexity analysis shows that different parties hold the evidence for different steps, so one failure the member experiences can belong to any of five organizations. And the requirements contain six that exist only to diagnose and recover loss, with nowhere on the old map to sit. This view adds the claim, the authorities and the path back.",
+      "areas": {
+        "opportunity": "opportunity",
+        "potential-value": "potential",
+        "offer-claim": "claim",
+        "earned-value": "earned",
+        "available-value": "available",
+        "realized-value": "realized",
+        "auth-sponsor": "sponsor",
+        "auth-attribution": "attribution",
+        "auth-merchant": "merchant",
+        "auth-issuer": "issuer",
+        "auth-supplier": "supplier",
+        "data": "data",
+        "channels": "channels",
+        "service": "service",
+        "friction": "friction",
+        "points-balance": "balance",
+        "engagement": "engagement",
+        "recovery": "recovery"
+      },
+      "edges": [
+        [
+          "opportunity",
+          "potential-value",
+          "Filtered and surfaced to one member",
+          "inferred",
+          null,
+          "UPD-R01"
+        ],
+        [
+          "potential-value",
+          "offer-claim",
+          "Member saves or activates it",
+          "current",
+          null,
+          "UPD-R02"
+        ],
+        [
+          "offer-claim",
+          "earned-value",
+          "Qualifying activity, recognized",
+          "current",
+          null,
+          "UPD-R03"
+        ],
+        [
+          "earned-value",
+          "available-value",
+          "Posted to the balance",
+          "inferred",
+          null,
+          "UPD-R04"
+        ],
+        [
+          "available-value",
+          "realized-value",
+          "Used, and worth something",
+          "inferred",
+          null,
+          "UPD-R05"
+        ],
+        [
+          "auth-issuer",
+          "available-value",
+          "Returns and reversals",
+          "current",
+          null,
+          "UPD-R06"
+        ],
+        [
+          "available-value",
+          "recovery",
+          "Points missing, late or reversed",
+          "current",
+          null,
+          "UPD-R09"
+        ],
+        [
+          "realized-value",
+          "recovery",
+          "Reward missing, late or wrong",
+          "current",
+          null,
+          "UPD-R10"
+        ],
+        [
+          "recovery",
+          "available-value",
+          "Points restored",
+          "current",
+          null,
+          "UPD-R11"
+        ],
+        [
+          "recovery",
+          "realized-value",
+          "Reward re-issued or refunded",
+          "inferred",
+          null,
+          "UPD-R12"
+        ],
+        [
+          "recovery",
+          "engagement",
+          "Whether trust survives the loss",
+          "current",
+          null,
+          "UPD-R13"
+        ],
+        [
+          "auth-sponsor",
+          "opportunity",
+          "Sets the terms it carries",
+          "inferred",
+          null,
+          "UPD-R14"
+        ],
+        [
+          "auth-merchant",
+          "earned-value",
+          "Observes the purchase",
+          "inferred",
+          null,
+          "UPD-R15"
+        ],
+        [
+          "auth-issuer",
+          "earned-value",
+          "Observes the payment",
+          "inferred",
+          null,
+          "UPD-R16"
+        ],
+        [
+          "auth-attribution",
+          "earned-value",
+          "Connects the activity, or does not",
+          "inferred",
+          null,
+          "UPD-R17"
+        ],
+        [
+          "auth-supplier",
+          "realized-value",
+          "Delivers it, or does not",
+          "inferred",
+          null,
+          "UPD-R18"
+        ],
+        [
+          "data",
+          "potential-value",
+          "Relevance and eligibility",
+          "current",
+          null,
+          "UPD-R19"
+        ],
+        [
+          "channels",
+          "potential-value",
+          "Where they weigh it",
+          "current",
+          null,
+          "UPD-R20"
+        ],
+        [
+          "channels",
+          "offer-claim",
+          "Where activation happens, or does not",
+          "inferred",
+          null,
+          "UPD-R21"
+        ],
+        [
+          "service",
+          "recovery",
+          "Answers and routes the case",
+          "current",
+          null,
+          "UPD-R22"
+        ],
+        [
+          "friction",
+          "offer-claim",
+          "Activation missed",
+          "inferred",
+          null,
+          "UPD-R23"
+        ],
+        [
+          "friction",
+          "potential-value",
+          "Too unclear to judge",
+          "current",
+          null,
+          "UPD-R24"
+        ],
+        [
+          "friction",
+          "available-value",
+          "Posting delay read as expiry",
+          "current",
+          null,
+          "UPD-R25"
+        ],
+        [
+          "friction",
+          "recovery",
+          "Unclear whether anything was submitted",
+          "current",
+          null,
+          "UPD-R26"
+        ],
+        [
+          "earned-value",
+          "points-balance",
+          "Posts into the balance",
+          "inferred",
+          null,
+          "UPD-R27"
+        ],
+        [
+          "points-balance",
+          "available-value",
+          "Balance is ready to spend",
+          "current",
+          null,
+          "UPD-R28"
+        ],
+        [
+          "realized-value",
+          "engagement",
+          "Shapes what the member does next",
+          "current",
+          null,
+          "UPD-R29"
+        ],
+        [
+          "engagement",
+          "data",
+          "Participation signals sharpen the filter",
+          "inferred",
+          null,
+          "UPD-R30"
+        ]
+      ]
     }
   };
 
@@ -3610,29 +4128,29 @@ svg {
     "Sets decision priorities": "What decisioning is pointed at, and what counts as a good decision, follows from what leadership asks to be measured.",
     "Allocates operating capacity": "How much capacity exists for posting, fulfilment and recovery is a funding decision, not an operational one.",
     "Reports the economics": "Liability, margin and breakage are what leadership sees when deciding what the programme can do.",
-    "Filtered and surfaced to one member": "The catalogue narrows to one person: decisioning selects what is relevant and eligible for them, and a channel puts it in front of them. That is the whole of the movement — it is the system's act, not the member's. What the member does with it once it arrives belongs to Potential Value, which is where the weighing happens.",
+    "Filtered and surfaced to one member": "Decisioning selects what is relevant and eligible for this member, and a channel puts it in front of them. The system's act, not the member's.",
     "Member decides to act, and acts": "The member commits: they make the qualifying purchase or complete the required activity. This is the step where value becomes theirs.",
     "Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
     "Use + convert into worthwhile outcome": "Available Value becomes Realized Value through successful use or conversion into perceived worth.",
     "Propositions + benefits": "Partner contributions create sources of opportunity.",
     "Products + participation routes": "Products and transactions create opportunity and earning routes.",
-    "Relevance and eligibility": "Decisioning determines which of the catalogue's rewards reach this member as relevant and eligible — and therefore what the member has to weigh up at all. The filtering happens before the member is aware of anything, which is why the data layer shapes what an opportunity becomes rather than only acting on it later.",
+    "Relevance and eligibility": "Decisioning determines which of the catalogue's rewards reach this member as relevant and eligible, and therefore what they have to weigh at all.",
     "Posting + release reliability": "Operations influence whether earned entitlements become accessible.",
     "Access + use pathway": "Channels influence whether available value can be discovered and used.",
     "Fulfilment + recovery": "Fulfilment and recovery influence successful value use.",
     "Qualification stalls": "A member who acted but whose action was not registered, or whose qualification could not be determined, is stuck holding nothing despite having done the thing.",
-    "Balance is ready to spend": "A standing balance is already available to spend: for that balance the member does not pass through opportunity, potential or earned value again. It is why a brand-new member who has just been granted their enrolment points is holding available value on day one.",
-    "Posts into the balance": "Earned value accumulates into the member's standing balance once it posts. Points that are earned but not yet posted sit outside the balance, which is the gap a member experiences as pending.",
-    "Where they weigh it": "The member compares, reads the terms and works out what it is worth inside a channel — and only inside a channel: a reward no channel carries never reaches anyone, however well it was chosen. A reward the channel presents badly is weighed badly, whatever the offer itself is.",
+    "Balance is ready to spend": "A standing balance is already available to spend. It is why a brand-new member holding enrolment points is at Available Value on day one.",
+    "Posts into the balance": "Earned value accumulates into the standing balance once it posts. Points earned but not yet posted sit outside the balance, which is the gap a member experiences as pending.",
+    "Where they weigh it": "The member compares, reads the terms and works out what it is worth inside a channel, and only inside a channel.",
     "Where the action is taken": "The qualifying action usually runs through a channel: activating an offer, linking a card, completing the purchase on a surface the programme can see. A channel that does not register the action means the member acted and the system did not notice.",
     "Where the balance is seen": "Value being posted and the member knowing it was posted are two different things. A channel is what turns available value into value the member is aware they hold.",
     "Answers can I get this": "Eligibility questions, terms and qualification rules are what a member needs resolved before they can decide — including simply understanding what the offer is. Service is what answers them, and unanswered questions stall the assessment.",
     "Decides the action counted": "Qualification processing determines whether what the member did actually satisfies the rule. This is where a member who believes they earned something and a system that disagrees part company.",
-    "Too unclear to judge": "Unclear terms, eligibility or worth stall the member's assessment — or stop it starting, when the interface buries the offer so thoroughly that it never surfaces. Either way the member cannot tell whether it is worth pursuing, so it goes no further.",
+    "Too unclear to judge": "Unclear terms, eligibility or worth stall the assessment. The most repeated difficulty in the October study.",
     "Posting delays and exceptions": "Earned value that does not post, posts late, or lands in an unresolved exception never becomes usable. This is where most preventable loss sits.",
     "Redemption and fulfilment breakdowns": "Available value the member tries to use but cannot - a failed redemption, an unfulfilled benefit, a partner outage - stops at the last step, which is the most expensive place to lose it.",
-    "Shapes what the member does next": "Where the progression ends and behaviour begins. A member who got something worthwhile is more likely to come back; one who did not is less likely. This is the only step the system cannot control directly.",
-    "Participation signals sharpen the filter": "What a member did with the value they realized becomes signal: what they took up, what they ignored, what they redeemed. Decisioning uses it to filter the catalogue better next time. This is the return leg — it is what makes the progression a cycle rather than a one-way pipe, and it is why Meaningful engagement sits in this view at all.",
+    "Shapes what the member does next": "The return leg of the engine. Five of six contributors drew it independently and the October study did not confirm it.",
+    "Participation signals sharpen the filter": "What a member did with the value they realized becomes signal. Decisioning uses it to filter the catalogue better next time.",
     "Governed permitted context": "Permissioned identity may provide usable context under governance.",
     "Coordinated value-path decision": "A selected value pathway may be carried into delivery and operations.",
     "Access + reliable fulfilment": "Coordinated delivery may improve access, fulfilment and recovery.",
@@ -3646,7 +4164,27 @@ svg {
     "Capability signals": "New technological possibilities can raise expectations for relevance, immediacy, portability and ease of use.",
     "Market reference points": "Competing ecosystems influence the standards people use to compare value, flexibility, service and access.",
     "Alternative value propositions": "People outside the boundary can choose alternative loyalty and financial relationships before entering this system.",
-    "Entry expectations": "Expectations about value, trust and effort shape the threshold for establishing a first relationship."
+    "Entry expectations": "Expectations about value, trust and effort shape the threshold for establishing a first relationship.",
+    "Member saves or activates it": "The member decides to pursue the offer and claims it. The Offer Service records this as SAVED or OPTED_IN. Nothing has been earned: the member has committed, the system has recorded an intention.",
+    "Qualifying activity, recognized": "The member does the thing the terms require and some party observes it. Both halves are necessary: an activity nobody recognizes produces no award, and an unactivated offer produces no award however the member behaves.",
+    "Posted to the balance": "The award is credited and becomes spendable. Recognition and posting are separate clocks, which is why a member can be owed points that are not yet theirs to use.",
+    "Used, and worth something": "The member spends the points and receives something they can use. Redemption and fulfilment are separate events.",
+    "Returns and reversals": "A returned purchase can reverse an award that has already posted. The issuance interfaces carry transactionType RETURN and support reversals, so value leaves the balance after arriving.",
+    "Points missing, late or reversed": "Value that should be in the balance and is not. The member notices an absence and has to work out whether it is a delay, a disqualification or a failure.",
+    "Reward missing, late or wrong": "Value that was spent and did not arrive, or arrived different from what the member expected.",
+    "Points restored": "The case is resolved and the points are credited. FR28 and FR29 exist because this does not always happen: refunded redemptions can fail to return.",
+    "Reward re-issued or refunded": "The reward is provided again, or the points are returned so the member can choose something else.",
+    "Whether trust survives the loss": "The open question. Restoring points is not obviously the same as restoring confidence. One participant said a small balance increase would go unnoticed, which suggests a silent correction may repair the ledger without repairing the relationship.",
+    "Sets the terms it carries": "The sponsor defines eligibility, reward amount, dates and exclusions. A member who fails to qualify fails against terms set by a party they never dealt with.",
+    "Observes the purchase": "Where the transaction happens and where the most detailed evidence exists. A basket-calculated integration sees item detail; most routes do not, so product-level eligibility is not uniformly provable.",
+    "Observes the payment": "The card issuer and network see a merchant and an amount, usually not a product. Their settlement timing governs when a purchase becomes visible to the programme at all.",
+    "Connects the activity, or does not": "Affiliate attribution and receipt matching are what link an activity to an account when no direct integration does it. They are also the weakest link: attribution that does not happen produces no record, and no record is indistinguishable from no purchase. The member holds a valid receipt and the system holds nothing.",
+    "Delivers it, or does not": "Fulfilment is a separate event from redemption, with its own timing and conditions. Points can be correctly deducted and the reward still not arrive, which is a loss at the last stage that nothing earlier in the chain can detect.",
+    "Where activation happens, or does not": "Saving and activating are things the member does in a channel. An activation step the channel does not make obvious is an activation that does not happen.",
+    "Answers and routes the case": "Service assembles what is known, decides who is responsible and carries the case to them. FR17 is this arrow.",
+    "Activation missed": "The member can intend to claim an offer and fail to, because the step was not where they looked or not obviously required.",
+    "Posting delay read as expiry": "A passed posting date read as points that can no longer be used. Two clocks collapsed into one, observed in a participant.",
+    "Unclear whether anything was submitted": "The study's one Critical finding. A member acted, the system recorded nothing, and neither party was told they disagreed."
   };
 
   var relationshipMeta = {
@@ -4199,6 +4737,260 @@ svg {
       "decisionStatus": "Unresolved",
       "transitionIds": [],
       "evidenceRefs": []
+    },
+    "UPD-R01": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R02": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-DEVPORTAL-2026-09"
+      ]
+    },
+    "UPD-R03": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-DEVPORTAL-2026-09",
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R04": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R05": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R06": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-DEVPORTAL-2026-09",
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R09": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R10": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R11": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R12": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R13": {
+      "epistemicStatus": "Contested",
+      "claimBasis": "Analytical inference",
+      "decisionStatus": "Hypothesis",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R14": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R15": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R16": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R17": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R18": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R19": {
+      "epistemicStatus": "Contested",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R20": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R21": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R22": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R23": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R24": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R25": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R26": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R27": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "UPD-R28": {
+      "epistemicStatus": "Supported",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R29": {
+      "epistemicStatus": "Contested",
+      "claimBasis": "Evidence",
+      "decisionStatus": "Active direction",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ]
+    },
+    "UPD-R30": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
     }
   };
 
@@ -5174,11 +5966,11 @@ svg {
 </script>
 <script src="convergence.js?v=16"></script>
 <script src="narrative.js?v=14"></script>
-<script src="regions.js?v=6"></script>
+<script src="regions.js?v=7"></script>
 <script src="opportunity.js?v=3"></script>
 <script src="view-notes.js?v=8"></script>
-<script src="legend.js?v=1"></script>
+<script src="legend.js?v=2"></script>
 <script src="stakeholders.js?v=1"></script>
-<script src="evidence.js?v=1"></script>
+<script src="evidence.js?v=2"></script>
 </body>
 </html>

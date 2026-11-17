@@ -277,7 +277,7 @@
     },
     {
       "id": "RQ-RECOVER",
-      "stage": "Not on the map yet",
+      "stage": "Correction and recovery",
       "heading": "Diagnose and recover loss",
       "frs": [
         "FR15",
@@ -287,9 +287,9 @@
         "FR36",
         "FR37"
       ],
-      "acts": "No current relationship",
+      "acts": "Available Value → Correction and recovery, Realized Value → Correction and recovery",
       "loop": "TR4 reliability and trust",
-      "reading": "Six requirements exist purely to find out why value did not arrive and to get it back. The systems map has no recovery construct at all: it draws where value is lost but not the path back. This is the clearest gap the requirements expose in the map."
+      "reading": "Six requirements exist purely to find out why value did not arrive and to get it back. The September map had nowhere for them: it drew where value is lost but never the path back. That gap is what the Updated Systems Map closes — Correction and recovery is now a node with seven connections, and these six requirements are what it does."
     },
     {
       "id": "RQ-CONSENT",

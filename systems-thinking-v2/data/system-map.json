@@ -55,6 +55,16 @@
       "claimBasis": "legacy-evidence-synthesis",
       "isEmpiricalEvidence": false,
       "detail": "Document and technical analysis of programme terms, developer documentation and catalogue observations. Establishes four clocks and the program-state versus experienced-state distinction. Not member evidence."
+    },
+    {
+      "id": "SRC-DEVPORTAL-2026-09",
+      "type": "technical-documentation",
+      "title": "BR AIR MILES Developer Portal capture",
+      "version": "2",
+      "date": "2026-09-15",
+      "claimBasis": "legacy-evidence-synthesis",
+      "isEmpiricalEvidence": false,
+      "detail": "320-page capture of the Offer Service, Collector Service, transaction history and point-of-sale integration. Establishes offer member states SAVE/SAVED/UNSAVED and OPT_IN/OPTED_IN, the separate displayDate, startDate and endDate fields, transactionType RETURN, and transaction history scoped by card and sponsor rather than by product."
     }
   ],
   "boundary": {
@@ -2075,6 +2085,403 @@
       "stakeholderRefs": [
         1,
         2
+      ]
+    },
+    {
+      "id": "offer-claim",
+      "canonicalName": "Saved and activated offers",
+      "displayLabel": "Saved and activated offers",
+      "label": "Saved and activated offers",
+      "subtitle": "The member has claimed it, not yet earned it",
+      "type": "state",
+      "kind": "state",
+      "category": "Controlled value state",
+      "boundaryStatus": "inside",
+      "phase": "Current",
+      "applicableTabs": [
+        "updated"
+      ],
+      "definition": "An offer the member has saved or opted into, but has not yet satisfied. The developer documentation exposes this directly: the Offer Service carries member states SAVE, SAVED, UNSAVED and OPT_IN, OPTED_IN, separately from whether any qualifying activity has happened.",
+      "roleInSystem": "Sits between Potential Value and Earned Value. It is the position the five-stage model had no room for: the member has decided to pursue something but the system has recorded nothing it can award against. An offer that requires activation and is not activated earns nothing, however the member behaves afterwards.",
+      "whyItMatters": "This is where a member can do everything right and still get nothing. They weighed the offer, chose it, bought the product, and never activated it. The programme is correct; the member is baffled.",
+      "known": "The Offer Service states are documented in the developer portal. FR30, FR31 and FR32 already require saving, viewing by offer state and activating.",
+      "provisional": "No member in the October study reached an activation step, so how often this fails and how members understand it are both untested. The gap is documented, not measured.",
+      "opportunityImplication": "Make the claim visible and its consequence explicit, so the difference between saved and activated is never something the member has to infer.",
+      "status": "supported",
+      "epistemicStatus": "Supported",
+      "baselineDisplayStatus": "Supported",
+      "chain": [
+        "Offer surfaced",
+        "Member saves or activates",
+        "Qualifying activity",
+        "Recognition",
+        "Award"
+      ],
+      "dimensions": [
+        "Saved",
+        "Activated",
+        "Expiry",
+        "Mass versus targeted"
+      ],
+      "systemLinks": [],
+      "incomingRelationshipIds": [],
+      "outgoingRelationshipIds": [],
+      "valueStatesInfluenced": [],
+      "jtbdRefs": [],
+      "dvoRefs": [],
+      "evidenceRefs": [
+        "SRC-DEVPORTAL-2026-09",
+        "SRC-ECA-2026-11"
+      ],
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "traceabilityStatus": "source-link-pending",
+      "claims": [],
+      "region": "The chain, with the claim",
+      "regionByView": {
+        "updated": "The chain, with the claim"
+      },
+      "stakeholderRefs": []
+    },
+    {
+      "id": "recovery",
+      "canonicalName": "Correction and recovery",
+      "displayLabel": "Correction and recovery",
+      "label": "Correction and recovery",
+      "subtitle": "The path back when value does not arrive",
+      "type": "capability",
+      "kind": "capability",
+      "category": "Focal system process",
+      "boundaryStatus": "inside",
+      "phase": "Current",
+      "applicableTabs": [
+        "updated"
+      ],
+      "definition": "Everything the system does after value fails to arrive: diagnosing why, assembling the evidence, routing the case to whoever can act, and restoring the points or the reward. It covers missing awards, reversed awards, undelivered rewards and refunds whose points were never returned.",
+      "roleInSystem": "The return path the map has never drawn. Value leaves the chain at every stage; until now nothing brought it back. Six functional requirements — FR15, FR16, FR17, FR29, FR36 and FR37 — act here and nowhere else.",
+      "whyItMatters": "This is where the breakage brake and the permission brake meet. An unrecovered loss is revenue to Finance and a trust cost to the member at the same time. The study's one Critical finding sits here: a participant believed an inquiry had been submitted when it had not.",
+      "known": "The issuance interfaces support returns and reversals. Members reported missing points and valued a pre-filled inquiry. The requirements for diagnosis and routing are written.",
+      "provisional": "Whether recovery restores trust or merely restores points is untested. One participant said a small balance increase would go unnoticed, which suggests restoring the points alone may not close the loop.",
+      "opportunityImplication": "Treat recovery as a first-class part of the product rather than an exception path, and measure whether a recovered member re-engages.",
+      "status": "supported",
+      "epistemicStatus": "Supported",
+      "baselineDisplayStatus": "Supported",
+      "chain": [
+        "Value does not arrive",
+        "Diagnosis",
+        "Evidence assembled",
+        "Routed to the responsible party",
+        "Restored or refused"
+      ],
+      "dimensions": [
+        "Diagnosis",
+        "Evidence",
+        "Responsibility",
+        "Restoration",
+        "Time to resolve"
+      ],
+      "systemLinks": [],
+      "incomingRelationshipIds": [],
+      "outgoingRelationshipIds": [],
+      "valueStatesInfluenced": [],
+      "jtbdRefs": [],
+      "dvoRefs": [],
+      "evidenceRefs": [
+        "SRC-UT-2026-10",
+        "SRC-ECA-2026-11"
+      ],
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "traceabilityStatus": "source-link-pending",
+      "claims": [],
+      "region": "When it does not arrive",
+      "regionByView": {
+        "updated": "When it does not arrive"
+      },
+      "stakeholderRefs": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "auth-sponsor",
+      "canonicalName": "Offer sponsor",
+      "displayLabel": "Offer sponsor",
+      "label": "Offer sponsor",
+      "subtitle": "Sets the terms",
+      "type": "partner",
+      "kind": "partner",
+      "category": "Evidence authority",
+      "boundaryStatus": "inside",
+      "phase": "Current",
+      "applicableTabs": [
+        "updated"
+      ],
+      "definition": "The organization whose offer it is: it defines the eligibility criteria, the reward amount, the dates and the exclusions. A product brand sponsoring a receipt promotion need not be the merchant where the purchase happens.",
+      "roleInSystem": "Owns the rules. When a member is told they did not qualify, the sponsor's terms are the reason, even though the member never dealt with the sponsor.",
+      "whyItMatters": "The map previously treated partners as one supply-side box. Separating the sponsor shows that the party who sets the condition is often not the party the member interacted with.",
+      "known": "The Offer Service exposes sponsor information and offer codes. Partner terms differ materially between brands.",
+      "provisional": "No universal precedence rule across sponsors was established. Which offers stack, and under whose terms, is unresolved.",
+      "opportunityImplication": "Carry the sponsor's terms into the member's view at the moment of decision rather than at the moment of failure.",
+      "status": "inferred",
+      "epistemicStatus": "Inferred",
+      "baselineDisplayStatus": "Inferred",
+      "chain": [
+        "Sponsor sets terms",
+        "Offer published",
+        "Member acts",
+        "Terms decide the outcome"
+      ],
+      "dimensions": [
+        "Eligibility criteria",
+        "Reward amount",
+        "Dates",
+        "Exclusions"
+      ],
+      "systemLinks": [],
+      "incomingRelationshipIds": [],
+      "outgoingRelationshipIds": [],
+      "valueStatesInfluenced": [],
+      "jtbdRefs": [],
+      "dvoRefs": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "traceabilityStatus": "source-link-pending",
+      "claims": [],
+      "region": "Who holds the evidence",
+      "regionByView": {
+        "updated": "Who holds the evidence"
+      },
+      "stakeholderRefs": [
+        11
+      ]
+    },
+    {
+      "id": "auth-merchant",
+      "canonicalName": "Merchant and point of sale",
+      "displayLabel": "Merchant and point of sale",
+      "label": "Merchant and point of sale",
+      "subtitle": "Observes the purchase",
+      "type": "partner",
+      "kind": "partner",
+      "category": "Evidence authority",
+      "boundaryStatus": "inside",
+      "phase": "Current",
+      "applicableTabs": [
+        "updated"
+      ],
+      "definition": "Where the transaction actually happens. A basket-calculated point-of-sale integration can see item-level detail; most other routes cannot.",
+      "roleInSystem": "Holds the most detailed evidence of what was bought, and shares the least of it. Product-level eligibility depends on this evidence, and it is not uniformly available.",
+      "whyItMatters": "The product's core tested task — telling a member what a specific laptop would earn — depends on evidence this party may never pass on.",
+      "known": "The POS integration documents basket, SKU and tender detail for the routes that use it.",
+      "provisional": "Which integrations the Blue Rewards app can actually use is explicitly outside what the documentation establishes.",
+      "opportunityImplication": "Say what the system can and cannot see per route, rather than implying uniform product-level knowledge.",
+      "status": "inferred",
+      "epistemicStatus": "Inferred",
+      "baselineDisplayStatus": "Inferred",
+      "chain": [
+        "Purchase occurs",
+        "Detail captured or not",
+        "Evidence passed on",
+        "Eligibility decided"
+      ],
+      "dimensions": [
+        "Item detail",
+        "Tender",
+        "Channel",
+        "Location"
+      ],
+      "systemLinks": [],
+      "incomingRelationshipIds": [],
+      "outgoingRelationshipIds": [],
+      "valueStatesInfluenced": [],
+      "jtbdRefs": [],
+      "dvoRefs": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "traceabilityStatus": "source-link-pending",
+      "claims": [],
+      "region": "Who holds the evidence",
+      "regionByView": {
+        "updated": "Who holds the evidence"
+      },
+      "stakeholderRefs": [
+        11
+      ]
+    },
+    {
+      "id": "auth-issuer",
+      "canonicalName": "Card issuer and network",
+      "displayLabel": "Card issuer and network",
+      "label": "Card issuer and network",
+      "subtitle": "Observes the payment",
+      "type": "partner",
+      "kind": "partner",
+      "category": "Evidence authority",
+      "boundaryStatus": "inside",
+      "phase": "Current",
+      "applicableTabs": [
+        "updated"
+      ],
+      "definition": "The bank and payment network behind a card-linked offer. They see a merchant and an amount, usually not a product, and their settlement timing governs when a purchase can be recognized.",
+      "roleInSystem": "Decides when a card-linked purchase becomes visible to the programme at all, and can reverse an award when a purchase is returned.",
+      "whyItMatters": "This is the party behind the posting clock. A purchase made before a deadline can be recognized after it, through nobody's fault.",
+      "known": "Card Offers rules distinguish eligible BMO-issued products from eligible non-BMO Mastercard products. Returns and reversals are supported by the issuance interfaces.",
+      "provisional": "Settlement timing per issuer is not established, so the size of the recognition gap is unknown.",
+      "opportunityImplication": "Make the waiting state explicit and name which clock the system is waiting on.",
+      "status": "inferred",
+      "epistemicStatus": "Inferred",
+      "baselineDisplayStatus": "Inferred",
+      "chain": [
+        "Payment made",
+        "Settlement",
+        "Recognition",
+        "Award or reversal"
+      ],
+      "dimensions": [
+        "Eligibility",
+        "Settlement timing",
+        "Returns",
+        "Caps"
+      ],
+      "systemLinks": [],
+      "incomingRelationshipIds": [],
+      "outgoingRelationshipIds": [],
+      "valueStatesInfluenced": [],
+      "jtbdRefs": [],
+      "dvoRefs": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "traceabilityStatus": "source-link-pending",
+      "claims": [],
+      "region": "Who holds the evidence",
+      "regionByView": {
+        "updated": "Who holds the evidence"
+      },
+      "stakeholderRefs": [
+        3
+      ]
+    },
+    {
+      "id": "auth-attribution",
+      "canonicalName": "Affiliate and receipt processing",
+      "displayLabel": "Affiliate and receipt processing",
+      "label": "Affiliate and receipt processing",
+      "subtitle": "Attributes the activity",
+      "type": "partner",
+      "kind": "partner",
+      "category": "Evidence authority",
+      "boundaryStatus": "inside",
+      "phase": "Current",
+      "applicableTabs": [
+        "updated"
+      ],
+      "definition": "The services that connect an activity to a member when no direct integration does it: affiliate attribution for Shops, optical recognition and item matching for Blue Receipts.",
+      "roleInSystem": "The weakest link in the evidence chain, and the one most likely to fail silently. Attribution that does not happen produces no record, and no record looks exactly like no purchase.",
+      "whyItMatters": "A member can hold a valid receipt and still have no award, because the item did not match. The system is correct and the member is right to be confused.",
+      "known": "Shops requires attribution and retailer reports; receipt offers require recognition and item matching. Both are documented.",
+      "provisional": "Failure rates for attribution and matching are not available at any level.",
+      "opportunityImplication": "Show the member what the system did and did not recognize, instead of only the outcome.",
+      "status": "inferred",
+      "epistemicStatus": "Inferred",
+      "baselineDisplayStatus": "Inferred",
+      "chain": [
+        "Activity happens",
+        "Attribution attempted",
+        "Matched or not",
+        "Award or silence"
+      ],
+      "dimensions": [
+        "Attribution",
+        "Item matching",
+        "Retailer reporting",
+        "Processing time"
+      ],
+      "systemLinks": [],
+      "incomingRelationshipIds": [],
+      "outgoingRelationshipIds": [],
+      "valueStatesInfluenced": [],
+      "jtbdRefs": [],
+      "dvoRefs": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "traceabilityStatus": "source-link-pending",
+      "claims": [],
+      "region": "Who holds the evidence",
+      "regionByView": {
+        "updated": "Who holds the evidence"
+      },
+      "stakeholderRefs": [
+        11
+      ]
+    },
+    {
+      "id": "auth-supplier",
+      "canonicalName": "Reward supplier and fulfilment",
+      "displayLabel": "Reward supplier and fulfilment",
+      "label": "Reward supplier and fulfilment",
+      "subtitle": "Delivers the reward",
+      "type": "partner",
+      "kind": "partner",
+      "category": "Evidence authority",
+      "boundaryStatus": "inside",
+      "phase": "Current",
+      "applicableTabs": [
+        "updated"
+      ],
+      "definition": "Whoever actually provides what the points were spent on: a gift-card issuer, a merchandise supplier, the travel platform. Redemption and fulfilment are separate events with separate timing.",
+      "roleInSystem": "Owns the last step. Points can be correctly deducted and the reward still not arrive, which is a loss at Realized Value that no earlier part of the chain can detect.",
+      "whyItMatters": "The second scenario the team prototyped lives here, and it is the part the usability study barely reached.",
+      "known": "Catalogue observations, supplier conditions and the separation of redemption from fulfilment are documented.",
+      "provisional": "Part 2 produced four task attempts across three participants, three of them unsuccessful. That is not enough to conclude anything about this step.",
+      "opportunityImplication": "Treat fulfilment status as a tracked state, not a confirmation email.",
+      "status": "inferred",
+      "epistemicStatus": "Inferred",
+      "baselineDisplayStatus": "Inferred",
+      "chain": [
+        "Points redeemed",
+        "Order placed",
+        "Supplier fulfils",
+        "Member receives"
+      ],
+      "dimensions": [
+        "Availability",
+        "Fulfilment time",
+        "Supplier conditions",
+        "Cancellation"
+      ],
+      "systemLinks": [],
+      "incomingRelationshipIds": [],
+      "outgoingRelationshipIds": [],
+      "valueStatesInfluenced": [],
+      "jtbdRefs": [],
+      "dvoRefs": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "traceabilityStatus": "source-link-pending",
+      "claims": [],
+      "region": "Who holds the evidence",
+      "regionByView": {
+        "updated": "Who holds the evidence"
+      },
+      "stakeholderRefs": [
+        8,
+        11
       ]
     }
   ],
@@ -4163,6 +4570,792 @@
       "flowLens": "information",
       "polarity": "+",
       "delay": true
+    },
+    {
+      "id": "UPD-R01",
+      "sourceId": "opportunity",
+      "targetId": "potential-value",
+      "from": "opportunity",
+      "to": "potential-value",
+      "label": "Filtered and surfaced to one member",
+      "displayLabel": "Filtered and surfaced to one member",
+      "relationshipDefinition": "Decisioning selects what is relevant and eligible for this member, and a channel puts it in front of them. The system's act, not the member's.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R02",
+      "sourceId": "potential-value",
+      "targetId": "offer-claim",
+      "from": "potential-value",
+      "to": "offer-claim",
+      "label": "Member saves or activates it",
+      "displayLabel": "Member saves or activates it",
+      "relationshipDefinition": "The member decides to pursue the offer and claims it. The Offer Service records this as SAVED or OPTED_IN. Nothing has been earned: the member has committed, the system has recorded an intention.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-DEVPORTAL-2026-09"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "participation",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R03",
+      "sourceId": "offer-claim",
+      "targetId": "earned-value",
+      "from": "offer-claim",
+      "to": "earned-value",
+      "label": "Qualifying activity, recognized",
+      "displayLabel": "Qualifying activity, recognized",
+      "relationshipDefinition": "The member does the thing the terms require and some party observes it. Both halves are necessary: an activity nobody recognizes produces no award, and an unactivated offer produces no award however the member behaves.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-DEVPORTAL-2026-09",
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "value",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R04",
+      "sourceId": "earned-value",
+      "targetId": "available-value",
+      "from": "earned-value",
+      "to": "available-value",
+      "label": "Posted to the balance",
+      "displayLabel": "Posted to the balance",
+      "relationshipDefinition": "The award is credited and becomes spendable. Recognition and posting are separate clocks, which is why a member can be owed points that are not yet theirs to use.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R05",
+      "sourceId": "available-value",
+      "targetId": "realized-value",
+      "from": "available-value",
+      "to": "realized-value",
+      "label": "Used, and worth something",
+      "displayLabel": "Used, and worth something",
+      "relationshipDefinition": "The member spends the points and receives something they can use. Redemption and fulfilment are separate events.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R06",
+      "sourceId": "auth-issuer",
+      "targetId": "available-value",
+      "from": "auth-issuer",
+      "to": "available-value",
+      "label": "Returns and reversals",
+      "displayLabel": "Returns and reversals",
+      "relationshipDefinition": "A returned purchase can reverse an award that has already posted. The issuance interfaces carry transactionType RETURN and support reversals, so value leaves the balance after arriving.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-DEVPORTAL-2026-09",
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "value",
+      "polarity": "-",
+      "delay": false
+    },
+    {
+      "id": "UPD-R09",
+      "sourceId": "available-value",
+      "targetId": "recovery",
+      "from": "available-value",
+      "to": "recovery",
+      "label": "Points missing, late or reversed",
+      "displayLabel": "Points missing, late or reversed",
+      "relationshipDefinition": "Value that should be in the balance and is not. The member notices an absence and has to work out whether it is a delay, a disqualification or a failure.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "condition",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R10",
+      "sourceId": "realized-value",
+      "targetId": "recovery",
+      "from": "realized-value",
+      "to": "recovery",
+      "label": "Reward missing, late or wrong",
+      "displayLabel": "Reward missing, late or wrong",
+      "relationshipDefinition": "Value that was spent and did not arrive, or arrived different from what the member expected.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "condition",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R11",
+      "sourceId": "recovery",
+      "targetId": "available-value",
+      "from": "recovery",
+      "to": "available-value",
+      "label": "Points restored",
+      "displayLabel": "Points restored",
+      "relationshipDefinition": "The case is resolved and the points are credited. FR28 and FR29 exist because this does not always happen: refunded redemptions can fail to return.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "value",
+      "polarity": "+",
+      "delay": true
+    },
+    {
+      "id": "UPD-R12",
+      "sourceId": "recovery",
+      "targetId": "realized-value",
+      "from": "recovery",
+      "to": "realized-value",
+      "label": "Reward re-issued or refunded",
+      "displayLabel": "Reward re-issued or refunded",
+      "relationshipDefinition": "The reward is provided again, or the points are returned so the member can choose something else.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+",
+      "delay": true
+    },
+    {
+      "id": "UPD-R13",
+      "sourceId": "recovery",
+      "targetId": "engagement",
+      "from": "recovery",
+      "to": "engagement",
+      "label": "Whether trust survives the loss",
+      "displayLabel": "Whether trust survives the loss",
+      "relationshipDefinition": "The open question. Restoring points is not obviously the same as restoring confidence. One participant said a small balance increase would go unnoticed, which suggests a silent correction may repair the ledger without repairing the relationship.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Contested",
+      "claimBasis": "analytical-inference",
+      "decisionStatus": "hypothesis",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "hypothesis",
+      "flowLens": "participation",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R14",
+      "sourceId": "auth-sponsor",
+      "targetId": "opportunity",
+      "from": "auth-sponsor",
+      "to": "opportunity",
+      "label": "Sets the terms it carries",
+      "displayLabel": "Sets the terms it carries",
+      "relationshipDefinition": "The sponsor defines eligibility, reward amount, dates and exclusions. A member who fails to qualify fails against terms set by a party they never dealt with.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "condition",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R15",
+      "sourceId": "auth-merchant",
+      "targetId": "earned-value",
+      "from": "auth-merchant",
+      "to": "earned-value",
+      "label": "Observes the purchase",
+      "displayLabel": "Observes the purchase",
+      "relationshipDefinition": "Where the transaction happens and where the most detailed evidence exists. A basket-calculated integration sees item detail; most routes do not, so product-level eligibility is not uniformly provable.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R16",
+      "sourceId": "auth-issuer",
+      "targetId": "earned-value",
+      "from": "auth-issuer",
+      "to": "earned-value",
+      "label": "Observes the payment",
+      "displayLabel": "Observes the payment",
+      "relationshipDefinition": "The card issuer and network see a merchant and an amount, usually not a product. Their settlement timing governs when a purchase becomes visible to the programme at all.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": true
+    },
+    {
+      "id": "UPD-R17",
+      "sourceId": "auth-attribution",
+      "targetId": "earned-value",
+      "from": "auth-attribution",
+      "to": "earned-value",
+      "label": "Connects the activity, or does not",
+      "displayLabel": "Connects the activity, or does not",
+      "relationshipDefinition": "Affiliate attribution and receipt matching are what link an activity to an account when no direct integration does it. They are also the weakest link: attribution that does not happen produces no record, and no record is indistinguishable from no purchase. The member holds a valid receipt and the system holds nothing.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R18",
+      "sourceId": "auth-supplier",
+      "targetId": "realized-value",
+      "from": "auth-supplier",
+      "to": "realized-value",
+      "label": "Delivers it, or does not",
+      "displayLabel": "Delivers it, or does not",
+      "relationshipDefinition": "Fulfilment is a separate event from redemption, with its own timing and conditions. Points can be correctly deducted and the reward still not arrive, which is a loss at the last stage that nothing earlier in the chain can detect.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+",
+      "delay": true
+    },
+    {
+      "id": "UPD-R19",
+      "sourceId": "data",
+      "targetId": "potential-value",
+      "from": "data",
+      "to": "potential-value",
+      "label": "Relevance and eligibility",
+      "displayLabel": "Relevance and eligibility",
+      "relationshipDefinition": "Decisioning determines which of the catalogue's rewards reach this member as relevant and eligible, and therefore what they have to weigh at all.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Contested",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R20",
+      "sourceId": "channels",
+      "targetId": "potential-value",
+      "from": "channels",
+      "to": "potential-value",
+      "label": "Where they weigh it",
+      "displayLabel": "Where they weigh it",
+      "relationshipDefinition": "The member compares, reads the terms and works out what it is worth inside a channel, and only inside a channel.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R21",
+      "sourceId": "channels",
+      "targetId": "offer-claim",
+      "from": "channels",
+      "to": "offer-claim",
+      "label": "Where activation happens, or does not",
+      "displayLabel": "Where activation happens, or does not",
+      "relationshipDefinition": "Saving and activating are things the member does in a channel. An activation step the channel does not make obvious is an activation that does not happen.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "participation",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R22",
+      "sourceId": "service",
+      "targetId": "recovery",
+      "from": "service",
+      "to": "recovery",
+      "label": "Answers and routes the case",
+      "displayLabel": "Answers and routes the case",
+      "relationshipDefinition": "Service assembles what is known, decides who is responsible and carries the case to them. FR17 is this arrow.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "capability",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R23",
+      "sourceId": "friction",
+      "targetId": "offer-claim",
+      "from": "friction",
+      "to": "offer-claim",
+      "label": "Activation missed",
+      "displayLabel": "Activation missed",
+      "relationshipDefinition": "The member can intend to claim an offer and fail to, because the step was not where they looked or not obviously required.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "condition",
+      "polarity": "-",
+      "delay": false
+    },
+    {
+      "id": "UPD-R24",
+      "sourceId": "friction",
+      "targetId": "potential-value",
+      "from": "friction",
+      "to": "potential-value",
+      "label": "Too unclear to judge",
+      "displayLabel": "Too unclear to judge",
+      "relationshipDefinition": "Unclear terms, eligibility or worth stall the assessment. The most repeated difficulty in the October study.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "condition",
+      "polarity": "-",
+      "delay": false
+    },
+    {
+      "id": "UPD-R25",
+      "sourceId": "friction",
+      "targetId": "available-value",
+      "from": "friction",
+      "to": "available-value",
+      "label": "Posting delay read as expiry",
+      "displayLabel": "Posting delay read as expiry",
+      "relationshipDefinition": "A passed posting date read as points that can no longer be used. Two clocks collapsed into one, observed in a participant.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "condition",
+      "polarity": "-",
+      "delay": false
+    },
+    {
+      "id": "UPD-R26",
+      "sourceId": "friction",
+      "targetId": "recovery",
+      "from": "friction",
+      "to": "recovery",
+      "label": "Unclear whether anything was submitted",
+      "displayLabel": "Unclear whether anything was submitted",
+      "relationshipDefinition": "The study's one Critical finding. A member acted, the system recorded nothing, and neither party was told they disagreed.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "condition",
+      "polarity": "-",
+      "delay": false
+    },
+    {
+      "id": "UPD-R27",
+      "sourceId": "earned-value",
+      "targetId": "points-balance",
+      "from": "earned-value",
+      "to": "points-balance",
+      "label": "Posts into the balance",
+      "displayLabel": "Posts into the balance",
+      "relationshipDefinition": "Earned value accumulates into the standing balance once it posts. Points earned but not yet posted sit outside the balance, which is the gap a member experiences as pending.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R28",
+      "sourceId": "points-balance",
+      "targetId": "available-value",
+      "from": "points-balance",
+      "to": "available-value",
+      "label": "Balance is ready to spend",
+      "displayLabel": "Balance is ready to spend",
+      "relationshipDefinition": "A standing balance is already available to spend. It is why a brand-new member holding enrolment points is at Available Value on day one.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Supported",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "value",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R29",
+      "sourceId": "realized-value",
+      "targetId": "engagement",
+      "from": "realized-value",
+      "to": "engagement",
+      "label": "Shapes what the member does next",
+      "displayLabel": "Shapes what the member does next",
+      "relationshipDefinition": "The return leg of the engine. Five of six contributors drew it independently and the October study did not confirm it.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Contested",
+      "claimBasis": "evidence",
+      "decisionStatus": "active-direction",
+      "evidenceRefs": [
+        "SRC-UT-2026-10"
+      ],
+      "valueTransitionIds": [],
+      "state": "active-direction",
+      "flowLens": "participation",
+      "polarity": "+",
+      "delay": false
+    },
+    {
+      "id": "UPD-R30",
+      "sourceId": "engagement",
+      "targetId": "data",
+      "from": "engagement",
+      "to": "data",
+      "label": "Participation signals sharpen the filter",
+      "displayLabel": "Participation signals sharpen the filter",
+      "relationshipDefinition": "What a member did with the value they realized becomes signal. Decisioning uses it to filter the catalogue better next time.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "updated"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "information",
+      "polarity": "+",
+      "delay": true
     }
   ],
   "overlays": [
@@ -4610,6 +5803,74 @@
       "interpretationRules": [
         "External factors influence but are not controlled by the bounded system."
       ]
+    },
+    {
+      "id": "updated",
+      "label": "9. Updated Systems Map",
+      "heading": "The system with its missing direction",
+      "purpose": "Carry the November evidence into the structure itself rather than describing it alongside.",
+      "contextParagraph": "The September map ran one way: value moved forward through five stages and never came back. Three things since then say that is wrong. The developer documentation shows offers carry a member state before any earning happens, and that awards can be returned and reversed. The complexity analysis shows that different parties hold the evidence for different steps, so one failure the member experiences can belong to any of five organizations. And the requirements contain six that exist only to diagnose and recover loss, with nowhere on the old map to sit. This view adds the claim, the authorities and the path back.",
+      "nodeIds": [
+        "offer-claim",
+        "recovery",
+        "auth-sponsor",
+        "auth-merchant",
+        "auth-issuer",
+        "auth-attribution",
+        "auth-supplier",
+        "data",
+        "channels",
+        "service",
+        "friction",
+        "points-balance",
+        "engagement"
+      ],
+      "valueStateIds": [
+        "opportunity",
+        "potential-value",
+        "earned-value",
+        "available-value",
+        "realized-value"
+      ],
+      "relationshipIds": [
+        "UPD-R01",
+        "UPD-R02",
+        "UPD-R03",
+        "UPD-R04",
+        "UPD-R05",
+        "UPD-R06",
+        "UPD-R09",
+        "UPD-R10",
+        "UPD-R11",
+        "UPD-R12",
+        "UPD-R13",
+        "UPD-R14",
+        "UPD-R15",
+        "UPD-R16",
+        "UPD-R17",
+        "UPD-R18",
+        "UPD-R19",
+        "UPD-R20",
+        "UPD-R21",
+        "UPD-R22",
+        "UPD-R23",
+        "UPD-R24",
+        "UPD-R25",
+        "UPD-R26",
+        "UPD-R27",
+        "UPD-R28",
+        "UPD-R29",
+        "UPD-R30"
+      ],
+      "transitionIds": [],
+      "overlayIds": [],
+      "exclusions": [],
+      "interpretationRules": [
+        "Negative arrows here mean value leaving the chain, not a smaller amount arriving.",
+        "The five evidence authorities are roles, not a confirmed org chart. One organization can hold several of them.",
+        "Saved and activated offers is a recorded position, taken from the Offer Service's own member states. It is not a sixth kind of value."
+      ],
+      "viewNote": ""
     }
   ],
   "materialAssumptions": [
