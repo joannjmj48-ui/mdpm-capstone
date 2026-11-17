@@ -1,0 +1,423 @@
+{
+  "version": "1.0.0-evidence",
+  "extends": "data/system-map.json",
+  "sources": [
+    {
+      "id": "SRC-UT-2026-10",
+      "label": "MDPM 826 Usability Test Report — Team Zig",
+      "date": "2026-10-28",
+      "detail": "Moderated remote formative study. 6 participants, 31 Part 1 task attempts: 25 passes, 5 completions after a hint, 1 failure. 13 issues rated Critical, Major or Minor."
+    },
+    {
+      "id": "SRC-ECA-2026-11",
+      "label": "Blue Rewards Ecosystem and Complexity Analysis v1.0",
+      "date": "2026-11-15",
+      "detail": "Independent research synthesis. Six complexity dimensions, four clocks, findings F01 to F13, and a program-state versus experienced-state comparison."
+    },
+    {
+      "id": "SRC-FR-2026-11",
+      "label": "Requirements Specification (MDPM 883), in the PRD",
+      "date": "2026-11-12",
+      "detail": "37 functional requirements and the non-functional set across look and feel, usability, performance and security."
+    },
+    {
+      "id": "SRC-DP-2026-11",
+      "label": "Blue Rewards Data Pipeline (MDPM 830)",
+      "date": "2026-11-08",
+      "detail": "Generate, Collect, Keep and Shape, Store, Use. Three pilot measures: Opportunity Capture Rate, Earned Value Realization Rate, End-to-End Realization Rate."
+    }
+  ],
+  "findings": [
+    {
+      "id": "UT-01",
+      "severity": "Critical",
+      "stage": "Realized Value",
+      "edge": "Service and operations → Realized Value",
+      "issue": "A participant believed a missing-points inquiry had been submitted when it had not.",
+      "systemReading": "The member acted, the system did not register the act, and nothing told either party they disagreed. On the map this is a broken return leg: the member's action never becomes recorded activity, so no correction can start.",
+      "requirement": "FR37"
+    },
+    {
+      "id": "UT-02",
+      "severity": "Major",
+      "stage": "Potential Value",
+      "edge": "Channels and delivery → Potential Value",
+      "issue": "Participants looked for a dedicated Reward Goals tab before finding the placemat on Home.",
+      "systemReading": "A capability the member cannot locate does not reach them, which is the same failure as an opportunity no channel carries. The feature existed; the channel did not surface it where they looked.",
+      "requirement": "FR3"
+    },
+    {
+      "id": "UT-03",
+      "severity": "Major",
+      "stage": "Potential Value",
+      "edge": "Interface friction → Potential Value",
+      "issue": "A participant overlooked the comparison controls at the bottom of the screen.",
+      "systemReading": "Friction stalling the assessment before it starts. The member had the options in front of them and could not begin weighing them.",
+      "requirement": "FR20a"
+    },
+    {
+      "id": "UT-04",
+      "severity": "Major",
+      "stage": "Available Value",
+      "edge": "Channels and delivery → Available Value",
+      "issue": "A participant struggled to locate the overdue-points alert on Home.",
+      "systemReading": "The system knew value was overdue and the member did not. Recorded position and member awareness diverged with no prompt to close the gap.",
+      "requirement": "FR13a"
+    },
+    {
+      "id": "UT-05",
+      "severity": "Major",
+      "stage": "Every stage",
+      "edge": "Interface friction, all stages",
+      "issue": "Back navigation sometimes returned a participant to an unexpected screen.",
+      "systemReading": "The clearest evidence that interface friction is a condition across the whole progression rather than a property of one stage.",
+      "requirement": "UH1"
+    },
+    {
+      "id": "UT-06",
+      "severity": "Major",
+      "stage": "Earned Value → Available Value",
+      "edge": "Earned Value → Available Value",
+      "issue": "A participant read the passed posting date as meaning the overdue points could no longer be used.",
+      "systemReading": "Two different clocks collapsed into one. Posting time says when points are credited; expiry says when they stop being spendable. The member treated a delay as a loss.",
+      "requirement": "FR25"
+    },
+    {
+      "id": "UT-07",
+      "severity": "Major",
+      "stage": "Potential Value",
+      "edge": "Interface friction → Potential Value",
+      "issue": "The label Points to use left members unsure whether the amount was points required, spent or remaining.",
+      "systemReading": "One label spanning three different value states. The map separates Potential, Earned, Available and Realized precisely because they are different things; the interface did not.",
+      "requirement": "UH2"
+    },
+    {
+      "id": "UT-08",
+      "severity": "Minor",
+      "stage": "Potential Value",
+      "edge": "Interface friction → Potential Value",
+      "issue": "Comparison showed cash-purchase and points-redemption options together in different formats.",
+      "systemReading": "Earning and spending are opposite directions through the chain. Presenting them in one list asks the member to hold both directions at once.",
+      "requirement": "FR20b"
+    },
+    {
+      "id": "UT-09",
+      "severity": "Minor",
+      "stage": "Opportunity → Potential Value",
+      "edge": "Data and decisioning → Potential Value",
+      "issue": "Ask Blue accepted a goal to save toward a car, then asked pickup and drop-off questions. The participant abandoned the chat.",
+      "systemReading": "The filter failed to bound itself to the catalogue. Decisioning surfaced something that is not an opportunity in this system, which is the one job that arrow has.",
+      "requirement": "FR2"
+    },
+    {
+      "id": "UT-10",
+      "severity": "Minor",
+      "stage": "Potential Value",
+      "edge": "Interface friction → Potential Value",
+      "issue": "A participant could not tell how projected earnings contributed toward the points still needed.",
+      "systemReading": "Points already held and points expected to arrive sit in different states. Shown as one number, the member cannot tell what is theirs now.",
+      "requirement": "FR5"
+    },
+    {
+      "id": "UT-11",
+      "severity": "Minor",
+      "stage": "Points balance",
+      "edge": "Points balance → Available Value",
+      "issue": "A participant was unsure whether their existing 30,000 points counted toward the goal target.",
+      "systemReading": "Direct evidence for the entry question the map already carries: a member joins the cycle wherever their balance puts them, and the product did not say so.",
+      "requirement": "FR23"
+    },
+    {
+      "id": "UT-12",
+      "severity": "Minor",
+      "stage": "Potential Value",
+      "edge": "Channels and delivery → Potential Value",
+      "issue": "A participant was unsure whether Ask Blue's results would appear in chat or elsewhere on the page.",
+      "systemReading": "The member could not tell whether the system had acted. Status is not a cosmetic concern here; it determines whether they try again or stop.",
+      "requirement": "UH7"
+    },
+    {
+      "id": "UT-13",
+      "severity": "Minor",
+      "stage": "Realized Value → Meaningful engagement",
+      "edge": "Realized Value → Meaningful engagement",
+      "issue": "A participant questioned why they would use Reward Goals at all. Another said it would not change their decisions.",
+      "systemReading": "The return leg of the flywheel, tested and not confirmed. If realized value does not change what the member does next, the loop does not compound and the engine the whole team drew does not start.",
+      "requirement": "FR5"
+    },
+    {
+      "id": "UT-14",
+      "severity": "Minor",
+      "stage": "Realized Value",
+      "edge": "Realized Value → Meaningful engagement",
+      "issue": "Changes to the balance after a resolution were difficult to identify and verify.",
+      "systemReading": "Value arrived and was not noticed. Unobserved value cannot feed back, so a correct outcome produces no engagement.",
+      "requirement": "FR26"
+    }
+  ],
+  "stageCounts": {
+    "lead": "Where the fourteen issues landed",
+    "note": "Counted by the value stage each issue acts on. Seven of the fourteen sit at Potential Value, the stage where the member works out what something is worth. None sit at Opportunity, which is the programme's side of the chain and was never in front of a participant.",
+    "rows": [
+      {
+        "stage": "Opportunity",
+        "count": 0,
+        "gloss": "The catalogue. Not tested, and not visible to a member."
+      },
+      {
+        "stage": "Potential Value",
+        "count": 7,
+        "gloss": "Working out what it is worth. Every severity band appears here."
+      },
+      {
+        "stage": "Earned Value → Available Value",
+        "count": 1,
+        "gloss": "The posting gap, read as expiry."
+      },
+      {
+        "stage": "Available Value",
+        "count": 2,
+        "gloss": "Knowing what is overdue and what is already spendable."
+      },
+      {
+        "stage": "Realized Value and the return leg",
+        "count": 3,
+        "gloss": "Whether value arrived, and whether it changed anything."
+      },
+      {
+        "stage": "Every stage",
+        "count": 1,
+        "gloss": "Navigation. Confirms friction is a condition, not a stage."
+      }
+    ]
+  },
+  "requirementClusters": [
+    {
+      "id": "RQ-OPP",
+      "stage": "Opportunity",
+      "heading": "Make the catalogue reachable",
+      "frs": [
+        "FR1",
+        "FR2",
+        "FR6",
+        "FR8",
+        "FR8a",
+        "FR8b",
+        "FR9",
+        "FR21",
+        "FR30",
+        "FR31"
+      ],
+      "acts": "Data and decisioning → Potential Value, Partner ecosystem → Opportunity",
+      "loop": "TR1 relevance flywheel · TR3 partner coverage",
+      "reading": "These are the filter. They decide what a member ever sees, which is the one thing that moves value out of Opportunity. FR8 and FR9 are the balancing condition made explicit: the catalogue still has to work when no external data is connected. FR8a and FR8b are the offer clock — stop showing what the member can no longer act on."
+    },
+    {
+      "id": "RQ-POT",
+      "stage": "Potential Value",
+      "heading": "Make it judgeable",
+      "frs": [
+        "FR3",
+        "FR4",
+        "FR5",
+        "FR10",
+        "FR19",
+        "FR20a",
+        "FR20b",
+        "FR24",
+        "FR33"
+      ],
+      "acts": "Channels and delivery → Potential Value, Interface friction → Potential Value",
+      "loop": "TB3 value gap · delivery brake",
+      "reading": "The largest cluster, acting on the stage where seven of the fourteen tested issues landed. FR24, the monetary equivalent and the basis of the estimate, answers the single most repeated complaint in the study."
+    },
+    {
+      "id": "RQ-EARN",
+      "stage": "Earned Value",
+      "heading": "Make qualifying legible",
+      "frs": [
+        "FR11",
+        "FR11a",
+        "FR12",
+        "FR32",
+        "FR34"
+      ],
+      "acts": "Products and transactions → Earned Value, Service and operations → Earned Value",
+      "loop": "TB3 value gap · delivery brake",
+      "reading": "Qualification is where the member's act meets the programme's rules. The complexity analysis calls this eligibility time; these requirements make its state visible instead of inferred."
+    },
+    {
+      "id": "RQ-AVAIL",
+      "stage": "Available Value",
+      "heading": "Separate earned from spendable",
+      "frs": [
+        "FR13",
+        "FR13a",
+        "FR23",
+        "FR25",
+        "FR26",
+        "FR28"
+      ],
+      "acts": "Service and operations → Available Value, Points balance → Available Value",
+      "loop": "TB1 programme economics · breakage brake",
+      "reading": "FR23 splits the balance from unposted earnings, which is the gap the map draws between Earned Value and Available Value. FR25 and FR26 are the notifications that keep the two clocks apart — the distinction one participant got wrong."
+    },
+    {
+      "id": "RQ-REAL",
+      "stage": "Realized Value",
+      "heading": "Confirm value arrived",
+      "frs": [
+        "FR14",
+        "FR27",
+        "FR35"
+      ],
+      "acts": "Channels and delivery → Realized Value",
+      "loop": "TR1 relevance flywheel",
+      "reading": "The smallest cluster, and the one the testing found least evidence for. Value that arrives unnoticed cannot feed the return leg."
+    },
+    {
+      "id": "RQ-RECOVER",
+      "stage": "Not on the map yet",
+      "heading": "Diagnose and recover loss",
+      "frs": [
+        "FR15",
+        "FR16",
+        "FR17",
+        "FR29",
+        "FR36",
+        "FR37"
+      ],
+      "acts": "No current relationship",
+      "loop": "TR4 reliability and trust",
+      "reading": "Six requirements exist purely to find out why value did not arrive and to get it back. The systems map has no recovery construct at all: it draws where value is lost but not the path back. This is the clearest gap the requirements expose in the map."
+    },
+    {
+      "id": "RQ-CONSENT",
+      "stage": "Across the chain",
+      "heading": "Keep permission with the member",
+      "frs": [
+        "FR7",
+        "FR18",
+        "FR22"
+      ],
+      "acts": "Data and decisioning, governance",
+      "loop": "TB2 trust and consent · permission brake",
+      "reading": "The permission brake, written as requirements. FR18 — approval before anything changes a balance, goal, redemption or data permission — is the brake itself, and the security set S1 to S7b holds it in place."
+    }
+  ],
+  "clocks": {
+    "lead": "Four clocks, not one",
+    "note": "From the November complexity analysis. The five value stages implicitly assume value moves on a single timeline. It does not, and the gap between two of these clocks is already a Major usability issue.",
+    "rows": [
+      {
+        "name": "Eligibility time",
+        "what": "When the action must happen for the terms to be satisfied.",
+        "stage": "Potential Value → Earned Value"
+      },
+      {
+        "name": "Recognition time",
+        "what": "When evidence of the action reaches the service that can act on it.",
+        "stage": "Earned Value"
+      },
+      {
+        "name": "Posting time",
+        "what": "When points are actually credited to the balance.",
+        "stage": "Earned Value → Available Value"
+      },
+      {
+        "name": "Realization time",
+        "what": "When the member receives value they can use.",
+        "stage": "Available Value → Realized Value"
+      }
+    ],
+    "consequence": "A delay between recognition and posting is not a failure, but it looks exactly like one. One participant read a passed posting date as the points no longer being usable. Absence of points is not evidence that points are missing, and the product has to be able to say which of the four clocks it is waiting on."
+  },
+  "gaps": {
+    "lead": "What the system records, and what the member believes",
+    "note": "Adapted from the complexity analysis. Each row is a place where the programme can be entirely correct and the member still wrong. Marked where the usability study saw the same gap in a participant.",
+    "rows": [
+      {
+        "recorded": "Posted points already exist",
+        "believed": "The member has not checked the balance",
+        "kind": "Awareness",
+        "observed": true,
+        "evidence": "“So even if my points go up by a bit, I will probably not notice.”"
+      },
+      {
+        "recorded": "Purchase observed, award absent",
+        "believed": "The member assumes the points are missing",
+        "kind": "Timing, attribution or eligibility",
+        "observed": true,
+        "evidence": "The whole missing-points flow, tasks 5 and 6."
+      },
+      {
+        "recorded": "Points credited after a resolution",
+        "believed": "The member cannot tell what changed",
+        "kind": "Awareness",
+        "observed": true,
+        "evidence": "“There’s no notification that says that I received the points.”"
+      },
+      {
+        "recorded": "Offer displayed, activation required",
+        "believed": "The member expects to earn automatically",
+        "kind": "Qualification",
+        "observed": false,
+        "evidence": "Not reached in this study. Activation was not one of the six tasks."
+      },
+      {
+        "recorded": "Receipt accepted, product unmatched",
+        "believed": "The member believes the exact product qualified",
+        "kind": "Evidentiary disagreement",
+        "observed": false,
+        "evidence": "Not tested. Receipt earning was outside the prototype."
+      },
+      {
+        "recorded": "Points spent, eGift not delivered",
+        "believed": "The member expects immediate delivery",
+        "kind": "Fulfilment timing",
+        "observed": false,
+        "evidence": "Scenario 2 covered this, but Part 2 produced only four attempts."
+      },
+      {
+        "recorded": "Bonus expected later",
+        "believed": "The member thinks the net cost is available now",
+        "kind": "Liquidity versus eventual value",
+        "observed": false,
+        "evidence": "Not tested. This is the November points-back promotion case."
+      }
+    ],
+    "closing": "Three of the seven gaps were confirmed in front of participants. Four were not reached. That split is the argument for the next round of testing, and it is why the 90,000-point scenario matters: it is where redemption and fulfilment live."
+  },
+  "whatChanged": [
+    {
+      "claim": "Members cannot tell what their points are worth.",
+      "was": "Assumed",
+      "now": "Supported",
+      "why": "The most repeated finding in the study, across offer comparison, goal setting and transaction review. Four participants asked for a conversion they could not find."
+    },
+    {
+      "claim": "Interface friction acts at every stage of the progression.",
+      "was": "Inferred",
+      "now": "Supported",
+      "why": "Fourteen issues spread across five stages, with back-navigation failing independently of any one of them."
+    },
+    {
+      "claim": "Realized value increases sustained engagement.",
+      "was": "Group convergence",
+      "now": "Contested",
+      "why": "The return leg five of six contributors drew is the one the testing did not confirm. Two participants said progress tracking would not change their decisions. This is a loop assumption, and it is now the weakest link in the engine."
+    },
+    {
+      "claim": "A member joins the cycle wherever their balance puts them.",
+      "was": "Analytical inference",
+      "now": "Supported",
+      "why": "A participant with 30,000 points could not tell whether those points counted toward their goal — the entry question, asked unprompted."
+    },
+    {
+      "claim": "Decisioning bounds what becomes a visible opportunity.",
+      "was": "Assumed",
+      "now": "Contested",
+      "why": "Ask Blue accepted a goal the catalogue cannot satisfy. The filter is the mechanism the product depends on and it did not hold."
+    }
+  ]
+}

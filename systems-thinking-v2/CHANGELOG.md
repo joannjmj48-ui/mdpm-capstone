@@ -47,3 +47,20 @@
 ### Rule preserved
 
 Convergence strength records how independently contributors reached the same claim. It never upgrades epistemic status — two people agreeing is not evidence.
+
+## Evidence and Requirements (November 2026, for the PRD)
+
+- Added tab 8, built additively from `data/evidence-map.json` by `scripts/build-evidence.py`.
+- Placed the fourteen issues from the October usability study on the map, each tagged with the
+  relationship it acts on and the requirement that answers it. Seven of the fourteen sit at
+  Potential Value.
+- Mapped all 42 functional requirements to the value stage they act on. One cluster of six —
+  diagnose and recover loss — has no corresponding relationship in the map, which is the clearest
+  gap the requirements expose.
+- Added the four clocks (eligibility, recognition, posting, realization) from the November
+  complexity analysis, and the recorded-versus-understood comparison, marked by whether the
+  usability study actually reached each row.
+- Applied the first primary member evidence to the contract. `SRC-UT-2026-10` is the first source
+  with `isEmpiricalEvidence: true`. Interface friction and two relationships moved to Supported;
+  three moved to Contested, including the return leg five of six contributors drew independently.
+  Convergence still never upgrades epistemic status — testing does.
