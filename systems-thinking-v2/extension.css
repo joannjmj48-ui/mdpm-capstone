@@ -1,0 +1,60 @@
+/* Tab 9 — Extension to the map. Joann's MMIE 884 format and palette. */
+
+#loyalty-map-v2 #extension-view { margin-top: 1rem; }
+#loyalty-map-v2 .xt-wrap { display: flex; flex-direction: column; gap: 1.1rem; }
+
+#loyalty-map-v2 .xt-intro {
+  background: #fbfaf6; border: 1px solid #ddd7c6;
+  border-left: 3px solid #C79A3B; border-radius: var(--radius);
+  padding: 1.15rem 1.3rem;
+}
+#loyalty-map-v2 .xt-kicker {
+  font-family: Georgia, serif; font-size: 12px; letter-spacing: .22em;
+  text-transform: uppercase; color: #854F0B;
+}
+#loyalty-map-v2 .xt-intro h3 {
+  margin: .35rem 0 .6rem; font-family: Georgia, serif;
+  font-size: 1.45rem; color: #10123f; text-wrap: balance;
+}
+#loyalty-map-v2 .xt-intro p { margin: 0 0 .55rem; color: #4a4a52; max-width: 82ch; }
+#loyalty-map-v2 .xt-intro p:last-child { margin-bottom: 0; }
+#loyalty-map-v2 .xt-how {
+  padding-top: .6rem; border-top: 1px solid #e6e2d6;
+  font-size: var(--font-size-small); color: #6b6b73;
+}
+
+#loyalty-map-v2 .xt-figure { margin: 0; }
+#loyalty-map-v2 .xt-scroll {
+  overflow-x: auto; border: 1px solid #ddd7c6; border-radius: var(--radius);
+  background: #fbfaf6;
+}
+#loyalty-map-v2 .xt-scroll svg { display: block; width: 100%; min-width: 1280px; height: auto; }
+
+#loyalty-map-v2 .xt-notes {
+  display: grid; gap: .8rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+}
+#loyalty-map-v2 .xt-note {
+  position: relative; background: #fbfaf6; border: 1px solid #ddd7c6;
+  border-radius: var(--radius); padding: 1rem 1.1rem 1rem 3.6rem;
+}
+#loyalty-map-v2 .xt-code {
+  position: absolute; left: 1rem; top: 1rem;
+  font-family: Georgia, serif; font-size: 13px; font-weight: 700;
+  color: #8a8a92; border: 1.5px solid #c9c2ae; border-radius: 999px;
+  width: 2rem; height: 2rem; display: grid; place-items: center;
+}
+#loyalty-map-v2 .xt-note.is-new .xt-code { color: #ffffff; background: #534AB7; border-color: #534AB7; }
+#loyalty-map-v2 .xt-note.is-lever .xt-code { color: #10123f; background: #C79A3B; border-color: #C79A3B; }
+#loyalty-map-v2 .xt-note.is-new { border-left: 3px solid #534AB7; }
+#loyalty-map-v2 .xt-note.is-lever { border-left: 3px solid #C79A3B; }
+#loyalty-map-v2 .xt-note h4 {
+  margin: .15rem 0 .4rem; font-family: Georgia, serif; font-size: 1.05rem; color: #10123f;
+}
+#loyalty-map-v2 .xt-note p { margin: 0; font-size: var(--font-size-small); color: #4a4a52; }
+#loyalty-map-v2 .xt-note b { color: #10123f; }
+
+@media (max-width: 760px) {
+  #loyalty-map-v2 .xt-note { padding-left: 1.1rem; }
+  #loyalty-map-v2 .xt-code { position: static; margin-bottom: .5rem; }
+}

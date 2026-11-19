@@ -65,22 +65,23 @@ Convergence strength records how independently contributors reached the same cla
   three moved to Contested, including the return leg five of six contributors drew independently.
   Convergence still never upgrades epistemic status — testing does.
 
-## Updated Systems Map (tab 9, November 2026)
+## Extension to the map (tab 9, November 2026)
 
-A second map rather than an edit of the first: the September map stays exactly as the team
-knows it, and the revised structure sits beside it.
+Replaces the earlier grid-based attempt, which was drawn in Sly's layout and read as a
+replacement rather than an extension. Rebuilt in the format Joann used for MMIE 884, and in the
+palette from her own Blue Rewards HTML map.
 
-- **Value can now move backwards.** The developer portal carries `transactionType: RETURN` and
-  the issuance interfaces support reversals, so a posted award can be removed after it arrives.
-  Three edges are drawn as value leaving the forward chain and styled accordingly, with a new
-  legend key.
-- **Correction and recovery** is a node with seven connections. The six requirements that had
-  nowhere to act — FR15, FR16, FR17, FR29, FR36, FR37 — act here.
-- **Five evidence authorities** replace the single partner box in this view: offer sponsor,
-  merchant and point of sale, card issuer and network, affiliate and receipt processing, reward
-  supplier and fulfilment. Finding F08: one failure the member experiences can belong to any of
-  them, and deciding which is what FR15 to FR17 do.
-- **Saved and activated offers** sits between Potential Value and Earned Value, taken from the
-  Offer Service's own member states (SAVE/SAVED/UNSAVED, OPT_IN/OPTED_IN). It is a recorded
-  position, not a sixth kind of value.
-- Adds `SRC-DEVPORTAL-2026-09` to the contract as technical documentation, not member evidence.
+- Hand-positioned SVG, not the grid renderer. Realized value stays at the centre as the main
+  variable. Every link carries a polarity, delays are double-barred, loops are circled and named.
+- The relevance flywheel TR1 is drawn muted and dashed: it is what the map already says, and
+  nothing here changes it. Colour marks only what the November evidence adds.
+- Two new balancing loops, each with exactly one minus. TB4, the recovery brake, is the product:
+  unresolved loss triggers recovery capability, which reduces it. TB5, the doubt brake, rides the
+  team's own flywheel: realized value creates exposure, unresolved loss creates doubt, and doubt
+  withdraws participation.
+- Three feeders into unresolved loss: reversals and clawbacks (delayed), unactivated offers, and
+  evidence split across five parties.
+- A strip along the bottom shows the five stages with the one position the Offer Service's member
+  states add: saved or activated.
+- The contract is back to the team's agreed model. The nodes, relationships and view added for
+  the grid version were removed; the extension holds its own structure in the generator.

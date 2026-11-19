@@ -153,16 +153,3 @@
   #loyalty-map-v2 .ev-sources li { grid-template-columns: 1fr; gap: .15rem; }
 }
 
-/* Value leaving the forward chain: a posted award reversed, and the two
-   losses that enter the recovery path. Each pair is unique to this view. */
-#loyalty-map-v2 #lm2-lines path[data-from="auth-issuer"][data-to="available-value"],
-#loyalty-map-v2 #lm2-lines path[data-from="available-value"][data-to="recovery"],
-#loyalty-map-v2 #lm2-lines path[data-from="realized-value"][data-to="recovery"] {
-  stroke: var(--destructive);
-  stroke-dasharray: 7 4;
-  stroke-width: 1.8px;
-}
-#loyalty-map-v2 .lm2-key-line-reversal {
-  border-top-style: dashed !important;
-  border-top-color: var(--destructive) !important;
-}

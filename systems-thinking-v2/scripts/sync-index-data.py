@@ -111,12 +111,6 @@ layouts = {
                "member-value": "value", "engagement": "futureengagement", "intersection": "intersection", "net-value": "net"},
     "external": {"regulation": "regulation", "technology-landscape": "technology", "expectations": "expectations",
                  "competitors": "competitors", "neither": "neither"},
-    "updated": {"opportunity": "opportunity", "potential-value": "potential", "offer-claim": "claim",
-                "earned-value": "earned", "available-value": "available", "realized-value": "realized",
-                "auth-sponsor": "sponsor", "auth-attribution": "attribution", "auth-merchant": "merchant",
-                "auth-issuer": "issuer", "auth-supplier": "supplier",
-                "data": "data", "channels": "channels", "service": "service", "friction": "friction",
-                "points-balance": "balance", "engagement": "engagement", "recovery": "recovery"},
 }
 
 by_id = {r["id"]: r for r in contract["relationships"]}

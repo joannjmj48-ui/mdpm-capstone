@@ -18,8 +18,7 @@
     "Population": "boxes", "Process / behaviour": "boxes", "Value state": "boxes",
     "Partner": "boxes", "Capability": "boxes", "Future opportunity": "boxes",
     "Outside boundary": "boxes", "Intended outcome": "boxes",
-    "Structural flow": "lines", "Future pathway": "lines", "Inferred relationship": "lines",
-    "Value leaving the chain": "lines"
+    "Structural flow": "lines", "Future pathway": "lines", "Inferred relationship": "lines"
   };
   var CLASSIFIERS = ["Supported", "Group convergence", "Hypothesis"];
 
