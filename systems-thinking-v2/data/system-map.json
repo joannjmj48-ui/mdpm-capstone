@@ -439,7 +439,7 @@
         "current",
         "future"
       ],
-      "definition": "The value members actually obtain and can use — the amount of worthwhile value that makes it all the way through to them. This is the system's main variable: the thing the whole map is organised around and the measure the team agreed to be judged on.",
+      "definition": "The value members actually obtain and can use — the amount of worthwhile value that makes it all the way through to them. This is the system's main variable: the thing the whole map is organised around and the measure the team agreed to be judged on. Agreed wording in the November client brief: worthwhile value that the member successfully receives and can use.",
       "roleInSystem": "This is the system main variable. It connects relevance, qualification, posting, access, use, fulfilment and perceived worth without treating activity alone as success.",
       "whyItMatters": "The system exists to improve the amount, relevance, reliability, accessibility, usefulness and appropriate speed with which loyalty opportunities become realized member value across its relationship pathways.",
       "known": "The analytical model distinguishes Opportunity, Potential Value, Earned Value, Available Value and Realized Value. Empirical transition rates and drop-offs remain unknown.",
@@ -2109,7 +2109,7 @@
     {
       "id": "potential-value",
       "label": "Potential Value",
-      "definition": "The rewards that reached a particular member, and which that member is weighing up. Two things have happened: the catalogue was filtered to them, and they are working out what it is worth to them — is it attainable, is it worth the effort, is it what they actually want. It is called potential value because this is where value first exists in the member's eyes, as something they could have. Nothing is theirs yet. At the very front of the chain the person weighing it may not be a member yet: a join-and-get-750-points offer is weighed by a prospect, who becomes a member by acting on it.",
+      "definition": "The rewards that reached a particular member, and which that member is weighing up. Two things have happened: the catalogue was filtered to them, and they are working out what it is worth to them — is it attainable, is it worth the effort, is it what they actually want. It is called potential value because this is where value first exists in the member's eyes, as something they could have. Nothing is theirs yet. At the very front of the chain the person weighing it may not be a member yet: a join-and-get-750-points offer is weighed by a prospect, who becomes a member by acting on it. The November client brief calls this worthwhile value: an opportunity meaningful enough to influence a member's choice. That is the same thing this stage describes, and it is the term the team now uses with BMO.",
       "entryCondition": "The opportunity is surfaced to this member as relevant and eligible, and the member begins weighing it.",
       "exitCondition": "The member decides to act and completes the qualifying requirement.",
       "order": 2,
@@ -2121,7 +2121,8 @@
         "SRC-CONTRACT-001"
       ],
       "plainLanguage": "The rewards that reached this person, and they're working out whether it's worth it. At the very front of the chain that person may still be a prospect.",
-      "region": "The five value states"
+      "region": "The five value states",
+      "alsoCalled": "Worthwhile value"
     },
     {
       "id": "earned-value",
@@ -2143,7 +2144,7 @@
     {
       "id": "available-value",
       "label": "Available Value",
-      "definition": "Earned Value value that has been posted, released, activated or otherwise made accessible for use.",
+      "definition": "Earned Value value that has been posted, released, activated or otherwise made accessible for use. Note the collision with the client brief: the problem statement there runs available value to realized value, where available value means everything the programme offers before any of it reaches a member. On this map that is Opportunity, the first stage. Available Value here is the fourth stage: posted, released and spendable.",
       "entryCondition": "The member can operationally access or use the earned entitlement.",
       "exitCondition": "The member successfully uses or converts the value.",
       "order": 4,
@@ -2160,7 +2161,7 @@
     {
       "id": "realized-value",
       "label": "Realized Value",
-      "definition": "Value the member has successfully used or converted into a worthwhile outcome that the system can measure. Reworded on 12 September to make the outcome measurable rather than only perceived, so the product can show a member that their value has been measured.",
+      "definition": "Value the member has successfully used or converted into a worthwhile outcome that the system can measure. Reworded on 12 September to make the outcome measurable rather than only perceived, so the product can show a member that their value has been measured. The November client brief ties realization back to the member's own judgement: realized value is the benefit that made an opportunity worthwhile to the member, successfully received and available to use. Whether value was realized is therefore measured against what that member valued in the first place, not against the programme's view of worth.",
       "entryCondition": "Successful use or conversion produces a recognized outcome.",
       "exitCondition": "The value episode is evaluated and may influence subsequent participation.",
       "order": 5,
@@ -4692,12 +4693,26 @@
           "Trust and engagement",
           "Member trust"
         ]
+      },
+      {
+        "use": "Worthwhile value",
+        "insteadOf": [
+          "Potential value"
+        ],
+        "plainLanguage": "An opportunity meaningful enough to influence a member's choice.",
+        "note": "Defined in the November 2026 client and faculty briefs and used with BMO. It names the same position as this map's Potential Value stage. The map keeps Potential Value as the stage label so the five stages read as one sequence; worthwhile value is recorded here as the agreed external term."
       }
     ],
     "openCollision": {
       "issue": "Resolved 12 September.",
       "resolution": "Two things carry the name realized value, and that is deliberate. The fifth stage, Realized Value, is the moment a single reward gets used and its worth becomes observable. The main variable, Realized value, is the running total of everything that has reached that stage. The stage is an event; the main variable is what accumulates from it. Every stage keeps the word Value so the five names read consistently.",
       "needsDecision": null
+    },
+    "clientBriefCollision": {
+      "raised": "2026-11-19, from the November client and faculty briefs",
+      "issue": "The briefs run the problem statement as available value to realized value, where available value means the whole of what the programme offers. On this map, Available Value is the fourth stage — posted and spendable — and the whole of what the programme offers is Opportunity, the first stage.",
+      "effect": "A reader who moves from the deck to the map will place the losses at the wrong end of the chain.",
+      "needsDecision": "Either the deck adopts Opportunity for the catalogue, or the map renames its fourth stage. The map cannot quietly carry both meanings; this is the same failure as the September realized value collision."
     }
   },
   "stakeholderBinding": {
