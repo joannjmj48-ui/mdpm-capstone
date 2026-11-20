@@ -85,3 +85,18 @@ palette from her own Blue Rewards HTML map.
   states add: saved or activated.
 - The contract is back to the team's agreed model. The nodes, relationships and view added for
   the grid version were removed; the extension holds its own structure in the generator.
+
+## What our product would do to the system (tab 2, second panel)
+
+Added in response to peer feedback asking for sustained systems thinking applied to proposed
+changes rather than only to the current system.
+
+- Runs the four capabilities from the November product vision, plus Blue, back through the map.
+  For each: what it changes about member behaviour, what it changes about what the surrounding
+  parties are rewarded for, who newly has to coordinate, what enables it, what could undermine
+  it, what signal to watch, and the question M3 feasibility has to settle.
+- Three cross-cutting risks: the engine's return leg is unconfirmed, succeeding costs the
+  programme breakage revenue, and visibility raises support load before it lowers it.
+- A sequencing conclusion: progression and recovery have to land before discovery, because
+  ranking only works if members believe what they are shown will arrive.
+- No new tab. Tab 2 now carries two panels.
