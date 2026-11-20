@@ -49,7 +49,7 @@ js = """/* GENERATED FROM data/stakeholders.json by scripts/build-stakeholders.p
   var button = document.createElement("button");
   button.type = "button";
   button.className = "btn";
-  button.textContent = "4. Stakeholders";
+  button.textContent = "5. Stakeholders";
   button.setAttribute("data-sh-view", "stakeholders");
   button.setAttribute("aria-pressed", "false");
   var boundary = controls.querySelector('[data-map-view="external"]');

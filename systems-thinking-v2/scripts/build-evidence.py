@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build evidence.js from data/evidence-map.json.
 
-Tab 8, Evidence and Requirements. Additive: appends its own section and
+Tab 9, Evidence and Requirements. Additive: appends its own section and
 button to the existing map shell without touching the map renderer.
 Never hand-edit evidence.js.
 """
@@ -129,7 +129,7 @@ body = (
     '<div class="ev-panel" data-ev-body="reqs" hidden>'
     '<p class="ev-lead">All 42 functional requirements, grouped by the value stage they act on. '
     "Grouping them this way is what exposed the gap: one whole cluster of six had nowhere on the September map to act, "
-    "which is why the Updated Systems Map now draws a recovery path.</p>"
+    "which is why the Extension to the Map now draws a recovery path.</p>"
     '<div class="ev-grid">' + "".join(cluster_card(c) for c in D["requirementClusters"]) + "</div>"
     "</div>"
 
@@ -171,7 +171,7 @@ js = (
     '  var button = document.createElement("button");\n'
     '  button.type = "button";\n'
     '  button.className = "btn";\n'
-    '  button.textContent = "8. Evidence and Requirements";\n'
+    '  button.textContent = "9. Evidence and Requirements";\n'
     '  button.setAttribute("data-ev-view", "evidence");\n'
     '  button.setAttribute("aria-pressed", "false");\n'
     "  controls.appendChild(button);\n\n"
