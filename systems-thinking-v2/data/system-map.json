@@ -85,6 +85,16 @@
       "claimBasis": "evidence",
       "isEmpiricalEvidence": true,
       "detail": "Supplied by the client. Calls offered, answered and abandoned, abandon rate, service level, average handle time and speed of answer, plus the top five contact drivers by quarter. Answered plus abandoned equals offered in every quarter, so the figures are internally consistent. The five drivers cover 39 per cent of Q2, 48 per cent of Q3 and 59 per cent of Q4, so a large share of contacts sits in categories not supplied. Second source of empirical evidence in this map, and the first operational one."
+    },
+    {
+      "id": "SRC-PIPELINE-2026",
+      "type": "team-design",
+      "title": "Blue Rewards data pipeline (MDPM 830)",
+      "version": "1.0",
+      "date": "2026-11-08",
+      "claimBasis": "group-convergence",
+      "isEmpiricalEvidence": false,
+      "detail": "Generate, Collect, Keep and Shape, Store, Use, with an owner per stage. Carries a recorded-activity chain, three pilot measures and a return loop in which the app's own records feed evaluation. A design, not evidence — but it is the proposed remedy for the measurement gap this map records."
     }
   ],
   "boundary": {
@@ -119,7 +129,49 @@
       "Conversion is optional, relevant and need-led.",
       "Member-Client status does not prove realized or incremental value.",
       "Partner and organizational outcomes remain distinct from member realized value."
-    ]
+    ],
+    "pipelineDecisions": {
+      "source": "SRC-PIPELINE-2026",
+      "recorded": "2026-11-08",
+      "note": "Scope calls made in the data pipeline work. Deferred means the team intends it but a precondition is unmet; conditional means it proceeds only with a named permission; excluded means it is out.",
+      "decisions": [
+        {
+          "item": "Direct access to account records at other banks",
+          "call": "Deferred",
+          "reason": "Until members have an approved way to share it and withdraw access."
+        },
+        {
+          "item": "Personalized earning previews before joining",
+          "call": "Deferred",
+          "reason": "Until non-member data collection and permission arrangements exist."
+        },
+        {
+          "item": "Purchase history used for recommendations",
+          "call": "Conditional",
+          "reason": "Requires separate member permission under the proposed design."
+        },
+        {
+          "item": "Retailer prices without an identifiable basis",
+          "call": "Excluded",
+          "reason": "Only identified, dated amounts can support a clearly labelled estimate."
+        },
+        {
+          "item": "Other-bank login credentials",
+          "call": "Excluded",
+          "reason": "The proposed features do not require another bank's password."
+        },
+        {
+          "item": "Raw conversations in business reports",
+          "call": "Excluded",
+          "reason": "Reports use confirmed fields and aggregated results."
+        },
+        {
+          "item": "Cost and banking-outcome analysis",
+          "call": "Conditional",
+          "reason": "Requires access to the necessary BMO records and permission to connect them."
+        }
+      ]
+    }
   },
   "nodes": [
     {
@@ -2116,7 +2168,7 @@
     {
       "id": "opportunity",
       "label": "Opportunity",
-      "definition": "Every reward, benefit, offer and earning possibility the programme makes available — the whole catalogue, before any member filter is applied. It is programme-level, not member-level: an opportunity exists whether or not any particular member ever sees it. Nothing here is anyone's.",
+      "definition": "Every reward, benefit, offer and earning possibility the programme makes available — the whole catalogue, before any member filter is applied. It is programme-level, not member-level: an opportunity exists whether or not any particular member ever sees it. Nothing here is anyone's. Pilot measure proposed in the MDPM 830 data pipeline: Opportunity Capture Rate — Opportunities that members begin pursuing ÷ worthwhile, eligible opportunities available. Measures the movement out of Opportunity: of everything that was worth surfacing, how much did a member start to act on.",
       "entryCondition": "A partner, product or programme proposition exists and is live.",
       "exitCondition": "The system surfaces it to a particular member as relevant and eligible.",
       "order": 1,
@@ -2128,7 +2180,13 @@
         "SRC-CONTRACT-001"
       ],
       "plainLanguage": "Every reward the programme offers. Not yet pointed at anyone — and whoever eventually sees it may be a prospect, not a member.",
-      "region": "The five value states"
+      "region": "The five value states",
+      "pilotMeasure": {
+        "name": "Opportunity Capture Rate",
+        "formula": "Opportunities that members begin pursuing ÷ worthwhile, eligible opportunities available.",
+        "reading": "Measures the movement out of Opportunity: of everything that was worth surfacing, how much did a member start to act on.",
+        "source": "SRC-PIPELINE-2026"
+      }
     },
     {
       "id": "potential-value",
@@ -2151,7 +2209,7 @@
     {
       "id": "earned-value",
       "label": "Earned Value",
-      "definition": "Value the member has decided to act on and acted to secure — they completed the qualifying purchase, activity or requirement. The decision has been made and carried out, but the value may not have posted yet. Enrolment counts: signing up is itself a qualifying behaviour, which is how a sign-up grant of roughly 750 points is earned rather than simply appearing.",
+      "definition": "Value the member has decided to act on and acted to secure — they completed the qualifying purchase, activity or requirement. The decision has been made and carried out, but the value may not have posted yet. Enrolment counts: signing up is itself a qualifying behaviour, which is how a sign-up grant of roughly 750 points is earned rather than simply appearing. Pilot measure proposed in the MDPM 830 data pipeline: Earned Value Realization Rate — Earned value successfully received ÷ earned value expected and due. Measures Earned Value through to receipt: of what the member qualified for, how much actually arrived. This is the ratio the recovery work exists to raise.",
       "entryCondition": "The member acts on the opportunity and satisfies the applicable qualification rule.",
       "exitCondition": "The earned value posts into the member's balance and becomes usable.",
       "order": 3,
@@ -2163,7 +2221,13 @@
         "SRC-CONTRACT-001"
       ],
       "region": "The five value states",
-      "plainLanguage": "The member did the thing — including, at the very start, signing up. It's theirs, even if it hasn't landed yet."
+      "plainLanguage": "The member did the thing — including, at the very start, signing up. It's theirs, even if it hasn't landed yet.",
+      "pilotMeasure": {
+        "name": "Earned Value Realization Rate",
+        "formula": "Earned value successfully received ÷ earned value expected and due.",
+        "reading": "Measures Earned Value through to receipt: of what the member qualified for, how much actually arrived. This is the ratio the recovery work exists to raise.",
+        "source": "SRC-PIPELINE-2026"
+      }
     },
     {
       "id": "available-value",
@@ -2185,7 +2249,7 @@
     {
       "id": "realized-value",
       "label": "Realized Value",
-      "definition": "Value the member has successfully used or converted into a worthwhile outcome that the system can measure. Reworded on 12 September to make the outcome measurable rather than only perceived, so the product can show a member that their value has been measured. The November client brief ties realization back to the member's own judgement: realized value is the benefit that made an opportunity worthwhile to the member, successfully received and available to use. Whether value was realized is therefore measured against what that member valued in the first place, not against the programme's view of worth.",
+      "definition": "Value the member has successfully used or converted into a worthwhile outcome that the system can measure. Reworded on 12 September to make the outcome measurable rather than only perceived, so the product can show a member that their value has been measured. The November client brief ties realization back to the member's own judgement: realized value is the benefit that made an opportunity worthwhile to the member, successfully received and available to use. Whether value was realized is therefore measured against what that member valued in the first place, not against the programme's view of worth. Pilot measure proposed in the MDPM 830 data pipeline: End-to-End Realization Rate — Opportunities ending in successfully received and used value ÷ worthwhile, eligible opportunities available. Measures the whole chain at once, from catalogue to use. The main variable, expressed as a rate.",
       "entryCondition": "Successful use or conversion produces a recognized outcome.",
       "exitCondition": "The value episode is evaluated and may influence subsequent participation.",
       "order": 5,
@@ -2197,7 +2261,13 @@
         "SRC-CONTRACT-001"
       ],
       "plainLanguage": "The member used it, and we can show what it was worth.",
-      "region": "The five value states"
+      "region": "The five value states",
+      "pilotMeasure": {
+        "name": "End-to-End Realization Rate",
+        "formula": "Opportunities ending in successfully received and used value ÷ worthwhile, eligible opportunities available.",
+        "reading": "Measures the whole chain at once, from catalogue to use. The main variable, expressed as a rate.",
+        "source": "SRC-PIPELINE-2026"
+      }
     }
   ],
   "valueTransitions": [
@@ -2773,7 +2843,8 @@
       "claimBasis": "legacy-evidence-synthesis",
       "decisionStatus": "unresolved",
       "evidenceRefs": [
-        "SRC-ASSUMPTIONS-2026"
+        "SRC-ASSUMPTIONS-2026",
+        "SRC-PIPELINE-2026"
       ],
       "valueTransitionIds": [
         "VT05"
@@ -2782,7 +2853,7 @@
       "flowLens": "information",
       "polarity": "+",
       "delay": true,
-      "evidenceNote": "Same gap as TRN-R16. Participation signals exist, but nothing joins a recommendation to what the member did afterwards across routes (D23, D24, K2). K4 adds that incremental activity cannot be separated from activity that would have happened anyway, so even where the signal exists its meaning is unresolved."
+      "evidenceNote": "Same gap as TRN-R16. Participation signals exist, but nothing joins a recommendation to what the member did afterwards across routes (D23, D24, K2). K4 adds that incremental activity cannot be separated from activity that would have happened anyway, so even where the signal exists its meaning is unresolved. There is now a designed remedy. The MDPM 830 data pipeline proposes exactly the chain the register says is missing — option shown, selected, action started, purchase or redemption confirmed, points or reward received, intended use confirmed — and a return loop in which the app records the options it displayed, their order, the explanations given, the model version and what the member then did. This arrow is Contested because the chain does not exist today, not because the team has no plan for it."
     },
     {
       "id": "CUR-R15",
@@ -4205,7 +4276,8 @@
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
       "evidenceRefs": [
-        "SRC-ASSUMPTIONS-2026"
+        "SRC-ASSUMPTIONS-2026",
+        "SRC-PIPELINE-2026"
       ],
       "valueTransitionIds": [
         "VT05"
@@ -4214,7 +4286,7 @@
       "flowLens": "information",
       "polarity": "+",
       "delay": true,
-      "evidenceNote": "The assumption register says this chain does not exist end to end today. D23: no single record links a recommendation exposure to later activation, qualification, posting and redemption. D24: a stable exposure identifier could probably be created, but not without changes to some systems. K2: the stages are not consistently reported as one funnel for every earning route. So this arrow is not merely unproven — it is currently unmeasurable, which is a different and more actionable problem."
+      "evidenceNote": "The assumption register says this chain does not exist end to end today. D23: no single record links a recommendation exposure to later activation, qualification, posting and redemption. D24: a stable exposure identifier could probably be created, but not without changes to some systems. K2: the stages are not consistently reported as one funnel for every earning route. So this arrow is not merely unproven — it is currently unmeasurable, which is a different and more actionable problem. There is now a designed remedy. The MDPM 830 data pipeline proposes exactly the chain the register says is missing — option shown, selected, action started, purchase or redemption confirmed, points or reward received, intended use confirmed — and a return loop in which the app records the options it displayed, their order, the explanations given, the model version and what the member then did. This arrow is Contested because the chain does not exist today, not because the team has no plan for it."
     }
   ],
   "overlays": [

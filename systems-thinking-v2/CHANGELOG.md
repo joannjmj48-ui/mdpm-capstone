@@ -151,3 +151,19 @@ Second empirical source in the map and the first operational one.
   points at the investigation rather than the queue — consistent with assumption D28.
 - Gives the "visibility raises support load" prediction a baseline: roughly 6,600 reward
   contacts and 1,550 agent-hours in Q4.
+
+## Data pipeline folded in (November 2026)
+
+`SRC-PIPELINE-2026`. The pipeline's recorded-activity chain is the remedy for the measurement
+gap the assumption register exposed, so the two now reference each other.
+
+- The three pilot measures are attached to the value stages they actually measure: Opportunity
+  Capture Rate on the movement out of Opportunity, Earned Value Realization Rate on Earned Value
+  through to receipt, End-to-End Realization Rate on the whole chain. The stages and the
+  measures are the same structure.
+- Engagement to decisioning stays Contested, but the note now says why: the chain does not exist
+  today, and the pipeline is the designed fix, not an absence of a plan.
+- The pipeline's seven boundary decisions (deferred, conditional, excluded) are recorded in the
+  contract's boundary block.
+- The PRD figure gains a measures row and the D27 line in the scope panel. Canvas is now
+  1700 x 1215.

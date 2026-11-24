@@ -7,7 +7,7 @@ Joann's MMIE 884 palette and type.
 """
 import pathlib, html
 
-W, H = 1700, 1180
+W, H = 1700, 1215
 INK, CANV, NAVY, GOLD = "#2b2b33", "#fbfaf6", "#10123f", "#C79A3B"
 MUTE, MEMB, BMO, PART, CTX = "#8a8a92", "#185FA5", "#534AB7", "#0F6E56", "#854F0B"
 SANS, SERIF = "Helvetica,Arial,sans-serif", "Georgia,serif"
@@ -126,8 +126,20 @@ for i, t in enumerate(JOURNEY):
     if i < len(JOURNEY) - 1:
         a(f'<path d="M{x},955 L{x+12},955" stroke="{MUTE}" stroke-width="1.6" marker-end="url(#ar_{MUTE[1:]})"/>')
         x += 24
-a(f'<text x="36" y="1004" font-family="{SANS}" font-size="12" fill="{MUTE}">Underneath, value moves through the five stages on the systems map: Opportunity, Potential Value, Earned Value, Available Value, Realized Value.</text>')
-a(f'<text x="36" y="1024" font-family="{SANS}" font-size="12" fill="{MUTE}">The product does not move value. It changes whether the member can see, judge, follow and recover it.</text>')
+a(f'<text x="36" y="1004" font-family="{SANS}" font-size="12" fill="{MUTE}">Underneath, value moves through the five stages on the systems map. The product does not move value; it changes whether the member can see, judge, follow and recover it.</text>')
+a(f'<text x="36" y="1042" font-family="{SERIF}" font-size="14" fill="{NAVY}" font-weight="700">How the stages would be measured</text>')
+MEAS = [("Opportunity Capture Rate", "begun \u00f7 worthwhile and eligible", "Opportunity out"),
+        ("Earned Value Realization Rate", "received \u00f7 expected and due", "Earned through to receipt"),
+        ("End-to-End Realization Rate", "received and used \u00f7 available", "The whole chain")]
+mx = 36
+for nm, f, where in MEAS:
+    w = 296
+    a(f'<rect x="{mx}" y="1056" width="{w}" height="58" rx="10" fill="#ffffff" stroke="{PART}" stroke-width="1.5"/>')
+    a(f'<text x="{mx+14}" y="1076" font-family="{SANS}" font-size="12" fill="{PART}" font-weight="700">{e(nm)}</text>')
+    a(f'<text x="{mx+14}" y="1093" font-family="{SANS}" font-size="11" fill="{INK}">{e(f)}</text>')
+    a(f'<text x="{mx+14}" y="1107" font-family="{SANS}" font-size="10.5" fill="{MUTE}">{e(where)}</text>')
+    mx += w + 10
+a(f'<text x="36" y="1136" font-family="{SANS}" font-size="11" fill="{MUTE}">Pilot measures from the MDPM 830 data pipeline. They sit on the stage transitions, which is how the data model and the systems map describe one thing.</text>')
 
 a(f'<rect x="980" y="900" width="684" height="212" rx="14" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1.6"/>')
 a(f'<text x="1004" y="930" font-family="{SERIF}" font-size="13" fill="#A32D2D" font-weight="700" letter-spacing="2">WHAT THE PRODUCT DOES NOT REPLACE</text>')
@@ -138,7 +150,7 @@ for i, t in enumerate(["Existing earning methods: partner scans, linked-card off
                        "Partner issuance, redemption and reversal: those services need partner credentials, not a member session."]):
     a(f'<text x="1004" y="{958+i*30}" font-family="{SANS}" font-size="12" fill="#4A1B0C">&#8226;  {e(t)}</text>')
 
-a(f'<text x="36" y="{H-22}" font-family="{SANS}" font-size="11" fill="{MUTE}">Team Zig · Blue Rewards capstone · systems map figure for the Product Requirements Document, section 3. Full interactive map: joannjmj48-ui.github.io/mdpm-capstone/systems-thinking-v2/</text>')
+a(f'<text x="36" y="{H-14}" font-family="{SANS}" font-size="11" fill="{MUTE}">Team Zig · Blue Rewards capstone · systems map figure for the Product Requirements Document, section 3. Full interactive map: joannjmj48-ui.github.io/mdpm-capstone/systems-thinking-v2/</text>')
 
 markers = "".join(
     f'<marker id="ar_{c[1:]}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">'
