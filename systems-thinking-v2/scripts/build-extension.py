@@ -134,6 +134,16 @@ CAPS = [
   "watch":"Resolution rate and time by responsible party, and the share of members who file a second inquiry about the same loss.",
   "m3":"Who owns the case when the fault sits with a partner, and what service expectation can be agreed with parties outside BMO?"},
 
+ {"name":"Getting in at all", "need":"Upstream of all four", "step":"Before Explore",
+  "acts":"A gate in front of Opportunity. Not currently drawn on the map as a condition of its own.",
+  "intended":"Nothing \u2014 this is not one of our capabilities. It is what the operational data says members actually call about.",
+  "behaviour":"Of answered calls in Q4 2026, 31.3 per cent were email and password inquiries and 7.0 per cent website navigation: 38.3 per cent on access and getting around. Reward inquiries and eGift cards together were 14.6 per cent. Email and password contacts are 2.5 times their Q2 level, navigation 4.0 times.",
+  "incentives":"Every capability in this product sits behind a login. A member who cannot get in generates a support contact and realizes nothing, and none of our four capabilities can influence that.",
+  "relationships":"Identity and authentication own the largest and fastest growing driver, and are not currently a stakeholder in this work.",
+  "enables":"Nothing in our scope. Assumptions D25 and D26 name the mechanism: separate authenticated sessions across app, web and partner surfaces, and handoffs that lose the originating offer or task.",
+  "undermines":"Scoping only the reward journey addresses roughly fifteen per cent of what members contact support about while the other thirty-eight per cent grows. That is a materiality problem for the business case and the first thing a sceptical reviewer will raise.",
+  "watch":"Whether email, password and navigation contacts keep rising, and what share of members never reach the reward journey at all.",
+  "m3":"Does access friction gate the value this product can realize, and should the scope say so explicitly rather than leave it unaddressed?"},
  {"name":"Conversational assistance — Blue", "need":"Across all four", "step":"Every step",
   "acts":"The information layer, at every stage",
   "intended":"Members explain priorities in their own words and get help completing supported tasks.",
@@ -149,10 +159,12 @@ CAPS = [
 CROSS = [
  {"t":"The engine's return leg is unconfirmed",
   "p":"Every capability here assumes realized value changes what a member does next, and nothing can currently prove it. Two participants said progress tracking would not influence their decisions. Worse, the assumption register says no single record links a recommendation to later activation, qualification, posting and redemption (D23), the funnel is not reported end to end for every route (K2), and incremental activity cannot be separated from activity that would have happened anyway (K4). The return leg is not unproven; it is unmeasurable. Instrumenting it is cheaper than building on it."},
+ {"t":"Members already give up, and nobody counts it",
+  "p":"Across Q2 to Q4 2026, 92,706 contacts were abandoned before anyone answered \u2014 22,006 in Q4, still 22 per cent of calls offered. Those members had a problem and stopped trying. They leave no case record, so the loss sits outside every measure the programme has. This is the doubt brake, already running at a scale the team can quote."},
  {"t":"Succeeding costs the programme money",
   "p":"Recovery restores points that would otherwise expire unclaimed, and planning defers redemptions that would otherwise lapse. Both reduce breakage. The business case has to carry that as a cost of the product working, not treat it as an edge case."},
  {"t":"Visibility raises support load before it lowers it",
-  "p":"Surfacing overdue value converts silent loss into filed cases. If the team does not forecast that curve, the first quarter of data will read as the product creating problems rather than revealing them."},
+  "p":"Surfacing overdue value converts silent loss into filed cases. There is now a baseline to forecast against: in Q4 2026 reward inquiries were 8.7 per cent of answered calls, about 6,600 contacts and 1,550 agent-hours at a fourteen-minute handle time. If the product works, that number rises before it falls. Without the forecast, the first quarter of data will read as the product creating problems rather than revealing them."},
 ]
 
 SEQ = ("The team already agreed a sequence in September: make it true, make it safe, make it relevant, make it wider. "
@@ -320,7 +332,7 @@ body = (
  "what the parties around them are rewarded for, who newly has to coordinate, and what could undermine the value it intends "
  "to create. These are questions M3 feasibility has to answer, not only whether the thing can be built.</p>"
  '<div class="xt-caps">' + "".join(cap_card(c) for c in CAPS) + "</div>"
- '<h4 class="xt-crosshead">Three things that could undermine the intended value, whatever we build</h4>'
+ '<h4 class="xt-crosshead">What could undermine the intended value, whatever we build</h4>'
  '<div class="xt-cross">' + "".join(
    '<article class="xt-note is-warn"><h4>' + esc(x["t"]) + "</h4><p>" + esc(x["p"]) + "</p></article>" for x in CROSS)
  + "</div>"

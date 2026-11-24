@@ -75,6 +75,16 @@
       "claimBasis": "analytical-inference",
       "isEmpiricalEvidence": false,
       "detail": "Eighty working assumptions across roadmap and funding, current performance measures, product ownership and AI governance, capability approvals, data and record linkage, architecture and operational workflows, AI implementation and evaluation, and operating model. Each carries a focused follow-up for BMO. Assumptions, not findings — but several name mechanisms the map was missing."
+    },
+    {
+      "id": "SRC-OPS-2026",
+      "type": "client-operational-data",
+      "title": "Blue Rewards contact centre volumes and drivers, Q2 to Q4 2026",
+      "version": "1.0",
+      "date": "2026-11-24",
+      "claimBasis": "evidence",
+      "isEmpiricalEvidence": true,
+      "detail": "Supplied by the client. Calls offered, answered and abandoned, abandon rate, service level, average handle time and speed of answer, plus the top five contact drivers by quarter. Answered plus abandoned equals offered in every quarter, so the figures are internally consistent. The five drivers cover 39 per cent of Q2, 48 per cent of Q3 and 59 per cent of Q4, so a large share of contacts sits in categories not supplied. Second source of empirical evidence in this map, and the first operational one."
     }
   ],
   "boundary": {
@@ -966,7 +976,9 @@
         "DVO-VT05",
         "DVO-CROSS-REALIZATION"
       ],
-      "evidenceRefs": [],
+      "evidenceRefs": [
+        "SRC-OPS-2026"
+      ],
       "claimBasis": "legacy-evidence-synthesis",
       "decisionStatus": "unresolved",
       "traceabilityStatus": "source-link-pending",
@@ -997,7 +1009,8 @@
       "stakeholderRefs": [
         1,
         3
-      ]
+      ],
+      "evidenceNote": "Operations is improving sharply: speed of answer fell from 17.1 to 8.6 minutes, abandon rate from 36 to 22 per cent, service level rose from 46 to 64 per cent across Q2 to Q4 2026. Handle time barely moved, which points at the investigation itself rather than at queueing. Fraud contacts roughly halved over the same period, so a driver can be moved substantially."
     },
     {
       "id": "friction",
@@ -1056,6 +1069,7 @@
         "DVO-VT03"
       ],
       "evidenceRefs": [
+        "SRC-OPS-2026",
         "SRC-UT-2026-10"
       ],
       "claimBasis": "evidence",
@@ -1089,7 +1103,7 @@
         4,
         1
       ],
-      "evidenceNote": "Tested October 2026. Fourteen issues spread across five stages, with back navigation failing independently of any single stage. Friction is confirmed as a condition on the whole progression rather than a property of one step."
+      "evidenceNote": "Tested October 2026. Fourteen issues spread across five stages, with back navigation failing independently of any single stage. Friction is confirmed as a condition on the whole progression rather than a property of one step. The contact mix locates friction further upstream than this map assumed. Of answered calls in Q4, email and password inquiries were 31.3 per cent and website navigation 7.0 per cent — together 38.3 per cent, and the two fastest growing drivers (2.5 and 4.0 times since Q2). Reward inquiries and eGift cards together were 14.6 per cent. Access and navigation, not rewards, dominate what members call about. Assumptions D25 and D26 name the mechanism: separate authenticated sessions across surfaces, and handoffs that lose the originating offer or task."
     },
     {
       "id": "identity",
@@ -4126,7 +4140,8 @@
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
       "evidenceRefs": [
-        "SRC-ASSUMPTIONS-2026"
+        "SRC-ASSUMPTIONS-2026",
+        "SRC-OPS-2026"
       ],
       "valueTransitionIds": [
         "VT04"
@@ -4135,7 +4150,7 @@
       "flowLens": "condition",
       "polarity": "-",
       "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins.",
-      "evidenceNote": "D16: returns preserve the original transaction reference only for deeply integrated partners, so a reversal cannot always be matched to the award it reverses. D28: a missing-points investigation currently requires a support employee to assemble the offer, activation, purchase, qualification and issuance history from more than one system by hand."
+      "evidenceNote": "D16: returns preserve the original transaction reference only for deeply integrated partners, so a reversal cannot always be matched to the award it reverses. D28: a missing-points investigation currently requires a support employee to assemble the offer, activation, purchase, qualification and issuance history from more than one system by hand. Average handle time is 839 seconds in Q4, about fourteen minutes per answered call, down only from 951 seconds in Q2. That is consistent with assumption D28: a support employee assembling offer, activation, purchase, qualification and issuance history from more than one system by hand."
     },
     {
       "id": "TRN-R15",
@@ -4158,6 +4173,7 @@
       "decisionStatus": "active-direction",
       "evidenceRefs": [
         "SRC-ASSUMPTIONS-2026",
+        "SRC-OPS-2026",
         "SRC-UT-2026-10"
       ],
       "valueTransitionIds": [
@@ -4167,7 +4183,7 @@
       "flowLens": "participation",
       "polarity": "+",
       "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins.",
-      "evidenceNote": "Tested October 2026 and not confirmed. Five of six contributors drew this return leg independently. Two participants said progress tracking would not change their decisions, and one questioned why the feature existed. Convergence is not evidence; this is now the weakest link in the engine. Beyond the October testing, the register explains why this is hard to settle: K3 says a targeted offer is currently judged on engagement or activation rather than confirmed value, so the programme's own measures would not detect this link working or failing."
+      "evidenceNote": "Tested October 2026 and not confirmed. Five of six contributors drew this return leg independently. Two participants said progress tracking would not change their decisions, and one questioned why the feature existed. Convergence is not evidence; this is now the weakest link in the engine. Beyond the October testing, the register explains why this is hard to settle: K3 says a targeted offer is currently judged on engagement or activation rather than confirmed value, so the programme's own measures would not detect this link working or failing. Operational data gives this a magnitude. Across Q2 to Q4 2026, 92,706 contacts were abandoned before being answered — 22,006 in Q4 alone, still 22 per cent of calls offered. An abandoned contact is a member with an unresolved problem who stopped trying. Those members leave no case record, so the loss accumulates where nothing counts it."
     },
     {
       "id": "TRN-R16",

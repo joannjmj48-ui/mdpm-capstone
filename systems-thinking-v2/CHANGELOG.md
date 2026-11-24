@@ -133,3 +133,21 @@ confirmation. Assumptions, not findings, but several name mechanisms the map was
   moves to Supported.
 - **D16 and D28** describe current-state recovery: reversals match only for deeply integrated
   partners, and support assembles the history by hand across systems.
+
+## Contact centre data from the client (November 2026)
+
+`SRC-OPS-2026`: calls offered, answered and abandoned, service levels, handle time and the top
+five contact drivers for Q2 to Q4 2026. Answered plus abandoned equals offered in every quarter.
+Second empirical source in the map and the first operational one.
+
+- **92,706 contacts abandoned across three quarters**, 22,006 in Q4 and still 22 per cent of
+  calls offered. Members with a problem who stopped trying, leaving no case record. The doubt
+  brake, quantified.
+- **Access, not rewards, dominates the contact mix.** Email and password 31.3 per cent of Q4
+  answered calls, website navigation 7.0 per cent — 38.3 per cent together, growing 2.5 and 4.0
+  times since Q2. Reward inquiries and eGift cards together 14.6 per cent. Added as a sixth
+  card in the consequence analysis, because the product's scope addresses the smaller share.
+- **Fourteen-minute average handle time**, barely moved while speed of answer halved, which
+  points at the investigation rather than the queue — consistent with assumption D28.
+- Gives the "visibility raises support load" prediction a baseline: roughly 6,600 reward
+  contacts and 1,550 agent-hours in Q4.
