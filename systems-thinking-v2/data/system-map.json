@@ -95,6 +95,16 @@
       "claimBasis": "group-convergence",
       "isEmpiricalEvidence": false,
       "detail": "Generate, Collect, Keep and Shape, Store, Use, with an owner per stage. Carries a recorded-activity chain, three pilot measures and a return loop in which the app's own records feed evaluation. A design, not evidence — but it is the proposed remedy for the measurement gap this map records."
+    },
+    {
+      "id": "SRC-WEB-2026",
+      "type": "secondary-web-summary",
+      "title": "Public web summary of the Blue Rewards programme",
+      "version": "1.0",
+      "date": "2026-11-24",
+      "claimBasis": "legacy-evidence-synthesis",
+      "isEmpiricalEvidence": false,
+      "detail": "A consumer-facing summary found online, brought in by the team. Useful for the transition narrative and for partner churn, but unverified and internally inconsistent: it states 1,500 Blue Points for $10 and, in the same document, that conversion and expiry rules are not published yet. Claims unique to it — 24-month inactivity expiry, Shell leaving on 25 May 2026, legacy elite tiers phasing out by the end of 2027, Metro, Rexall and Staples unconfirmed — are recorded as unverified and must not upgrade any status on their own."
     }
   ],
   "boundary": {
@@ -2161,6 +2171,66 @@
       "stakeholderRefs": [
         1,
         2
+      ]
+    },
+    {
+      "id": "legacy",
+      "canonicalName": "Inherited programme history",
+      "displayLabel": "Inherited programme history",
+      "label": "Inherited programme history",
+      "subtitle": "AIR MILES before BMO",
+      "type": "friction",
+      "kind": "friction",
+      "category": "Structural condition",
+      "boundaryStatus": "inside",
+      "phase": "Current",
+      "applicableTabs": [
+        "current"
+      ],
+      "definition": "What a member brings with them from the programme's past. Blue Rewards grew out of AIR MILES after BMO's 2023 acquisition, and the former Cash Miles and Dream Miles split became one Blue Points balance. A member who collected under the old programme carries two inheritances: a balance earned under different rules, and an expectation formed by what the programme used to be worth and where it used to work.",
+      "roleInSystem": "A condition on judgement and on entitlement, not a separate population. A legacy collector is also a member-only or member-client participant; what differs is their history. The complexity analysis states it directly: some legacy AIR MILES status benefits continue under transitional conditions, and these are entitlements dependent on history, not merely current balance. Prior linking can also disqualify a member from a first-time bonus, so two members with identical balances can have different options.",
+      "whyItMatters": "The same offer does not mean the same thing to a legacy collector. They judge worth against a remembered baseline, and partners they used to use may have left. This is the one place where the map's present-tense structure breaks down: current attributes alone do not determine what a member is entitled to, which is finding F06.",
+      "known": "The acquisition, the currency consolidation and the existence of transitional legacy entitlements are established. Historical Cash and Dream fields persist in developer documentation, and older material uses a different redemption unit entirely.",
+      "provisional": "How many members are legacy collectors, how much of the outstanding balance is theirs, and how their behaviour differs are all unestablished. Secondary web sources claim a 24-month inactivity expiry, Shell leaving in May 2026 and legacy tiers ending by 2027; none of that is confirmed by a programme source the team holds.",
+      "opportunityImplication": "Ask BMO for the legacy segment: its size, its share of outstanding liability, and which transitional entitlements are still live. A dormant legacy balance under an expiry rule is the breakage mechanism in its most concrete form.",
+      "status": "inferred",
+      "epistemicStatus": "Inferred",
+      "baselineDisplayStatus": "Inferred",
+      "chain": [
+        "Collected under AIR MILES",
+        "Balance and expectations carried over",
+        "Judged against the old baseline",
+        "Entitlements depend on history",
+        "Different options from an identical balance"
+      ],
+      "dimensions": [
+        "Carried balance",
+        "Remembered worth",
+        "Transitional entitlements",
+        "Partners that left",
+        "Dormancy"
+      ],
+      "systemLinks": [],
+      "incomingRelationshipIds": [],
+      "outgoingRelationshipIds": [],
+      "valueStatesInfluenced": [
+        "potential-value",
+        "available-value"
+      ],
+      "jtbdRefs": [],
+      "dvoRefs": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11",
+        "SRC-WEB-2026"
+      ],
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "traceabilityStatus": "source-link-pending",
+      "claims": [],
+      "region": "Structural conditions",
+      "regionByView": {},
+      "stakeholderRefs": [
+        10
       ]
     }
   ],
@@ -4287,6 +4357,87 @@
       "polarity": "+",
       "delay": true,
       "evidenceNote": "The assumption register says this chain does not exist end to end today. D23: no single record links a recommendation exposure to later activation, qualification, posting and redemption. D24: a stable exposure identifier could probably be created, but not without changes to some systems. K2: the stages are not consistently reported as one funnel for every earning route. So this arrow is not merely unproven — it is currently unmeasurable, which is a different and more actionable problem. There is now a designed remedy. The MDPM 830 data pipeline proposes exactly the chain the register says is missing — option shown, selected, action started, purchase or redemption confirmed, points or reward received, intended use confirmed — and a return loop in which the app records the options it displayed, their order, the explanations given, the model version and what the member then did. This arrow is Contested because the chain does not exist today, not because the team has no plan for it."
+    },
+    {
+      "id": "CUR-R32",
+      "sourceId": "legacy",
+      "targetId": "engagement",
+      "from": "legacy",
+      "to": "engagement",
+      "label": "History decides what is on offer",
+      "displayLabel": "History decides what is on offer",
+      "relationshipDefinition": "Entitlements depend on history, not only on current balance. Prior linking can disqualify a member from a first-time bonus, and transitional legacy benefits continue for some and not others. Two members with identical balances can be offered different things, which makes participation harder to predict from present attributes alone.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "condition",
+      "polarity": "-"
+    },
+    {
+      "id": "CUR-R33",
+      "sourceId": "legacy",
+      "targetId": "member-value",
+      "from": "legacy",
+      "to": "member-value",
+      "label": "Judged against what it used to be worth",
+      "displayLabel": "Judged against what it used to be worth",
+      "relationshipDefinition": "A legacy collector evaluates an offer against a remembered baseline: a different currency, different partners and, for some, status benefits being wound down. The same offer reads as worth less to someone who remembers more, which depresses realized value without anything in the present system changing.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "condition",
+      "polarity": "-"
+    },
+    {
+      "id": "CUR-R34",
+      "sourceId": "legacy",
+      "targetId": "finance",
+      "from": "legacy",
+      "to": "finance",
+      "label": "Dormant balances and expiry",
+      "displayLabel": "Dormant balances and expiry",
+      "relationshipDefinition": "Points collected under the old programme and never spent are the clearest form of outstanding liability, and any inactivity rule is what converts them into breakage. The breakage brake at its most concrete, acting on a segment nobody has sized.",
+      "kind": "other",
+      "flowType": "structural-flow",
+      "direction": "directed",
+      "conditions": [],
+      "applicableTabs": [
+        "current"
+      ],
+      "epistemicStatus": "Inferred",
+      "claimBasis": "legacy-evidence-synthesis",
+      "decisionStatus": "unresolved",
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ],
+      "valueTransitionIds": [],
+      "state": "unresolved",
+      "flowLens": "value",
+      "polarity": "+"
     }
   ],
   "overlays": [
@@ -4534,7 +4685,8 @@
         "service",
         "friction",
         "finance",
-        "leadership"
+        "leadership",
+        "legacy"
       ],
       "relationshipIds": [
         "CUR-R01",
@@ -4567,7 +4719,10 @@
         "CUR-R28",
         "CUR-R29",
         "CUR-R30",
-        "CUR-R31"
+        "CUR-R31",
+        "CUR-R32",
+        "CUR-R33",
+        "CUR-R34"
       ],
       "transitionIds": [
         "VT01",

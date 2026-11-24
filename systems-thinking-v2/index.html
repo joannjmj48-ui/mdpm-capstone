@@ -821,7 +821,7 @@ svg {
 <link rel="stylesheet" href="convergence.css?v=9">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
 <link rel="stylesheet" href="narrative.css?v=1">
-<link rel="stylesheet" href="regions.css?v=10">
+<link rel="stylesheet" href="regions.css?v=11">
 <link rel="stylesheet" href="evidence.css?v=4">
 <link rel="stylesheet" href="extension.css?v=4">
 <link rel="stylesheet" href="opportunity.css?v=7">
@@ -1332,7 +1332,7 @@ svg {
       "mo mc co"
       "partner value engagement"
       "products data channels"
-      ". service friction";
+      "legacy service friction";
   }
   #loyalty-map-v2 .lm2-grid[data-view="future"] {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2700,6 +2700,45 @@ svg {
         }
       ]
     },
+    "legacy": {
+      "label": "Inherited programme history",
+      "sub": "AIR MILES before BMO",
+      "kind": "friction",
+      "phase": "Current",
+      "status": "Inferred",
+      "basis": "Evidence trace pending",
+      "decision": "Unresolved",
+      "category": "Structural condition",
+      "definition": "What a member brings with them from the programme's past. Blue Rewards grew out of AIR MILES after BMO's 2023 acquisition, and the former Cash Miles and Dream Miles split became one Blue Points balance. A member who collected under the old programme carries two inheritances: a balance earned under different rules, and an expectation formed by what the programme used to be worth and where it used to work.",
+      "role": "A condition on judgement and on entitlement, not a separate population. A legacy collector is also a member-only or member-client participant; what differs is their history. The complexity analysis states it directly: some legacy AIR MILES status benefits continue under transitional conditions, and these are entitlements dependent on history, not merely current balance. Prior linking can also disqualify a member from a first-time bonus, so two members with identical balances can have different options.",
+      "why": "The same offer does not mean the same thing to a legacy collector. They judge worth against a remembered baseline, and partners they used to use may have left. This is the one place where the map's present-tense structure breaks down: current attributes alone do not determine what a member is entitled to, which is finding F06.",
+      "known": "The acquisition, the currency consolidation and the existence of transitional legacy entitlements are established. Historical Cash and Dream fields persist in developer documentation, and older material uses a different redemption unit entirely.",
+      "provisional": "How many members are legacy collectors, how much of the outstanding balance is theirs, and how their behaviour differs are all unestablished. Secondary web sources claim a 24-month inactivity expiry, Shell leaving in May 2026 and legacy tiers ending by 2027; none of that is confirmed by a programme source the team holds.",
+      "opportunity": "Ask BMO for the legacy segment: its size, its share of outstanding liability, and which transitional entitlements are still live. A dormant legacy balance under an expiry rule is the breakage mechanism in its most concrete form.",
+      "chain": [
+        "Collected under AIR MILES",
+        "Balance and expectations carried over",
+        "Judged against the old baseline",
+        "Entitlements depend on history",
+        "Different options from an identical balance"
+      ],
+      "dimensions": [
+        "Carried balance",
+        "Remembered worth",
+        "Transitional entitlements",
+        "Partners that left",
+        "Dormancy"
+      ],
+      "systemLinks": [
+        {
+          "phase": "Who holds power here",
+          "targets": [
+            "10 · Legacy AIR MILES collectors (Keep informed)"
+          ],
+          "explanation": "From the power and interest grid. Analytical judgement, not an org chart."
+        }
+      ]
+    },
     "opportunity": {
       "label": "Opportunity",
       "sub": "Filtered and surfaced to one member",
@@ -2970,7 +3009,8 @@ svg {
         "service": "service",
         "friction": "friction",
         "finance": "finance",
-        "leadership": "leadership"
+        "leadership": "leadership",
+        "legacy": "legacy"
       },
       "edges": [
         [
@@ -3220,6 +3260,30 @@ svg {
           "inferred",
           null,
           "CUR-R31"
+        ],
+        [
+          "legacy",
+          "engagement",
+          "History decides what is on offer",
+          "inferred",
+          null,
+          "CUR-R32"
+        ],
+        [
+          "legacy",
+          "member-value",
+          "Judged against what it used to be worth",
+          "inferred",
+          null,
+          "CUR-R33"
+        ],
+        [
+          "legacy",
+          "finance",
+          "Dormant balances and expiry",
+          "inferred",
+          null,
+          "CUR-R34"
         ]
       ]
     },
@@ -3611,6 +3675,9 @@ svg {
     "Sets decision priorities": "What decisioning is pointed at, and what counts as a good decision, follows from what leadership asks to be measured.",
     "Allocates operating capacity": "How much capacity exists for posting, fulfilment and recovery is a funding decision, not an operational one.",
     "Reports the economics": "Liability, margin and breakage are what leadership sees when deciding what the programme can do.",
+    "History decides what is on offer": "Entitlements depend on history, not only on current balance. Prior linking can disqualify a member from a first-time bonus, and transitional legacy benefits continue for some and not others. Two members with identical balances can be offered different things, which makes participation harder to predict from present attributes alone.",
+    "Judged against what it used to be worth": "A legacy collector evaluates an offer against a remembered baseline: a different currency, different partners and, for some, status benefits being wound down. The same offer reads as worth less to someone who remembers more, which depresses realized value without anything in the present system changing.",
+    "Dormant balances and expiry": "Points collected under the old programme and never spent are the clearest form of outstanding liability, and any inactivity rule is what converts them into breakage. The breakage brake at its most concrete, acting on a segment nobody has sized.",
     "Filtered and surfaced to one member": "The catalogue narrows to one person: decisioning selects what is relevant and eligible for them, and a channel puts it in front of them. That is the whole of the movement — it is the system's act, not the member's. What the member does with it once it arrives belongs to Potential Value, which is where the weighing happens.",
     "Member decides to act, and acts": "The member commits: they make the qualifying purchase or complete the required activity. This is the step where value becomes theirs.",
     "Post + release + activate": "Earned Value becomes Available Value when the entitlement is operationally accessible.",
@@ -3890,6 +3957,33 @@ svg {
       "decisionStatus": "Active direction",
       "transitionIds": [],
       "evidenceRefs": []
+    },
+    "CUR-R32": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "CUR-R33": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
+    },
+    "CUR-R34": {
+      "epistemicStatus": "Inferred",
+      "claimBasis": "Evidence trace pending",
+      "decisionStatus": "Unresolved",
+      "transitionIds": [],
+      "evidenceRefs": [
+        "SRC-ECA-2026-11"
+      ]
     },
     "TR-R01": {
       "epistemicStatus": "Assumed",

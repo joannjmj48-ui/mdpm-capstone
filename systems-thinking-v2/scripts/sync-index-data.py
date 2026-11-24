@@ -102,7 +102,7 @@ layouts = {
     "current": {"member-only": "mo", "member-client": "mc", "client-only": "co", "partner": "partner",
                 "member-value": "value", "engagement": "engagement", "products": "products", "data": "data",
                 "channels": "channels", "service": "service", "friction": "friction",
-                "finance": "finance", "leadership": "leadership"},
+                "finance": "finance", "leadership": "leadership", "legacy": "legacy"},
     "transition": {"opportunity": "opportunity", "potential-value": "potential", "earned-value": "earned",
                    "available-value": "available", "realized-value": "realized", "partner": "partner",
                    "products": "products", "data": "data", "service": "service", "channels": "channels",

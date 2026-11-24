@@ -167,3 +167,22 @@ gap the assumption register exposed, so the two now reference each other.
   contract's boundary block.
 - The PRD figure gains a measures row and the D27 line in the scope panel. Canvas is now
   1700 x 1215.
+
+## Inherited programme history (November 2026)
+
+Legacy AIR MILES collectors are now on the Current System view — as a structural condition beside
+Interface friction, not as a fourth population, because a legacy collector is also a member-only
+or member-client participant. What differs is their history.
+
+Grounded in the complexity analysis: "some legacy AIR MILES status benefits continue under
+transitional conditions. These are entitlements dependent on history, not merely current
+balance." That is finding F06, and it is the one place the map's present-tense structure breaks
+down — two members with identical balances can be entitled to different things.
+
+Three relationships: judged against what it used to be worth (to Realized value, negative),
+dormant balances and expiry (to Finance and risk, positive — the breakage brake at its most
+concrete), and history decides what is on offer (to Meaningful engagement, negative).
+
+`SRC-WEB-2026` records the secondary web summary as unverified. It contradicts itself on
+conversion and expiry, so its unique claims — 24-month inactivity, Shell leaving, legacy tiers
+ending 2027, Metro and Rexall unconfirmed — upgrade nothing on their own.
