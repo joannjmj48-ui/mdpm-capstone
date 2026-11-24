@@ -118,3 +118,8 @@
   #loyalty-map-v2 .xt-dl dd { margin-bottom: .5rem; }
   #loyalty-map-v2 .xt-seq { padding-left: 1.1rem; }
 }
+
+#loyalty-map-v2 .xt-cap-note {
+  margin-top: .5rem; font-size: var(--font-size-small); color: #6b6b73;
+}
+#loyalty-map-v2 .xt-cap-note a { color: #534AB7; font-weight: 600; }

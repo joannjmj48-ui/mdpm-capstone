@@ -100,3 +100,14 @@ changes rather than only to the current system.
 - A sequencing conclusion: progression and recovery have to land before discovery, because
   ranking only works if members believe what they are shown will arrive.
 - No new tab. Tab 2 now carries two panels.
+
+## PRD figure: where the product sits (tab 2, third panel)
+
+- `scripts/build-context-figure.py` writes `figures/product-in-the-system.svg`, a standalone
+  vector figure for section 3 of the PRD, plus `figures/_panel.svg` which the extension
+  generator embeds.
+- Shows the product nested inside the Blue Rewards systems of record, nested inside BMO, with
+  the member on one side, the five evidence authorities on the other, and the uncontrolled
+  forces across the top. The scope boundary from section 5.2 is on the figure rather than in a
+  paragraph.
+- The page offers the file for download; SVG inserts directly into Word, Docs and PowerPoint.

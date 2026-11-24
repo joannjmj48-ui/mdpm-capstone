@@ -291,6 +291,8 @@ NOTES = (
  "of its interface. TB4 is the lever: it drains unresolved loss so TB5 bites less. That is the same move as adding a "
  "counteracting loop rather than fighting a frozen variable.</p></article>")
 
+CONTEXT_SVG = (ROOT / "figures" / "_panel.svg").read_text(encoding="utf-8")
+
 body = (
  '<div class="xt-wrap">'
  '<header class="xt-intro">'
@@ -304,6 +306,7 @@ body = (
  '<div class="xt-tabs" role="group" aria-label="Extension sections">'
  '<button type="button" class="btn btn-primary" data-xt-panel="map" aria-pressed="true">What the evidence adds</button>'
  '<button type="button" class="btn" data-xt-panel="conseq" aria-pressed="false">What our product would do to the system</button>'
+ '<button type="button" class="btn" data-xt-panel="where" aria-pressed="false">Where the product sits</button>'
  "</div>"
  '<div class="xt-panel" data-xt-body="map">'
  '<p class="xt-how">Read it the way the toolkit says. Follow an arrow, read its sign, and count the minuses round a loop: '
@@ -323,6 +326,17 @@ body = (
  + "</div>"
  '<article class="xt-note is-lever xt-seq"><span class="xt-code">&#9733;</span>'
  "<h4>What this says about sequencing</h4><p>" + esc(SEQ) + "</p></article>"
+ "</div>"
+ '<div class="xt-panel" data-xt-body="where" hidden>'
+ '<p class="xt-how">The figure prepared for section 3 of the PRD. It answers one question: where does the product sit? '
+ "Nested inside the Blue Rewards systems of record, which are nested inside BMO, with the member on one side and the five "
+ "evidence authorities on the other. The product owns no system of record &mdash; it owns the member&rsquo;s understanding "
+ "of them. The red panel is the scope boundary from section 5.2, on the figure rather than in a paragraph.</p>"
+ '<figure class="xt-figure"><div class="xt-scroll">' + CONTEXT_SVG + "</div>"
+ '<figcaption class="xt-cap-note">Download the figure: '
+ '<a href="figures/product-in-the-system.svg" download>product-in-the-system.svg</a> '
+ "&mdash; vector, so it stays sharp at any size. Word, Google Docs and PowerPoint all insert SVG directly.</figcaption>"
+ "</figure>"
  "</div></div>"
 )
 
