@@ -134,8 +134,9 @@ a(f'<text x="1004" y="930" font-family="{SERIF}" font-size="13" fill="#A32D2D" f
 for i, t in enumerate(["Existing earning methods: partner scans, linked-card offers, receipts, Shops and BMO products.",
                        "Redemption fulfilment: gift cards, travel, merchandise and partner redemptions.",
                        "Merchant shopping, checkout and payment.",
-                       "BMO and partner support where manual investigation or partner action is required."]):
-    a(f'<text x="1004" y="{960+i*32}" font-family="{SANS}" font-size="12" fill="#4A1B0C">&#8226;  {e(t)}</text>')
+                       "BMO and partner support where manual investigation or partner action is required.",
+                       "Partner issuance, redemption and reversal: those services need partner credentials, not a member session."]):
+    a(f'<text x="1004" y="{958+i*30}" font-family="{SANS}" font-size="12" fill="#4A1B0C">&#8226;  {e(t)}</text>')
 
 a(f'<text x="36" y="{H-22}" font-family="{SANS}" font-size="11" fill="{MUTE}">Team Zig · Blue Rewards capstone · systems map figure for the Product Requirements Document, section 3. Full interactive map: joannjmj48-ui.github.io/mdpm-capstone/systems-thinking-v2/</text>')
 

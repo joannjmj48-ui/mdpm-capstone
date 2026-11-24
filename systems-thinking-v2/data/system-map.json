@@ -65,6 +65,16 @@
       "claimBasis": "legacy-evidence-synthesis",
       "isEmpiricalEvidence": false,
       "detail": "320-page capture of the Offer Service, Collector Service, transaction history and point-of-sale integration. Establishes offer member states SAVE/SAVED/UNSAVED and OPT_IN/OPTED_IN, the separate displayDate, startDate and endDate fields, transactionType RETURN, and transaction history scoped by card and sponsor rather than by product."
+    },
+    {
+      "id": "SRC-ASSUMPTIONS-2026",
+      "type": "assumption-register",
+      "title": "Blue Rewards working assumption register (for client confirmation)",
+      "version": "1.0",
+      "date": "2026-09-24",
+      "claimBasis": "analytical-inference",
+      "isEmpiricalEvidence": false,
+      "detail": "Eighty working assumptions across roadmap and funding, current performance measures, product ownership and AI governance, capability approvals, data and record linkage, architecture and operational workflows, AI implementation and evaluation, and operating model. Each carries a focused follow-up for BMO. Assumptions, not findings — but several name mechanisms the map was missing."
     }
   ],
   "boundary": {
@@ -2717,6 +2727,7 @@
       "claimBasis": "evidence",
       "decisionStatus": "unresolved",
       "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026",
         "SRC-UT-2026-10"
       ],
       "valueTransitionIds": [
@@ -2726,7 +2737,7 @@
       "flowLens": "participation",
       "polarity": "+",
       "delay": true,
-      "evidenceNote": "The same return leg as TRN-R15, in the current-system view. Tested and not confirmed."
+      "evidenceNote": "The same return leg as TRN-R15, in the current-system view. Tested and not confirmed. See TRN-R15. K3: current measures stop at activation, so the return leg is outside what the scorecard can observe."
     },
     {
       "id": "CUR-R14",
@@ -2744,17 +2755,20 @@
       "applicableTabs": [
         "current"
       ],
-      "epistemicStatus": "Supported",
+      "epistemicStatus": "Contested",
       "claimBasis": "legacy-evidence-synthesis",
       "decisionStatus": "unresolved",
-      "evidenceRefs": [],
+      "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026"
+      ],
       "valueTransitionIds": [
         "VT05"
       ],
       "state": "unresolved",
       "flowLens": "information",
       "polarity": "+",
-      "delay": true
+      "delay": true,
+      "evidenceNote": "Same gap as TRN-R16. Participation signals exist, but nothing joins a recommendation to what the member did afterwards across routes (D23, D24, K2). K4 adds that incremental activity cannot be separated from activity that would have happened anyway, so even where the signal exists its meaning is unresolved."
     },
     {
       "id": "CUR-R15",
@@ -3003,13 +3017,14 @@
       "claimBasis": "evidence",
       "decisionStatus": "unresolved",
       "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026",
         "SRC-UT-2026-10"
       ],
       "valueTransitionIds": [
         "VT01"
       ],
       "state": "inferred-current",
-      "evidenceNote": "Tested October 2026 and not confirmed. Ask Blue accepted a goal to save toward a car, which the catalogue cannot satisfy, then asked pickup and drop-off questions. Bounding the catalogue to what the member can actually obtain is the one job this arrow has."
+      "evidenceNote": "Tested October 2026 and not confirmed. Ask Blue accepted a goal to save toward a car, which the catalogue cannot satisfy, then asked pickup and drop-off questions. Bounding the catalogue to what the member can actually obtain is the one job this arrow has. The register adds mechanism. D20: an offer ordering called collectorrelevance already uses member-level signals, so ranking is not something the product introduces — it already exists and its inputs are undocumented for this project. D6 and D7: qualification logic is not fully held in structured fields, and some conditions exist only in legal text, which is why the filter cannot always tell a member whether something will qualify."
     },
     {
       "id": "TR-R08",
@@ -4076,17 +4091,20 @@
       "applicableTabs": [
         "transition"
       ],
-      "epistemicStatus": "Inferred",
+      "epistemicStatus": "Supported",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
-      "evidenceRefs": [],
+      "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026"
+      ],
       "valueTransitionIds": [
         "VT03"
       ],
       "state": "inferred-current",
       "flowLens": "condition",
       "polarity": "-",
-      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins."
+      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins.",
+      "evidenceNote": "D9: Blue Rewards cannot reliably distinguish recognized and still within the posting period from recognized and overdue without manual interpretation on some routes. The four clocks are not only a conceptual distinction — they are a data gap, which is why a participant could read a passed posting date as expiry."
     },
     {
       "id": "TRN-R14",
@@ -4104,17 +4122,20 @@
       "applicableTabs": [
         "transition"
       ],
-      "epistemicStatus": "Inferred",
+      "epistemicStatus": "Supported",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
-      "evidenceRefs": [],
+      "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026"
+      ],
       "valueTransitionIds": [
         "VT04"
       ],
       "state": "inferred-current",
       "flowLens": "condition",
       "polarity": "-",
-      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins."
+      "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins.",
+      "evidenceNote": "D16: returns preserve the original transaction reference only for deeply integrated partners, so a reversal cannot always be matched to the award it reverses. D28: a missing-points investigation currently requires a support employee to assemble the offer, activation, purchase, qualification and issuance history from more than one system by hand."
     },
     {
       "id": "TRN-R15",
@@ -4136,6 +4157,7 @@
       "claimBasis": "evidence",
       "decisionStatus": "active-direction",
       "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026",
         "SRC-UT-2026-10"
       ],
       "valueTransitionIds": [
@@ -4145,7 +4167,7 @@
       "flowLens": "participation",
       "polarity": "+",
       "provenance": "Added 12 Sept 2026. Friction can obstruct any stage, not one; and the progression had no link to where behaviour begins.",
-      "evidenceNote": "Tested October 2026 and not confirmed. Five of six contributors drew this return leg independently. Two participants said progress tracking would not change their decisions, and one questioned why the feature existed. Convergence is not evidence; this is now the weakest link in the engine."
+      "evidenceNote": "Tested October 2026 and not confirmed. Five of six contributors drew this return leg independently. Two participants said progress tracking would not change their decisions, and one questioned why the feature existed. Convergence is not evidence; this is now the weakest link in the engine. Beyond the October testing, the register explains why this is hard to settle: K3 says a targeted offer is currently judged on engagement or activation rather than confirmed value, so the programme's own measures would not detect this link working or failing."
     },
     {
       "id": "TRN-R16",
@@ -4163,17 +4185,20 @@
       "applicableTabs": [
         "transition"
       ],
-      "epistemicStatus": "Supported",
+      "epistemicStatus": "Contested",
       "claimBasis": "group-convergence",
       "decisionStatus": "active-direction",
-      "evidenceRefs": [],
+      "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026"
+      ],
       "valueTransitionIds": [
         "VT05"
       ],
       "state": "active-direction",
       "flowLens": "information",
       "polarity": "+",
-      "delay": true
+      "delay": true,
+      "evidenceNote": "The assumption register says this chain does not exist end to end today. D23: no single record links a recommendation exposure to later activation, qualification, posting and redemption. D24: a stable exposure identifier could probably be created, but not without changes to some systems. K2: the stages are not consistently reported as one funnel for every earning route. So this arrow is not merely unproven — it is currently unmeasurable, which is a different and more actionable problem."
     }
   ],
   "overlays": [

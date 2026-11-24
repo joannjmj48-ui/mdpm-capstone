@@ -94,12 +94,12 @@ CAPS = [
   "acts":"TR1 relevance flywheel, at decisioning into worthwhile value",
   "intended":"Members find worthwhile opportunities with less search effort.",
   "behaviour":"Members stop browsing the catalogue and start trusting the ranking. Browsing breadth falls, and what is not ranked is effectively not offered.",
-  "incentives":"Ranking becomes a commercial allocation mechanism. A partner not surfaced loses attributable volume, and will ask why. That turns a product decision into a negotiation surface and gives Finance an interest, because ranking changes redemption mix and therefore breakage.",
+  "incentives":"Ranking is already a commercial allocation mechanism — the register notes an existing ordering called collectorrelevance whose inputs are undocumented for this project. What changes is that ours would be visible and explainable, so a partner not surfaced can ask why. The team already holds assumption O12: a control is needed to stop partner payments or BMO product economics overriding the member\u2019s stated objective in ranking. Nobody owns that control today.",
   "relationships":"Partner managers, Finance and risk, and whoever ends up owning ranking policy — which is nobody today.",
   "enables":"The offer service already exposes targeting states, dates and sponsor information. Member preferences and saved goals give the ranker something to rank against.",
   "undermines":"Narrow ranking starves the long tail of partners, which weakens partner coverage — the flywheel eating its own supply side. And Ask Blue accepted a goal the catalogue cannot satisfy in testing; an unbounded ranker surfaces things the programme cannot deliver.",
   "watch":"Share of redemptions concentrated in the top-ranked partners, and churn among partners in the tail.",
-  "m3":"Can the offer service support ranking without creating a de facto commercial tier, and who signs off on ranking policy?"},
+  "m3":"Who approves the candidate offer set (BR3 says offer and partner owners retain that authority), who owns the commercial-bias control in O12, and how is a breach investigated?"},
 
  {"name":"Adaptive Value Planning", "need":"Clarity", "step":"Decide",
   "acts":"Worthwhile value — the stage where seven of fourteen tested issues landed",
@@ -121,7 +121,7 @@ CAPS = [
   "enables":"Transaction history carries posting dates and sponsor references for the routes it covers.",
   "undermines":"A date we cannot stand behind manufactures distrust. Visibility without accuracy strengthens the doubt brake rather than weakening it — the member now has a specific broken promise instead of a vague absence.",
   "watch":"Inquiries per thousand members, and whether the rate falls after two quarters rather than settling higher.",
-  "m3":"Which earning routes can produce an expected date we would defend? The developer documentation does not establish pre-posting qualification status across partners."},
+  "m3":"Which earning routes can produce an expected date we would defend? D9 says Blue Rewards cannot always distinguish still within the posting period from overdue without manual interpretation, so for some routes the answer today is none."},
 
  {"name":"Value Protection and Recovery", "need":"Reliability", "step":"Receive and use",
   "acts":"TB4 recovery brake — the loop this product exists to close",
@@ -129,8 +129,8 @@ CAPS = [
   "behaviour":"Members stop absorbing losses quietly and start escalating them. Loss that was invisible becomes measured.",
   "incentives":"Recovered points are a direct cost: every restoration reduces breakage revenue. The programme has to agree to this product succeeding, which is a sentence worth saying out loud to the client.",
   "relationships":"The hardest coordination problem in the product. Five parties can hold the deciding evidence, and routing a case to whichever one is responsible means service expectations with organizations BMO does not control.",
-  "enables":"The pre-filled inquiry tested well — participants valued not having to gather the information again.",
-  "undermines":"A recovery flow with no authority behind it relocates frustration from where are my points to where is my case. The study's one Critical finding was a submission that never registered.",
+  "enables":"The pre-filled inquiry tested well — participants valued not having to gather the information again. D28 says support employees currently assemble that history from more than one system by hand, so the work is real and already being done, just not by the product.",
+  "undermines":"A recovery flow with no authority behind it relocates frustration from where are my points to where is my case. The study's one Critical finding was a submission that never registered. And D27 sets a hard limit: partner issuance, redemption and reversal services cannot be called under a member's own session, because they need credentials issued to approved partner systems. The product can prepare and route a case. It cannot fix one.",
   "watch":"Resolution rate and time by responsible party, and the share of members who file a second inquiry about the same loss.",
   "m3":"Who owns the case when the fault sits with a partner, and what service expectation can be agreed with parties outside BMO?"},
 
@@ -148,7 +148,7 @@ CAPS = [
 
 CROSS = [
  {"t":"The engine's return leg is unconfirmed",
-  "p":"Every capability here assumes realized value changes what a member does next. Two participants said progress tracking would not influence their decisions, which is why that link is marked Contested on the map. Building more flywheel before confirming the return leg risks spending M3 on an engine that does not turn."},
+  "p":"Every capability here assumes realized value changes what a member does next, and nothing can currently prove it. Two participants said progress tracking would not influence their decisions. Worse, the assumption register says no single record links a recommendation to later activation, qualification, posting and redemption (D23), the funnel is not reported end to end for every route (K2), and incremental activity cannot be separated from activity that would have happened anyway (K4). The return leg is not unproven; it is unmeasurable. Instrumenting it is cheaper than building on it."},
  {"t":"Succeeding costs the programme money",
   "p":"Recovery restores points that would otherwise expire unclaimed, and planning defers redemptions that would otherwise lapse. Both reduce breakage. The business case has to carry that as a cost of the product working, not treat it as an edge case."},
  {"t":"Visibility raises support load before it lowers it",

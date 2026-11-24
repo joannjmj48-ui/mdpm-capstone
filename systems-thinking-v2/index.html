@@ -3398,7 +3398,7 @@ svg {
           "friction",
           "available-value",
           "Posting delays and exceptions",
-          "inferred",
+          "current",
           null,
           "TRN-R13"
         ],
@@ -3406,7 +3406,7 @@ svg {
           "friction",
           "realized-value",
           "Redemption and fulfilment breakdowns",
-          "inferred",
+          "current",
           null,
           "TRN-R14"
         ],
@@ -3756,17 +3756,20 @@ svg {
         "VT05"
       ],
       "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026",
         "SRC-UT-2026-10"
       ]
     },
     "CUR-R14": {
-      "epistemicStatus": "Supported",
+      "epistemicStatus": "Contested",
       "claimBasis": "Evidence trace pending",
       "decisionStatus": "Unresolved",
       "transitionIds": [
         "VT05"
       ],
-      "evidenceRefs": []
+      "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026"
+      ]
     },
     "CUR-R15": {
       "epistemicStatus": "Inferred",
@@ -3950,6 +3953,7 @@ svg {
         "VT01"
       ],
       "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026",
         "SRC-UT-2026-10"
       ]
     },
@@ -4063,22 +4067,26 @@ svg {
       ]
     },
     "TRN-R13": {
-      "epistemicStatus": "Inferred",
+      "epistemicStatus": "Supported",
       "claimBasis": "Group convergence",
       "decisionStatus": "Active direction",
       "transitionIds": [
         "VT03"
       ],
-      "evidenceRefs": []
+      "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026"
+      ]
     },
     "TRN-R14": {
-      "epistemicStatus": "Inferred",
+      "epistemicStatus": "Supported",
       "claimBasis": "Group convergence",
       "decisionStatus": "Active direction",
       "transitionIds": [
         "VT04"
       ],
-      "evidenceRefs": []
+      "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026"
+      ]
     },
     "TRN-R15": {
       "epistemicStatus": "Contested",
@@ -4088,17 +4096,20 @@ svg {
         "VT05"
       ],
       "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026",
         "SRC-UT-2026-10"
       ]
     },
     "TRN-R16": {
-      "epistemicStatus": "Supported",
+      "epistemicStatus": "Contested",
       "claimBasis": "Group convergence",
       "decisionStatus": "Active direction",
       "transitionIds": [
         "VT05"
       ],
-      "evidenceRefs": []
+      "evidenceRefs": [
+        "SRC-ASSUMPTIONS-2026"
+      ]
     },
     "FUT-R01": {
       "epistemicStatus": "Assumed",
@@ -5181,6 +5192,6 @@ svg {
 <script src="legend.js?v=2"></script>
 <script src="stakeholders.js?v=2"></script>
 <script src="evidence.js?v=3"></script>
-<script src="extension.js?v=5"></script>
+<script src="extension.js?v=6"></script>
 </body>
 </html>

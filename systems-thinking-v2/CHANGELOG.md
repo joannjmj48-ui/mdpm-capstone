@@ -111,3 +111,25 @@ changes rather than only to the current system.
   forces across the top. The scope boundary from section 5.2 is on the figure rather than in a
   paragraph.
 - The page offers the file for download; SVG inserts directly into Word, Docs and PowerPoint.
+
+## Working assumption register folded in (November 2026)
+
+`SRC-ASSUMPTIONS-2026` added to the contract: eighty working assumptions prepared for BMO
+confirmation. Assumptions, not findings, but several name mechanisms the map was missing.
+
+- **The learning loop cannot currently close.** D23: no single record links a recommendation
+  exposure to later activation, qualification, posting and redemption. K2: the funnel is not
+  reported end to end for every route. K4: incremental activity cannot be separated from
+  activity that would have happened anyway. Engagement to decisioning is now Contested in both
+  views — not unproven, unmeasurable.
+- **Ranking already exists.** D20 names an existing ordering, `collectorrelevance`, whose inputs
+  are undocumented for this project. The product would make ranking visible, not introduce it.
+- **O12 confirms the commercial-bias risk** the consequence analysis derived independently: a
+  control is needed to stop partner payments or BMO product economics overriding the member's
+  stated objective. Nobody owns it today.
+- **D27 is a hard boundary.** Partner issuance, redemption and reversal services cannot be
+  called under a member's session. Added to the PRD figure's scope panel.
+- **D9 makes the four clocks a data gap**, not only a conceptual one. Friction to Available Value
+  moves to Supported.
+- **D16 and D28** describe current-state recovery: reversals match only for deeply integrated
+  partners, and support assembles the history by hand across systems.
