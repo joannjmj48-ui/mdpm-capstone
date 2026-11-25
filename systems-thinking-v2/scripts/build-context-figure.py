@@ -66,11 +66,17 @@ def loop(cx, cy, rx, ry, code, title, colour, steps, foot):
     ay = cy - ry + 112
     a(f'<path d="M{cx-14},{ay} A 14 14 0 1 1 {cx},{ay-14}" fill="none" stroke="{colour}" stroke-width="2.2" stroke-linecap="round"/>')
     a(f'<path d="M{cx-4},{ay-19} L{cx+5},{ay-14} L{cx-4},{ay-9} Z" fill="{colour}"/>')
-    ty = cy - ry + 146
+    ty = cy - ry + 140
     for st, sign in steps:
+        words, ln, rows = st.split(), "", []
+        for wd in words:
+            if len(ln + " " + wd) > 17: rows.append(ln); ln = wd
+            else: ln = (ln + " " + wd).strip()
+        rows.append(ln)
         a(f'<text x="{cx-rx+16}" y="{ty}" font-family="{SERIF}" font-size="12" fill="{colour}" font-weight="700">{sign}</text>')
-        a(f'<text x="{cx-rx+32}" y="{ty}" font-family="{SANS}" font-size="10.5" fill="{INK}">{e(st)}</text>')
-        ty += 17
+        for r2, row in enumerate(rows):
+            a(f'<text x="{cx-rx+30}" y="{ty+r2*12}" font-family="{SANS}" font-size="10" fill="{INK}">{e(row)}</text>')
+        ty += 12 * len(rows) + 5
     a(f'<text x="{cx}" y="{cy+ry+18}" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="{colour}" font-weight="700">{e(foot)}</text>')
 
 # ── outside the boundary ──
@@ -95,8 +101,9 @@ a(f'<text x="172" y="584" text-anchor="middle" font-family="{SANS}" font-size="1
 
 # ── relevance flywheel, between the member and the core ──
 loop(394, 580, 74, 170, "R1", ["Relevance", "flywheel"], PART,
-     [("Realized value", "+"), ("Participation", "+"), ("Permissioned signal", "+"),
-      ("Decisioning relevance", "+")],
+     [("Member needs, preferences and activity", "+"), ("Personalized, understandable offers", "+"),
+      ("Worthwhile benefits received", "+"), ("Repeat participation", "+"),
+      ("Stronger BMO banking relationships", "+")],
      "no minuses · it compounds")
 
 # ── BMO, the programme, and the enhancement ──
@@ -128,9 +135,9 @@ FEATS = [("Relevant Opportunity\nDiscovery", "Relevance", "ranked options, with 
          ("Blue, the conversational\nassistant", "Across all four", "the same saved information,\nasked for in their own words")]
 for i2, (t, need, out2) in enumerate(FEATS):
     if i2 < 3:
-        x, y = 542 + i2 * 236, 610
+        x, y = 542 + i2 * 236, 604
     else:
-        x, y = 660 + (i2 - 3) * 236, 736
+        x, y = 660 + (i2 - 3) * 236, 728
     a(f'<rect x="{x}" y="{y}" width="228" height="112" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
     for j2, ln in enumerate(t.split("\n")):
         a(f'<text x="{x+114}" y="{y+26+j2*16}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">{e(ln)}</text>')
@@ -138,7 +145,16 @@ for i2, (t, need, out2) in enumerate(FEATS):
     for j2, ln in enumerate(out2.split("\n")):
         a(f'<text x="{x+114}" y="{y+94+j2*13}" text-anchor="middle" font-family="{SANS}" font-size="10" fill="#9a9ab8">{e(ln)}</text>')
 
-a(f'<text x="890" y="872" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">Explore and decide  &#8594;  Earn or redeem  &#8594;  Follow progress  &#8594;  Receive and use</text>')
+# the four things a member does, from the brief — what all five features serve
+STAGES = ["Explore and decide", "Earn or redeem", "Follow progress", "Receive and use"]
+for i2, st in enumerate(STAGES):
+    sx = 536 + i2 * 180
+    a(f'<rect x="{sx}" y="852" width="168" height="42" rx="10" fill="#E6F1FB" stroke="{MEMB}" stroke-width="1.4"/>')
+    a(f'<circle cx="{sx+22}" cy="873" r="11" fill="{MEMB}"/>')
+    a(f'<text x="{sx+22}" y="877" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="#ffffff" font-weight="700">{i2+1}</text>')
+    a(f'<text x="{sx+40}" y="878" font-family="{SANS}" font-size="11.5" fill="{NAVY}" font-weight="700">{e(st)}</text>')
+    if i2 < 3:
+        a(f'<text x="{sx+174}" y="878" text-anchor="middle" font-family="{SANS}" font-size="13" fill="#9a9ab8">&#8594;</text>')
 
 # ── liability brake, between the core and the proof-holders ──
 loop(1374, 580, 74, 170, "B1", ["Liability", "brake"], BMO,
