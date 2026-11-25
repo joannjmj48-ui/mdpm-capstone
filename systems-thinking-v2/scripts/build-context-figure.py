@@ -95,7 +95,7 @@ a(f'<text x="172" y="584" text-anchor="middle" font-family="{SANS}" font-size="1
 # ── relevance flywheel, between the member and the core ──
 loop(394, 560, 74, 196, "R1", ["Relevance", "flywheel"], PART,
      [("Realized value", "+"), ("Participation", "+"), ("Permissioned signal", "+"),
-      ("Decisioning relevance", "+"), ("back to the start", "+")],
+      ("Decisioning relevance", "+")],
      "no minuses · it compounds")
 
 # ── BMO, the programme, and the enhancement ──
@@ -139,7 +139,7 @@ a(f'<text x="890" y="914" text-anchor="middle" font-family="{SANS}" font-size="1
 # ── liability brake, between the core and the proof-holders ──
 loop(1374, 560, 74, 196, "B1", ["Liability", "brake"], BMO,
      [("Points issued", "+"), ("Outstanding liability", "+"), ("Cost carried by Finance", "−"),
-      ("Offer generosity", "+"), ("back to the start", "+")],
+      ("Offer generosity", "+")],
      "one minus · it pushes back")
 
 # ── who holds the proof, far right ──
@@ -166,15 +166,15 @@ arrow(1262, 760, 1466, 700, PART, "+  we send each case to them", dashed=True, l
 a(f'<ellipse cx="890" cy="1066" rx="330" ry="66" fill="#ffffff" stroke="{LOSS}" stroke-width="2"/>')
 a(f'<text x="890" y="1042" text-anchor="middle" font-family="{SERIF}" font-size="12.5" fill="{LOSS}" font-weight="700" letter-spacing="1.2">B2  &#183;  PROOF AND DOUBT BRAKE</text>')
 B2 = [("Member activity", "+"), ("Time to confirm ‖", "+"), ("Member doubt", "−"), ("Participation", "+")]
-bx = 566
+bx = 590
 for st, sign in B2:
     w = len(st) * 6.0 + 18
     a(f'<rect x="{bx}" y="{1054}" width="{w}" height="22" rx="11" fill="{CANV}" stroke="{LOSS}" stroke-width="1.1"/>')
     a(f'<text x="{bx+w/2}" y="{1069}" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="{INK}">{e(st)}</text>')
     bx += w + 5
-    a(f'<text x="{bx}" y="{1070}" font-family="{SERIF}" font-size="13" fill="{LOSS}" font-weight="700">{sign}</text>')
-    bx += 14
-a(f'<text x="{bx+4}" y="1069" font-family="{SANS}" font-size="10.5" fill="{MUTE}">back to the start</text>')
+    if st != B2[-1][0]:
+        a(f'<text x="{bx}" y="{1070}" font-family="{SERIF}" font-size="13" fill="{LOSS}" font-weight="700">{sign}</text>')
+        bx += 14
 a(f'<text x="890" y="1104" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="{MUTE}">One minus and a delay. The lag before a member can confirm what happened is what manufactures doubt.</text>')
 a(f'<line x1="890" y1="950" x2="890" y2="996" stroke="{LOSS}" stroke-width="2.2" marker-end="url(#ar_{LOSS[1:]})"/>')
 a(f'<path d="M1736,772 Q1620,980 1222,1050" fill="none" stroke="{LOSS}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar_{LOSS[1:]})" opacity="0.65"/>')
