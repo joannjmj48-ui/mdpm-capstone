@@ -119,7 +119,7 @@ for i, t in enumerate(["Offer service", "Points and transactions", "Catalogue an
 
 a(f'<rect x="524" y="534" width="732" height="366" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
 a(f'<text x="890" y="566" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
-a(f'<text x="890" y="588" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#c9c9e0">An enhanced experience within the Blue Rewards app</text>')
+a(f'<text x="890" y="588" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#c9c9e0">An enhanced experience within the Blue Rewards app and website</text>')
 
 FEATS = [("Relevant Opportunity\nDiscovery", "Relevance", "ranked options, with the\nreason for the ranking"),
          ("Adaptive Value\nPlanning", "Clarity", "a saved goal and\na saved comparison"),
