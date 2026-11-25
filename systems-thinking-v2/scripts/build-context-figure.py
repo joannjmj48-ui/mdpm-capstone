@@ -262,7 +262,7 @@ for i, (t, sb, col) in enumerate(DOWN):
 # ── leverage points ──────────────────────────────────────────────────────
 a(f'<rect x="36" y="1310" width="{W-72}" height="102" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
 a(f'<text x="56" y="1338" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">LEVERAGE POINTS</text>')
-LEV = [("1", "Make realized value the goal", "Not issued value or activity. Changes what the scoreboard rewards, so it changes B1.", "Objectives and measurement"),
+LEV = [("1", "Make realized value the goal", "Not issued value, activity or breakage. Changes the scoreboard, so it changes B1.", "Objectives and measurement"),
        ("2", "Connect the value states", "Make earned, pending, posted and used visible as one thing. Shortens the delay in B2.", "Information flows"),
        ("3", "Detect and resolve missing value", "Find at-risk value early and route it. This is the recovery capability.", "Rules and accountability"),
        ("4", "Treat consent as spendable", "Intrusion spends it. Personalization has a ceiling, capping how hard R1 is pushed.", "Rules and accountability"),
