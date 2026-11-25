@@ -374,7 +374,7 @@
 
   root.appendChild(section);
 
-  var button = el("button", "btn", "6. Convergence");
+  var button = el("button", "btn", "7. Convergence");
   button.type = "button";
   button.setAttribute("data-cv-view", "convergence");
   button.setAttribute("aria-pressed", "false");

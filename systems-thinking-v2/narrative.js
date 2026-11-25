@@ -16,7 +16,7 @@
   var button = document.createElement("button");
   button.type = "button";
   button.className = "btn";
-  button.textContent = "7. Conclusion";
+  button.textContent = "8. Conclusion";
   button.setAttribute("data-nv-view", "narrative");
   button.setAttribute("aria-pressed", "false");
   controls.appendChild(button);

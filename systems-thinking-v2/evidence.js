@@ -15,7 +15,7 @@
   var button = document.createElement("button");
   button.type = "button";
   button.className = "btn";
-  button.textContent = "9. Evidence and Requirements";
+  button.textContent = "10. Evidence and Requirements";
   button.setAttribute("data-ev-view", "evidence");
   button.setAttribute("aria-pressed", "false");
   controls.appendChild(button);
