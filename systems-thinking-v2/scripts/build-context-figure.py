@@ -247,8 +247,8 @@ a(f'<line x1="700" y1="1014" x2="700" y2="1180" stroke="{NAVY}" stroke-width="3.
 a(f'<rect x="36" y="1186" width="{W-72}" height="112" rx="14" fill="#F1EFE8" stroke="{MUTE}" stroke-width="1.4"/>')
 a(f'<text x="56" y="1214" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">DOWNSTREAM STAKEHOLDERS</text>')
 a(f'<text x="372" y="1214" font-family="{SANS}" font-size="11.5" fill="{MUTE}">Who this reaches, and what it would mean for them</text>')
-DOWN = [("Members", ["Fewer missed opportunities, less time spent searching, a clear view",
-                     "of what is owed, and a way to recover what goes missing"], MEMB),
+DOWN = [("Members", ["Fewer missed earning and redemption opportunities, less searching,",
+                     "a clear view of what is owed, and a way to recover what goes missing"], MEMB),
         ("Finance and risk", ["Recovered points reduce breakage, and liability ages differently"], BMO),
         ("Support and operations", ["Inquiries rise before they fall, because loss becomes visible"], LOSS),
         ("Earn and redeem partners", ["Ranking changes who gets seen, and who does not"], PART),
