@@ -323,7 +323,9 @@ body = (
  '<div class="xt-panel" data-xt-body="where">'
  '<p class="xt-how">One picture of where the product sits: nested inside the Blue Rewards systems of record, which are '
  "nested inside BMO, with the member on one side and the five parties that hold the evidence on the other. "
- "<b>The product owns no system of record. It owns the member&rsquo;s understanding of them.</b> The scope boundary is "
+ "<b>We would not change what value exists. We would change how much of it a member actually ends up with</b> &mdash; "
+ "by helping them find what is worth having, decide on it, follow it through, and get it back when it goes "
+ "missing. That is the whole of the four capabilities, not just the understanding part. The scope boundary is "
  "on the figure rather than in a paragraph, so a reader who only looks at the picture still knows what this does not "
  "replace. This is the figure prepared for section 3 of the PRD.</p>"
  '<figure class="xt-figure"><div class="xt-scroll">' + CONTEXT_SVG + "</div>"

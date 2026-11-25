@@ -288,8 +288,10 @@ inner = (f'<defs>{markers}</defs>' + "".join(o[:SPLIT])
 svg_site = (f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" '
   f'aria-label="Where the product sits in the Blue Rewards system. The product is a dedicated space inside the existing '
   f'Blue Rewards app, nested within the programme systems of record, which are nested within BMO. The member is to the '
-  f'left, evidence authorities to the right, and forces outside the boundary across the top. The product owns no system '
-  f'of record.">{inner}</svg>')
+  f'left, evidence authorities to the right, and forces outside the boundary across the top. It holds none of the '
+  f'records; what it changes is how much of the available value a member ends up with, by helping them find what is '
+  f'worth having, decide on it, follow it through, and recover it when it goes missing. Three feedback loops explain '
+  f'why realized value stays lower than it could be, and five leverage points act on those loops.">{inner}</svg>')
 svg_file = f'<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">{inner}</svg>\n'
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
