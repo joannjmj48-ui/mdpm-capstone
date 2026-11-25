@@ -7,7 +7,7 @@ Joann's MMIE 884 palette and type.
 """
 import pathlib, html
 
-W, H = 2040, 1754
+W, H = 2040, 1772
 INK, CANV, NAVY, GOLD = "#2b2b33", "#fbfaf6", "#10123f", "#C79A3B"
 MUTE, MEMB, BMO, PART, CTX = "#8a8a92", "#185FA5", "#534AB7", "#0F6E56", "#854F0B"
 LOSS = "#A32D2D"
@@ -214,18 +214,18 @@ a(f'<text x="758" y="664" text-anchor="middle" font-family="{SERIF}" font-size="
 a(f'<circle cx="330" cy="500" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
 a(f'<text x="330" y="504" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">5</text>')
 
-a(f'<rect x="36" y="1522" width="1180" height="236" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
+a(f'<rect x="36" y="1522" width="1180" height="254" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
 a(f'<text x="60" y="1552" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">LEVERAGE POINTS</text>')
-a(f'<text x="256" y="1552" font-family="{SANS}" font-size="11" fill="{MUTE}">Each one changes a loop above, which is the only way to move the problem.</text>')
-LEV = [("1", "Make realized value the goal", "Not issued value, not activity, not breakage. Changes what the scoreboard rewards, so it changes B1."),
-       ("2", "Connect the value states", "Make what is earned, pending, posted and used visible as one thing. Shortens the delay in B2."),
-       ("3", "Detect and resolve missing value", "Find at-risk value early and route it. This is the recovery capability."),
-       ("4", "Treat consent as spendable", "Intrusion spends it, so personalization has a ceiling. Caps how hard R1 can be pushed."),
-       ("5", "Learn from realized outcomes", "Feed what actually arrived back into relevance. This is the return leg of R1.")]
-for i2, (n, t, sb) in enumerate(LEV):
+a(f'<text x="256" y="1552" font-family="{SANS}" font-size="11" fill="{MUTE}">Each one changes a loop above. Grouped under the three candidate leverage points in the faculty brief.</text>')
+LEV = [("1", "Make realized value the goal", "Not issued value, not activity, not breakage. Changes what the scoreboard rewards, so it changes B1.", "Objectives and measurement"),
+       ("2", "Connect the value states", "Make what is earned, pending, posted and used visible as one thing. Shortens the delay in B2.", "Information flows"),
+       ("3", "Detect and resolve missing value", "Find at-risk value early and route it. This is the recovery capability.", "Rules and accountability"),
+       ("4", "Treat consent as spendable", "Intrusion spends it, so personalization has a ceiling. Caps how hard R1 can be pushed.", "Rules and accountability"),
+       ("5", "Learn from realized outcomes", "Feed what actually arrived back into relevance. This is the return leg of R1.", "Information flows")]
+for i2, (n, t, sb, fam) in enumerate(LEV):
     col, row = (0, i2) if i2 < 3 else (1, i2 - 3)
     x = 60 + col * 580
-    y = 1586 + row * 60
+    y = 1586 + row * 66
     a(f'<circle cx="{x+13}" cy="{y}" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
     a(f'<text x="{x+13}" y="{y+4}" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">{n}</text>')
     a(f'<text x="{x+34}" y="{y+4}" font-family="{SANS}" font-size="12" fill="{NAVY}" font-weight="700">{e(t)}</text>')
@@ -236,6 +236,7 @@ for i2, (n, t, sb) in enumerate(LEV):
     out2.append(ln)
     for j2, l2 in enumerate(out2[:2]):
         a(f'<text x="{x+34}" y="{y+22+j2*14}" font-family="{SANS}" font-size="10.5" fill="{INK}">{e(l2)}</text>')
+    a(f'<text x="{x+34}" y="{y+50}" font-family="{SERIF}" font-size="9.5" fill="#854F0B" letter-spacing="1.1">{e(fam.upper())}</text>')
 
 # ── downstream stakeholders ──
 a(f'<rect x="36" y="1296" width="{W-72}" height="200" rx="14" fill="#F1EFE8" stroke="{MUTE}" stroke-width="1.4"/>')
@@ -264,7 +265,7 @@ for i, (t, sb, col) in enumerate(DOWN):
         a(f'<text x="{x+cw/2}" y="{1422+j*16}" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="{INK}">{e(l2)}</text>')
 
 # ── what this does not replace ──
-a(f'<rect x="1246" y="1522" width="758" height="236" rx="14" fill="#FCEBEB" stroke="{LOSS}" stroke-width="1.6"/>')
+a(f'<rect x="1246" y="1522" width="758" height="254" rx="14" fill="#FCEBEB" stroke="{LOSS}" stroke-width="1.6"/>')
 a(f'<text x="1270" y="1552" font-family="{SERIF}" font-size="13" fill="{LOSS}" font-weight="700" letter-spacing="2">WHAT THIS DOES NOT REPLACE</text>')
 NR = ["Existing earning methods: partner scans, linked-card offers, receipts, Shops and BMO products.",
       "Redemption fulfilment: gift cards, travel, merchandise and partner redemptions.",
