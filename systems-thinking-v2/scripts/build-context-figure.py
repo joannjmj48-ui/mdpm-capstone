@@ -143,14 +143,14 @@ loop(1374, 560, 74, 196, "B1", ["Liability", "brake"], BMO,
      "one minus · it pushes back")
 
 # ── who holds the proof, far right ──
-band(1468, 250, 536, 520, "Who holds the proof", ["No single one sees a whole journey, so when value goes missing", "the proof is split between them. We would ask all five and instruct none."], PART)
+band(1468, 250, 536, 520, "Who holds the proof", ["No single one sees a whole journey, so when value goes missing the proof is split", "between them. Each sends what it has on its own schedule, so the programme often", "finds out late. We would ask all five and instruct none."], PART)
 AUTH = [("Offer sponsor", "writes the eligibility rules, the reward amount and the deadlines"),
         ("Merchant and point of sale", "the only party that sees what was actually in the basket"),
         ("Card issuer and network", "sees a merchant and an amount, and decides when it settles"),
         ("Affiliate and receipt processing", "ties an online click or a photographed receipt to the member"),
         ("Reward supplier and fulfilment", "ships the gift card, books the trip, decides when it arrives")]
 for i, (t, sb) in enumerate(AUTH):
-    chip(1488, 330 + i * 80, 496, 62, [t], PART, fill=CANV, size=12.5, sub=sb)
+    chip(1488, 352 + i * 80, 496, 62, [t], PART, fill=CANV, size=12.5, sub=sb)
 
 # ── arrows across the boundaries ──
 arrow(292, 300, 520, 566, MEMB, "+  the member uses it", bend=(430, 288), lx=398, ly=262)
@@ -159,8 +159,8 @@ a(f'<line x1="640" y1="504" x2="640" y2="528" stroke="{PART}" stroke-width="2.2"
 a(f'<text x="652" y="522" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">+  reads records</text>')
 a(f'<line x1="1070" y1="528" x2="1070" y2="504" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
 a(f'<text x="1082" y="522" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">+  writes goals and cases</text>')
-arrow(1256, 600, 1466, 440, PART, "‖  on their own timetable", dashed=True, lx=1380, ly=316)
-arrow(1466, 700, 1256, 760, PART, "+  cases routed to them", dashed=True, lx=1380, ly=800)
+arrow(1466, 460, 1262, 600, PART, "‖  we learn when they tell us", dashed=True, lx=1380, ly=318)
+arrow(1262, 760, 1466, 700, PART, "+  we send each case to them", dashed=True, lx=1380, ly=800)
 
 # ── the loop that joins the member to the people holding the proof ──
 a(f'<ellipse cx="890" cy="1066" rx="330" ry="66" fill="#ffffff" stroke="{LOSS}" stroke-width="2"/>')
