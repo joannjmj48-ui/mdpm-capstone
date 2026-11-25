@@ -278,3 +278,18 @@ with their chain listed, and downstream stakeholders as a band across the bottom
   caps R1; learn from realized outcomes is R1's return leg.
 - The loop glyph inside each ellipse is a real circular arrow rather than a dashed circle.
 - The B2 chain closes with "back to the start" instead of a dangling sign.
+
+## The figure was missing its problem (November 2026)
+
+Loops and leverage points had been added to Systems Map 2.0 without a stated problem for them
+to explain, which left the leverage points unanchored: an intervention with nothing identified
+to intervene on.
+
+Added a problem band directly under the core:
+
+> **Available value does not reliably become realized value.** Members miss opportunities worth
+> having, cannot tell what they are owed, and give up when value goes missing.
+
+With what each loop does to it: R1 should raise it but its return leg is unconfirmed, B1 holds
+it down by limiting generosity, B2 holds it down by turning delay into withdrawal. The leverage
+strip now reads "each one changes a loop above, which is the only way to move the problem."
