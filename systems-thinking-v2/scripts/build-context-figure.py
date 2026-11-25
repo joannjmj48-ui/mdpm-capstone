@@ -63,12 +63,12 @@ a(f'<text x="54" y="127" font-family="{SANS}" font-size="13" fill="{NAVY}">'
 SPLIT = len(o)
 
 # ── outside the boundary ──
-band(36, 112, W - 72, 96, "Outside the boundary", ["Neither BMO nor this work can change these.", "They set the conditions everything else runs in."], CTX)
+band(36, 112, W - 72, 96, "Outside the boundary", None, CTX)
 for i, t in enumerate(["Regulation and privacy", "Competitor programmes", "Member expectations", "Technology landscape"]):
     chip(330 + i * 330, 152, 300, 42, [t], CTX, fill=CANV, weight="400", size=12.5)
 
 # ── the member, left ──
-band(36, 232, 300, 500, "The member", ["The programme sees some of what a member does,", "not all of it."], MEMB)
+band(36, 232, 300, 500, "The member", ["It only records what passes through a route that earns:", "a scan, a linked card, a receipt, a Shops click."], MEMB)
 chip(54, 300, 264, 62, ["Member"], MEMB, fill="#E6F1FB", size=15, sub="with or without a BMO banking relationship")
 chip(54, 382, 264, 108, ["Spending they already", "intend to make"], MEMB, fill=CANV, weight="400", size=12.5,
      sub="what the enhancement is built around")
@@ -84,52 +84,63 @@ a(f'<text x="186" y="706" text-anchor="middle" font-family="{SANS}" font-size="1
 a(f'<text x="186" y="721" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">inside it, not everything they bought or wanted.</text>')
 
 # ── BMO → programme → product, centre ──
-band(404, 232, 794, 620, "BMO", "Owns Blue Rewards, funds it and carries the cost of the points members hold.", BMO, dashed=False)
-for i, t in enumerate(["Finance and risk", "Programme leadership", "Banking relationship"]):
-    chip(424 + i * 254, 282, 238, 40, [t], BMO, fill="#EEEDFE", size=12, weight="700")
+band(404, 232, 794, 620, "BMO", "Owns Blue Rewards and funds it. Emerging Business, in gold, is our client. Each of the other teams holds a decision we would need.", BMO, dashed=False)
+BMO_TEAMS = [("Emerging Business", "our client \u00b7 Drew\u2019s team", True),
+             ("Programme leadership", "sets direction, funds it", False),
+             ("Cards and Credit", "the banking earning routes", False),
+             ("Data and Analytics", "the records and the decisioning", False),
+             ("Finance and risk", "carries the cost of points held", False)]
+for i, (t, sb, client) in enumerate(BMO_TEAMS):
+    x = 424 + i * 152
+    col = GOLD if client else BMO
+    a(f'<rect x="{x}" y="296" width="146" height="44" rx="10" fill="{"#FAEEDA" if client else "#EEEDFE"}" stroke="{col}" stroke-width="{2 if client else 1.4}"/>')
+    a(f'<text x="{x+73}" y="314" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{"#854F0B" if client else BMO}" font-weight="700">{e(t)}</text>')
+    a(f'<text x="{x+73}" y="330" text-anchor="middle" font-family="{SANS}" font-size="9.5" fill="{MUTE}">{e(sb)}</text>')
 
-band(424, 346, 752, 484, "Blue Rewards programme today", "Where the official records live. We would read from these and write back to them, not replace them.", PART, dashed=False)
+band(424, 346, 752, 484, "Blue Rewards programme today", ["The loyalty programme itself: the offers, the points, the catalogue, and the people who resolve cases.", "We would read from these services and write back to them. We would not replace any of them."], PART, dashed=False)
 for i, t in enumerate(["Offer service", "Points and transactions", "Catalogue and travel", "Support and cases"]):
-    chip(442 + i * 184, 396, 168, 40, [t], PART, fill="#E1F5EE", size=11.5)
+    chip(442 + i * 184, 420, 168, 40, [t], PART, fill="#E1F5EE", size=11.5)
 
-a(f'<rect x="442" y="462" width="714" height="348" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
-a(f'<text x="799" y="494" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
-a(f'<text x="799" y="518" text-anchor="middle" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">A dedicated space inside the Blue Rewards app and website. Everything around it already exists.</text>')
+a(f'<rect x="442" y="476" width="714" height="340" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
+a(f'<text x="799" y="506" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
+a(f'<text x="799" y="530" text-anchor="middle" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">A dedicated space inside the Blue Rewards app and website. Everything around it already exists.</text>')
 CAPS = [("Relevant Opportunity\nDiscovery", "Relevance"), ("Adaptive Value\nPlanning", "Clarity"),
         ("Transparent Value\nProgression", "Visibility"), ("Value Protection\nand Recovery", "Reliability")]
 for i, (t, need) in enumerate(CAPS):
     x = 458 + i * 176
-    a(f'<rect x="{x}" y="538" width="162" height="96" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
+    a(f'<rect x="{x}" y="548" width="162" height="92" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
     for j, ln in enumerate(t.split("\n")):
-        a(f'<text x="{x+81}" y="{568+j*17}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">{e(ln)}</text>')
-    a(f'<text x="{x+81}" y="{618}" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{GOLD}" letter-spacing="1.4">{e(need.upper())}</text>')
-a(f'<rect x="458" y="650" width="682" height="40" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2" stroke-dasharray="6 4"/>')
-a(f'<text x="800" y="675" text-anchor="middle" font-family="{SANS}" font-size="12.5" fill="#ffffff">Blue, the optional conversational assistant, works across all four and shares the same saved information</text>')
-a(f'<text x="799" y="716" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{GOLD}">We would hold none of the official records. What we would own is whether the member understands them.</text>')
-a(f'<rect x="458" y="736" width="682" height="58" rx="10" fill="none" stroke="#3C3489" stroke-width="1.4" stroke-dasharray="5 4"/>')
-a(f'<text x="800" y="757" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0" font-weight="700">The only new records we would create</text>')
-a(f'<text x="800" y="777" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">A saved goal · a saved comparison · ranked options with the reason for the ranking · a case the member can follow</text>')
+        a(f'<text x="{x+81}" y="{576+j*17}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">{e(ln)}</text>')
+    a(f'<text x="{x+81}" y="{626}" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{GOLD}" letter-spacing="1.4">{e(need.upper())}</text>')
+a(f'<rect x="458" y="656" width="682" height="36" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2" stroke-dasharray="6 4"/>')
+a(f'<text x="800" y="679" text-anchor="middle" font-family="{SANS}" font-size="12.5" fill="#ffffff">Blue, the optional conversational assistant, works across all four and shares the same saved information</text>')
+a(f'<text x="799" y="714" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{GOLD}">The programme still runs the offers, the points and the rewards. What we would own is whether the member understands them.</text>')
+a(f'<rect x="458" y="732" width="682" height="54" rx="10" fill="none" stroke="#3C3489" stroke-width="1.4" stroke-dasharray="5 4"/>')
+a(f'<text x="800" y="752" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0" font-weight="700">The only new records we would create</text>')
+a(f'<text x="800" y="771" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">A saved goal · a saved comparison · ranked options with the reason for the ranking · a case the member can follow</text>')
 
 # ── evidence authorities, right ──
-band(1234, 232, 430, 464, "Who holds the proof", ["Each knows a different part of what happened to a member.", "We would work with all five, and control none of them."], PART)
-AUTH = [("Offer sponsor", "sets the terms"), ("Merchant and point of sale", "observes the purchase"),
-        ("Card issuer and network", "observes the payment"), ("Affiliate and receipt processing", "attributes the activity"),
-        ("Reward supplier and fulfilment", "delivers the reward")]
+band(1206, 232, 458, 464, "Who holds the proof", ["No single one sees a whole journey, so when value goes missing the", "proof is split between them. We would ask all five and instruct none."], PART)
+AUTH = [("Offer sponsor", "writes the eligibility rules, the reward amount and the deadlines"),
+        ("Merchant and point of sale", "the only party that sees what was actually in the basket"),
+        ("Card issuer and network", "sees a merchant and an amount, and decides when it settles"),
+        ("Affiliate and receipt processing", "ties an online click or a photographed receipt to the member"),
+        ("Reward supplier and fulfilment", "ships the gift card, books the trip, decides when it arrives")]
 for i, (t, s) in enumerate(AUTH):
-    chip(1256, 316 + i * 78, 386, 60, [t], PART, fill=CANV, size=12.5, sub=s)
+    chip(1226, 316 + i * 78, 418, 60, [t], PART, fill=CANV, size=12.5, sub=s)
 
 # ── arrows ──
 for c in (MEMB, BMO, PART, GOLD, MUTE):
     pass
-arrow(318, 336, 452, 512, MEMB, "the member uses it", bend=(388, 410), lx=370, ly=388)
-arrow(452, 580, 318, 470, MEMB, None, bend=(382, 560))
-arrow(700, 456, 700, 462, PART, None)
-a(f'<line x1="600" y1="438" x2="600" y2="458" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
-a(f'<text x="612" y="454" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">reads records</text>')
-a(f'<line x1="968" y1="462" x2="968" y2="438" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
-a(f'<text x="984" y="455" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">writes goals and cases</text>')
-arrow(1156, 480, 1256, 420, PART, "evidence arrives on their schedule", dashed=True, lx=1210, ly=372)
-arrow(1256, 560, 1156, 620, PART, "cases routed to whoever is responsible", dashed=True, lx=1212, ly=676)
+arrow(318, 336, 452, 526, MEMB, "the member uses it", bend=(388, 410), lx=370, ly=388)
+arrow(452, 594, 318, 470, MEMB, None, bend=(382, 568))
+arrow(700, 470, 700, 476, PART, None)
+a(f'<line x1="600" y1="462" x2="600" y2="474" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
+a(f'<text x="612" y="472" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">reads records</text>')
+a(f'<line x1="968" y1="474" x2="968" y2="462" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
+a(f'<text x="984" y="472" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">writes goals and cases</text>')
+arrow(1156, 494, 1226, 434, PART, "evidence arrives on their schedule", dashed=True, lx=1434, ly=382)
+arrow(1226, 574, 1156, 634, PART, "cases routed to whoever is responsible", dashed=True, lx=1434, ly=616)
 
 # ── journey and scope, bottom ──
 a(f'<line x1="36" y1="884" x2="{W-36}" y2="884" stroke="#ddd7c6" stroke-width="1"/>')

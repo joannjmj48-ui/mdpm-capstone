@@ -217,3 +217,16 @@ Rewritten so the figure answers its own questions.
   "what the programme records is what a member did inside it, not everything they bought or
   wanted".
 - The measures carry a plain reading under each formula; the MDPM 830 caption is removed.
+
+## Figure: name the BMO teams, and say why (November 2026)
+
+- The BMO band now names the five teams rather than three generic functions. **Emerging Business**
+  is marked in gold as the client, with Drew's team noted. Programme leadership, Cards and Credit,
+  Data and Analytics and Finance and risk each carry the decision they hold.
+- "Outside the boundary" loses its note. The band name already says nobody here controls it.
+- The member band now says *why* the programme sees only part: it records what passes through a
+  route that earns — a scan, a linked card, a receipt, a Shops click.
+- Blue Rewards is described as the loyalty programme, not a store of records.
+- Every line under "Who holds the proof" is elaborated into what that party actually knows, and
+  the heading note explains why five parties matter: no single one sees a whole journey, so when
+  value goes missing the proof is split between them.
