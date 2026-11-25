@@ -331,7 +331,7 @@ body = (
  '<figure class="xt-figure"><div class="xt-scroll">' + CONTEXT_SVG + "</div>"
  '<figcaption class="xt-cap-note">Download: '
  '<a href="figures/product-in-the-system.svg" download>SVG</a> (vector, inserts into Word, Docs and PowerPoint) '
- '&middot; <a href="figures/product-in-the-system.png" download>PNG</a> (3400 &times; 2430).</figcaption>'
+ '&middot; <a href="figures/product-in-the-system.png" download>PNG</a> 5120 &times; 2880, 16:9 for a slide.</figcaption>'
  "</figure></div>"
  '<div class="xt-panel" data-xt-body="map" hidden>'
  '<p class="xt-how">Read it the way the toolkit says. Follow an arrow, read its sign, and count the minuses round a loop: '
