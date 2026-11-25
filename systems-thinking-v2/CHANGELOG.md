@@ -293,3 +293,15 @@ Added a problem band directly under the core:
 With what each loop does to it: R1 should raise it but its return leg is unconfirmed, B1 holds
 it down by limiting generosity, B2 holds it down by turning delay into withdrawal. The leverage
 strip now reads "each one changes a loop above, which is the only way to move the problem."
+
+## Core box: goal, then features (November 2026)
+
+The box read feature, then programme statement, then feature again, then journey. It now runs
+in one direction: what we are proposing &rarr; the goal &rarr; the five features we have so far
+&rarr; the journey they support &rarr; what Milestone 3 settles.
+
+- Removed "the only new records we would create", which claimed more certainty about the build
+  than M3 allows, and the duplicated programme statement already carried by the band above.
+- "Which of these we build, in what order and how far, is what Milestone 3 settles" replaces it.
+- The problem band heading is now simply "The problem", and each loop names the variable it
+  acts on rather than a dangling "it": R1 should raise realized value, B1 caps it, B2 drains it.

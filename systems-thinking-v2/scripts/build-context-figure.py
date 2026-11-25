@@ -119,23 +119,29 @@ for i, t in enumerate(["Offer service", "Points and transactions", "Catalogue an
 
 a(f'<rect x="524" y="534" width="732" height="414" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
 a(f'<text x="890" y="566" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
-a(f'<text x="890" y="590" text-anchor="middle" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">A dedicated space inside the Blue Rewards app and website.</text>')
+a(f'<text x="890" y="588" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#c9c9e0">A dedicated space inside the Blue Rewards app and website.</text>')
+
+a(f'<text x="546" y="626" font-family="{SERIF}" font-size="11.5" fill="{GOLD}" letter-spacing="1.8" font-weight="700">THE GOAL</text>')
+a(f'<text x="636" y="626" font-family="{SANS}" font-size="13" fill="#ffffff" font-weight="700">Members repeatedly receive and use the value they expect.</text>')
+
+a(f'<text x="546" y="660" font-family="{SERIF}" font-size="11.5" fill="{GOLD}" letter-spacing="1.8" font-weight="700">WHAT WE HAVE SO FAR</text>')
+a(f'<text x="806" y="660" font-family="{SANS}" font-size="11.5" fill="#9a9ab8">five features in the Milestone 2 prototype, each answering one member need</text>')
 CAPS = [("Relevant Opportunity\nDiscovery", "Relevance"), ("Adaptive Value\nPlanning", "Clarity"),
         ("Transparent Value\nProgression", "Visibility"), ("Value Protection\nand Recovery", "Reliability")]
-for i, (t, need) in enumerate(CAPS):
-    x = 542 + i * 180
-    a(f'<rect x="{x}" y="610" width="164" height="96" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
-    for j, ln in enumerate(t.split("\n")):
-        a(f'<text x="{x+82}" y="{640+j*17}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">{e(ln)}</text>')
-    a(f'<text x="{x+82}" y="690" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{GOLD}" letter-spacing="1.4">{e(need.upper())}</text>')
-a(f'<rect x="542" y="724" width="692" height="38" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2" stroke-dasharray="6 4"/>')
-a(f'<text x="888" y="748" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff">Blue, the optional conversational assistant, works across all four and shares the same saved information</text>')
-a(f'<text x="890" y="786" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{GOLD}">The programme still runs the offers, the points and the rewards. What we would own is whether the member understands them.</text>')
-a(f'<rect x="542" y="804" width="692" height="60" rx="10" fill="none" stroke="#3C3489" stroke-width="1.4" stroke-dasharray="5 4"/>')
-a(f'<text x="888" y="826" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0" font-weight="700">The only new records we would create</text>')
-a(f'<text x="888" y="846" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">A saved goal &#183; a saved comparison &#183; ranked options with the reason for the ranking &#183; a case the member can follow</text>')
-a(f'<text x="890" y="890" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">The member journey it supports:  Explore and decide  &#8594;  Earn or redeem  &#8594;  Follow progress  &#8594;  Receive and use</text>')
-a(f'<text x="890" y="914" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="#9a9ab8">Underneath, value moves through the five stages on the map. This enhancement does not move value; it changes whether the member can see, judge, follow and recover it.</text>')
+for i2, (t, need) in enumerate(CAPS):
+    x = 542 + i2 * 180
+    a(f'<rect x="{x}" y="676" width="164" height="92" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
+    for j2, ln in enumerate(t.split("\n")):
+        a(f'<text x="{x+82}" y="{704+j2*17}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">{e(ln)}</text>')
+    a(f'<text x="{x+82}" y="754" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{GOLD}" letter-spacing="1.4">{e(need.upper())}</text>')
+a(f'<rect x="542" y="778" width="692" height="42" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
+a(f'<text x="888" y="796" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">Blue, the optional conversational assistant</text>')
+a(f'<text x="888" y="812" text-anchor="middle" font-family="{SANS}" font-size="11" fill="#9a9ab8">works across all four and shares the same saved information</text>')
+
+a(f'<text x="890" y="852" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">Explore and decide  &#8594;  Earn or redeem  &#8594;  Follow progress  &#8594;  Receive and use</text>')
+a(f'<text x="890" y="872" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="#9a9ab8">the member journey these five support, one feature to a step</text>')
+a(f'<rect x="542" y="890" width="692" height="40" rx="10" fill="none" stroke="#3C3489" stroke-width="1.4" stroke-dasharray="5 4"/>')
+a(f'<text x="888" y="915" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">Which of these we build, in what order and how far, is what Milestone 3 settles.</text>')
 
 # ── liability brake, between the core and the proof-holders ──
 loop(1374, 560, 74, 196, "B1", ["Liability", "brake"], BMO,
@@ -166,12 +172,12 @@ arrow(1262, 760, 1466, 700, PART, "+  we send each case to them", dashed=True, l
 
 # ── the problem the loops explain ──
 a(f'<rect x="400" y="1006" width="1240" height="110" rx="14" fill="#FAECE7" stroke="{LOSS}" stroke-width="2"/>')
-a(f'<text x="424" y="1036" font-family="{SERIF}" font-size="14" fill="{LOSS}" font-weight="700" letter-spacing="2">THE PROBLEM THESE LOOPS EXPLAIN</text>')
+a(f'<text x="424" y="1036" font-family="{SERIF}" font-size="14" fill="{LOSS}" font-weight="700" letter-spacing="2">THE PROBLEM</text>')
 a(f'<text x="424" y="1062" font-family="{SERIF}" font-size="17" fill="{NAVY}" font-weight="700">Available value does not reliably become realized value.</text>')
-a(f'<text x="424" y="1084" font-family="{SANS}" font-size="12" fill="{INK}">Members miss opportunities worth having, cannot tell what they are owed, and give up when value goes missing. Realized value is the main variable, and these three loops are why it stays lower than it could be:</text>')
-EFFECT = [("R1", "should raise it \u2014 but its return leg is unconfirmed", PART),
-          ("B1", "holds it down by limiting how generous offers can be", BMO),
-          ("B2", "holds it down by turning delay into withdrawal", LOSS)]
+a(f'<text x="424" y="1084" font-family="{SANS}" font-size="12" fill="{INK}">Members miss opportunities worth having, cannot tell what they are owed, and give up when value goes missing. Realized value is the main variable. These three loops are why it stays lower than it could be:</text>')
+EFFECT = [("R1", "should raise realized value \u2014 but its return leg is unconfirmed", PART),
+          ("B1", "caps realized value by limiting how generous offers can be", BMO),
+          ("B2", "drains realized value by turning delay into withdrawal", LOSS)]
 ex = 424
 for code, eff, col in EFFECT:
     a(f'<circle cx="{ex+10}" cy="{1100}" r="10" fill="{col}"/>')
@@ -200,12 +206,12 @@ a(f'<path d="M172,650 Q168,1030 540,1194" fill="none" stroke="{LOSS}" stroke-wid
 
 a(f'<circle cx="1284" cy="452" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
 a(f'<text x="1284" y="456" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">1</text>')
-a(f'<circle cx="1046" cy="600" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
-a(f'<text x="1046" y="604" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">2</text>')
-a(f'<circle cx="1222" cy="600" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
-a(f'<text x="1222" y="604" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">3</text>')
-a(f'<circle cx="686" cy="600" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
-a(f'<text x="686" y="604" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">4</text>')
+a(f'<circle cx="1060" cy="680" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
+a(f'<text x="1060" y="684" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">2</text>')
+a(f'<circle cx="1240" cy="680" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
+a(f'<text x="1240" y="684" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">3</text>')
+a(f'<circle cx="700" cy="680" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
+a(f'<text x="700" y="684" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">4</text>')
 a(f'<circle cx="330" cy="356" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
 a(f'<text x="330" y="360" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">5</text>')
 
