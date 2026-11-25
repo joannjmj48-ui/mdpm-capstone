@@ -268,3 +268,13 @@ with their chain listed, and downstream stakeholders as a band across the bottom
 - **Impacted / downstream stakeholders** is now a band inside the figure: members, Finance and
   risk, support and operations, earn and redeem partners, Cards and Credit.
 - Canvas is 2040 x 1546 to make room for the loops either side of the core.
+
+## Leverage points on the figure (November 2026)
+
+- The five converged leverage clusters from the Convergence tab are now marked on Systems Map
+  2.0 with numbered gold badges at the point each one acts, and named in a strip beneath the
+  map. Make realized value the goal acts on B1; connect the value states shortens the delay in
+  B2; detect and resolve missing value is the recovery capability; treat consent as spendable
+  caps R1; learn from realized outcomes is R1's return leg.
+- The loop glyph inside each ellipse is a real circular arrow rather than a dashed circle.
+- The B2 chain closes with "back to the start" instead of a dangling sign.
