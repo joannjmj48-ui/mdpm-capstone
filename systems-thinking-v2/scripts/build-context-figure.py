@@ -243,28 +243,29 @@ a(f'<text x="1480" y="1124" text-anchor="middle" font-family="{SANS}" font-size=
 a(f'<text x="1480" y="1141" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">or that a missing reward is being handled, is what manufactures doubt.</text>')
 
 # ── what the system above would do to the people downstream of it ────────
-a(f'<line x1="700" y1="1014" x2="700" y2="1180" stroke="{NAVY}" stroke-width="3.2" marker-end="url(#ar_{NAVY[1:]})"/>')
-a(f'<rect x="36" y="1186" width="{W-72}" height="112" rx="14" fill="#F1EFE8" stroke="{MUTE}" stroke-width="1.4"/>')
-a(f'<text x="56" y="1214" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">DOWNSTREAM STAKEHOLDERS</text>')
-a(f'<text x="372" y="1214" font-family="{SANS}" font-size="11.5" fill="{MUTE}">Who this reaches, and what it would mean for them</text>')
-DOWN = [("Members", ["Fewer missed earning and redemption opportunities, less searching,",
-                     "a clear view of what is owed, and a way to recover what goes missing"], MEMB),
+a(f'<line x1="700" y1="1014" x2="700" y2="1172" stroke="{NAVY}" stroke-width="3.2" marker-end="url(#ar_{NAVY[1:]})"/>')
+a(f'<rect x="36" y="1178" width="{W-72}" height="132" rx="14" fill="#F1EFE8" stroke="{MUTE}" stroke-width="1.4"/>')
+a(f'<text x="56" y="1206" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">DOWNSTREAM STAKEHOLDERS</text>')
+a(f'<text x="372" y="1206" font-family="{SANS}" font-size="11.5" fill="{MUTE}">Who this reaches, and what it would mean for them</text>')
+DOWN = [("Members", ["Fewer missed earning and redemption opportunities,",
+                     "less time spent searching, a clear view of what is owed,",
+                     "and a way to recover missing points and rewards"], MEMB),
         ("Finance and risk", ["Recovered points reduce breakage, and liability ages differently"], BMO),
         ("Support and operations", ["Inquiries rise before they fall, because loss becomes visible"], LOSS),
         ("Earn and redeem partners", ["Ranking changes who gets seen, and who does not"], PART),
         ("Cards and Credit", ["More reason to hold the card, but only if the flywheel turns"], BMO)]
 for i, (t, lines, col) in enumerate(DOWN):
     x = 56 + i * 492
-    a(f'<rect x="{x}" y="1226" width="476" height="64" rx="9" fill="#ffffff" stroke="{col}" stroke-width="1.5"/>')
-    a(f'<rect x="{x}" y="1226" width="476" height="4" rx="2" fill="{col}"/>')
-    a(f'<text x="{x+238}" y="1252" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{col}" font-weight="700">{e(t)}</text>')
-    ly = 1278 if len(lines) == 1 else 1271
+    a(f'<rect x="{x}" y="1218" width="476" height="80" rx="9" fill="#ffffff" stroke="{col}" stroke-width="1.5"/>')
+    a(f'<rect x="{x}" y="1218" width="476" height="4" rx="2" fill="{col}"/>')
+    a(f'<text x="{x+238}" y="1244" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{col}" font-weight="700">{e(t)}</text>')
+    ly = 1272 if len(lines) == 1 else 1264
     for j, l2 in enumerate(lines):
-        a(f'<text x="{x+238}" y="{ly+j*16}" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{INK}">{e(l2)}</text>')
+        a(f'<text x="{x+238}" y="{ly+j*14}" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{INK}">{e(l2)}</text>')
 
 # ── leverage points ──────────────────────────────────────────────────────
-a(f'<rect x="36" y="1310" width="{W-72}" height="102" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
-a(f'<text x="56" y="1338" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">LEVERAGE POINTS</text>')
+a(f'<rect x="36" y="1322" width="{W-72}" height="96" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
+a(f'<text x="56" y="1350" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">LEVERAGE POINTS</text>')
 LEV = [("1", "Make realized value the goal", "Not issued value, activity or breakage. Changes the scoreboard, so it changes B1.", "Objectives and measurement"),
        ("2", "Connect the value states", "Make earned, pending, posted and used visible as one thing. Shortens the delay in B2.", "Information flows"),
        ("3", "Detect and resolve missing value", "Find at-risk value early and route it. This is the recovery capability.", "Rules and accountability"),
@@ -272,10 +273,10 @@ LEV = [("1", "Make realized value the goal", "Not issued value, activity or brea
        ("5", "Learn from realized outcomes", "Feed what actually arrived back into relevance. This is the return leg of R1.", "Information flows")]
 for i2, (n2, t, sb, fam) in enumerate(LEV):
     x = 56 + i2 * 496
-    badge(x + 13, 1364, n2)
-    a(f'<text x="{x+34}" y="1369" font-family="{SANS}" font-size="12.5" fill="{NAVY}" font-weight="700">{e(t)}</text>')
-    a(f'<text x="{x+34}" y="1386" font-family="{SANS}" font-size="10" fill="{INK}">{e(sb)}</text>')
-    a(f'<text x="{x+34}" y="1403" font-family="{SERIF}" font-size="10" fill="#854F0B" letter-spacing="1.1">{e(fam.upper())}</text>')
+    badge(x + 13, 1378, n2)
+    a(f'<text x="{x+34}" y="1383" font-family="{SANS}" font-size="12.5" fill="{NAVY}" font-weight="700">{e(t)}</text>')
+    a(f'<text x="{x+34}" y="1400" font-family="{SANS}" font-size="10" fill="{INK}">{e(sb)}</text>')
+    a(f'<text x="{x+34}" y="1415" font-family="{SERIF}" font-size="10" fill="#854F0B" letter-spacing="1.1">{e(fam.upper())}</text>')
 
 a(f'<text x="36" y="1434" font-family="{SANS}" font-size="12.5" fill="{MUTE}">Team Zig &#183; Blue Rewards capstone &#183; Figure for section 3 of the Product Requirements Document. Full interactive systems map: joannjmj48-ui.github.io/mdpm-capstone/systems-thinking-v2/</text>')
 
