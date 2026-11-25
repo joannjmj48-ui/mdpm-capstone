@@ -181,8 +181,8 @@ a(f'<path d="M172,646 Q300,980 558,1050" fill="none" stroke="{LOSS}" stroke-widt
 
 # ── downstream stakeholders ──
 a(f'<rect x="36" y="1162" width="{W-72}" height="200" rx="14" fill="#F1EFE8" stroke="{MUTE}" stroke-width="1.4"/>')
-a(f'<text x="{W/2}" y="1192" text-anchor="middle" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">IMPACTED  /  DOWNSTREAM STAKEHOLDERS</text>')
-a(f'<text x="{W/2}" y="1212" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">Who is affected if this is delivered, and in what way</text>')
+a(f'<text x="{W/2}" y="1192" text-anchor="middle" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">DOWNSTREAM STAKEHOLDERS</text>')
+a(f'<text x="{W/2}" y="1212" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">Who this reaches, and what it would mean for them</text>')
 DOWN = [("Members", "Fewer steps and less uncertainty, and a way to see what is owed", MEMB),
         ("Finance and risk", "Recovered points reduce breakage, and liability ages differently", BMO),
         ("Support and operations", "Inquiries rise before they fall, because loss becomes visible", LOSS),
