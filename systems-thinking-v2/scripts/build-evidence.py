@@ -171,7 +171,7 @@ js = (
     '  var button = document.createElement("button");\n'
     '  button.type = "button";\n'
     '  button.className = "btn";\n'
-    '  button.textContent = "10. Evidence and Requirements";\n'
+    '  button.textContent = "9. Evidence and Requirements";\n'
     '  button.setAttribute("data-ev-view", "evidence");\n'
     '  button.setAttribute("aria-pressed", "false");\n'
     "  controls.appendChild(button);\n\n"

@@ -4668,7 +4668,7 @@
   "views": [
     {
       "id": "current",
-      "label": "2. Systems Map M1",
+      "label": "1. Systems Map M1",
       "heading": "Current System",
       "purpose": "Show what exists today and where value progression may be enabled, interrupted, delayed or obscured.",
       "contextParagraph": "This view shows the populations, partners, value flows and institutional capabilities operating today. It highlights where loyalty value may progress or stall between Opportunity, Potential Value, Earned Value, Available Value and Realized Value, while preserving uncertainty about the actual degree of integration, fragmentation and causal effect.",
@@ -4740,7 +4740,7 @@
     },
     {
       "id": "transition",
-      "label": "4. How Value Progresses",
+      "label": "3. How Value Progresses",
       "heading": "How value progresses",
       "purpose": "Show the stages worthwhile value passes through on its way to the member, and where that progression may stall. This is a stage view, not a second systems map: value moves forward through the states and does not return to an earlier one.",
       "contextParagraph": "How worthwhile value moves from an offer in the catalogue to something a member has used. Five stages, and between each one a step where value can stall. Naming the stages separately is what lets you say which step is failing, rather than treating the whole thing as one problem.",
@@ -4822,7 +4822,7 @@
     },
     {
       "id": "future",
-      "label": "9. Opportunity + Product Description",
+      "label": "8. Opportunity + Product Description",
       "heading": "What would have to be true",
       "purpose": "Show a hypothesized improved system if relevant value-state transitions are strengthened.",
       "contextParagraph": "Three capabilities the system does not have yet, and the outcomes the team hopes they produce. They are preconditions for the product described below, not a committed architecture - every one is a hypothesis, and each carries the balancing loop that decides whether it holds.",
@@ -4864,7 +4864,7 @@
     },
     {
       "id": "external",
-      "label": "5. Outside the Boundary",
+      "label": "4. Outside the Boundary",
       "heading": "Outside the System Boundary",
       "purpose": "Show external actors and conditions without treating them as internal components.",
       "contextParagraph": "This view isolates external actors and conditions that may influence the bounded system. Only relationships among external factors are drawn; possible links to current and future nodes remain narrative and contextual rather than established internal flows.",
