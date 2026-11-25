@@ -198,3 +198,22 @@ ending 2027, Metro and Rexall unconfirmed — upgrade nothing on their own.
 Everything below shifts as expected and ends at 9. Evidence and Requirements. Numbers live in
 the generators; every module's cache key is bumped so a half-cached page cannot show two
 numbering schemes at once.
+
+## Systems Map 2.0 figure: plain-language pass (November 2026)
+
+Rewritten so the figure answers its own questions.
+
+- Added a purpose bar: what the figure shows, and the instruction to read it from the outside in.
+- Title is now "Where our proposed enhancement would sit"; the strapline is "An enhanced
+  experience within Blue Rewards".
+- "The product" is named throughout: "What we are proposing to build", "this enhancement",
+  "What this enhancement does not replace".
+- "Evidence authorities" becomes "Who holds the proof". "Systems of record" becomes "where the
+  official records live". "Owns no system of record" becomes "we would hold none of the
+  official records".
+- "What the programme cannot observe" now lists real examples, including the three programmes
+  usability participants named themselves.
+- "Recorded activity is evidence of programme interaction, not of a life" is gone, replaced with
+  "what the programme records is what a member did inside it, not everything they bought or
+  wanted".
+- The measures carry a plain reading under each formula; the MDPM 830 caption is removed.
