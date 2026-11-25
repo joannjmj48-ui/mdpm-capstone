@@ -64,7 +64,8 @@ def loop(cx, cy, rx, ry, code, title, colour, steps, foot):
     for i, ln in enumerate(title):
         a(f'<text x="{cx}" y="{cy-ry+46+i*15}" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{colour}" font-weight="700">{e(ln)}</text>')
     ay = cy - ry + 112
-    a(f'<path d="M{cx-15},{ay} A 15 15 0 1 1 {cx},{ay-15}" fill="none" stroke="{colour}" stroke-width="2.4" marker-end="url(#ar_{colour[1:]})"/>')
+    a(f'<path d="M{cx-14},{ay} A 14 14 0 1 1 {cx},{ay-14}" fill="none" stroke="{colour}" stroke-width="2.2" stroke-linecap="round"/>')
+    a(f'<path d="M{cx-4},{ay-19} L{cx+5},{ay-14} L{cx-4},{ay-9} Z" fill="{colour}"/>')
     ty = cy - ry + 146
     for st, sign in steps:
         a(f'<text x="{cx-rx+16}" y="{ty}" font-family="{SERIF}" font-size="12" fill="{colour}" font-weight="700">{sign}</text>')
