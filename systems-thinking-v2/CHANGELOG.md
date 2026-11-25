@@ -242,3 +242,16 @@ Added: real examples under each outside-the-boundary force, pulled from the Outs
 Boundary view. Member is now "a member, a BMO client, or both". Title is Systems Map 2.0.
 "Evidence arrives on their schedule" becomes "each reports on its own timetable", moved out of
 the gap between two boxes.
+
+## Figure: polarity, loops and downstream impact (November 2026)
+
+- Every arrow now carries a sign, and the reporting arrow carries a delay bar. A notation key
+  sits in the masthead.
+- Three loops that cross the boundaries the figure draws: R1 relevance flywheel (no minuses,
+  compounds), B1 liability brake (one minus, programme to Finance), B2 proof and doubt brake
+  (one minus and a delay, member to the five parties holding the proof).
+- "Who feels it downstream if this works" names four consequences by owner, drawn from the
+  consequence analysis in Systems Map M2.
+- Member expectations keeps its place outside the boundary, but the label now says why: formed
+  by every other app they use, and not always realistic. We control what we deliver, not the
+  standard members arrive with.

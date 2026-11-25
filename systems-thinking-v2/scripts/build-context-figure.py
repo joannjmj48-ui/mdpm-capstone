@@ -7,9 +7,10 @@ Joann's MMIE 884 palette and type.
 """
 import pathlib, html
 
-W, H = 1700, 1130
+W, H = 1700, 1420
 INK, CANV, NAVY, GOLD = "#2b2b33", "#fbfaf6", "#10123f", "#C79A3B"
 MUTE, MEMB, BMO, PART, CTX = "#8a8a92", "#185FA5", "#534AB7", "#0F6E56", "#854F0B"
+LOSS = "#A32D2D"
 SANS, SERIF = "Helvetica,Arial,sans-serif", "Georgia,serif"
 
 o = []
@@ -53,7 +54,8 @@ a(f'<rect width="{W}" height="86" fill="{NAVY}"/><rect y="86" width="{W}" height
 a(f'<text x="36" y="38" font-family="{SERIF}" font-size="13" fill="{GOLD}" letter-spacing="2.8" font-weight="700">TEAM ZIG  ·  BLUE REWARDS  ·  SYSTEMS MAP</text>')
 a(f'<text x="36" y="70" font-family="{SERIF}" font-size="25" fill="#ffffff" font-weight="700">Systems Map 2.0</text>')
 a(f'<text x="{W-36}" y="48" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">Team Zig · November 2026</text>')
-a(f'<text x="{W-36}" y="68" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">An enhanced experience within Blue Rewards</text>')
+a(f'<text x="{W-36}" y="62" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">An enhanced experience within Blue Rewards</text>')
+a(f'<text x="{W-36}" y="84" text-anchor="end" font-family="{SANS}" font-size="11" fill="{GOLD}">+ same direction &#183; &#8722; opposite direction &#183; &#8214; significant delay &#183; R reinforcing, B balancing</text>')
 
 SPLIT = len(o)
 
@@ -61,7 +63,7 @@ SPLIT = len(o)
 band(36, 112, W - 72, 108, "Outside the boundary", None, CTX)
 OUT = [("Regulation and privacy", "privacy law, consent rules, suitability, disclosure"),
        ("Competitor programmes", "PC Optimum, Scene, bank and card ecosystems"),
-       ("Member expectations", "relevance, simplicity, flexibility, dependable service"),
+       ("Member expectations", "formed by every other app they use, and not always realistic"),
        ("Technology landscape", "AI, identity, interoperability, data portability")]
 for i, (t, sb) in enumerate(OUT):
     chip(330 + i * 330, 146, 300, 56, [t], CTX, fill=CANV, weight="700", size=12.5, sub=sb)
@@ -71,7 +73,7 @@ band(36, 244, 300, 384, "The member", None, MEMB)
 chip(54, 300, 264, 62, ["Member"], MEMB, fill="#E6F1FB", size=15, sub="a member, a BMO client, or both")
 chip(54, 382, 264, 108, ["Spending they already", "intend to make"], MEMB, fill=CANV, weight="400", size=12.5,
      sub="what the enhancement is built around")
-a(f'<text x="186" y="548" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{MEMB}" font-weight="700">What the member gets back:</text>')
+a(f'<text x="186" y="548" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{MEMB}" font-weight="700">&#8722;  What the member gets back:</text>')
 a(f'<text x="186" y="563" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{MEMB}" font-weight="700">fewer steps, less uncertainty</text>')
 a(f'<text x="186" y="590" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">What the programme records is what a member did</text>')
 a(f'<text x="186" y="604" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">inside it, not everything they bought or wanted.</text>')
@@ -125,15 +127,15 @@ for i, (t, s) in enumerate(AUTH):
 # ── arrows ──
 for c in (MEMB, BMO, PART, GOLD, MUTE):
     pass
-arrow(318, 336, 452, 526, MEMB, "the member uses it", bend=(388, 410), lx=370, ly=388)
+arrow(318, 336, 452, 526, MEMB, "+  the member uses it", bend=(388, 410), lx=370, ly=388)
 arrow(452, 594, 318, 470, MEMB, None, bend=(382, 568))
 arrow(700, 470, 700, 476, PART, None)
 a(f'<line x1="600" y1="462" x2="600" y2="474" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
-a(f'<text x="612" y="472" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">reads records</text>')
+a(f'<text x="612" y="472" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">+  reads records</text>')
 a(f'<line x1="968" y1="474" x2="968" y2="462" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
-a(f'<text x="984" y="472" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">writes goals and cases</text>')
-arrow(1156, 494, 1226, 434, PART, "each reports on its own timetable", dashed=True, lx=1434, ly=382)
-arrow(1226, 574, 1156, 634, PART, "cases routed to whoever is responsible", dashed=True, lx=1434, ly=616)
+a(f'<text x="984" y="472" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">+  writes goals and cases</text>')
+arrow(1156, 494, 1226, 434, PART, "\u2016  each reports on its own timetable", dashed=True, lx=1434, ly=382)
+arrow(1226, 574, 1156, 634, PART, "+  cases routed to whoever is responsible", dashed=True, lx=1434, ly=616)
 
 # ── journey and scope, bottom ──
 a(f'<line x1="36" y1="884" x2="{W-36}" y2="884" stroke="#ddd7c6" stroke-width="1"/>')
@@ -148,6 +150,49 @@ for i, t in enumerate(JOURNEY):
         a(f'<path d="M{x},955 L{x+12},955" stroke="{MUTE}" stroke-width="1.6" marker-end="url(#ar_{MUTE[1:]})"/>')
         x += 24
 a(f'<text x="36" y="1004" font-family="{SANS}" font-size="12" fill="{MUTE}">Underneath, value moves through the five stages on the systems map. This enhancement does not move value itself \u2014 existing Blue Rewards services and partners still do that. It changes whether the member can see, judge, follow and recover it.</text>')
+
+a(f'<text x="36" y="1056" font-family="{SERIF}" font-size="16" fill="{NAVY}" font-weight="700">Three loops that cross these boundaries</text>')
+a(f'<text x="36" y="1076" font-family="{SANS}" font-size="11.5" fill="{MUTE}">Count the minuses round a loop: an even number compounds, an odd number pushes back.</text>')
+LOOPS = [
+ ("R1", "Relevance flywheel", PART,
+  [("Realized value", "+"), ("Participation", "+"), ("Permissioned signal", "+"), ("Decisioning relevance", "+")],
+  "No minuses, so it compounds. Crosses the member and the programme."),
+ ("B1", "Liability brake", BMO,
+  [("Points issued", "+"), ("Outstanding liability", "+"), ("Cost carried by Finance", "\u2212"), ("Offer generosity", "+")],
+  "One minus, so it pushes back. Crosses the programme and BMO Finance and risk."),
+ ("B2", "Proof and doubt brake", LOSS,
+  [("Member activity", "+"), ("Time to confirm \u2016", "+"), ("Member doubt", "\u2212"), ("Participation", "+")],
+  "One minus and a delay. Crosses the member and all five parties that hold the proof."),
+]
+ly = 1098
+for code, name, col, chain, note in LOOPS:
+    a(f'<circle cx="52" cy="{ly+24}" r="16" fill="{col}"/>')
+    a(f'<text x="52" y="{ly+29}" text-anchor="middle" font-family="{SERIF}" font-size="12" fill="#ffffff" font-weight="700">{code}</text>')
+    a(f'<text x="80" y="{ly+14}" font-family="{SANS}" font-size="12.5" fill="{col}" font-weight="700">{e(name)}</text>')
+    cx = 80
+    for var, sign in chain:
+        w = len(var) * 6.0 + 18
+        a(f'<rect x="{cx}" y="{ly+24}" width="{w}" height="22" rx="11" fill="#ffffff" stroke="{col}" stroke-width="1.1"/>')
+        a(f'<text x="{cx+w/2}" y="{ly+39}" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="{INK}">{e(var)}</text>')
+        cx += w + 6
+        a(f'<text x="{cx}" y="{ly+40}" font-family="{SERIF}" font-size="13" fill="{col}" font-weight="700">{sign}</text>')
+        cx += 16
+    a(f'<text x="{cx+2}" y="{ly+39}" font-family="{SANS}" font-size="10.5" fill="{MUTE}">back to the start</text>')
+    a(f'<text x="80" y="{ly+60}" font-family="{SANS}" font-size="11" fill="{MUTE}">{e(note)}</text>')
+    ly += 80
+
+a(f'<text x="980" y="1182" font-family="{SERIF}" font-size="16" fill="{NAVY}" font-weight="700">Who feels it downstream if this works</text>')
+DOWN = [("Finance and risk", "recovered points reduce breakage, and liability ages differently", BMO),
+        ("Support and operations", "inquiries rise before they fall, because loss becomes visible", LOSS),
+        ("Earn and redeem partners", "ranking changes who gets seen, and who does not", PART),
+        ("Cards and Credit", "more reason to hold the card, but only if the flywheel turns", BMO)]
+dy = 1206
+for t, sb, col in DOWN:
+    a(f'<rect x="980" y="{dy}" width="4" height="42" rx="2" fill="{col}"/>')
+    a(f'<text x="996" y="{dy+16}" font-family="{SANS}" font-size="12" fill="{col}" font-weight="700">{e(t)}</text>')
+    a(f'<text x="996" y="{dy+34}" font-family="{SANS}" font-size="11" fill="{MUTE}">{e(sb)}</text>')
+    dy += 50
+
 
 a(f'<rect x="980" y="900" width="684" height="212" rx="14" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1.6"/>')
 a(f'<text x="1004" y="930" font-family="{SERIF}" font-size="13" fill="#A32D2D" font-weight="700" letter-spacing="2">WHAT THIS ENHANCEMENT DOES NOT REPLACE</text>')
