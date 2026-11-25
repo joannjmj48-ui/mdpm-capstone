@@ -7,7 +7,7 @@ Joann's MMIE 884 palette and type.
 """
 import pathlib, html
 
-W, H = 2040, 1856
+W, H = 2040, 1800
 INK, CANV, NAVY, GOLD = "#2b2b33", "#fbfaf6", "#10123f", "#C79A3B"
 MUTE, MEMB, BMO, PART, CTX = "#8a8a92", "#185FA5", "#534AB7", "#0F6E56", "#854F0B"
 LOSS = "#A32D2D"
@@ -94,7 +94,7 @@ a(f'<text x="172" y="570" text-anchor="middle" font-family="{SANS}" font-size="1
 a(f'<text x="172" y="584" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="{MUTE}">they bought or wanted.</text>')
 
 # ── relevance flywheel, between the member and the core ──
-loop(394, 560, 74, 196, "R1", ["Relevance", "flywheel"], PART,
+loop(394, 580, 74, 170, "R1", ["Relevance", "flywheel"], PART,
      [("Realized value", "+"), ("Participation", "+"), ("Permissioned signal", "+"),
       ("Decisioning relevance", "+")],
      "no minuses · it compounds")
@@ -144,7 +144,7 @@ a(f'<rect x="542" y="890" width="692" height="40" rx="10" fill="none" stroke="#3
 a(f'<text x="888" y="915" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">Which of these we build, in what order and how far, is what Milestone 3 settles.</text>')
 
 # ── liability brake, between the core and the proof-holders ──
-loop(1374, 560, 74, 196, "B1", ["Liability", "brake"], BMO,
+loop(1374, 580, 74, 170, "B1", ["Liability", "brake"], BMO,
      [("Points issued", "+"), ("Outstanding liability", "+"), ("Cost carried by Finance", "−"),
       ("Offer generosity", "+")],
      "one minus · it pushes back")
@@ -166,8 +166,8 @@ a(f'<line x1="640" y1="504" x2="640" y2="528" stroke="{PART}" stroke-width="2.2"
 a(f'<text x="652" y="522" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">+  reads records</text>')
 a(f'<line x1="1070" y1="528" x2="1070" y2="504" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
 a(f'<text x="1082" y="522" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">+  writes goals and cases</text>')
-arrow(1466, 460, 1262, 600, PART, "‖  delay — they report on their own timeline", dashed=True, lx=1326, ly=236)
-arrow(1262, 760, 1466, 700, PART, "+  we send each case to them", dashed=True, lx=1380, ly=800)
+arrow(1466, 420, 1262, 446, PART, "‖  delay — they report on their own timeline", dashed=True, bend=(1364, 368), lx=1326, ly=236)
+arrow(1256, 822, 1466, 766, PART, "+  we send each case to them", dashed=True, bend=(1372, 848), lx=1374, ly=890)
 
 
 # ── the problem the loops explain ──
@@ -215,27 +215,28 @@ a(f'<text x="700" y="684" text-anchor="middle" font-family="{SERIF}" font-size="
 a(f'<circle cx="330" cy="356" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
 a(f'<text x="330" y="360" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">5</text>')
 
-a(f'<rect x="36" y="1522" width="{W-72}" height="150" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
+a(f'<rect x="36" y="1522" width="1180" height="236" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
 a(f'<text x="60" y="1552" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">LEVERAGE POINTS</text>')
-a(f'<text x="256" y="1552" font-family="{SANS}" font-size="11" fill="{MUTE}">Each one changes a loop above, which is the only way to move the problem. The numbered markers show where it acts.</text>')
+a(f'<text x="256" y="1552" font-family="{SANS}" font-size="11" fill="{MUTE}">Each one changes a loop above, which is the only way to move the problem.</text>')
 LEV = [("1", "Make realized value the goal", "Not issued value, not activity, not breakage. Changes what the scoreboard rewards, so it changes B1."),
        ("2", "Connect the value states", "Make what is earned, pending, posted and used visible as one thing. Shortens the delay in B2."),
        ("3", "Detect and resolve missing value", "Find at-risk value early and route it. This is the recovery capability."),
        ("4", "Treat consent as spendable", "Intrusion spends it, so personalization has a ceiling. Caps how hard R1 can be pushed."),
        ("5", "Learn from realized outcomes", "Feed what actually arrived back into relevance. This is the return leg of R1.")]
-lw = (W - 72 - 40 - 4 * 10) / 5
-for i, (n, t, sb) in enumerate(LEV):
-    x = 56 + i * (lw + 10)
-    a(f'<circle cx="{x+16}" cy="{1586}" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
-    a(f'<text x="{x+16}" y="{1590}" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">{n}</text>')
-    a(f'<text x="{x+38}" y="{1590}" font-family="{SANS}" font-size="12" fill="{NAVY}" font-weight="700">{e(t)}</text>')
+for i2, (n, t, sb) in enumerate(LEV):
+    col, row = (0, i2) if i2 < 3 else (1, i2 - 3)
+    x = 60 + col * 580
+    y = 1586 + row * 60
+    a(f'<circle cx="{x+13}" cy="{y}" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
+    a(f'<text x="{x+13}" y="{y+4}" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">{n}</text>')
+    a(f'<text x="{x+34}" y="{y+4}" font-family="{SANS}" font-size="12" fill="{NAVY}" font-weight="700">{e(t)}</text>')
     words = sb.split(); ln, out2 = "", []
     for wd in words:
-        if len(ln + " " + wd) > 46: out2.append(ln); ln = wd
+        if len(ln + " " + wd) > 62: out2.append(ln); ln = wd
         else: ln = (ln + " " + wd).strip()
     out2.append(ln)
-    for j, l2 in enumerate(out2[:4]):
-        a(f'<text x="{x+16}" y="{1616+j*15}" font-family="{SANS}" font-size="10.5" fill="{INK}">{e(l2)}</text>')
+    for j2, l2 in enumerate(out2[:2]):
+        a(f'<text x="{x+34}" y="{y+22+j2*14}" font-family="{SANS}" font-size="10.5" fill="{INK}">{e(l2)}</text>')
 
 # ── downstream stakeholders ──
 a(f'<rect x="36" y="1296" width="{W-72}" height="200" rx="14" fill="#F1EFE8" stroke="{MUTE}" stroke-width="1.4"/>')
@@ -264,17 +265,22 @@ for i, (t, sb, col) in enumerate(DOWN):
         a(f'<text x="{x+cw/2}" y="{1422+j*16}" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="{INK}">{e(l2)}</text>')
 
 # ── what this does not replace ──
-a(f'<rect x="36" y="1702" width="{W-72}" height="124" rx="14" fill="#FCEBEB" stroke="{LOSS}" stroke-width="1.6"/>')
-a(f'<text x="60" y="1730" font-family="{SERIF}" font-size="13" fill="{LOSS}" font-weight="700" letter-spacing="2">WHAT THIS ENHANCEMENT DOES NOT REPLACE</text>')
+a(f'<rect x="1246" y="1522" width="758" height="236" rx="14" fill="#FCEBEB" stroke="{LOSS}" stroke-width="1.6"/>')
+a(f'<text x="1270" y="1552" font-family="{SERIF}" font-size="13" fill="{LOSS}" font-weight="700" letter-spacing="2">WHAT THIS DOES NOT REPLACE</text>')
 NR = ["Existing earning methods: partner scans, linked-card offers, receipts, Shops and BMO products.",
       "Redemption fulfilment: gift cards, travel, merchandise and partner redemptions.",
       "Merchant shopping, checkout and payment.",
       "BMO and partner support where manual investigation or partner action is required.",
       "Partner issuance, redemption and reversal: those services need partner credentials, not a member session."]
 for i, t in enumerate(NR):
-    col_x = 60 if i < 3 else 1060
-    row = i if i < 3 else i - 3
-    a(f'<text x="{col_x}" y="{1756+row*24}" font-family="{SANS}" font-size="11.5" fill="#4A1B0C">&#8226;  {e(t)}</text>')
+    words = t.split(); ln, wrapped = "", []
+    for wd in words:
+        if len(ln + " " + wd) > 86: wrapped.append(ln); ln = wd
+        else: ln = (ln + " " + wd).strip()
+    wrapped.append(ln)
+    base = 1584 + i * 34
+    for k2, l3 in enumerate(wrapped[:2]):
+        a(f'<text x="{1270 if k2 == 0 else 1284}" y="{base+k2*14}" font-family="{SANS}" font-size="11" fill="#4A1B0C">{"&#8226;  " if k2 == 0 else ""}{e(l3)}</text>')
 
 a(f'<text x="36" y="{H-18}" font-family="{SANS}" font-size="11" fill="{MUTE}">Team Zig &#183; Blue Rewards capstone &#183; Figure for section 3 of the Product Requirements Document. Full interactive systems map: joannjmj48-ui.github.io/mdpm-capstone/systems-thinking-v2/</text>')
 

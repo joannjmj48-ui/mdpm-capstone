@@ -305,3 +305,10 @@ in one direction: what we are proposing &rarr; the goal &rarr; the five features
 - "Which of these we build, in what order and how far, is what Milestone 3 settles" replaces it.
 - The problem band heading is now simply "The problem", and each loop names the variable it
   acts on rather than a dangling "it": R1 should raise realized value, B1 caps it, B2 drains it.
+
+## Arrows around B1, and a two-column footer (November 2026)
+
+- Both ellipses are shorter (ry 170), and the two dashed arrows to the evidence authorities now
+  pass over and under B1 rather than through its text — the same treatment the member arrows
+  already had around R1.
+- Leverage points and what this does not replace sit side by side. Canvas 2040 x 1800.
