@@ -159,7 +159,7 @@ a(f'<line x1="640" y1="504" x2="640" y2="528" stroke="{PART}" stroke-width="2.2"
 a(f'<text x="652" y="522" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">+  reads records</text>')
 a(f'<line x1="1070" y1="528" x2="1070" y2="504" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
 a(f'<text x="1082" y="522" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">+  writes goals and cases</text>')
-arrow(1466, 460, 1262, 600, PART, "‖  we learn when they tell us", dashed=True, lx=1380, ly=318)
+arrow(1466, 460, 1262, 600, PART, "‖  delay — they report on their own timeline", dashed=True, lx=1326, ly=318)
 arrow(1262, 760, 1466, 700, PART, "+  we send each case to them", dashed=True, lx=1380, ly=800)
 
 # ── the loop that joins the member to the people holding the proof ──
