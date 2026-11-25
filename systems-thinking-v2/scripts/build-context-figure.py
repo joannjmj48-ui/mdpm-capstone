@@ -7,7 +7,7 @@ Joann's MMIE 884 palette and type.
 """
 import pathlib, html
 
-W, H = 2040, 1800
+W, H = 2040, 1754
 INK, CANV, NAVY, GOLD = "#2b2b33", "#fbfaf6", "#10123f", "#C79A3B"
 MUTE, MEMB, BMO, PART, CTX = "#8a8a92", "#185FA5", "#534AB7", "#0F6E56", "#854F0B"
 LOSS = "#A32D2D"
@@ -100,7 +100,7 @@ loop(394, 580, 74, 170, "R1", ["Relevance", "flywheel"], PART,
      "no minuses · it compounds")
 
 # ── BMO, the programme, and the enhancement ──
-band(488, 250, 804, 742, "BMO", ["Owns Blue Rewards and funds it. Emerging Business, in gold, is our client.", "Each of the other teams holds a decision we would need."], BMO, dashed=False)
+band(488, 250, 804, 696, "BMO", ["Owns Blue Rewards and funds it. Emerging Business, in gold, is our client.", "Each of the other teams holds a decision we would need."], BMO, dashed=False)
 BMO_TEAMS = [("Emerging Business", "our client · Drew’s team", True),
              ("Programme leadership", "sets direction, funds it", False),
              ("Cards and Credit", "the banking earning routes", False),
@@ -113,35 +113,32 @@ for i, (t, sb, client) in enumerate(BMO_TEAMS):
     a(f'<text x="{x+74}" y="345" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{"#854F0B" if client else BMO}" font-weight="700">{e(t)}</text>')
     a(f'<text x="{x+74}" y="361" text-anchor="middle" font-family="{SANS}" font-size="9.5" fill="{MUTE}">{e(sb)}</text>')
 
-band(506, 392, 768, 578, "Blue Rewards programme today", ["The loyalty programme itself: the offers, the points, the catalogue, and the people who resolve cases.", "We would read from these services and write back to them. We would not replace any of them."], PART, dashed=False)
+band(506, 392, 768, 532, "Blue Rewards programme today", ["The loyalty programme itself: the offers, the points, the catalogue, and the people who resolve cases.", "We would read from these services and write back to them. We would not replace any of them."], PART, dashed=False)
 for i, t in enumerate(["Offer service", "Points and transactions", "Catalogue and travel", "Support and cases"]):
     chip(524 + i * 186, 462, 170, 40, [t], PART, fill="#E1F5EE", size=11.5)
 
-a(f'<rect x="524" y="534" width="732" height="414" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
+a(f'<rect x="524" y="534" width="732" height="366" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
 a(f'<text x="890" y="566" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
-a(f'<text x="890" y="588" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#c9c9e0">A dedicated space inside the Blue Rewards app and website.</text>')
+a(f'<text x="890" y="588" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#c9c9e0">An enhanced experience within the Blue Rewards app</text>')
 
-a(f'<text x="546" y="626" font-family="{SERIF}" font-size="11.5" fill="{GOLD}" letter-spacing="1.8" font-weight="700">THE GOAL</text>')
-a(f'<text x="636" y="626" font-family="{SANS}" font-size="13" fill="#ffffff" font-weight="700">Members repeatedly receive and use the value they expect.</text>')
-
-a(f'<text x="546" y="660" font-family="{SERIF}" font-size="11.5" fill="{GOLD}" letter-spacing="1.8" font-weight="700">WHAT WE HAVE SO FAR</text>')
-a(f'<text x="806" y="660" font-family="{SANS}" font-size="11.5" fill="#9a9ab8">five features in the Milestone 2 prototype, each answering one member need</text>')
-CAPS = [("Relevant Opportunity\nDiscovery", "Relevance"), ("Adaptive Value\nPlanning", "Clarity"),
-        ("Transparent Value\nProgression", "Visibility"), ("Value Protection\nand Recovery", "Reliability")]
-for i2, (t, need) in enumerate(CAPS):
-    x = 542 + i2 * 180
-    a(f'<rect x="{x}" y="676" width="164" height="92" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
+FEATS = [("Relevant Opportunity\nDiscovery", "Relevance", "ranked options, with the\nreason for the ranking"),
+         ("Adaptive Value\nPlanning", "Clarity", "a saved goal and\na saved comparison"),
+         ("Transparent Value\nProgression", "Visibility", "what has arrived, and\nwhat is still expected"),
+         ("Value Protection\nand Recovery", "Reliability", "a case the member\ncan follow"),
+         ("Blue, the conversational\nassistant", "Across all four", "the same saved information,\nasked for in their own words")]
+for i2, (t, need, out2) in enumerate(FEATS):
+    if i2 < 3:
+        x, y = 542 + i2 * 236, 610
+    else:
+        x, y = 660 + (i2 - 3) * 236, 736
+    a(f'<rect x="{x}" y="{y}" width="228" height="112" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
     for j2, ln in enumerate(t.split("\n")):
-        a(f'<text x="{x+82}" y="{704+j2*17}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">{e(ln)}</text>')
-    a(f'<text x="{x+82}" y="754" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{GOLD}" letter-spacing="1.4">{e(need.upper())}</text>')
-a(f'<rect x="542" y="778" width="692" height="42" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
-a(f'<text x="888" y="796" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">Blue, the optional conversational assistant</text>')
-a(f'<text x="888" y="812" text-anchor="middle" font-family="{SANS}" font-size="11" fill="#9a9ab8">works across all four and shares the same saved information</text>')
+        a(f'<text x="{x+114}" y="{y+26+j2*16}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">{e(ln)}</text>')
+    a(f'<text x="{x+114}" y="{y+76}" text-anchor="middle" font-family="{SERIF}" font-size="10.5" fill="{GOLD}" letter-spacing="1.4">{e(need.upper())}</text>')
+    for j2, ln in enumerate(out2.split("\n")):
+        a(f'<text x="{x+114}" y="{y+94+j2*13}" text-anchor="middle" font-family="{SANS}" font-size="10" fill="#9a9ab8">{e(ln)}</text>')
 
-a(f'<text x="890" y="852" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">Explore and decide  &#8594;  Earn or redeem  &#8594;  Follow progress  &#8594;  Receive and use</text>')
-a(f'<text x="890" y="872" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="#9a9ab8">the member journey these five support, one feature to a step</text>')
-a(f'<rect x="542" y="890" width="692" height="40" rx="10" fill="none" stroke="#3C3489" stroke-width="1.4" stroke-dasharray="5 4"/>')
-a(f'<text x="888" y="915" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">Which of these we build, in what order and how far, is what Milestone 3 settles.</text>')
+a(f'<text x="890" y="872" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#c9c9e0">Explore and decide  &#8594;  Earn or redeem  &#8594;  Follow progress  &#8594;  Receive and use</text>')
 
 # ── liability brake, between the core and the proof-holders ──
 loop(1374, 580, 74, 170, "B1", ["Liability", "brake"], BMO,
@@ -169,6 +166,8 @@ a(f'<text x="1082" y="522" font-family="{SANS}" font-size="11" fill="{PART}" fon
 arrow(1466, 420, 1262, 446, PART, "‖  delay — they report on their own timeline", dashed=True, bend=(1364, 368), lx=1326, ly=236)
 arrow(1256, 822, 1466, 766, PART, "+  we send each case to them", dashed=True, bend=(1372, 848), lx=1374, ly=890)
 
+
+SPLIT2 = len(o)
 
 # ── the problem the loops explain ──
 a(f'<rect x="400" y="1006" width="1240" height="110" rx="14" fill="#FAECE7" stroke="{LOSS}" stroke-width="2"/>')
@@ -200,20 +199,20 @@ for st, sign in B2:
         bx += 14
 a(f'<text x="890" y="1230" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="{MUTE}">One minus and a delay. The lag before a member can confirm that a purchase</text>')
 a(f'<text x="890" y="1245" text-anchor="middle" font-family="{SANS}" font-size="10.5" fill="{MUTE}">counted, or that a missing reward is being handled, is what manufactures doubt.</text>')
-a(f'<line x1="890" y1="950" x2="890" y2="1000" stroke="{LOSS}" stroke-width="2.2" marker-end="url(#ar_{LOSS[1:]})"/>')
-a(f'<path d="M1736,776 Q1872,1050 1240,1194" fill="none" stroke="{LOSS}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar_{LOSS[1:]})" opacity="0.65"/>')
-a(f'<path d="M172,650 Q168,1030 540,1194" fill="none" stroke="{LOSS}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar_{LOSS[1:]})" opacity="0.65"/>')
+a(f'<line x1="890" y1="996" x2="890" y2="1046" stroke="{LOSS}" stroke-width="2.2" marker-end="url(#ar_{LOSS[1:]})"/>')
+a(f'<path d="M1736,822 Q1872,1096 1240,1240" fill="none" stroke="{LOSS}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar_{LOSS[1:]})" opacity="0.65"/>')
+a(f'<path d="M172,696 Q168,1076 540,1240" fill="none" stroke="{LOSS}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar_{LOSS[1:]})" opacity="0.65"/>')
 
-a(f'<circle cx="1284" cy="452" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
-a(f'<text x="1284" y="456" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">1</text>')
-a(f'<circle cx="1060" cy="680" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
-a(f'<text x="1060" y="684" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">2</text>')
-a(f'<circle cx="1240" cy="680" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
-a(f'<text x="1240" y="684" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">3</text>')
-a(f'<circle cx="700" cy="680" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
-a(f'<text x="700" y="684" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">4</text>')
-a(f'<circle cx="330" cy="356" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
-a(f'<text x="330" y="360" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">5</text>')
+a(f'<circle cx="1284" cy="500" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
+a(f'<text x="1284" y="504" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">1</text>')
+a(f'<circle cx="1230" cy="660" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
+a(f'<text x="1230" y="664" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">2</text>')
+a(f'<circle cx="876" cy="786" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
+a(f'<text x="876" y="790" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">3</text>')
+a(f'<circle cx="758" cy="660" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
+a(f'<text x="758" y="664" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">4</text>')
+a(f'<circle cx="330" cy="500" r="13" fill="{GOLD}" stroke="{NAVY}" stroke-width="1.4"/>')
+a(f'<text x="330" y="504" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="{NAVY}" font-weight="700">5</text>')
 
 a(f'<rect x="36" y="1522" width="1180" height="236" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
 a(f'<text x="60" y="1552" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">LEVERAGE POINTS</text>')
@@ -282,7 +281,7 @@ for i, t in enumerate(NR):
     for k2, l3 in enumerate(wrapped[:2]):
         a(f'<text x="{1270 if k2 == 0 else 1284}" y="{base+k2*14}" font-family="{SANS}" font-size="11" fill="#4A1B0C">{"&#8226;  " if k2 == 0 else ""}{e(l3)}</text>')
 
-a(f'<text x="36" y="{H-18}" font-family="{SANS}" font-size="11" fill="{MUTE}">Team Zig &#183; Blue Rewards capstone &#183; Figure for section 3 of the Product Requirements Document. Full interactive systems map: joannjmj48-ui.github.io/mdpm-capstone/systems-thinking-v2/</text>')
+a(f'<text x="36" y="{H+28}" font-family="{SANS}" font-size="11" fill="{MUTE}">Team Zig &#183; Blue Rewards capstone &#183; Figure for section 3 of the Product Requirements Document. Full interactive systems map: joannjmj48-ui.github.io/mdpm-capstone/systems-thinking-v2/</text>')
 
 
 markers = "".join(
@@ -290,7 +289,8 @@ markers = "".join(
     f'<path d="M0,0 L9,3 L0,6 Z" fill="{c}"/></marker>' for c in (MEMB, BMO, PART, CTX, MUTE, GOLD, NAVY))
 
 inner = (f'<defs>{markers}</defs>' + "".join(o[:SPLIT])
-         + '<g transform="translate(0,0)">' + "".join(o[SPLIT:]) + "</g>")
+         + '<g transform="translate(0,0)">' + "".join(o[SPLIT:SPLIT2]) + "</g>"
+         + '<g transform="translate(0,-46)">' + "".join(o[SPLIT2:]) + "</g>")
 svg_site = (f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" '
   f'aria-label="Where the product sits in the Blue Rewards system. The product is a dedicated space inside the existing '
   f'Blue Rewards app, nested within the programme systems of record, which are nested within BMO. The member is to the '

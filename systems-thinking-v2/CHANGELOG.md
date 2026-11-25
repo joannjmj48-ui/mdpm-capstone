@@ -312,3 +312,14 @@ in one direction: what we are proposing &rarr; the goal &rarr; the five features
   pass over and under B1 rather than through its text — the same treatment the member arrows
   already had around R1.
 - Leverage points and what this does not replace sit side by side. Canvas 2040 x 1800.
+
+## Core box: five equal features, each with what it gives the member (November 2026)
+
+- The sub-line is now "An enhanced experience within the Blue Rewards app".
+- The goal line, the "what we have so far" header and the Milestone 3 line are gone.
+- Blue is a fifth feature box in the same style as the other four, rather than a wide strip
+  underneath them, which had been highlighting it over the rest.
+- Each feature names what it actually gives the member: ranked options with the reason, a saved
+  goal and comparison, what has arrived and what is still expected, a case the member can
+  follow, and for Blue the same saved information asked for in their own words.
+- Bands tightened and the lower half lifted. Canvas 2040 x 1754.
