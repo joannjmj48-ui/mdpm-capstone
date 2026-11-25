@@ -74,6 +74,7 @@ def loop(cx, cy, rx, ry, code, title, colour, steps, foot):
         ty += 13 * len(rows) + 5
     a(f'<text x="{cx}" y="{cy+ry+20}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{colour}" font-weight="700">{e(foot)}</text>')
 
+
 # ── canvas and masthead ──────────────────────────────────────────────────
 a(f'<rect width="{W}" height="{H}" fill="{CANV}"/>')
 a(f'<rect width="{W}" height="88" fill="{NAVY}"/><rect y="88" width="{W}" height="4" fill="{GOLD}"/>')
@@ -83,35 +84,67 @@ a(f'<text x="{W-36}" y="36" text-anchor="end" font-family="{SANS}" font-size="12
 a(f'<text x="{W-36}" y="56" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">An enhanced experience within Blue Rewards</text>')
 a(f'<text x="{W-36}" y="78" text-anchor="end" font-family="{SANS}" font-size="11.5" fill="{GOLD}">+ same direction &#183; &#8722; opposite direction &#183; &#8214; significant delay &#183; R reinforcing, B balancing</text>')
 
+# ── the problem leads the figure, with the loop that most directly explains it ──
+a(f'<rect x="36" y="108" width="1480" height="144" rx="14" fill="#FAECE7" stroke="{LOSS}" stroke-width="2"/>')
+a(f'<text x="776" y="138" text-anchor="middle" font-family="{SERIF}" font-size="15" fill="{LOSS}" font-weight="700" letter-spacing="2">THE PROBLEM</text>')
+a(f'<text x="776" y="170" text-anchor="middle" font-family="{SERIF}" font-size="20" fill="{NAVY}" font-weight="700">Available value does not reliably become realized value.</text>')
+a(f'<text x="776" y="196" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{INK}">Members miss opportunities worth having, cannot tell what they are owed, and give up when value goes missing. Realized value is the main variable.</text>')
+EFFECT = [("R1", "should raise realized value — but its return leg is unconfirmed", PART),
+          ("B1", "caps realized value by limiting how generous offers can be", BMO),
+          ("B2", "drains realized value by turning delay into withdrawal", LOSS)]
+widths = [len(eff) * 6.6 + 30 for _, eff, _ in EFFECT]
+ex = 776 - (sum(widths) - 30) / 2
+for (code, eff, col), wid in zip(EFFECT, widths):
+    a(f'<circle cx="{ex+11}" cy="226" r="11" fill="{col}"/>')
+    a(f'<text x="{ex+11}" y="230" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="#ffffff" font-weight="700">{code}</text>')
+    a(f'<text x="{ex+29}" y="230" font-family="{SANS}" font-size="12.5" fill="{col}">{e(eff)}</text>')
+    ex += wid
+
+a(f'<ellipse cx="2030" cy="180" rx="470" ry="72" fill="#ffffff" stroke="{LOSS}" stroke-width="2"/>')
+a(f'<line x1="1520" y1="180" x2="1552" y2="180" stroke="{LOSS}" stroke-width="2.2" marker-end="url(#ar_{LOSS[1:]})"/>')
+a(f'<text x="2030" y="148" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{LOSS}" font-weight="700" letter-spacing="1.2">B2  &#183;  PROOF AND DOUBT BRAKE</text>')
+B2 = [("Member activity", "+"), ("Time to confirm &#8214;", "+"), ("Member doubt", "&#8722;"), ("Participation", "+")]
+B2W = [len(st.replace("&#8214;", "x")) * 6.8 + 22 for st, _ in B2]
+bx = 2030 - (sum(B2W) + 3 * 19) / 2
+for (st, sign), wid in zip(B2, B2W):
+    a(f'<rect x="{bx}" y="164" width="{wid}" height="26" rx="13" fill="{CANV}" stroke="{LOSS}" stroke-width="1.1"/>')
+    a(f'<text x="{bx+wid/2}" y="182" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{INK}">{st}</text>')
+    bx += wid + 5
+    if st != B2[-1][0]:
+        a(f'<text x="{bx}" y="184" font-family="{SERIF}" font-size="14.5" fill="{LOSS}" font-weight="700">{sign}</text>')
+        bx += 14
+a(f'<text x="2030" y="210" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">One minus and a delay. The lag before a member can confirm that a purchase</text>')
+a(f'<text x="2030" y="227" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">counted, or that a missing reward is being handled, is what manufactures doubt.</text>')
+
 # ── outside the boundary ─────────────────────────────────────────────────
-band(36, 108, W - 72, 86, "Outside the boundary", None, CTX)
+band(36, 268, W - 72, 76, "Outside the boundary", None, CTX)
 OUT = [("Regulation and privacy", "privacy law, consent rules, suitability, disclosure"),
        ("Competitor programmes", "PC Optimum, Scene, bank and card ecosystems"),
        ("Member expectations", "formed by every other app they use, and not always realistic"),
        ("Technology landscape", "AI, identity, interoperability, data portability")]
 for i, (t, sb) in enumerate(OUT):
-    chip(330 + i * 558, 120, 520, 62, [t], CTX, fill=CANV, size=14, sub=sb)
+    chip(330 + i * 558, 276, 520, 60, [t], CTX, fill=CANV, size=14, sub=sb)
 
 # ── the member, far left ─────────────────────────────────────────────────
-band(36, 240, 304, 400, "The member", None, MEMB)
-chip(54, 292, 268, 68, ["Member"], MEMB, fill="#E6F1FB", size=15.5, sub="a member, a BMO client, or both")
-chip(54, 376, 268, 92, ["Spending they already", "intend to make"], MEMB, fill=CANV, weight="400", size=13.5,
+band(36, 370, 304, 400, "The member", None, MEMB)
+chip(54, 422, 268, 68, ["Member"], MEMB, fill="#E6F1FB", size=15.5, sub="a member, a BMO client, or both")
+chip(54, 506, 268, 92, ["Spending they already", "intend to make"], MEMB, fill=CANV, weight="400", size=13.5,
      sub="what the enhancement is built around")
-a(f'<text x="188" y="508" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{MEMB}" font-weight="700">&#8722;  What the member gets back:</text>')
-a(f'<text x="188" y="526" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{MEMB}" font-weight="700">fewer steps, less uncertainty</text>')
-a(f'<text x="188" y="558" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">What the programme records is what</text>')
-a(f'<text x="188" y="574" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">a member did inside it, not everything</text>')
-a(f'<text x="188" y="590" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">they bought or wanted.</text>')
+a(f'<text x="188" y="638" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{MEMB}" font-weight="700">&#8722;  What the member gets back:</text>')
+a(f'<text x="188" y="656" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{MEMB}" font-weight="700">fewer steps, less uncertainty</text>')
+a(f'<text x="188" y="688" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">What the programme records is what</text>')
+a(f'<text x="188" y="704" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">a member did inside it, not everything</text>')
+a(f'<text x="188" y="720" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">they bought or wanted.</text>')
 
 # ── relevance flywheel, between the member and the core ──────────────────
-loop(428, 540, 84, 190, "R1", ["Relevance", "flywheel"], PART,
+loop(428, 670, 84, 190, "R1", ["Relevance", "flywheel"], PART,
      [("Member needs, preferences and activity", "+"), ("Personalized, understandable offers", "+"),
       ("Worthwhile benefits received", "+"), ("Repeat participation", "+"),
       ("Stronger BMO banking relationships", "+")],
      "no minuses · it compounds")
 
 # ── BMO, the programme, and the enhancement ──────────────────────────────
-band(528, 240, 1184, 616, "BMO", ["Owns Blue Rewards and funds it. Emerging Business, in gold, is our client.",
+band(528, 370, 1184, 616, "BMO", ["Owns Blue Rewards and funds it. Emerging Business, in gold, is our client.",
                                   "Each of the other teams holds a decision we would need."], BMO, dashed=False)
 BMO_TEAMS = [("Emerging Business", "our client &#183; Drew’s team", True),
              ("Programme leadership", "sets direction, funds it", False),
@@ -121,19 +154,19 @@ BMO_TEAMS = [("Emerging Business", "our client &#183; Drew’s team", True),
 for i, (t, sb, client) in enumerate(BMO_TEAMS):
     x = 546 + i * 228
     col = GOLD if client else BMO
-    a(f'<rect x="{x}" y="316" width="220" height="54" rx="10" fill="{"#FAEEDA" if client else "#EEEDFE"}" stroke="{col}" stroke-width="{2 if client else 1.4}"/>')
-    a(f'<text x="{x+110}" y="339" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{"#854F0B" if client else BMO}" font-weight="700">{e(t)}</text>')
-    a(f'<text x="{x+110}" y="358" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">{sb}</text>')
+    a(f'<rect x="{x}" y="446" width="220" height="54" rx="10" fill="{"#FAEEDA" if client else "#EEEDFE"}" stroke="{col}" stroke-width="{2 if client else 1.4}"/>')
+    a(f'<text x="{x+110}" y="469" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{"#854F0B" if client else BMO}" font-weight="700">{e(t)}</text>')
+    a(f'<text x="{x+110}" y="488" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">{sb}</text>')
 
-band(546, 382, 1148, 452, "Blue Rewards programme today",
+band(546, 512, 1148, 452, "Blue Rewards programme today",
      ["The loyalty programme itself: the offers, the points, the catalogue, and the people who resolve cases.",
       "We would read from these services and write back to them. We would not replace any of them."], PART, dashed=False)
 for i, t in enumerate(["Offer service", "Points and transactions", "Catalogue and travel", "Support and cases"]):
-    chip(564 + i * 282, 456, 260, 46, [t], PART, fill="#E1F5EE", size=13)
+    chip(564 + i * 282, 586, 260, 46, [t], PART, fill="#E1F5EE", size=13)
 
-a(f'<rect x="564" y="528" width="1112" height="292" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
-a(f'<text x="1120" y="562" text-anchor="middle" font-family="{SERIF}" font-size="16" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
-a(f'<text x="1120" y="586" text-anchor="middle" font-family="{SANS}" font-size="13.5" fill="#c9c9e0">An enhanced experience within the Blue Rewards app and website</text>')
+a(f'<rect x="564" y="658" width="1112" height="292" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
+a(f'<text x="1120" y="692" text-anchor="middle" font-family="{SERIF}" font-size="16" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
+a(f'<text x="1120" y="716" text-anchor="middle" font-family="{SANS}" font-size="13.5" fill="#c9c9e0">An enhanced experience within the Blue Rewards app and website</text>')
 
 FEATS = [("Relevant Opportunity Discovery", "Relevance", "ranked options, with the reason for the ranking"),
          ("Adaptive Value Planning", "Clarity", "a saved goal and a saved comparison"),
@@ -141,20 +174,20 @@ FEATS = [("Relevant Opportunity Discovery", "Relevance", "ranked options, with t
          ("Value Protection and Recovery", "Reliability", "a case the member can follow"),
          ("Blue, the conversational assistant", "Across all four", "the same saved information, in their own words")]
 for i2, (t, need, out2) in enumerate(FEATS):
-    x, y = (574 + i2 * 376, 604) if i2 < 3 else (762 + (i2 - 3) * 376, 712)
+    x, y = (574 + i2 * 376, 734) if i2 < 3 else (762 + (i2 - 3) * 376, 842)
     a(f'<rect x="{x}" y="{y}" width="340" height="96" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
     a(f'<text x="{x+170}" y="{y+30}" text-anchor="middle" font-family="{SANS}" font-size="14" fill="#ffffff" font-weight="700">{e(t)}</text>')
     a(f'<text x="{x+170}" y="{y+56}" text-anchor="middle" font-family="{SERIF}" font-size="12" fill="{GOLD}" letter-spacing="1.4">{e(need.upper())}</text>')
     a(f'<text x="{x+170}" y="{y+78}" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#9a9ab8">{e(out2)}</text>')
 
 # ── liability brake, between the core and the proof-holders ──────────────
-loop(1806, 540, 86, 190, "B1", ["Liability", "brake"], BMO,
+loop(1806, 670, 86, 190, "B1", ["Liability", "brake"], BMO,
      [("Points issued", "+"), ("Outstanding liability", "+"), ("Cost carried by Finance", "&#8722;"),
       ("Offer generosity", "+")],
      "one minus · it pushes back")
 
 # ── who holds the proof, far right ───────────────────────────────────────
-band(1908, 240, 616, 540, "Evidence authorities",
+band(1908, 370, 616, 540, "Evidence authorities",
      ["No single party sees a whole journey, so when value goes missing the evidence is",
       "split between them. Each sends what it has on its own schedule, so the programme",
       "often finds out late. We would ask all five and instruct none."], PART)
@@ -164,108 +197,70 @@ AUTH = [("Offer sponsor", "writes the eligibility rules, the reward amount and t
         ("Affiliate and receipt processing", "ties an online click or a photographed receipt to the member"),
         ("Reward supplier and fulfilment", "ships the gift card, books the trip, decides when it arrives")]
 for i, (t, sb) in enumerate(AUTH):
-    chip(1926, 344 + i * 84, 580, 68, [t], PART, fill=CANV, size=14.5, sub=sb)
+    chip(1926, 474 + i * 84, 580, 68, [t], PART, fill=CANV, size=14.5, sub=sb)
 
 # ── arrows across the boundaries ─────────────────────────────────────────
-arrow(324, 292, 560, 560, MEMB, "+  the member uses it", bend=(460, 280), lx=436, ly=252)
-arrow(560, 800, 324, 600, MEMB, None, bend=(440, 822))
-a(f'<line x1="700" y1="506" x2="700" y2="524" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
-a(f'<text x="712" y="522" font-family="{SANS}" font-size="12.5" fill="{PART}" font-weight="700">+  reads records</text>')
-a(f'<line x1="1456" y1="524" x2="1456" y2="506" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
-a(f'<text x="1468" y="522" font-family="{SANS}" font-size="12.5" fill="{PART}" font-weight="700">+  writes goals and cases</text>')
-arrow(1906, 414, 1682, 440, PART, "‖  delay — they report on their own timeline", dashed=True, bend=(1800, 296), lx=1620, ly=222)
-arrow(1676, 800, 1906, 736, PART, "+  we send each case to them", dashed=True, bend=(1800, 818), lx=1806, ly=790)
+arrow(324, 422, 560, 690, MEMB, "+  the member uses it", bend=(460, 410), lx=436, ly=382)
+arrow(560, 930, 324, 730, MEMB, None, bend=(440, 952))
+a(f'<line x1="700" y1="636" x2="700" y2="654" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
+a(f'<text x="712" y="652" font-family="{SANS}" font-size="12.5" fill="{PART}" font-weight="700">+  reads records</text>')
+a(f'<line x1="1456" y1="654" x2="1456" y2="636" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
+a(f'<text x="1468" y="652" font-family="{SANS}" font-size="12.5" fill="{PART}" font-weight="700">+  writes goals and cases</text>')
+arrow(1906, 544, 1682, 570, PART, "‖  delay — they report on their own timeline", dashed=True, bend=(1800, 426), lx=1620, ly=358)
+arrow(1676, 930, 1906, 866, PART, "+  we send each case to them", dashed=True, bend=(1800, 948), lx=1806, ly=920)
 
 # ── where the five leverage points act ───────────────────────────────────
-badge(1700, 440, "1")
-badge(1654, 606, "2")
-badge(1090, 714, "3")
-badge(902, 606, "4")
-badge(352, 452, "5")
+badge(1700, 570, "1")
+badge(1654, 736, "2")
+badge(1090, 844, "3")
+badge(902, 736, "4")
+badge(352, 582, "5")
 
-# ── the problem the loops explain ────────────────────────────────────────
-a(f'<rect x="36" y="880" width="1480" height="166" rx="14" fill="#FAECE7" stroke="{LOSS}" stroke-width="2"/>')
-a(f'<line x1="776" y1="826" x2="776" y2="872" stroke="{LOSS}" stroke-width="2.2" marker-end="url(#ar_{LOSS[1:]})"/>')
-a(f'<text x="776" y="910" text-anchor="middle" font-family="{SERIF}" font-size="15" fill="{LOSS}" font-weight="700" letter-spacing="2">THE PROBLEM</text>')
-a(f'<text x="776" y="942" text-anchor="middle" font-family="{SERIF}" font-size="20" fill="{NAVY}" font-weight="700">Available value does not reliably become realized value.</text>')
-a(f'<text x="776" y="968" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{INK}">Members miss opportunities worth having, cannot tell what they are owed, and give up when value goes missing.</text>')
-a(f'<text x="776" y="986" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{INK}">Realized value is the main variable. These three loops are why it stays lower than it could be:</text>')
-EFFECT = [("R1", "should raise realized value — but its return leg is unconfirmed", PART),
-          ("B1", "caps realized value by limiting how generous offers can be", BMO),
-          ("B2", "drains realized value by turning delay into withdrawal", LOSS)]
-widths = [len(eff) * 6.6 + 30 for _, eff, _ in EFFECT]
-ex = 776 - (sum(widths) - 30) / 2
-for (code, eff, col), wid in zip(EFFECT, widths):
-    a(f'<circle cx="{ex+11}" cy="1021" r="11" fill="{col}"/>')
-    a(f'<text x="{ex+11}" y="1025" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="#ffffff" font-weight="700">{code}</text>')
-    a(f'<text x="{ex+29}" y="1025" font-family="{SANS}" font-size="12.5" fill="{col}">{e(eff)}</text>')
-    ex += wid
-
-# ── the loop that joins the member to the people holding the proof ───────
-a(f'<ellipse cx="2030" cy="963" rx="470" ry="83" fill="#ffffff" stroke="{LOSS}" stroke-width="2"/>')
-a(f'<path d="M2216,786 Q2160,830 2092,884" fill="none" stroke="{LOSS}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar_{LOSS[1:]})" opacity="0.7"/>')
-a(f'<line x1="1520" y1="963" x2="1552" y2="963" stroke="{LOSS}" stroke-width="2.2" marker-end="url(#ar_{LOSS[1:]})"/>')
-a(f'<text x="2030" y="928" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{LOSS}" font-weight="700" letter-spacing="1.2">B2  &#183;  PROOF AND DOUBT BRAKE</text>')
-B2 = [("Member activity", "+"), ("Time to confirm &#8214;", "+"), ("Member doubt", "&#8722;"), ("Participation", "+")]
-B2W = [len(st.replace("&#8214;", "x")) * 6.8 + 22 for st, _ in B2]
-bx = 2030 - (sum(B2W) + 3 * 19) / 2
-for (st, sign), wid in zip(B2, B2W):
-    a(f'<rect x="{bx}" y="{947}" width="{wid}" height="26" rx="13" fill="{CANV}" stroke="{LOSS}" stroke-width="1.1"/>')
-    a(f'<text x="{bx+wid/2}" y="{965}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{INK}">{st}</text>')
-    bx += wid + 5
-    if st != B2[-1][0]:
-        a(f'<text x="{bx}" y="{967}" font-family="{SERIF}" font-size="14.5" fill="{LOSS}" font-weight="700">{sign}</text>')
-        bx += 14
-a(f'<text x="2030" y="1000" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">One minus and a delay. The lag before a member can confirm that a purchase</text>')
-a(f'<text x="2030" y="1017" text-anchor="middle" font-family="{SANS}" font-size="12" fill="{MUTE}">counted, or that a missing reward is being handled, is what manufactures doubt.</text>')
-
-# ── downstream stakeholders ──────────────────────────────────────────────
-a(f'<rect x="36" y="1070" width="760" height="302" rx="14" fill="#F1EFE8" stroke="{MUTE}" stroke-width="1.4"/>')
-a(f'<text x="416" y="1102" text-anchor="middle" font-family="{SERIF}" font-size="16" fill="{NAVY}" font-weight="700" letter-spacing="1.4">DOWNSTREAM STAKEHOLDERS</text>')
-a(f'<text x="416" y="1122" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{MUTE}">Who this reaches, and what it would mean for them</text>')
+# ── what the system above would do to the people downstream of it ────────
+a(f'<line x1="1120" y1="990" x2="1120" y2="1018" stroke="{NAVY}" stroke-width="3.2" marker-end="url(#ar_{NAVY[1:]})"/>')
+a(f'<rect x="36" y="1024" width="{W-72}" height="104" rx="14" fill="#F1EFE8" stroke="{MUTE}" stroke-width="1.4"/>')
+a(f'<text x="56" y="1052" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">DOWNSTREAM STAKEHOLDERS</text>')
+a(f'<text x="372" y="1052" font-family="{SANS}" font-size="11.5" fill="{MUTE}">Who this reaches, and what it would mean for them</text>')
 DOWN = [("Members", "Fewer steps and less uncertainty, and a way to see what is owed", MEMB),
         ("Finance and risk", "Recovered points reduce breakage, and liability ages differently", BMO),
         ("Support and operations", "Inquiries rise before they fall, because loss becomes visible", LOSS),
         ("Earn and redeem partners", "Ranking changes who gets seen, and who does not", PART),
         ("Cards and Credit", "More reason to hold the card, but only if the flywheel turns", BMO)]
 for i, (t, sb, col) in enumerate(DOWN):
-    x, y = 56 + (i // 3) * 372, 1152 + (i % 3) * 62
-    a(f'<rect x="{x}" y="{y-14}" width="3" height="46" rx="1.5" fill="{col}"/>')
-    a(f'<text x="{x+14}" y="{y}" font-family="{SANS}" font-size="13" fill="{col}" font-weight="700">{e(t)}</text>')
-    for j, l2 in enumerate(wrap(sb, 50)[:2]):
-        a(f'<text x="{x+14}" y="{y+17+j*15}" font-family="{SANS}" font-size="11.5" fill="{INK}">{e(l2)}</text>')
+    x = 56 + i * 492
+    a(f'<rect x="{x}" y="1064" width="476" height="52" rx="9" fill="#ffffff" stroke="{col}" stroke-width="1.5"/>')
+    a(f'<rect x="{x}" y="1064" width="476" height="4" rx="2" fill="{col}"/>')
+    a(f'<text x="{x+238}" y="1088" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{col}" font-weight="700">{e(t)}</text>')
+    a(f'<text x="{x+238}" y="1106" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{INK}">{e(sb)}</text>')
 
 # ── leverage points ──────────────────────────────────────────────────────
-a(f'<rect x="820" y="1070" width="1060" height="302" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
-a(f'<text x="844" y="1104" font-family="{SERIF}" font-size="16" fill="{NAVY}" font-weight="700" letter-spacing="1.4">LEVERAGE POINTS</text>')
-a(f'<text x="1058" y="1104" font-family="{SANS}" font-size="11.5" fill="{MUTE}">Each one changes a loop above. Grouped under the three candidate leverage points in the faculty brief.</text>')
+a(f'<rect x="36" y="1152" width="1500" height="228" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
+a(f'<text x="60" y="1186" font-family="{SERIF}" font-size="16" fill="{NAVY}" font-weight="700" letter-spacing="1.4">LEVERAGE POINTS</text>')
+a(f'<text x="276" y="1186" font-family="{SANS}" font-size="11.5" fill="{MUTE}">Each one changes a loop above. Grouped under the three candidate leverage points in the faculty brief.</text>')
 LEV = [("1", "Make realized value the goal", "Not issued value, not activity, not breakage. Changes what the scoreboard rewards, so it changes B1.", "Objectives and measurement"),
        ("2", "Connect the value states", "Make what is earned, pending, posted and used visible as one thing. Shortens the delay in B2.", "Information flows"),
        ("3", "Detect and resolve missing value", "Find at-risk value early and route it. This is the recovery capability.", "Rules and accountability"),
        ("4", "Treat consent as spendable", "Intrusion spends it, so personalization has a ceiling. Caps how hard R1 can be pushed.", "Rules and accountability"),
        ("5", "Learn from realized outcomes", "Feed what actually arrived back into relevance. This is the return leg of R1.", "Information flows")]
-for i2, (n, t, sb, fam) in enumerate(LEV):
-    x, y = 840 + (i2 // 3) * 522, 1156 + (i2 % 3) * 72
-    badge(x + 13, y, n)
+for i2, (n2, t, sb, fam) in enumerate(LEV):
+    x, y = 58 + (i2 // 3) * 750, 1224 + (i2 % 3) * 56
+    badge(x + 13, y, n2)
     a(f'<text x="{x+34}" y="{y+5}" font-family="{SANS}" font-size="13" fill="{NAVY}" font-weight="700">{e(t)}</text>')
-    for j2, l2 in enumerate(wrap(sb, 72)[:2]):
-        a(f'<text x="{x+34}" y="{y+24+j2*15}" font-family="{SANS}" font-size="11.5" fill="{INK}">{e(l2)}</text>')
-    a(f'<text x="{x+34}" y="{y+54}" font-family="{SERIF}" font-size="10.5" fill="#854F0B" letter-spacing="1.1">{e(fam.upper())}</text>')
+    a(f'<text x="{x+34}" y="{y+23}" font-family="{SANS}" font-size="11.5" fill="{INK}">{e(sb)}</text>')
+    a(f'<text x="{x+34}" y="{y+40}" font-family="{SERIF}" font-size="10.5" fill="#854F0B" letter-spacing="1.1">{e(fam.upper())}</text>')
 
 # ── what this does not replace ───────────────────────────────────────────
-a(f'<rect x="1904" y="1070" width="620" height="302" rx="14" fill="#FCEBEB" stroke="{LOSS}" stroke-width="1.6"/>')
-a(f'<text x="1928" y="1104" font-family="{SERIF}" font-size="14" fill="{LOSS}" font-weight="700" letter-spacing="2">WHAT THIS DOES NOT REPLACE</text>')
+a(f'<rect x="1560" y="1152" width="964" height="228" rx="14" fill="#FCEBEB" stroke="{LOSS}" stroke-width="1.6"/>')
+a(f'<text x="1584" y="1186" font-family="{SERIF}" font-size="14" fill="{LOSS}" font-weight="700" letter-spacing="2">WHAT THIS DOES NOT REPLACE</text>')
 NR = ["Existing earning methods: partner scans, linked-card offers, receipts, Shops and BMO products.",
       "Redemption fulfilment: gift cards, travel, merchandise and partner redemptions.",
       "Merchant shopping, checkout and payment.",
       "BMO and partner support where manual investigation or partner action is required.",
       "Partner issuance, redemption and reversal: those services need partner credentials, not a member session."]
 for i, t in enumerate(NR):
-    base = 1142 + i * 46
-    for k2, l3 in enumerate(wrap(t, 82)[:2]):
-        a(f'<text x="{1928 if k2 == 0 else 1942}" y="{base+k2*16}" font-family="{SANS}" font-size="11.5" fill="#4A1B0C">{"&#8226;  " if k2 == 0 else ""}{e(l3)}</text>')
+    a(f'<text x="1584" y="{1226 + i * 34}" font-family="{SANS}" font-size="11.5" fill="#4A1B0C">&#8226;  {e(t)}</text>')
 
-a(f'<text x="36" y="1412" font-family="{SANS}" font-size="12.5" fill="{MUTE}">Team Zig &#183; Blue Rewards capstone &#183; Figure for section 3 of the Product Requirements Document. Full interactive systems map: joannjmj48-ui.github.io/mdpm-capstone/systems-thinking-v2/</text>')
+a(f'<text x="36" y="1414" font-family="{SANS}" font-size="12.5" fill="{MUTE}">Team Zig &#183; Blue Rewards capstone &#183; Figure for section 3 of the Product Requirements Document. Full interactive systems map: joannjmj48-ui.github.io/mdpm-capstone/systems-thinking-v2/</text>')
 
 markers = "".join(
     f'<marker id="ar_{c[1:]}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">'
@@ -273,13 +268,13 @@ markers = "".join(
 
 inner = f'<defs>{markers}</defs>' + "".join(o)
 svg_site = (f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" '
-  f'aria-label="Where the product sits in the Blue Rewards system. The product is an enhanced experience inside the '
-  f'existing Blue Rewards app and website, nested within the programme systems of record, which are nested within BMO. '
-  f'The member is to the left, evidence authorities to the right, and forces outside the boundary across the top. It '
-  f'holds none of the records; what it changes is how much of the available value a member ends up with, by helping '
-  f'them find what is worth having, decide on it, follow it through, and recover it when it goes missing. Three '
-  f'feedback loops explain why realized value stays lower than it could be, and five leverage points act on those '
-  f'loops.">{inner}</svg>')
+  f'aria-label="The problem leads the figure: available value does not reliably become realized value. Below it, where '
+  f'the product sits in the Blue Rewards system. The product is an enhanced experience inside the existing Blue Rewards '
+  f'app and website, nested within the programme systems of record, which are nested within BMO. The member is to the '
+  f'left, evidence authorities to the right, and forces outside the boundary across the top. It holds none of the '
+  f'records; what it changes is how much of the available value a member ends up with. Three feedback loops explain '
+  f'why realized value stays lower than it could be, five leverage points act on those loops, and the system feeds '
+  f'down into five downstream stakeholders.">{inner}</svg>')
 svg_file = f'<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">{inner}</svg>\n'
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
