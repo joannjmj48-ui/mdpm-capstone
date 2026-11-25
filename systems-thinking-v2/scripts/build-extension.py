@@ -208,7 +208,7 @@ loop_badge(1420, 470, "TR1", "Relevance flywheel", MUTE, "existing")
 # ═════════════════════════ what November adds ══════════════════════
 box("rev", 200, 212, 330, 76, ["Reversals and clawbacks"], PART, sub="returned purchases, failed attribution")
 box("una", 580, 212, 300, 76, ["Unactivated offers"], MEMB, sub="saved, never opted in")
-box("evi", 940, 212, 330, 76, ["Evidence split across parties"], PART, sub="five authorities, one member")
+box("evi", 940, 212, 330, 76, ["Evidence split across authorities"], PART, sub="five authorities, one member")
 
 box("loss", 420, 470, 330, 84, ["Unresolved loss"], LOSS, sub="value that left and did not come back")
 box("rec", 420, 772, 330, 84, ["Recovery capability"], BMO, sub="diagnose · route · restore")

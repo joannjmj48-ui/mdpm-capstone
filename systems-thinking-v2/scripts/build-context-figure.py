@@ -144,7 +144,7 @@ loop(1374, 560, 74, 196, "B1", ["Liability", "brake"], BMO,
      "one minus · it pushes back")
 
 # ── who holds the proof, far right ──
-band(1468, 250, 536, 520, "Who holds the proof", ["No single party sees a whole journey, so when value goes missing the proof is split", "between them. Each sends what it has on its own schedule, so the programme often", "finds out late. We would ask all five and instruct none."], PART)
+band(1468, 250, 536, 520, "Evidence authorities", ["No single party sees a whole journey, so when value goes missing the evidence is split", "between them. Each sends what it has on its own schedule, so the programme often", "finds out late. We would ask all five and instruct none."], PART)
 AUTH = [("Offer sponsor", "writes the eligibility rules, the reward amount and the deadlines"),
         ("Merchant and point of sale", "the only party that sees what was actually in the basket"),
         ("Card issuer and network", "sees a merchant and an amount, and decides when it settles"),
