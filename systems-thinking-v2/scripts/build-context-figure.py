@@ -152,11 +152,12 @@ for i, (t, sb, client) in enumerate(BMO_TEAMS):
     a(f'<text x="{x+110}" y="507" text-anchor="middle" font-family="{SANS}" font-size="13" fill="{"#854F0B" if client else BMO}" font-weight="700">{e(t)}</text>')
     a(f'<text x="{x+110}" y="526" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">{sb}</text>')
 
+PROG = "#4038A0"
 band(546, 550, 1148, 436, "Blue Rewards programme today",
      ["The loyalty programme itself: the offers, the points, the catalogue, and the people who resolve cases.",
-      "We would read from these services and write back to them. We would not replace any of them."], PART)
+      "We would read from these services and write back to them. We would not replace any of them."], PROG)
 for i, t in enumerate(["Offer service", "Points and transactions", "Catalogue and travel", "Support and cases"]):
-    chip(564 + i * 282, 624, 260, 46, [t], PART, fill="#E1F5EE", size=13)
+    chip(564 + i * 282, 624, 260, 46, [t], PROG, fill="#EFEEFE", size=13)
 
 a(f'<rect x="564" y="696" width="1112" height="280" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
 a(f'<text x="1120" y="728" text-anchor="middle" font-family="{SERIF}" font-size="16" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
@@ -175,32 +176,40 @@ for i2, (t, need, out2) in enumerate(FEATS):
     a(f'<text x="{x+170}" y="{y+75}" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="#9a9ab8">{e(out2)}</text>')
 
 # ── liability brake, between the core and the proof-holders ──────────────
-loop(1806, 708, 86, 190, "B1", ["Liability", "brake"], BMO,
+loop(1806, 730, 86, 170, "B1", ["Liability", "brake"], BMO,
      [("Points issued", "+"), ("Outstanding liability", "+"), ("Cost carried by Finance", "&#8722;"),
       ("Offer generosity", "+")],
      "one minus · it pushes back")
 
 # ── who holds the proof, far right ───────────────────────────────────────
-band(1908, 408, 616, 540, "Evidence authorities",
-     ["No single party sees a whole journey, so when value goes missing the evidence is",
-      "split between them. Each sends what it has on its own schedule, so the programme",
-      "often finds out late. We would ask all five and instruct none."], PART)
+band(1908, 408, 616, 600, "Partner ecosystem",
+     ["Merchants, suppliers and sponsors. Inside the boundary, but outside BMO.",
+      "They supply what a member can earn and redeem, and each of them separately",
+      "holds part of the proof of what happened. We coordinate with all five and",
+      "instruct none of them."], PART)
+a(f'<text x="1926" y="528" font-family="{SERIF}" font-size="11" fill="{PART}" font-weight="700" letter-spacing="1.6">WHAT THEY SUPPLY — THE VALUE ITSELF</text>')
+chip(1926, 538, 580, 52, ["Offers, earn rates, rewards and fulfilment"], PART, fill="#E1F5EE", size=13.5,
+     sub="BMO funds and frames it · partners provide it")
+a(f'<text x="1926" y="624" font-family="{SERIF}" font-size="11" fill="{PART}" font-weight="700" letter-spacing="1.6">WHAT THEY HOLD — THE PROOF</text>')
 AUTH = [("Offer sponsor", "writes the eligibility rules, the reward amount and the deadlines"),
         ("Merchant and point of sale", "the only party that sees what was actually in the basket"),
         ("Card issuer and network", "sees a merchant and an amount, and decides when it settles"),
         ("Affiliate and receipt processing", "ties an online click or a photographed receipt to the member"),
         ("Reward supplier and fulfilment", "ships the gift card, books the trip, decides when it arrives")]
 for i, (t, sb) in enumerate(AUTH):
-    chip(1926, 512 + i * 84, 580, 68, [t], PART, fill=CANV, size=14.5, sub=sb)
+    chip(1926, 634 + i * 72, 580, 58, [t], PART, fill=CANV, size=13.5, sub=sb)
 
 # ── arrows across the boundaries ─────────────────────────────────────────
 arrow(324, 460, 560, 728, MEMB, "+  the member uses it", bend=(460, 448), lx=436, ly=420)
 arrow(560, 952, 324, 768, MEMB, None, bend=(440, 972))
-a(f'<line x1="700" y1="674" x2="700" y2="692" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
-a(f'<text x="712" y="690" font-family="{SANS}" font-size="12.5" fill="{PART}" font-weight="700">+  reads records</text>')
-a(f'<line x1="1456" y1="692" x2="1456" y2="674" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
-a(f'<text x="1468" y="690" font-family="{SANS}" font-size="12.5" fill="{PART}" font-weight="700">+  writes goals and cases</text>')
-arrow(1906, 582, 1682, 608, PART, "‖  delay — they report on their own timeline", dashed=True, bend=(1800, 464), lx=1620, ly=400)
+a(f'<line x1="700" y1="674" x2="700" y2="692" stroke="{PROG}" stroke-width="2.2" marker-end="url(#ar_{PROG[1:]})"/>')
+a(f'<text x="712" y="690" font-family="{SANS}" font-size="12.5" fill="{PROG}" font-weight="700">+  reads records</text>')
+a(f'<line x1="1456" y1="692" x2="1456" y2="674" stroke="{PROG}" stroke-width="2.2" marker-end="url(#ar_{PROG[1:]})"/>')
+a(f'<text x="1468" y="690" font-family="{SANS}" font-size="12.5" fill="{PROG}" font-weight="700">+  writes goals and cases</text>')
+a(f'<path d="M1900,452 L1702,452" fill="none" stroke="{PART}" stroke-width="2.4" marker-start="url(#as_{PART[1:]})" marker-end="url(#ar_{PART[1:]})"/>')
+a(f'<text x="1801" y="434" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">+  they supply the value</text>')
+a(f'<text x="1801" y="476" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">+  participation returns to them</text>')
+arrow(1906, 524, 1700, 552, PART, "‖  delay — proof arrives on their own timeline", dashed=True, bend=(1800, 500), lx=1300, ly=398)
 arrow(1676, 952, 1906, 892, PART, "+  we send each case to them", dashed=True, bend=(1800, 968), lx=1806, ly=942)
 
 # ── where the five leverage points act ───────────────────────────────────
@@ -214,8 +223,8 @@ badge(352, 620, "5")
 a(f'<ellipse cx="1480" cy="1094" rx="560" ry="72" fill="#ffffff" stroke="{LOSS}" stroke-width="2"/>')
 a(f'<path d="M150,812 C160,1050 300,1070 912,1092" fill="none" stroke="{LOSS}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar_{LOSS[1:]})" opacity="0.75"/>')
 a(f'<text x="214" y="880" font-family="{SANS}" font-size="11.5" fill="{LOSS}" font-weight="700">+  member activity</text>')
-a(f'<path d="M2216,952 C2216,1058 2156,1090 2048,1094" fill="none" stroke="{LOSS}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar_{LOSS[1:]})" opacity="0.75"/>')
-a(f'<text x="2246" y="1010" font-family="{SANS}" font-size="11.5" fill="{LOSS}" font-weight="700">&#8214;  proof arrives late</text>')
+a(f'<path d="M2216,1014 C2216,1066 2150,1092 2048,1094" fill="none" stroke="{LOSS}" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar_{LOSS[1:]})" opacity="0.75"/>')
+a(f'<text x="2256" y="1052" font-family="{SANS}" font-size="11.5" fill="{LOSS}" font-weight="700">&#8214;  proof arrives late</text>')
 a(f'<text x="1480" y="1058" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{LOSS}" font-weight="700" letter-spacing="1.2">B2  &#183;  PROOF AND DOUBT BRAKE</text>')
 B2 = [("Member activity", "+"), ("Time to confirm &#8214;", "+"), ("Member doubt", "&#8722;"), ("Participation", "+")]
 B2W = [len(st.replace("&#8214;", "x")) * 6.8 + 22 for st, _ in B2]
@@ -250,7 +259,6 @@ for i, (t, sb, col) in enumerate(DOWN):
 # ── leverage points ──────────────────────────────────────────────────────
 a(f'<rect x="36" y="1310" width="{W-72}" height="102" rx="14" fill="#F6F1E4" stroke="{GOLD}" stroke-width="1.6"/>')
 a(f'<text x="56" y="1338" font-family="{SERIF}" font-size="15" fill="{NAVY}" font-weight="700" letter-spacing="1.4">LEVERAGE POINTS</text>')
-a(f'<text x="282" y="1338" font-family="{SANS}" font-size="11.5" fill="{MUTE}">Each one changes a loop above. Grouped under the three candidate leverage points in the faculty brief.</text>')
 LEV = [("1", "Make realized value the goal", "Not issued value or activity. Changes what the scoreboard rewards, so it changes B1.", "Objectives and measurement"),
        ("2", "Connect the value states", "Make earned, pending, posted and used visible as one thing. Shortens the delay in B2.", "Information flows"),
        ("3", "Detect and resolve missing value", "Find at-risk value early and route it. This is the recovery capability.", "Rules and accountability"),
@@ -267,7 +275,9 @@ a(f'<text x="36" y="1434" font-family="{SANS}" font-size="12.5" fill="{MUTE}">Te
 
 markers = "".join(
     f'<marker id="ar_{c[1:]}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">'
-    f'<path d="M0,0 L9,3 L0,6 Z" fill="{c}"/></marker>' for c in (MEMB, BMO, PART, CTX, MUTE, GOLD, NAVY, LOSS))
+    f'<path d="M0,0 L9,3 L0,6 Z" fill="{c}"/></marker>'
+    f'<marker id="as_{c[1:]}" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto" markerUnits="strokeWidth">'
+    f'<path d="M9,0 L0,3 L9,6 Z" fill="{c}"/></marker>' for c in (MEMB, BMO, PART, CTX, MUTE, GOLD, NAVY, LOSS, "#4038A0"))
 
 inner = f'<defs>{markers}</defs>' + "".join(o)
 svg_site = (f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" '
