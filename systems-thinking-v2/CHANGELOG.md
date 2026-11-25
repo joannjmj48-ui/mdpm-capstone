@@ -255,3 +255,16 @@ the gap between two boxes.
 - Member expectations keeps its place outside the boundary, but the label now says why: formed
   by every other app they use, and not always realistic. We control what we deliver, not the
   standard members arrive with.
+
+## Systems Map 2.0 restructured to the MMIE 884 pitch-deck pattern (November 2026)
+
+Modelled on the Innovation Suite systems map: loops drawn as labelled ellipses inside the map
+with their chain listed, and downstream stakeholders as a band across the bottom.
+
+- **R1 Relevance flywheel** sits between the member and the core; **B1 Liability brake** between
+  the core and the parties holding the proof; **B2 Proof and doubt brake** spans the width below
+  the core, with dashed connectors from the member and from the proof column, because that is
+  the loop that crosses both.
+- **Impacted / downstream stakeholders** is now a band inside the figure: members, Finance and
+  risk, support and operations, earn and redeem partners, Cards and Credit.
+- Canvas is 2040 x 1546 to make room for the loops either side of the core.
