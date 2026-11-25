@@ -124,7 +124,7 @@ band(506, 392, 768, 532, "Blue Rewards programme today", ["The loyalty programme
 for i, t in enumerate(["Offer service", "Points and transactions", "Catalogue and travel", "Support and cases"]):
     chip(524 + i * 186, 462, 170, 40, [t], PART, fill="#E1F5EE", size=11.5)
 
-a(f'<rect x="524" y="534" width="732" height="366" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
+a(f'<rect x="524" y="534" width="732" height="338" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
 a(f'<text x="890" y="566" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
 a(f'<text x="890" y="588" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#c9c9e0">An enhanced experience within the Blue Rewards app and website</text>')
 
@@ -135,26 +135,15 @@ FEATS = [("Relevant Opportunity\nDiscovery", "Relevance", "ranked options, with 
          ("Blue, the conversational\nassistant", "Across all four", "the same saved information,\nasked for in their own words")]
 for i2, (t, need, out2) in enumerate(FEATS):
     if i2 < 3:
-        x, y = 542 + i2 * 236, 604
+        x, y = 542 + i2 * 236, 610
     else:
-        x, y = 660 + (i2 - 3) * 236, 728
+        x, y = 660 + (i2 - 3) * 236, 736
     a(f'<rect x="{x}" y="{y}" width="228" height="112" rx="10" fill="#1b1e55" stroke="{GOLD}" stroke-width="1.2"/>')
     for j2, ln in enumerate(t.split("\n")):
         a(f'<text x="{x+114}" y="{y+26+j2*16}" text-anchor="middle" font-family="{SANS}" font-size="12" fill="#ffffff" font-weight="700">{e(ln)}</text>')
     a(f'<text x="{x+114}" y="{y+76}" text-anchor="middle" font-family="{SERIF}" font-size="10.5" fill="{GOLD}" letter-spacing="1.4">{e(need.upper())}</text>')
     for j2, ln in enumerate(out2.split("\n")):
         a(f'<text x="{x+114}" y="{y+94+j2*13}" text-anchor="middle" font-family="{SANS}" font-size="10" fill="#9a9ab8">{e(ln)}</text>')
-
-# the four things a member does, from the brief — what all five features serve
-STAGES = ["Explore and decide", "Earn or redeem", "Follow progress", "Receive and use"]
-for i2, st in enumerate(STAGES):
-    sx = 536 + i2 * 180
-    a(f'<rect x="{sx}" y="852" width="168" height="42" rx="10" fill="#E6F1FB" stroke="{MEMB}" stroke-width="1.4"/>')
-    a(f'<circle cx="{sx+22}" cy="873" r="11" fill="{MEMB}"/>')
-    a(f'<text x="{sx+22}" y="877" text-anchor="middle" font-family="{SERIF}" font-size="11" fill="#ffffff" font-weight="700">{i2+1}</text>')
-    a(f'<text x="{sx+40}" y="878" font-family="{SANS}" font-size="11.5" fill="{NAVY}" font-weight="700">{e(st)}</text>')
-    if i2 < 3:
-        a(f'<text x="{sx+174}" y="878" text-anchor="middle" font-family="{SANS}" font-size="13" fill="#9a9ab8">&#8594;</text>')
 
 # ── liability brake, between the core and the proof-holders ──
 loop(1374, 580, 74, 170, "B1", ["Liability", "brake"], BMO,
