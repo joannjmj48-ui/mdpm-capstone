@@ -206,10 +206,12 @@ a(f'<line x1="700" y1="674" x2="700" y2="692" stroke="{PROG}" stroke-width="2.2"
 a(f'<text x="712" y="690" font-family="{SANS}" font-size="12.5" fill="{PROG}" font-weight="700">+  reads records</text>')
 a(f'<line x1="1456" y1="692" x2="1456" y2="674" stroke="{PROG}" stroke-width="2.2" marker-end="url(#ar_{PROG[1:]})"/>')
 a(f'<text x="1468" y="690" font-family="{SANS}" font-size="12.5" fill="{PROG}" font-weight="700">+  writes goals and cases</text>')
-a(f'<path d="M1900,452 L1702,452" fill="none" stroke="{PART}" stroke-width="2.4" marker-start="url(#as_{PART[1:]})" marker-end="url(#ar_{PART[1:]})"/>')
-a(f'<text x="1801" y="434" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">+  they supply the value</text>')
-a(f'<text x="1801" y="476" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">+  participation returns to them</text>')
-arrow(1906, 524, 1700, 552, PART, "‖  delay — proof arrives on their own timeline", dashed=True, bend=(1800, 500), lx=1500, ly=430)
+a(f'<text x="1810" y="404" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">‖  delay — proof arrives</text>')
+a(f'<text x="1810" y="420" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">on their own timeline</text>')
+a(f'<path d="M1900,460 L1702,460" fill="none" stroke="{PART}" stroke-width="2.4" marker-start="url(#as_{PART[1:]})" marker-end="url(#ar_{PART[1:]})"/>')
+a(f'<text x="1801" y="442" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">+  they supply the value</text>')
+a(f'<text x="1801" y="484" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">+  participation returns to them</text>')
+arrow(1906, 528, 1700, 556, PART, None, dashed=True, bend=(1800, 506))
 arrow(1676, 952, 1906, 892, PART, "+  we send each case to them", dashed=True, bend=(1800, 968), lx=1806, ly=942)
 
 # ── where the five leverage points act ───────────────────────────────────
