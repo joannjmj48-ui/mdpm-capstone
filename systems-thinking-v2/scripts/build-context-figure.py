@@ -209,7 +209,7 @@ a(f'<text x="1468" y="690" font-family="{SANS}" font-size="12.5" fill="{PROG}" f
 a(f'<path d="M1900,452 L1702,452" fill="none" stroke="{PART}" stroke-width="2.4" marker-start="url(#as_{PART[1:]})" marker-end="url(#ar_{PART[1:]})"/>')
 a(f'<text x="1801" y="434" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">+  they supply the value</text>')
 a(f'<text x="1801" y="476" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{PART}" font-weight="700">+  participation returns to them</text>')
-arrow(1906, 524, 1700, 552, PART, "‖  delay — proof arrives on their own timeline", dashed=True, bend=(1800, 500), lx=1300, ly=398)
+arrow(1906, 524, 1700, 552, PART, "‖  delay — proof arrives on their own timeline", dashed=True, bend=(1800, 500), lx=1500, ly=430)
 arrow(1676, 952, 1906, 892, PART, "+  we send each case to them", dashed=True, bend=(1800, 968), lx=1806, ly=942)
 
 # ── where the five leverage points act ───────────────────────────────────
