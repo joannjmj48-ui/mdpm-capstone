@@ -7,7 +7,7 @@ Joann's MMIE 884 palette and type.
 """
 import pathlib, html
 
-W, H = 1700, 1262
+W, H = 1700, 1130
 INK, CANV, NAVY, GOLD = "#2b2b33", "#fbfaf6", "#10123f", "#C79A3B"
 MUTE, MEMB, BMO, PART, CTX = "#8a8a92", "#185FA5", "#534AB7", "#0F6E56", "#854F0B"
 SANS, SERIF = "Helvetica,Arial,sans-serif", "Georgia,serif"
@@ -50,38 +50,31 @@ def arrow(x1, y1, x2, y2, colour, label=None, dashed=False, lx=None, ly=None, be
 # ── canvas and masthead ──
 a(f'<rect width="{W}" height="{H}" fill="{CANV}"/>')
 a(f'<rect width="{W}" height="86" fill="{NAVY}"/><rect y="86" width="{W}" height="4" fill="{GOLD}"/>')
-a(f'<text x="36" y="38" font-family="{SERIF}" font-size="13" fill="{GOLD}" letter-spacing="2.8" font-weight="700">TEAM ZIG  ·  BLUE REWARDS  ·  SYSTEMS MAP FIGURE FOR THE PRD</text>')
-a(f'<text x="36" y="70" font-family="{SERIF}" font-size="25" fill="#ffffff" font-weight="700">Where our proposed enhancement would sit</text>')
+a(f'<text x="36" y="38" font-family="{SERIF}" font-size="13" fill="{GOLD}" letter-spacing="2.8" font-weight="700">TEAM ZIG  ·  BLUE REWARDS  ·  SYSTEMS MAP</text>')
+a(f'<text x="36" y="70" font-family="{SERIF}" font-size="25" fill="#ffffff" font-weight="700">Systems Map 2.0</text>')
 a(f'<text x="{W-36}" y="48" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">Team Zig · November 2026</text>')
 a(f'<text x="{W-36}" y="68" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">An enhanced experience within Blue Rewards</text>')
 
-a(f'<rect x="36" y="104" width="{W-72}" height="36" rx="8" fill="#EEEDFE" stroke="{BMO}" stroke-width="1.2"/>')
-a(f'<text x="54" y="127" font-family="{SANS}" font-size="13" fill="{NAVY}">'
-  f'<tspan font-weight="700">What this figure shows &#8212; </tspan>'
-  f'the Blue Rewards system as it works today, and the one place inside it where Team Zig&#8217;s proposed enhancement would live. '
-  f'Read it from the outside in. Only the navy box is new; everything around it already exists.</text>')
 SPLIT = len(o)
 
 # ── outside the boundary ──
-band(36, 112, W - 72, 96, "Outside the boundary", None, CTX)
-for i, t in enumerate(["Regulation and privacy", "Competitor programmes", "Member expectations", "Technology landscape"]):
-    chip(330 + i * 330, 152, 300, 42, [t], CTX, fill=CANV, weight="400", size=12.5)
+band(36, 112, W - 72, 108, "Outside the boundary", None, CTX)
+OUT = [("Regulation and privacy", "privacy law, consent rules, suitability, disclosure"),
+       ("Competitor programmes", "PC Optimum, Scene, bank and card ecosystems"),
+       ("Member expectations", "relevance, simplicity, flexibility, dependable service"),
+       ("Technology landscape", "AI, identity, interoperability, data portability")]
+for i, (t, sb) in enumerate(OUT):
+    chip(330 + i * 330, 146, 300, 56, [t], CTX, fill=CANV, weight="700", size=12.5, sub=sb)
 
 # ── the member, left ──
-band(36, 232, 300, 500, "The member", ["It only records what passes through a route that earns:", "a scan, a linked card, a receipt, a Shops click."], MEMB)
-chip(54, 300, 264, 62, ["Member"], MEMB, fill="#E6F1FB", size=15, sub="with or without a BMO banking relationship")
+band(36, 244, 300, 384, "The member", None, MEMB)
+chip(54, 300, 264, 62, ["Member"], MEMB, fill="#E6F1FB", size=15, sub="a member, a BMO client, or both")
 chip(54, 382, 264, 108, ["Spending they already", "intend to make"], MEMB, fill=CANV, weight="400", size=12.5,
      sub="what the enhancement is built around")
-chip(54, 496, 264, 150, ["What the programme", "cannot observe"], MEMB, fill=CANV, weight="400", size=12.5,
-     subs=["a purchase made outside a route that earns",
-           "a competing programme or cashback card",
-           "members named PC Optimum, Scene and RBC",
-           "a trip abandoned after checking the price",
-           "a plan the member has not told anyone"])
-a(f'<text x="186" y="668" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{MEMB}" font-weight="700">What the member gets back:</text>')
-a(f'<text x="186" y="683" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{MEMB}" font-weight="700">fewer steps, less uncertainty</text>')
-a(f'<text x="186" y="706" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">What the programme records is what a member did</text>')
-a(f'<text x="186" y="721" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">inside it, not everything they bought or wanted.</text>')
+a(f'<text x="186" y="548" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{MEMB}" font-weight="700">What the member gets back:</text>')
+a(f'<text x="186" y="563" text-anchor="middle" font-family="{SANS}" font-size="11.5" fill="{MEMB}" font-weight="700">fewer steps, less uncertainty</text>')
+a(f'<text x="186" y="590" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">What the programme records is what a member did</text>')
+a(f'<text x="186" y="604" text-anchor="middle" font-family="{SANS}" font-size="11" fill="{MUTE}">inside it, not everything they bought or wanted.</text>')
 
 # ── BMO → programme → product, centre ──
 band(404, 232, 794, 620, "BMO", "Owns Blue Rewards and funds it. Emerging Business, in gold, is our client. Each of the other teams holds a decision we would need.", BMO, dashed=False)
@@ -103,7 +96,7 @@ for i, t in enumerate(["Offer service", "Points and transactions", "Catalogue an
 
 a(f'<rect x="442" y="476" width="714" height="340" rx="14" fill="{NAVY}" stroke="{GOLD}" stroke-width="2.5"/>')
 a(f'<text x="799" y="506" text-anchor="middle" font-family="{SERIF}" font-size="14" fill="{GOLD}" font-weight="700" letter-spacing="1.6">WHAT WE ARE PROPOSING TO BUILD</text>')
-a(f'<text x="799" y="530" text-anchor="middle" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">A dedicated space inside the Blue Rewards app and website. Everything around it already exists.</text>')
+a(f'<text x="799" y="530" text-anchor="middle" font-family="{SANS}" font-size="12.5" fill="#c9c9e0">A dedicated space inside the Blue Rewards app and website.</text>')
 CAPS = [("Relevant Opportunity\nDiscovery", "Relevance"), ("Adaptive Value\nPlanning", "Clarity"),
         ("Transparent Value\nProgression", "Visibility"), ("Value Protection\nand Recovery", "Reliability")]
 for i, (t, need) in enumerate(CAPS):
@@ -139,7 +132,7 @@ a(f'<line x1="600" y1="462" x2="600" y2="474" stroke="{PART}" stroke-width="2.2"
 a(f'<text x="612" y="472" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">reads records</text>')
 a(f'<line x1="968" y1="474" x2="968" y2="462" stroke="{PART}" stroke-width="2.2" marker-end="url(#ar_{PART[1:]})"/>')
 a(f'<text x="984" y="472" font-family="{SANS}" font-size="11" fill="{PART}" font-weight="700">writes goals and cases</text>')
-arrow(1156, 494, 1226, 434, PART, "evidence arrives on their schedule", dashed=True, lx=1434, ly=382)
+arrow(1156, 494, 1226, 434, PART, "each reports on its own timetable", dashed=True, lx=1434, ly=382)
 arrow(1226, 574, 1156, 634, PART, "cases routed to whoever is responsible", dashed=True, lx=1434, ly=616)
 
 # ── journey and scope, bottom ──
@@ -155,18 +148,6 @@ for i, t in enumerate(JOURNEY):
         a(f'<path d="M{x},955 L{x+12},955" stroke="{MUTE}" stroke-width="1.6" marker-end="url(#ar_{MUTE[1:]})"/>')
         x += 24
 a(f'<text x="36" y="1004" font-family="{SANS}" font-size="12" fill="{MUTE}">Underneath, value moves through the five stages on the systems map. This enhancement does not move value itself \u2014 existing Blue Rewards services and partners still do that. It changes whether the member can see, judge, follow and recover it.</text>')
-a(f'<text x="36" y="1042" font-family="{SERIF}" font-size="14" fill="{NAVY}" font-weight="700">Three measures we propose for these stages</text>')
-MEAS = [("Opportunity Capture Rate", "opportunities begun \u00f7 opportunities worth offering", "Did it reach them, and did they act"),
-        ("Earned Value Realization Rate", "value received \u00f7 value earned and due", "Did what they earned actually arrive"),
-        ("End-to-End Realization Rate", "received and used \u00f7 opportunities available", "The whole journey, end to end")]
-mx = 36
-for nm, f, where in MEAS:
-    w = 296
-    a(f'<rect x="{mx}" y="1056" width="{w}" height="58" rx="10" fill="#ffffff" stroke="{PART}" stroke-width="1.5"/>')
-    a(f'<text x="{mx+14}" y="1076" font-family="{SANS}" font-size="12" fill="{PART}" font-weight="700">{e(nm)}</text>')
-    a(f'<text x="{mx+14}" y="1093" font-family="{SANS}" font-size="11" fill="{INK}">{e(f)}</text>')
-    a(f'<text x="{mx+14}" y="1107" font-family="{SANS}" font-size="10.5" fill="{MUTE}">{e(where)}</text>')
-    mx += w + 10
 
 a(f'<rect x="980" y="900" width="684" height="212" rx="14" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1.6"/>')
 a(f'<text x="1004" y="930" font-family="{SERIF}" font-size="13" fill="#A32D2D" font-weight="700" letter-spacing="2">WHAT THIS ENHANCEMENT DOES NOT REPLACE</text>')
@@ -184,7 +165,7 @@ markers = "".join(
     f'<path d="M0,0 L9,3 L0,6 Z" fill="{c}"/></marker>' for c in (MEMB, BMO, PART, CTX, MUTE, GOLD, NAVY))
 
 inner = (f'<defs>{markers}</defs>' + "".join(o[:SPLIT])
-         + '<g transform="translate(0,46)">' + "".join(o[SPLIT:]) + "</g>")
+         + '<g transform="translate(0,0)">' + "".join(o[SPLIT:]) + "</g>")
 svg_site = (f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" '
   f'aria-label="Where the product sits in the Blue Rewards system. The product is a dedicated space inside the existing '
   f'Blue Rewards app, nested within the programme systems of record, which are nested within BMO. The member is to the '

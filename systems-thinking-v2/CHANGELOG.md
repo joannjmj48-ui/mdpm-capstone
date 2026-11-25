@@ -230,3 +230,15 @@ Rewritten so the figure answers its own questions.
 - Every line under "Who holds the proof" is elaborated into what that party actually knows, and
   the heading note explains why five parties matter: no single one sees a whole journey, so when
   value goes missing the proof is split between them.
+
+## Figure: strip what a systems map should not carry (November 2026)
+
+Removed: the purpose bar, the "everything around it already exists" line, the PRD framing in
+the eyebrow, the "what the programme cannot observe" box, the route-that-earns note, and the
+three pilot measures. The measures are a measurement model, not map structure; they stay on
+the value states in the contract, where they belong.
+
+Added: real examples under each outside-the-boundary force, pulled from the Outside the
+Boundary view. Member is now "a member, a BMO client, or both". Title is Systems Map 2.0.
+"Evidence arrives on their schedule" becomes "each reports on its own timetable", moved out of
+the gap between two boxes.
